@@ -1,0 +1,14 @@
+---
+title: "Announcements"
+listing:
+  contents: posts
+  fields: [date, title, description, image]
+  type: default
+  # max-description-length: 10000
+  # items: 20
+#   feed:
+# 	type: full
+---
+
+Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.
+
