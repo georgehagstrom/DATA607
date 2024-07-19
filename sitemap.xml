@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/instructors.html</loc>
+    <lastmod>2024-07-18T14:05:20.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/textbooks.html</loc>
+    <lastmod>2024-07-18T13:24:48.917Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/syllabus.html</loc>
+    <lastmod>2024-07-18T14:06:35.901Z</lastmod>
+  </url>
+  <url>
     <loc>https://georgehagstrom.github.io/DATA607/index.html</loc>
     <lastmod>2024-07-18T13:48:12.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/materials.html</loc>
+    <lastmod>2024-07-18T13:23:59.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/software.html</loc>
+    <lastmod>2024-07-18T13:24:35.222Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA607/course/overview.html</loc>
+    <lastmod>2024-07-18T13:24:06.494Z</lastmod>
   </url>
 </urlset>

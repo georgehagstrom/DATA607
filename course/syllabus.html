@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Announcements – DATA 507 Fall 2024</title>
+<title>Syllabus – DATA 507 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course/syllabus.html" rel="next">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../course/instructors.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,69 +69,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<link href="../fullcalendar-lib/main.css" rel="stylesheet">
+<script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<link href="./fullcalendar-lib/main.css" rel="stylesheet">
-<script type="text/javascript" src="./fullcalendar-lib/main.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Announcements – DATA 507 Fall 2024">
+<meta property="og:title" content="Syllabus – DATA 507 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 507 Fall 2024">
 </head>
@@ -146,7 +87,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Announcements</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/syllabus.html">Syllabus</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,8 +101,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/georgehagstrom/DATA607" title="Github" class="quarto-navigation-tool px-1" aria-label="Github" target="_blank"><i class="bi bi-github"></i></a>
@@ -199,7 +140,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
@@ -214,13 +155,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/syllabus.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/instructors.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/instructors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructors</span></a>
   </div>
 </li>
@@ -243,9 +184,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/syllabus.html">Syllabus</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Announcements</h1>
+<h1 class="title">Syllabus</h1>
 </div>
 
 
@@ -262,19 +203,152 @@ window.Quarto = {
 </header>
 
 
-<p>Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.</p>
+<p><strong>Instructor:</strong> George Hagstrom, Ph.D.<br>
+<strong>Class Meetup:</strong> Wednesday 8:00pm to 9:00pm<br>
+<strong>Office Hours:</strong> By appointment<br>
+<strong>Email:</strong> <a href="mailto:george.hagstrom@cuny.edu">george.hagstrom@cuny.edu</a></p>
+<section id="course-description" class="level3">
+<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
+<p>This course covers basic techniques in probability and statistics that are important in the field of data analytics. Discrete probability models, sampling from infinite and finite populations, statistical distributions, basic Bayesian statistics, and non-parametric statistical techniques for categorical data are covered in this course. Each of these statistical concepts will be applied in a variety of real-world scenarios through the use of case studies and customized data sets.</p>
+</section>
+<section id="course-learning-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="course-learning-outcomes">Course Learning Outcomes:</h3>
+<p>By then end of the course, students should be able to:</p>
+<ul>
+<li>Understand the foundations of probability theory and perform basic probability calculations.</li>
+<li>Build basic stochastic models for commonly encountered business problems.</li>
+<li>Model situations involving uncertainty using appropriate probability distributions and conditional techniques.</li>
+<li>Explore and summarize data using descriptive statistics.</li>
+<li>Test hypotheses using classical and modern computational techniques.</li>
+<li>Construct estimators and calculate intervals using classical and modern computational techniques.</li>
+<li>Perform basic Bayesian statistical techniques for estimation and testing hypotheses.</li>
+</ul>
+</section>
+<section id="program-learning-outcomes-addressed-by-the-course" class="level3">
+<h3 class="anchored" data-anchor-id="program-learning-outcomes-addressed-by-the-course">Program Learning Outcomes addressed by the course:</h3>
+<ul>
+<li>Business Understanding: Learn when probabilistic techniques apply to certain categories of business problems, discuss the sorts of solutions that are possible, and understand the limitations of these techniques.</li>
+<li>Foundational Math Skills: Explore and analyze data, build probabilistic and statistical models, construct estimators, and test hypotheses.</li>
+<li>Predictive Modeling: Learn foundational techniques that underlie predictive modeling algorithms, such as Naïve Bayes.</li>
+<li>Presentation: Complete and submit collaborative assignments using techniques from the course.</li>
+</ul>
+</section>
+<section id="how-is-this-course-relevant-for-data-analytics-professionals" class="level3">
+<h3 class="anchored" data-anchor-id="how-is-this-course-relevant-for-data-analytics-professionals">How is this course relevant for data analytics professionals?</h3>
+<p>Probabilistic techniques are the foundation of many data science applications from data exploration and visualization to outlier analysis, stochastic modeling, and data mining algorithms. This course will ensure that students have a strong understanding of these foundations.</p>
+</section>
+<section id="grading" class="level3">
+<h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<ul>
+<li><a href="../assignments/participation">Participation</a> (10%)
+<ul>
+<li><a href="../assignments/daacs">DAACS</a></li>
+<li><a href="../assignments/participation">One Minute Papers</a></li>
+</ul></li>
+<li><a href="../assignments/labs">Labs</a> (35%)</li>
+<li><a href="../assignments/project">Data Project</a> (30%)</li>
+<li><a href="../assignments/exams/">Exams</a>
+<ul>
+<li>Midterm (10%)</li>
+<li>Final exam (15%)</li>
+</ul></li>
+</ul>
+<section id="grade-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="grade-distribution">Grade Distribution</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 18%">
+<col style="width: 14%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quality of Performance</th>
+<th style="text-align: center;">Letter Grade</th>
+<th style="text-align: center;">Range %</th>
+<th style="text-align: center;">GPA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Excellent - work is of exceptional quality</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">93 - 100</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td>Excellent</td>
+<td style="text-align: center;">A-</td>
+<td style="text-align: center;">90 - 92.9</td>
+<td style="text-align: center;">3.7</td>
+</tr>
+<tr class="odd">
+<td>Good - work is above average</td>
+<td style="text-align: center;">B+</td>
+<td style="text-align: center;">87 - 89.9</td>
+<td style="text-align: center;">3.3</td>
+</tr>
+<tr class="even">
+<td>Satisfactory</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">83 - 86.9</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td>Below Average</td>
+<td style="text-align: center;">B-</td>
+<td style="text-align: center;">80 - 82.9</td>
+<td style="text-align: center;">2.7</td>
+</tr>
+<tr class="even">
+<td>Poor</td>
+<td style="text-align: center;">C+</td>
+<td style="text-align: center;">77 - 79.9</td>
+<td style="text-align: center;">2.3</td>
+</tr>
+<tr class="odd">
+<td>Poor</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">70 - 76.9</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td>Failure</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">&lt; 70</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="how-this-course-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-this-course-works">How This Course Works</h3>
+<p>This course is conducted entirely online. Each week, you will have various resources made available, including weekly readings from the textbooks and occasionally additional readings provided by the instructor. Most weeks will have homework assignments and labs to be submitted (although some chapters will take more than one week, see the <a href="../course-overview/schedule/">schedule</a> for details). There will also be a presentation required and a forum post introduction required. You are expected to complete all assignments by their due dates.</p>
+<p><strong>You are expected to attend or watch every Meetup.</strong> We highly recommend attending the Meetups live if possible but understand that may not be possible for everyone. Recordings will be made available by the next morning on the <a href="../course-overview/meetups/">Meetups page</a>. In addition to highlighting key concepts from each learning module, some topics will be discussed that are not in the textbook. Moreover, we regularly make announcements in the Meetups that will be important to being successful in this course. At the end of each Meetup there will be a short reflective exercise. These will contribute to your participation grade.</p>
+<p>The culmination of the course will be the presentation of the analysis of a dataset of your choosing. There will be a number of time slots available to present. You will be <strong>required to attend one presentation session</strong>, during which you will present your analysis and provide peer feedback for other students in that timeslot. See the <a href="../assignments/project/">project</a> for more information.</p>
+</section>
+<section id="accessibility-and-accommodations" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility-and-accommodations">Accessibility and Accommodations</h3>
+<p>The CUNY School of Professional Studies is firmly committed to making higher education accessible to students with disabilities by removing architectural barriers and providing programs and support services necessary for them to benefit from the instruction and resources of the University. Early planning is essential for many of the resources and accommodations provided. Please see: <a href="http://sps.cuny.edu/student_services/disabilityservices.html">http://sps.cuny.edu/student_services/disabilityservices.html</a></p>
+</section>
+<section id="online-etiquette-and-anti-harassment-policy" class="level3">
+<h3 class="anchored" data-anchor-id="online-etiquette-and-anti-harassment-policy">Online Etiquette and Anti-Harassment Policy</h3>
+<p>The University strictly prohibits the use of University online resources or facilities, including Blackboard, for the purpose of harassment of any individual or for the posting of any material that is scandalous, libelous, offensive or otherwise against the University’s policies. Please see: <a href="http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf">http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf</a></p>
+</section>
+<section id="academic-integrity" class="level3">
+<h3 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h3>
+<p>Academic dishonesty is unacceptable and will not be tolerated. Cheating, forgery, plagiarism and collusion in dishonest acts undermine the educational mission of the City University of New York and the students’ personal and intellectual growth. Please see: <a href="http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf">http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf</a></p>
+</section>
+<section id="student-support-services" class="level3">
+<h3 class="anchored" data-anchor-id="student-support-services">Student Support Services</h3>
+<p>If you need any additional help, please visit Student Support Services: <a href="http://sps.cuny.edu/student_resources/">http://sps.cuny.edu/student_resources/</a></p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -841,10 +915,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Announcements">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Announcements</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./course/syllabus.html" class="pagination-link" aria-label="Syllabus">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../course/instructors.html" class="pagination-link" aria-label="Instructors">
+        <span class="nav-page-text">Instructors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -853,4 +930,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/course/syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
