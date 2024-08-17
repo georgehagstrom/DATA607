@@ -1,0 +1,30 @@
+---
+title: "Labs"
+---
+
+The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different
+data sets. **Please submit a PDF (preferred) or HTML file along with your Rmarkdown file.** Be sure to answer all questions in lab, not just the *on your own section.* Labs should be submitted on Blackboard.
+
+<ol start='1'>
+<li value='1'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab1/Lab1_Data_Viz.html'>Introduction to Data Visualization using ggplot</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab1/Lab1_intro_to_data_viz.Rmd?raw=true'>Template</a>)</li>
+
+<li value='2'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab2/Lab2_Tidy_Data.html'>Tidy Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab2/Lab2_tidy_data.Rmd?raw=true'>Template</a>)</li>
+
+<li value='3'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab3/Lab3_EDA.html'>Exploratory Data Analysis</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab3/Lab3_EDA.Rmd?raw=true'>Template</a>)</li>
+
+<li value='4'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab4/Lab4_Data_Transformations.html'>Data Transformations</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab4/Lab4_data_transformations.Rmd?raw=true'>Template</a>)</li>
+
+<li value='5'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab5/Lab5_Strings_And_Text.html'>Processing Strings and Text </a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab5/Lab5_strings_and_text.Rmd?raw=true'>Template</a>)</li>
+
+<li value='6'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.html'>Databases and SQL</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.Rmd?raw=true'>Template</a>)</li>
+
+<li value='7'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.html'>Web Scraping and APIs</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.Rmd?raw=true'>Template</a>)</li>
+
+<li value='8'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.html'>Text Mining and NLP</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.Rmd?raw=true'>Template</a>)</li>
+
+<li value='9'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.html'>Graphs and Graph Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.Rmd?raw=true'>Template</a>)</li>
+</ol>
+
+<li value='10'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.html'>Large Datasets and Cloud Computing</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.Rmd?raw=true'>Template</a>)</li>
+
+
