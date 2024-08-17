@@ -15,7 +15,11 @@
     "href": "course/textbooks.html",
     "title": "Textbooks",
     "section": "",
-    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon."
+    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.",
+    "crumbs": [
+      "Course information",
+      "Textbooks"
+    ]
   },
   {
     "objectID": "course/syllabus.html",
