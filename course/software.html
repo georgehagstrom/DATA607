@@ -63,6 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assignments/participation.html" rel="next">
+<link href="../course/textbooks.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -119,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Software</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/software.html">Software</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,6 +205,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Textbooks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course/software.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Software</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -260,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/software.html">Software</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Software</h1>
 </div>
@@ -300,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="source-control" class="level3">
 <h3 class="anchored" data-anchor-id="source-control">Source Control</h3>
-<p>All course materials will be made available on <a href="https://github.com/jbryer/DATA606Fall2020/">Github</a> which provides an implementation of the <a href="https://git-scm.com/">git</a> open source version control system. RStudio supports git directly, but I recommend downloading <a href="https://www.sourcetreeapp.com/">Sourcetree</a>. This is a free desktop client that provides an easier interface for working with Github. You will also need to <a href="https://github.com/">create an account on Github</a>.</p>
+<p>All course materials will be made available on <a href="https://github.com/georgehagstrom/DATA607/">Github</a> which provides an implementation of the <a href="https://git-scm.com/">git</a> open source version control system. RStudio supports git directly, but I recommend downloading <a href="https://www.sourcetreeapp.com/">Sourcetree</a>. This is a free desktop client that provides an easier interface for working with Github. You will also need to <a href="https://github.com/">create an account on Github</a>.</p>
 <p>For more information, Jenny Bryan’s <a href="https://happygitwithr.com/"><em>Happy Git and Github for the useR</em></a> is a free online book covering the important features of source control for R users.</p>
 </section>
 <section id="r-packages" class="level3">
@@ -310,23 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'openintro'</span>,<span class="st">'devtools'</span>,<span class="st">'tidyverse'</span>, <span class="st">'ggplot2'</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'psych'</span>,<span class="st">'reshape2'</span>,<span class="st">'knitr'</span>,<span class="st">'markdown'</span>,<span class="st">'shiny'</span>,<span class="st">'R.rsp'</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'fivethirtyeight'</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jbryer/DATA606"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="the-data606-r-package" class="level3">
-<h3 class="anchored" data-anchor-id="the-data606-r-package">The <code>DATA606</code> R Package</h3>
-<p><img src="../images/hex/DATA606.png" alt="RStudio" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></p>
-<p>Many of the course resouces are available in the <code>DATA606</code> R package. Here are some command to get started:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'DATA606'</span>)          <span class="co"># Load the package</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="at">package=</span><span class="st">'DATA606'</span>) <span class="co"># Lists vignettes in the DATA606 package</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">'os4'</span>)             <span class="co"># Loads a PDF of the OpenIntro Statistics book</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package=</span><span class="st">'DATA606'</span>)     <span class="co"># Lists data available in the package</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">getLabs</span>()                   <span class="co"># Returns a list of the available labs</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">viewLab</span>(<span class="st">'Lab1'</span>)             <span class="co"># Opens Lab1 in the default web browser</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">startLab</span>(<span class="st">'Lab1'</span>)            <span class="co"># Starts Lab1 (copies to getwd()), opens the Rmd file</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">shiny_demo</span>()                <span class="co"># Lists available Shiny apps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'fivethirtyeight'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -897,6 +889,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../course/textbooks.html" class="pagination-link" aria-label="Textbooks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Textbooks</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../assignments/participation.html" class="pagination-link" aria-label="Participation">
+        <span class="nav-page-text">Participation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -33,14 +33,42 @@
     ]
   },
   {
-    "objectID": "modules/module1.html",
-    "href": "modules/module1.html",
-    "title": "Module 1 - Introduction to R and the Data Science Workflow",
+    "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "href": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "title": "Welcome to DATA 607",
     "section": "",
-    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nOpenIntro provides a number of videos. You may find these helpful while reading the chapter.\nCase Study: Using Stents to Prevent Strokes\n\n\nHadley Wickham Introduces the Tidyverse",
+    "text": "Welcome to DATA 607, Data Acquisition and Management.\nHere is what you should do to get started:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nDownload, install, and configure R, then RStudio.\nSign up for a (free) GitHub account.\nIntroduce yourself on the course discussion forum.\nJoin our Slack channel: https://join.slack.com/t/sps-16h7212/shared_invite/zt-1ni7pxv75-1WmKD8xJ~udY65c3k_JPKA\nAttend our first meetup on Wednesday at 6:45 p.m. ET."
+  },
+  {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
     "crumbs": [
-      "Topics",
-      "1 - Data Science Workflow and Toolkit"
+      "Assignments",
+      "Participation"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
     ]
   },
   {
@@ -88,35 +116,14 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
+    "objectID": "modules/module1.html",
+    "href": "modules/module1.html",
+    "title": "Module 1 - Introduction to R and the Data Science Workflow",
     "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nOpenIntro provides a number of videos. You may find these helpful while reading the chapter.\nCase Study: Using Stents to Prevent Strokes\n\n\nHadley Wickham Introduces the Tidyverse",
     "crumbs": [
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "assignments/participation.html",
-    "href": "assignments/participation.html",
-    "title": "Participation",
-    "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
-    "crumbs": [
-      "Assignments",
-      "Participation"
+      "Topics",
+      "1 - Data Science Workflow and Toolkit"
     ]
   },
   {
@@ -131,7 +138,11 @@
     "href": "course/software.html",
     "title": "Software",
     "section": "",
-    "text": "R and RStudio\n\nWe will make use of R, an open source statistics program and language. Be sure to install R and RStudio on your own computers within the first few days of the class.\n\nR - download for Windows, Mac, or Linux.\nRStudio - Download Windows, Mac, or Linux versions from here\n\nIf using Windows, you also need to download RTools.\n\n\nLaTeX\n\nLaTeX is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using &lt;TAG&gt;&lt;/TAG&gt; syntax, LaTeX uses \\TAG{} format. We will primarily use Markdown, and its extension R Markdown for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for Windows (MiKTeX) and Mac (BasicTeX). Alternatively, the tinytex R package provides an easier way of installing LaTeX directly from within R:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()\n\n\n\nSource Control\nAll course materials will be made available on Github which provides an implementation of the git open source version control system. RStudio supports git directly, but I recommend downloading Sourcetree. This is a free desktop client that provides an easier interface for working with Github. You will also need to create an account on Github.\nFor more information, Jenny Bryan’s Happy Git and Github for the useR is a free online book covering the important features of source control for R users.\n\n\nR Packages\n\nOnce everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):\n\ninstall.packages(c('openintro','devtools','tidyverse', 'ggplot2',\n                   'psych','reshape2','knitr','markdown','shiny','R.rsp',\n                   'fivethirtyeight'))\ndevtools::install_github(\"jbryer/DATA606\")\n\n\n\nThe DATA606 R Package\n\nMany of the course resouces are available in the DATA606 R package. Here are some command to get started:\n\nlibrary('DATA606')          # Load the package\nvignette(package='DATA606') # Lists vignettes in the DATA606 package\nvignette('os4')             # Loads a PDF of the OpenIntro Statistics book\ndata(package='DATA606')     # Lists data available in the package\ngetLabs()                   # Returns a list of the available labs\nviewLab('Lab1')             # Opens Lab1 in the default web browser\nstartLab('Lab1')            # Starts Lab1 (copies to getwd()), opens the Rmd file\nshiny_demo()                # Lists available Shiny apps"
+    "text": "R and RStudio\n\nWe will make use of R, an open source statistics program and language. Be sure to install R and RStudio on your own computers within the first few days of the class.\n\nR - download for Windows, Mac, or Linux.\nRStudio - Download Windows, Mac, or Linux versions from here\n\nIf using Windows, you also need to download RTools.\n\n\nLaTeX\n\nLaTeX is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using &lt;TAG&gt;&lt;/TAG&gt; syntax, LaTeX uses \\TAG{} format. We will primarily use Markdown, and its extension R Markdown for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for Windows (MiKTeX) and Mac (BasicTeX). Alternatively, the tinytex R package provides an easier way of installing LaTeX directly from within R:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()\n\n\n\nSource Control\nAll course materials will be made available on Github which provides an implementation of the git open source version control system. RStudio supports git directly, but I recommend downloading Sourcetree. This is a free desktop client that provides an easier interface for working with Github. You will also need to create an account on Github.\nFor more information, Jenny Bryan’s Happy Git and Github for the useR is a free online book covering the important features of source control for R users.\n\n\nR Packages\n\nOnce everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):\n\ninstall.packages(c('openintro','devtools','tidyverse', 'ggplot2',\n                   'psych','reshape2','knitr','markdown','shiny','R.rsp',\n                   'fivethirtyeight'))",
+    "crumbs": [
+      "Course information",
+      "Software"
+    ]
   },
   {
     "objectID": "course/overview.html",
