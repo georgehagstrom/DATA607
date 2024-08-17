@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>syllabus – DATA 507 Fall 2024</title>
+<title>Project – DATA 507 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../course/instructors.html" rel="next">
-<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="DATA 507 Fall 2024">
+<meta property="og:title" content="Project – DATA 507 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 507 Fall 2024">
 </head>
@@ -87,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/syllabus.html">Syllabus</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/syllabus.html" class="sidebar-item-text sidebar-link active">
+  <a href="../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
@@ -184,145 +182,153 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>#<code>{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'} #source('../../config.R') #</code></p>
+<p>The purpose of the data project is for you to conduct a reproducible analysis with a data set of your choosing. There are two components to the project, the proposal, which will be graded on a pass/fail basis, and the final report. The outline for each of these are provided in the templates. When submitting the assignments, include the R Markdown file (change the name to include your last name, for example <code>Bryer-Proposal.Rmd</code> and <code>Bryer-Project.Rmd</code>) along with any supplementary files necessary to run the R Markdown file (e.g.&nbsp;data files, screenshots, etc.). Suggestions for possible data sources are included below, however you are free to use data not listed below. The only requirement is that you are allowed to share the data. Projects will be shared with others on this website so should be presented in a way that other students can reproduce your analysis.</p>
+<section id="project-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="project-proposal">Project Proposal</h2>
+<p>The proposal can be more informal using bullet points where necessary and include R code and output. You must address the following areas:</p>
 <ul>
-<li></li>
-<li>title: “Syllabus”</li>
+<li>Research question</li>
+<li>What are the cases, and how many are there?</li>
+<li>Describe the method of data collection.</li>
+<li>What type of study is this (observational/experiment)?</li>
+<li>Data Source: If you collected the data, state self-collected. If not, provide a citation/link.</li>
+<li>Response: What is the response variable, and what type is it (numerical/categorical)?</li>
+<li>Explanatory: What is the explanatory variable(s), and what type is it (numerical/categorical)?</li>
+<li>Relevant summary statistics</li>
 </ul>
-<hr>
-<p><strong>Instructor:</strong> George Hagstrom, Ph.D. <strong>Class Meetup:</strong> TBD <strong>Office Hours:</strong> By appointment abd TBD <strong>Email:</strong> <a href="mailto:george.hagstrom@cuny.edu">george.hagstrom@cuny.edu</a></p>
-<section id="course-description" class="level3">
-<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
-<p>In this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, feature engineering, and working with large datasets in a cloud computing environment.</p>
-<p>Students will complete a project to create a working system for a large volume of data using publicly available data sets.</p>
+<p>#* <a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/DATA606_proposal_template.Rmd">Download project proposal template</a> #* <a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/DATA606_project_template.Rmd">Download project template</a></p>
+<p>#<a href="http://htmlpreview.github.io/?https://github.com/jbryer/%60r%20github_link%60/blob/master/Project/Example_proposal.html">Example data project proposal</a> (<a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/Example_proposal.Rmd">Source Rmarkdown file</a>)</p>
 </section>
-<section id="course-learning-outcomes" class="level3">
-<h3 class="anchored" data-anchor-id="course-learning-outcomes">Course Learning Outcomes:</h3>
-<p>By then end of the course, students should be able to:</p>
-<p><em>Load data into R from various data sources, including CSV files, Excel spreadsheets, relational databases, APIs, and web pages. </em> Perform various data cleansing and transformation work, including splitting, combining; resampling; variable creation; data aggregation; sorting and filtering data; strategies for working with outliers and missing data; data visualization and analysis in support of data cleansing activities. * Understand different information architectures, data types, and data structures. * Understand relational and non-relational database design and querying. * Cover relevant ethical issues including data privacy and misinformation.</p>
-</section>
-<section id="program-learning-outcomes-addressed-by-the-course" class="level3">
-<h3 class="anchored" data-anchor-id="program-learning-outcomes-addressed-by-the-course">Program Learning Outcomes addressed by the course:</h3>
+<section id="final-project" class="level2">
+<h2 class="anchored" data-anchor-id="final-project">Final Project</h2>
+<p>#* You are required to attend ONLY ONE of those time slots. You will do your presentation, watch the other presentations, and provide peer feedback (will be shared anonymously afterward).</p>
+<p>#<a href="../slides/Example_Project_Slides.html#1">Example project slide deck</a></p>
+<section id="checklist-suggested-outline" class="level4">
+<h4 class="anchored" data-anchor-id="checklist-suggested-outline">Checklist / Suggested Outline</h4>
 <ul>
-<li>Business Understanding. Apply frameworks and processes to build out data analytics solutions from understanding of business goals.</li>
-<li>Data Culture. Embody and champion the highest standards for the ethical and moral use of data; understand issues related to data privacy and data security.</li>
-<li>Solid foundational data programming skills, using industry standard tools, essential algorithms, and design patterns for working with structured data, unstructured data and big data.</li>
-<li>Data understanding. Collect, describe, model, explore and verify data.</li>
-<li>Data preparation. Selecting, cleaning, constructing, integrating, and formatting data.</li>
-</ul>
-</section>
-<section id="how-is-this-course-relevant-for-data-analytics-professionals" class="level3">
-<h3 class="anchored" data-anchor-id="how-is-this-course-relevant-for-data-analytics-professionals">How is this course relevant for data analytics professionals?</h3>
-<p>Most data analytics professionals spend most of their time getting data and preparing it for analysis. This is the course that teaches these key skills, as we work with both structured and unstructured data.</p>
-</section>
-<section id="grading" class="level3">
-<h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<li>Abstract (no more than 300 words)</li>
+<li>Overview slide
 <ul>
-<li><a href="../assignments/participation">Meetup Reflections</a> (10%)</li>
-<li><a href="../assignments/labs">Labs</a> (50%)</li>
-<li><a href="10%">TidyVerse Recipes</a></li>
-<li><a href="../assignments/project">Project</a> (30%)</li>
+<li>Context on the data collection</li>
+<li>Description of the dependent variable (what is being measured)</li>
+<li>Description of the independent variable (what is being measured; include at least 2 variables)</li>
+<li>Research question</li>
+</ul></li>
+<li>Summary statistics</li>
+<li>Include appropriate data visualizations.</li>
+<li>Statistical output
+<ul>
+<li>Include the appropriate statistics for your method used.</li>
+<li>For null hypothesis tests (e.g.&nbsp;t-test, chi-squared, ANOVA, etc.), state the null and alternative hypotheses along with relevant statistic and p-value (and confidence interval if appropriate).</li>
+<li>For regression models, include the regression output and interpret the R-squared value.</li>
+</ul></li>
+<li>Conclusion
+<ul>
+<li>Why is this analysis important?</li>
+<li>Limitations of the analysis?</li>
+</ul></li>
 </ul>
-<section id="grade-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="grade-distribution">Grade Distribution</h4>
+</section>
+<section id="rubric" class="level4">
+<h4 class="anchored" data-anchor-id="rubric">Rubric</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 58%">
-<col style="width: 18%">
-<col style="width: 14%">
-<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 34%">
+<col style="width: 32%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Quality of Performance</th>
-<th style="text-align: center;">Letter Grade</th>
-<th style="text-align: center;">Range %</th>
-<th style="text-align: center;">GPA</th>
+<th style="text-align: left;">Domain</th>
+<th style="text-align: left;">Accomplished</th>
+<th style="text-align: left;">Proficient</th>
+<th style="text-align: left;">Needs Improvement</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Excellent - work is of exceptional quality</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">93 - 100</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: left;">Abstract</td>
+<td style="text-align: left;">Abstract is less than 300 words, free of grammatical errors, summarizes the analysis conducted, has a conclusion and implicaitons</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
-<td>Excellent</td>
-<td style="text-align: center;">A-</td>
-<td style="text-align: center;">90 - 92.9</td>
-<td style="text-align: center;">3.7</td>
+<td style="text-align: left;">Introduction</td>
+<td style="text-align: left;">The research question is clearly stated, can be answered by the data, and the context of the problem clearly explained.</td>
+<td style="text-align: left;">The research question is unclear and/or not supported by the data.</td>
+<td style="text-align: left;">Research question is ambiguous, unclear, or not stated.</td>
 </tr>
 <tr class="odd">
-<td>Good - work is above average</td>
-<td style="text-align: center;">B+</td>
-<td style="text-align: center;">87 - 89.9</td>
-<td style="text-align: center;">3.3</td>
+<td style="text-align: left;">Data Display</td>
+<td style="text-align: left;">Includes appropriate, well-labeled, accurate displays (graphs and tables) of the data.</td>
+<td style="text-align: left;">Includes appropriate, accurate displays of the data.</td>
+<td style="text-align: left;">Includes appropriate but no accurate displays of the data.</td>
 </tr>
 <tr class="even">
-<td>Satisfactory</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">83 - 86.9</td>
-<td style="text-align: center;">3</td>
+<td style="text-align: left;">Data Analysis</td>
+<td style="text-align: left;">The appropriate statistical test(s) was used for the data and interpretation was clear.</td>
+<td style="text-align: left;">The appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.</td>
+<td style="text-align: left;">The incorrect statistical test was used an/or not justified for the data as presented.</td>
 </tr>
 <tr class="odd">
-<td>Below Average</td>
-<td style="text-align: center;">B-</td>
-<td style="text-align: center;">80 - 82.9</td>
-<td style="text-align: center;">2.7</td>
+<td style="text-align: left;">Conclusion</td>
+<td style="text-align: left;">Conclusion includes a clear answer to the statistical question that is consistent with the data analysis and the method of data collection.</td>
+<td style="text-align: left;">Conclusion includes an answer to the statistical question that is consistent with the data but not with the data collection method.</td>
+<td style="text-align: left;">Conclusion does not include an answer to the statistical question that is consistent with the data analysis.</td>
 </tr>
 <tr class="even">
-<td>Poor</td>
-<td style="text-align: center;">C+</td>
-<td style="text-align: center;">77 - 79.9</td>
-<td style="text-align: center;">2.3</td>
-</tr>
-<tr class="odd">
-<td>Poor</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">70 - 76.9</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="even">
-<td>Failure</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">&lt; 70</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: left;">Overall Presentation</td>
+<td style="text-align: left;">Attractive, well-organized, well-written presentation</td>
+<td style="text-align: left;">Presentation has two of the three qualities: attractive, well-organized, well-written.</td>
+<td style="text-align: left;">Presentation is not attractive, organized, or written. There are numerous errors throughout.</td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="how-this-course-works" class="level3">
-<h3 class="anchored" data-anchor-id="how-this-course-works">How This Course Works</h3>
-<p>This course is conducted entirely online. Each week, you will have various resources made available, including weekly readings from the textbooks and occasionally additional readings provided by the instructor. Most weeks will have homework assignments and labs to be submitted (although some chapters will take more than one week, see the <a href="../course-overview/schedule/">schedule</a> for details). There will also be a presentation required and a forum post introduction required. You are expected to complete all assignments by their due dates.</p>
-<p><strong>You are expected to attend or watch every Meetup.</strong> I highly recommend attending the Meetups live if possible but understand that may not be possible for everyone. Recordings will be made available by the next morning on the <a href="../course-overview/meetups/">Meetups page</a>. In addition to highlighting key concepts from each learning module, some topics will be discussed that are not in the textbook. Moreover, we regularly make announcements in the Meetups that will be important to being successful in this course. At the end of each Meetup there will be a short reflective exercise. These will contribute to your participation grade.</p>
-<p>The culmination of the course will be the presentation of the analysis of a dataset of your choosing. See the <a href="../assignments/project/">project</a> for more information.</p>
-</section>
-<section id="textbooks-and-course-materials" class="level3">
-<h3 class="anchored" data-anchor-id="textbooks-and-course-materials">Textbooks and Course Materials</h3>
+<section id="example-data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="example-data-sources">Example Data Sources</h2>
+<p>You are not to use data sources used in class or the textbooks. Possible data sources include, but are not limited to:</p>
 <ul>
-<li><p><em>R for Data Science (2e)</em> by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. This is the primary text for the course. Available online for free at: <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a></p></li>
-<li><p><em>Text Mining with R: A Tidy Approach</em>, Julia Silge and David Robinson. O’Reilly, 2017. Available online for free at <a href="https://www.tidytextmining.com/">https://www.tidytextmining.com/</a></p></li>
+<li>FiveThirtyEight <a href="https://github.com/fivethirtyeight/data">https://github.com/fivethirtyeight/data</a></li>
+<li>RStudio data sources <a href="http://blog.rstudio.org/2014/07/23/new-data-packages/">http://blog.rstudio.org/2014/07/23/new-data-packages/</a></li>
+<li>Analyze Survey Data for Free (ASDFree) has many open data sources that can be used <a href="http://www.asdfree.com/">http://www.asdfree.com/</a></li>
+<li>The World Bank Data Catalog <a href="http://datacatalog.worldbank.org/">http://datacatalog.worldbank.org/</a></li>
+<li>Google Public Data search engine <a href="http://www.google.com/publicdata/directory">http://www.google.com/publicdata/directory</a></li>
+<li>Vanderbilt data sources <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets">http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets</a></li>
+<li>Programme of International Student Assessment (PISA) <a href="http://www.oecd.org/pisa/">http://www.oecd.org/pisa/</a></li>
+<li>Behavioral Risk Factor Surveillance System (BRFSS) <a href="http://www.cdc.gov/brfss/">http://www.cdc.gov/brfss/</a></li>
+<li>World Values Survey <a href="http://www.worldvaluessurvey.org/wvs.jsp">http://www.worldvaluessurvey.org/wvs.jsp</a></li>
+<li>American National Election Survey (ANES) <a href="http://www.electionstudies.org/">http://www.electionstudies.org/</a></li>
+<li>General Social Survey (GSS) <a href="http://www3.norc.org/GSS+Website/">http://www3.norc.org/GSS+Website/</a></li>
+<li>Integrated Postsecondary Education Data System (IPEDS) <a href="https://nces.ed.gov/ipeds/">https://nces.ed.gov/ipeds/</a></li>
+<li>U.S. Census and American Community Survey <a href="https://cran.r-project.org/web/packages/acs/index.html">https://cran.r-project.org/web/packages/acs/index.html</a></li>
+<li><a href="https://machinelearningmastery.com/standard-machine-learning-datasets/">10 Standard Datasets for Practicing Applied Machine Learning</a></li>
+<li><a href="https://github.com/awesomedata/awesome-public-datasets">Awesome Public Datasets</a></li>
+<li><a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a> - See also this R package: https://github.com/tyluRp/ucimlr</li>
+<li><a href="https://www.openml.org/search?type=data&amp;sort=runs&amp;status=active">OpenML</a></li>
 </ul>
-</section>
-<section id="accessibility-and-accommodations" class="level3">
-<h3 class="anchored" data-anchor-id="accessibility-and-accommodations">Accessibility and Accommodations</h3>
-<p>The CUNY School of Professional Studies is firmly committed to making higher education accessible to students with disabilities by removing architectural barriers and providing programs and support services necessary for them to benefit from the instruction and resources of the University. Early planning is essential for many of the resources and accommodations provided. Please see: <a href="http://sps.cuny.edu/student_services/disabilityservices.html">http://sps.cuny.edu/student_services/disabilityservices.html</a></p>
-</section>
-<section id="online-etiquette-and-anti-harassment-policy" class="level3">
-<h3 class="anchored" data-anchor-id="online-etiquette-and-anti-harassment-policy">Online Etiquette and Anti-Harassment Policy</h3>
-<p>The University strictly prohibits the use of University online resources or facilities, including Blackboard, for the purpose of harassment of any individual or for the posting of any material that is scandalous, libelous, offensive or otherwise against the University’s policies. Please see: <a href="http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf">http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf</a></p>
-</section>
-<section id="academic-integrity" class="level3">
-<h3 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h3>
-<p>Academic dishonesty is unacceptable and will not be tolerated. Cheating, forgery, plagiarism and collusion in dishonest acts undermine the educational mission of the City University of New York and the students’ personal and intellectual growth. Please see: <a href="http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf">http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf</a></p>
-</section>
-<section id="student-support-services" class="level3">
-<h3 class="anchored" data-anchor-id="student-support-services">Student Support Services</h3>
-<p>If you need any additional help, please visit Student Support Services: <a href="http://sps.cuny.edu/student_resources/">http://sps.cuny.edu/student_resources/</a></p>
 
 
 </section>
@@ -892,21 +898,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Announcements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Announcements</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../course/instructors.html" class="pagination-link" aria-label="Instructors">
-        <span class="nav-page-text">Instructors</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/course/syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/assignments/project.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
