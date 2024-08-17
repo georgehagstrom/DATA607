@@ -1,0 +1,24 @@
+---
+title: "Welcome to DATA 607"
+author: "George I. Hagstrom"
+date: 2024-08-17
+draft: false
+description: "Important information on how to get started with this course. Please read this post carefully."
+---
+
+
+Welcome to DATA 607, Data Acquisition and Management.
+
+Here is what you should do to get started:
+
+* Read the [syllabus](course/syllabus).
+* Go through the course overview materials, and complete the [week 1 readings](modules/module1).
+* [Download, install, and configure R, then RStudio.](course/software)
+* Sign up for a (free) [GitHub](https://github.com/) account.
+* Introduce yourself on the course discussion forum.
+* Join our Slack channel: https://join.slack.com/t/sps-16h7212/shared_invite/zt-1ni7pxv75-1WmKD8xJ~udY65c3k_JPKA
+* Attend our first meetup on Wednesday at 6:45 p.m. ET.
+
+
+
+
