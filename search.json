@@ -29,6 +29,38 @@
     ]
   },
   {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
+    "crumbs": [
+      "Assignments",
+      "Participation"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
     "objectID": "assignments/project.html",
     "href": "assignments/project.html",
     "title": "Project",
@@ -70,27 +102,6 @@
     "crumbs": [
       "Assignments",
       "Project"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
     ]
   },
   {
