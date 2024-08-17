@@ -1,0 +1,55 @@
+---
+title: "Module 1 - Introduction to R and the Data Science Workflow"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+### Learning Objectives
+
+* Data Science Workflow
+* Course Toolkit: R, RStudio, tidyverse, Quarto, git
+
+
+
+### Readings
+
+* __RDS__ (R for Data Science): [Introduction](https://r4ds.hadley.nz/intro), [Chapter 28](https://r4ds.hadley.nz/quarto)
+* [Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html)
+* __Happy Git and GitHub for the R User__: [Let's Git Started](https://happygitwithr.com/), [1. Why Git? Why GitHub?](https://happygitwithr.com/big-picture)
+
+
+
+
+### Videos
+
+*OpenIntro* provides a number of [videos](https://www.openintro.org/stat/videos.php). You may find these helpful while reading the chapter.
+
+[Case Study: Using Stents to Prevent Strokes](https://www.youtube.com/watch?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8&v=nEHFF1ADpWE)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nEHFF1ADpWE?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8" frameborder="0" allowfullscreen></iframe>
+
+[Hadley Wickham Introduces the Tidyverse](https://posit.co/resources/videos/data-science-in-the-tidyverse-hadley-wickham/)
+
+
