@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Textbooks – DATA 507 Fall 2024</title>
+<title>Module 1 - Introduction to R and the Data Science Workflow – DATA 507 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Textbooks – DATA 507 Fall 2024">
+<meta property="og:title" content="Module 1 - Introduction to R and the Data Science Workflow – DATA 507 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 507 Fall 2024">
 </head>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Textbooks</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Module 1 - Introduction to R and the Data Science Workflow</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -209,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Textbooks</h1>
+<h1 class="title">Module 1 - Introduction to R and the Data Science Workflow</h1>
 </div>
 
 
@@ -226,30 +226,47 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="required" class="level4">
-<h4 class="anchored" data-anchor-id="required">Required</h4>
-<p><a href="https://r4ds.hadley.nz/"><img src="images/r4ds.jpg" alt="R for Data Science (2e)" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></a></p>
-<p>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). <em>R for Data Science (2e).</em> O’Reilly</p>
-<blockquote class="blockquote">
-<p>This is an open source textbook that can be freely read online at <a href="https://r4ds.hadley.nz/">r4ds.hadley.nz/</a> but can be purchased from <a href="https://www.amazon.com/dp/1492097403">Amazon</a>. The textbook was written in quarto and the source code can be found on <a href="https://github.com/hadley/r4ds/">github</a>. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.</p>
-</blockquote>
-<p><a href="https://happygitwithr.com/"><img src="images/happygitwithr.png" alt="Happy Git and GitHub for the useR" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></a></p>
-<p>Jennifer Bryan. <em>Happy Git and GitHub for the R User.</em></p>
-<blockquote class="blockquote">
-<p>This is an open source textbook that can be freely read online at <a href="https://happygitwithr.com/">happygitwithr.com/</a>. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.</p>
-</blockquote>
-<p><a href="Text Mining with R"><img src="images/textmining.png" alt="Text Mining with R" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></a></p>
-<p>Julia Silge and David Robinson. (2017). <em>Text Mining with R.</em> O’Reilly</p>
-<blockquote class="blockquote">
-<p>This is an open source textbook that can be freely read online at <a href="https://www.tidytextmining.com/">www.tidytextmining.com/</a> but can be purchased from <a href="https://www.amazon.com/gp/product/1491981652/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1491981652&amp;linkId=0e92d44b0aa39ab34608ffa582dbd490">Amazon</a>.</p>
-</blockquote>
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<ul>
+<li>Data Science Workflow</li>
+<li>Course Toolkit: R, RStudio, tidyverse, Quarto, git</li>
+</ul>
 </section>
-<section id="recommended" class="level4">
-<h4 class="anchored" data-anchor-id="recommended">Recommended</h4>
-<p>Wickham, H. <em>Advanced R.</em> Baca Raton, FL: Taylor &amp; Francis Group.</p>
-<blockquote class="blockquote">
-<p>Most of this book is available freely online at <a href="http://adv-r.had.co.nz">adv-r.had.co.nz</a> but can be purchased from <a href="http://www.amazon.com/Advanced-Chapman-Hall-Hadley-Wickham/dp/1466586966/ref=sr_1_1?ie=UTF8&amp;qid=1436796895&amp;sr=8-1&amp;keywords=advanced+R&amp;pebp=1436796898598&amp;perid=0921JRRF9KW2Z67NAF5F">Amazon</a>.</p>
-</blockquote>
+<section id="readings" class="level3">
+<h3 class="anchored" data-anchor-id="readings">Readings</h3>
+<ul>
+<li><strong>RDS</strong> (R for Data Science): <a href="https://r4ds.hadley.nz/intro">Introduction</a>, <a href="https://r4ds.hadley.nz/quarto">Chapter 28</a></li>
+<li><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto tutorial</a></li>
+<li><strong>Happy Git and GitHub for the R User</strong>: <a href="https://happygitwithr.com/">Let’s Git Started</a>, <a href="https://happygitwithr.com/big-picture">1. Why Git? Why GitHub?</a></li>
+</ul>
+</section>
+<section id="videos" class="level3">
+<h3 class="anchored" data-anchor-id="videos">Videos</h3>
+<p><em>OpenIntro</em> provides a number of <a href="https://www.openintro.org/stat/videos.php">videos</a>. You may find these helpful while reading the chapter.</p>
+<p><a href="https://www.youtube.com/watch?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8&amp;v=nEHFF1ADpWE">Case Study: Using Stents to Prevent Strokes</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nEHFF1ADpWE?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8" frameborder="0" allowfullscreen="">
+</iframe>
+<p><a href="https://posit.co/resources/videos/data-science-in-the-tidyverse-hadley-wickham/">Hadley Wickham Introduces the Tidyverse</a></p>
 
 
 </section>
@@ -824,4 +841,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/course/textbooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/modules/module1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
