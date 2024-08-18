@@ -184,9 +184,9 @@
   {
     "objectID": "modules/module5.html",
     "href": "modules/module5.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.\n\n\nVideos",
     "crumbs": [
       "Topics",
       "5 - Data Transformations"
@@ -217,9 +217,9 @@
   {
     "objectID": "modules/module6.html",
     "href": "modules/module6.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\n[Regex Buddy] (https://www.regular-expressions.info/tutorial.html)\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
     "crumbs": [
       "Topics",
       "6 - Processing Strings and Text"
@@ -250,9 +250,9 @@
   {
     "objectID": "modules/module4.html",
     "href": "modules/module4.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 4 - Exploratory Data Analysis",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nUsing summary statistics\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 10-11\n\n\n\nAdditional Resources:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.",
     "crumbs": [
       "Topics",
       "4 - Advanced Visualizations and EDA"
