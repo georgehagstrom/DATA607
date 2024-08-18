@@ -44,11 +44,7 @@ MathJax.Hub.Config({
 
 ### Videos
 
-*OpenIntro* provides a number of [videos](https://www.openintro.org/stat/videos.php). You may find these helpful while reading the chapter.
 
-[Case Study: Using Stents to Prevent Strokes](https://www.youtube.com/watch?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8&v=nEHFF1ADpWE)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nEHFF1ADpWE?list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8" frameborder="0" allowfullscreen></iframe>
 
 [Hadley Wickham Introduces the Tidyverse](https://posit.co/resources/videos/data-science-in-the-tidyverse-hadley-wickham/)
 

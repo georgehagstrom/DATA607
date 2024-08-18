@@ -52,3 +52,10 @@ This paper explains the concepts and thinking behind ggplot2.
 
 *[ggplot2 website](https://ggplot2.tidyverse.org/). This is another excellent source of resources and information on ggplot2
 
+
+
+
+### Videos
+
+
+
