@@ -106,6 +106,20 @@
     ]
   },
   {
+    "objectID": "assignments/tidygit.html",
+    "href": "assignments/tidygit.html",
+    "title": "GitHub/TidyVerse Create and Extend",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)"
+  },
+  {
+    "objectID": "assignments/tidygit/tidyextend.html",
+    "href": "assignments/tidygit/tidyextend.html",
+    "title": "DATA 607 Fall 2024",
+    "section": "",
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+  },
+  {
     "objectID": "assignments/participation.html",
     "href": "assignments/participation.html",
     "title": "Participation",
@@ -197,11 +211,53 @@
     "href": "assignments/project.html#overall-grading-rubric",
     "title": "Data Project",
     "section": "Overall Grading Rubric",
-    "text": "Overall Grading Rubric\n\n\n\n\n\n\n\n\n\nDomain\nAccomplished (100%)\nProficient (80%)\nNeeds Improvement (60%)\n\n\n\n\nProposal (20 pts)\nMotivation explained well, data science workflow clearly present, datasets and proposed analysis appropriate\nDescription of motivation, workflow, datasets, and analysis present but a few are not appropriate or unclear\nSeveral of motivation, workflow, datasets, and analysis are missing or inappropriate\n\n\nAbstract (5 pts)\nAbstract is less than 300 words, free of grammatical errors, summarizes the project analysis, conclusions, and implications\nNA\nNA\n\n\nIntroduction (20 pts)\nClear explanation of motivation for the project, choice of data, and analysis methods/workflow.\nRationale for the project, analysis/workflow, or choice of data is present but unclear.\nRationale is unstated.\n\n\nDatasets and Wrangling (30 pts)\nMultiple datasets used with different data types, data is properly tidied, reproducible code for tidying\nOne of the previous criteria is missing.\nSeveral criteria not met: insufficient datasets and types, incorrect tidying, non-reproducible code\n\n\nExploratory Data Analysis (30 pts)\nAppropriate summary statistics and visualization of distributions/covariance, hypotheses, and treatment of missing values/outliers, code reproducible\nEDA completed but some\n\n\n\nof summary statistics, visualizations, hypotheses, and missing data treatment not appropriate\nEDA substantially inappropriate or has several aspects missing\n\n\n\n\nData Display\nIncludes appropriate, well-labeled, accurate displays (graphs and tables) of the data.\nIncludes appropriate, accurate displays of the data.\nIncludes appropriate but no accurate displays of the data.\n\n\nStatistical Model (5 pts)\nstatistical test(s) was used for the data and interpretation was clear.\nThe appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.\nThe incorrect statistical test was used an/or not justified for the data as presented.\n\n\nConclusion (20 pts)\nConclusion includes a clear description of results consistent with the EDA and statistical modeling and discusses limitations of analysis and how to go further.\nConclusion describes results, limitations, and potential future steps but some descriptions inappropriate or unclear\nDescription of results, limitations, and future steps missing and/or unclear\n\n\nOverall Presentation (20 pts)\nAttractive, well-organized, well-written presentation\nPresentation has two of the three qualities: attractive, well-organized, well-written.\nPresentation is not attractive, organized, or written. There are numerous errors throughout.",
+    "text": "Overall Grading Rubric\n\n\n\n\n\n\n\n\n\nDomain\nAccomplished (100%)\nProficient (80%)\nNeeds Improvement (60%)\n\n\n\n\nProposal (20 pts)\nMotivation explained well, data science workflow clearly present, datasets and proposed analysis appropriate\nDescription of motivation, workflow, datasets, and analysis present but a few are not appropriate or unclear\nSeveral of motivation, workflow, datasets, and analysis are missing or inappropriate\n\n\nAbstract (5 pts)\nAbstract is less than 300 words, free of grammatical errors, summarizes the project analysis, conclusions, and implications\nNA\nNA\n\n\nIntroduction (20 pts)\nClear explanation of motivation for the project, choice of data, and analysis methods/workflow.\nRationale for the project, analysis/workflow, or choice of data is present but unclear.\nRationale is unstated.\n\n\nDatasets and Wrangling (30 pts)\nMultiple datasets used with different data types, data is properly tidied, reproducible code for tidying\nOne of the previous criteria is missing.\nSeveral criteria not met: insufficient datasets and types, incorrect tidying, non-reproducible code\n\n\nExploratory Data Analysis (30 pts)\nAppropriate summary statistics and visualization of distributions/covariance, hypotheses, and treatment of missing values/outliers, code reproducible\nEDA completed but some of summary statistics, visualizations, hypotheses, and missing data treatment not appropriate\nEDA substantially inappropriate or has several aspects missing\n\n\nData Display (20 pts)\nIncludes appropriate, well-labeled, accurate displays (graphs and tables) of the data.\nIncludes appropriate, accurate displays of the data.\nIncludes appropriate but no accurate displays of the data.\n\n\nStatistical Model (5 pts)\nstatistical test(s) was used for the data and interpretation was clear.\nThe appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.\nThe incorrect statistical test was used an/or not justified for the data as presented.\n\n\nConclusion (20 pts)\nConclusion includes a clear description of results consistent with the EDA and statistical modeling and discusses limitations of analysis and how to go further.\nConclusion describes results, limitations, and potential future steps but some descriptions inappropriate or unclear\nDescription of results, limitations, and future steps missing and/or unclear\n\n\nOverall Presentation (20 pts)\nAttractive, well-organized, well-written presentation\nPresentation has two of the three qualities: attractive, well-organized, well-written.\nPresentation is not attractive, organized, or written. There are numerous errors throughout.",
     "crumbs": [
       "Assignments",
       "Project"
     ]
+  },
+  {
+    "objectID": "assignments/tidygit/tidycreate.html",
+    "href": "assignments/tidygit/tidycreate.html",
+    "title": "DATA 607 Fall 2024",
+    "section": "",
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html",
+    "href": "assignments/labs/Lab1.html",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "href": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#first-steps",
+    "href": "assignments/labs/Lab1.html#first-steps",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "First Steps",
+    "text": "First Steps\nBefore we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.\n\nStart a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)\nUpdate the YAML, changing the author name to your name, and knit the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your Qmd and md files. If anything is missing, commit and push again."
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#packages",
+    "href": "assignments/labs/Lab1.html#packages",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, and the ggridges package to make a ridge plot in the last exercise. You may need to install ggridges if you haven’t already, you can do that using:\n\ninstall.packages(\"ggridges\")\n\nThen make sure to load both packages:"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#data",
+    "href": "assignments/labs/Lab1.html#data",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Data",
+    "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood, \n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/DATA607Lab1/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
   },
   {
     "objectID": "modules/module5.html",
