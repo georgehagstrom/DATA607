@@ -1,5 +1,5 @@
 ---
-title: "Labs"
+title: "GitHub/TidyVerse Create and Extend"
 ---
 
 The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different

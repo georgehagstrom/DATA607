@@ -1,0 +1,22 @@
+In this assignment, you’ll practice collaborating around a code project with GitHub.&nbsp; You could consider our collective work as building out a book of examples on how to use TidyVerse functions.
+
+GitHub repository:&nbsp;&nbsp;https://github.com/georgehagstrom/Fall2024TIDYVERSE
+
+
+FiveThirtyEight.com datasets.
+
+Kaggle datasets.&nbsp;
+
+Your task here is to&nbsp;Create an Example.&nbsp; Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)
+
+Later, you'll be asked to extend an existing vignette.&nbsp;&nbsp;Using one of your classmate’s examples (as created above), you'll then extend his or her example with additional annotated code. (15 points)
+
+You should clone the provided repository.&nbsp; Once you have code to submit, you should make a pull request on the shared repository.&nbsp; You should also update the README.md file with your example.
+
+After you’ve created your vignette, please submit your GitHub handle name in the submission link provided below.&nbsp;This will let your instructor know that your work is ready to be peer-graded.
+
+You should complete your submission on the schedule stated in the course syllabus.
+
+
+
+
