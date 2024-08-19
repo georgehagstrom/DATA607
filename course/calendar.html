@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 13 - Large Data and Distributed Computing – DATA 607 Fall 2024</title>
+<title>DATA607 - Data Acquisition and Management – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/module12.html" rel="prev">
+<link href="../assignments/participation.html" rel="next">
+<link href="../course/software.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +73,8 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Module 13 - Large Data and Distributed Computing – DATA 607 Fall 2024">
+<meta property="og:title" content="DATA607 - Data Acquisition and Management – DATA 607 Fall 2024">
+<meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
 
@@ -85,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module13.html">13 - Big Data and Cloud Computing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/overview.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/calendar.html">Calendar</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/calendar.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
@@ -307,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module13.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/module13.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 - Big Data and Cloud Computing</span></a>
   </div>
 </li>
@@ -322,9 +324,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module13.html">13 - Big Data and Cloud Computing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/overview.html">Course information</a></li><li class="breadcrumb-item"><a href="../course/calendar.html">Calendar</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Module 13 - Large Data and Distributed Computing</h1>
+<h1 class="title">DATA607 - Data Acquisition and Management</h1>
 </div>
 
 
@@ -341,49 +343,153 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- 
-See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
-The solution, put backticks (`) around the LaTeX equation
--->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<ul>
-<li>Basic Introduction to Computer Architecture</li>
-<li>Wrangling large data sets using data.table</li>
-<li>Cloud and Parrallel computing models</li>
-<li>Using R and Apache Spark together with sparklyr</li>
-</ul>
-</section>
-<section id="readings" class="level3">
-<h3 class="anchored" data-anchor-id="readings">Readings</h3>
-<ul>
-<li><a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.table vignette</a></li>
-<li>Advanced R: <a href="http://adv-r.had.co.nz/Performance.html">Why is R slow?</a></li>
-</ul>
-</section>
-<section id="additional-resources" class="level3">
-<h3 class="anchored" data-anchor-id="additional-resources">Additional Resources:</h3>
-</section>
-<section id="videos" class="level3">
-<h3 class="anchored" data-anchor-id="videos">Videos</h3>
+<p><em>Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.</em></p>
+<p><a href="https://sps.cuny.edu/academics/academic-calendar">CUNY SPS Academic Calendar</a></p>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialDate: '2024-08-19',
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      height: 'auto',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      selectable: true,
+      selectMirror: true,
+      nowIndicator: true,
+      events: [
 
 
-</section>
+{ title: "Chapter 1 - Intro to Data, R, and RStudio",
+  url: "/chapters/chapter1/",
+  start: '2024-09-04',
+  end: '2024-09-11' },
+ { title: "Chatper 2 - Summarizing Data",
+  url: "/chatpers/chapter2/",
+  start: '2024-09-11',
+  end: '2024-09-25' },
+ { title: "Chapter 3 - Probability",
+  url: "/chapters/chapter3",
+  start: '2024-09-25',
+  end: '2024-10-02' },
+ { title: "Chapter 4 - Distributions",
+  url: "/chapters/chapter4",
+  start: '2024-10-02',
+  end: '2024-10-09' },
+ { title: "Chatper 5 - Foundation for Inference",
+  url: "/chapters/chapter5",
+  start: '2024-10-09',
+  end: '2024-10-16' },
+ { title: "Midterm",
+  url: "/assesssments/midterm/",
+  start: '2024-10-16',
+  end: '2024-10-21' },
+ { title: "Chapter 6 - Inference for Categorical Data",
+  url: "/chapters/chapter6",
+  start: '2024-10-16',
+  end: '2024-10-23' },
+ { title: "Chapter 7 - Inference for Numerical Data",
+  url: "/chapters/chapter7",
+  start: '2024-10-23',
+  end: '2024-10-30' },
+ { title: "Chapter 8 - Linear Regression",
+  url: "/chapters/chapter8",
+  start: '2024-10-30',
+  end: '2024-11-06' },
+ { title: "Chapter 9 - Multiple & Logistic Regression",
+  url: "/chapters/chapter9",
+  start: '2024-11-06',
+  end: '2024-12-04' },
+ { title: "Intro to Bayesian Analysis",
+  url: "/chatpers/bayesian/",
+  start: '2024-12-04',
+  end: '2024-12-11' },
+ { title: "Final Exam",
+  url: "/assesssments/final/",
+  start: '2024-12-11',
+  end: '2024-12-16' },
+ { title: 'Intro to the Course',
+  start: '2024-08-28T20:00:00',
+  end: '2024-08-28T21:00:00' },
+ { title: 'Intro to Data',
+  url: "/chapters/chapter1.html",
+  start: '2024-09-04T20:00:00',
+  end: '2024-09-04T21:00:00' },
+ { title: 'Summarizing Data Part 1',
+  url: "/chapters/chapter2.html",
+  start: '2024-09-11T20:00:00',
+  end: '2024-09-11T21:00:00' },
+ { title: 'Summarizing Data Part 2',
+  url: "/chapters/chapter3.html",
+  start: '2024-09-18T20:00:00',
+  end: '2024-09-18T21:00:00' },
+ { title: 'Probability',
+  url: "/chapters/chapter3.html",
+  start: '2024-09-25T20:00:00',
+  end: '2024-09-25T21:00:00' },
+ { title: 'Distributions',
+  url: "/chapters/chapter4.html",
+  start: '2024-10-02T20:00:00',
+  end: '2024-10-02T21:00:00' },
+ { title: 'Foundation for Inference',
+  url: "/chapters/chapter5.html",
+  start: '2024-10-09T20:00:00',
+  end: '2024-10-09T21:00:00' },
+ { title: 'Inference for Categorical Data',
+  url: "/chapters/chapter6.html",
+  start: '2024-10-16T20:00:00',
+  end: '2024-10-16T21:00:00' },
+ { title: 'Inference for Numerical Data',
+  url: "/chapters/chapter7.html",
+  start: '2024-10-23T20:00:00',
+  end: '2024-10-23T21:00:00' },
+ { title: 'Linear Regression',
+  url: "/chapters/chapter8.html",
+  start: '2024-10-30T20:00:00',
+  end: '2024-10-30T21:00:00' },
+ { title: 'Maximum Likelihood Estimation',
+  url: "/chapters/chapter9.html",
+  start: '2024-11-06T20:00:00',
+  end: '2024-11-06T21:00:00' },
+ { title: 'Multiple Regression',
+  url: "/chapters/chapter9.html",
+  start: '2024-11-13T20:00:00',
+  end: '2024-11-13T21:00:00' },
+ { title: 'Predictive Modeling',
+  start: '2024-11-20T20:00:00',
+  end: '2024-11-20T21:00:00' },
+ { title: 'NO MEETUP - Thanksgiving',
+  start: 'NA',
+  end: 'NA' },
+ { title: 'Bayesian Analysis',
+  url: "/chapters/bayesian.html",
+  start: '2024-12-04T20:00:00',
+  end: '2024-12-04T21:00:00' },
+ { title: 'Final Meetup',
+  start: '2024-12-11T20:00:00',
+  end: '2024-12-11T21:00:00' }
+
+
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+<div id="calendar">
+
+</div>
+<p><a href="../Course_Calendar.ics">Click here to import the course calendar into your calendar application</a></p>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -952,11 +1058,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../modules/module12.html" class="pagination-link" aria-label="12 - Graphs and Graph Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">12 - Graphs and Graph Data</span>
+      <a href="../course/software.html" class="pagination-link" aria-label="Software">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Software</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../assignments/participation.html" class="pagination-link" aria-label="Participation">
+        <span class="nav-page-text">Participation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -964,4 +1073,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/modules/module13.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/course/calendar.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

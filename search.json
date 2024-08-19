@@ -11,14 +11,25 @@
     ]
   },
   {
-    "objectID": "course/textbooks.html",
-    "href": "course/textbooks.html",
-    "title": "Textbooks",
+    "objectID": "course/calendar.html",
+    "href": "course/calendar.html",
+    "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.",
+    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
     "crumbs": [
       "Course information",
-      "Textbooks"
+      "Calendar"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "DATA607 - Data Acquisition and Management",
+    "section": "",
+    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
+    "crumbs": [
+      "Course information",
+      "Schedule"
     ]
   },
   {
@@ -33,123 +44,123 @@
     ]
   },
   {
-    "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
-    "href": "posts/2024-08-28-Welcome_to_DATA_607.html",
-    "title": "Welcome to DATA 607",
+    "objectID": "modules/module4.html",
+    "href": "modules/module4.html",
+    "title": "Module 4 - Exploratory Data Analysis",
     "section": "",
-    "text": "Welcome to DATA 607, Data Acquisition and Management.\nHere is what you should do to get started:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nDownload, install, and configure R, then RStudio.\nSign up for a (free) GitHub account.\nIntroduce yourself on the course discussion forum.\nJoin our Slack channel:\n\nAttend our first meetup on Wednesday at 6:45 p.m. ET."
-  },
-  {
-    "objectID": "modules/module1.html",
-    "href": "modules/module1.html",
-    "title": "Module 1 - Introduction to R and the Data Science Workflow",
-    "section": "",
-    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nHadley Wickham Introduces the Tidyverse",
+    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nUsing summary statistics\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 10-11\n\n\n\nAdditional Resources:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.",
     "crumbs": [
       "Topics",
-      "1 - Data Science Workflow and Toolkit"
+      "4 - Advanced Visualizations and EDA"
     ]
   },
   {
-    "objectID": "modules/module7.html",
-    "href": "modules/module7.html",
-    "title": "Module 7 - Working with Databases and SQL",
+    "objectID": "modules/module13.html",
+    "href": "modules/module13.html",
+    "title": "Module 13 - Large Data and Distributed Computing",
     "section": "",
-    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 19-21\nSoftware Carpentry SQL Tutorial\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nStanford Online SQL Course\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\n\n\n\nVideos\nSoftware Carpentry SQLite Intro Playlist",
+    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "7 - Working with Databases and SQL"
+      "13 - Big Data and Cloud Computing"
     ]
   },
   {
-    "objectID": "modules/module2.html",
-    "href": "modules/module2.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "objectID": "modules/module3.html",
+    "href": "modules/module3.html",
+    "title": "Module 3 - Data Tidying",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2",
+    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 4-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
     "crumbs": [
       "Topics",
-      "2 - Visualizing Data"
+      "3 - Data Tidying"
     ]
   },
   {
-    "objectID": "modules/module10.html",
-    "href": "modules/module10.html",
-    "title": "Module 10 - Git and Collaboration",
+    "objectID": "modules/module6.html",
+    "href": "modules/module6.html",
+    "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\n[Regex Buddy] (https://www.regular-expressions.info/tutorial.html)\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
     "crumbs": [
       "Topics",
-      "GIT and Collaboration"
+      "6 - Processing Strings and Text"
     ]
   },
   {
-    "objectID": "modules/module8.html",
-    "href": "modules/module8.html",
-    "title": "Module 8 - Web Scraping and APIs",
+    "objectID": "modules/module9.html",
+    "href": "modules/module9.html",
+    "title": "Module 9 - Advanced R Programming",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
+    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
     "crumbs": [
       "Topics",
-      "8 - Web Scraping and APIs"
+      "9 - Advanced R Programming"
     ]
   },
   {
-    "objectID": "modules/module11.html",
-    "href": "modules/module11.html",
-    "title": "Module 11 - Tidy Text and NLP",
+    "objectID": "modules/module12.html",
+    "href": "modules/module12.html",
+    "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nAdditional Resources:\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "Tidy Text and NLP"
+      "12 - Graphs and Graph Data"
     ]
   },
   {
-    "objectID": "assignments/tidygit.html",
-    "href": "assignments/tidygit.html",
-    "title": "GitHub/TidyVerse Create and Extend",
+    "objectID": "modules/module5.html",
+    "href": "modules/module5.html",
+    "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)"
+    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.\n\n\nVideos",
+    "crumbs": [
+      "Topics",
+      "5 - Data Transformations"
+    ]
   },
   {
-    "objectID": "assignments/tidygit/tidyextend.html",
-    "href": "assignments/tidygit/tidyextend.html",
+    "objectID": "assignments/labs/Lab1.html",
+    "href": "assignments/labs/Lab1.html",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "href": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#first-steps",
+    "href": "assignments/labs/Lab1.html#first-steps",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "First Steps",
+    "text": "First Steps\nBefore we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.\n\nStart a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)\nUpdate the YAML, changing the author name to your name, and knit the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your Qmd and md files. If anything is missing, commit and push again."
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#packages",
+    "href": "assignments/labs/Lab1.html#packages",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, and the ggridges package to make a ridge plot in the last exercise. You may need to install ggridges if you haven’t already, you can do that using:\n\ninstall.packages(\"ggridges\")\n\nThen make sure to load both packages:"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#data",
+    "href": "assignments/labs/Lab1.html#data",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Data",
+    "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood, \n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/DATA607Lab1/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
+  },
+  {
+    "objectID": "assignments/tidygit/tidycreate.html",
+    "href": "assignments/tidygit/tidycreate.html",
     "title": "DATA 607 Fall 2024",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
-  },
-  {
-    "objectID": "assignments/participation.html",
-    "href": "assignments/participation.html",
-    "title": "Participation",
-    "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
-    "crumbs": [
-      "Assignments",
-      "Participation"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/project.html",
@@ -218,130 +229,123 @@
     ]
   },
   {
-    "objectID": "assignments/tidygit/tidycreate.html",
-    "href": "assignments/tidygit/tidycreate.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
+    "crumbs": [
+      "Assignments",
+      "Participation"
+    ]
+  },
+  {
+    "objectID": "assignments/tidygit/tidyextend.html",
+    "href": "assignments/tidygit/tidyextend.html",
     "title": "DATA 607 Fall 2024",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
-    "objectID": "assignments/labs/Lab1.html",
-    "href": "assignments/labs/Lab1.html",
-    "title": "Lab 1: Airbnbs in NYC",
+    "objectID": "assignments/tidygit.html",
+    "href": "assignments/tidygit.html",
+    "title": "GitHub/TidyVerse Create and Extend",
     "section": "",
-    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)"
   },
   {
-    "objectID": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
-    "href": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
-    "title": "Lab 1: Airbnbs in NYC",
+    "objectID": "modules/module11.html",
+    "href": "modules/module11.html",
+    "title": "Module 11 - Tidy Text and NLP",
     "section": "",
-    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#first-steps",
-    "href": "assignments/labs/Lab1.html#first-steps",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "First Steps",
-    "text": "First Steps\nBefore we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.\n\nStart a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)\nUpdate the YAML, changing the author name to your name, and knit the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your Qmd and md files. If anything is missing, commit and push again."
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#packages",
-    "href": "assignments/labs/Lab1.html#packages",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "Packages",
-    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, and the ggridges package to make a ridge plot in the last exercise. You may need to install ggridges if you haven’t already, you can do that using:\n\ninstall.packages(\"ggridges\")\n\nThen make sure to load both packages:"
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#data",
-    "href": "assignments/labs/Lab1.html#data",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "Data",
-    "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood, \n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/DATA607Lab1/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
-  },
-  {
-    "objectID": "modules/module5.html",
-    "href": "modules/module5.html",
-    "title": "Module 5 - Data Transformations",
-    "section": "",
-    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.\n\n\nVideos",
+    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nAdditional Resources:\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
     "crumbs": [
       "Topics",
-      "5 - Data Transformations"
+      "11 - Tidy Text and NLP"
     ]
   },
   {
-    "objectID": "modules/module12.html",
-    "href": "modules/module12.html",
-    "title": "Module 12 - Graphs and Graph Data",
+    "objectID": "modules/module8.html",
+    "href": "modules/module8.html",
+    "title": "Module 8 - Web Scraping and APIs",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
     "crumbs": [
       "Topics",
-      "Graphs and Graph Data"
+      "8 - Web Scraping and APIs"
     ]
   },
   {
-    "objectID": "modules/module9.html",
-    "href": "modules/module9.html",
-    "title": "Module 9 - Advanced R Programming",
+    "objectID": "modules/module10.html",
+    "href": "modules/module10.html",
+    "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
     "crumbs": [
       "Topics",
-      "9 - Advanced R Programming"
+      "10 - GIT and Collaboration"
     ]
   },
   {
-    "objectID": "modules/module6.html",
-    "href": "modules/module6.html",
-    "title": "Module 6 - Processing Strings and Text",
+    "objectID": "modules/module2.html",
+    "href": "modules/module2.html",
+    "title": "Module 2 - Data Vizualization and Basic Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\n[Regex Buddy] (https://www.regular-expressions.info/tutorial.html)\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
+    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2",
     "crumbs": [
       "Topics",
-      "6 - Processing Strings and Text"
+      "2 - Visualizing Data"
     ]
   },
   {
-    "objectID": "modules/module3.html",
-    "href": "modules/module3.html",
-    "title": "Module 3 - Data Tidying",
+    "objectID": "modules/module7.html",
+    "href": "modules/module7.html",
+    "title": "Module 7 - Working with Databases and SQL",
     "section": "",
-    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 4-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
+    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 19-21\nSoftware Carpentry SQL Tutorial\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nStanford Online SQL Course\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\n\n\n\nVideos\nSoftware Carpentry SQLite Intro Playlist",
     "crumbs": [
       "Topics",
-      "3 - Data Tidying"
+      "7 - Working with Databases and SQL"
     ]
   },
   {
-    "objectID": "modules/module13.html",
-    "href": "modules/module13.html",
-    "title": "Module 13 - Large Data and Distributed Computing",
+    "objectID": "modules/module1.html",
+    "href": "modules/module1.html",
+    "title": "Module 1 - Introduction to R and the Data Science Workflow",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
+    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nHadley Wickham Introduces the Tidyverse",
     "crumbs": [
       "Topics",
-      "Big Data and Cloud Computing"
+      "1 - Data Science Workflow and Toolkit"
     ]
   },
   {
-    "objectID": "modules/module4.html",
-    "href": "modules/module4.html",
-    "title": "Module 4 - Exploratory Data Analysis",
+    "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "href": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "title": "Welcome to DATA 607",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nUsing summary statistics\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 10-11\n\n\n\nAdditional Resources:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.",
-    "crumbs": [
-      "Topics",
-      "4 - Advanced Visualizations and EDA"
-    ]
-  },
-  {
-    "objectID": "course/materials.html",
-    "href": "course/materials.html",
-    "title": "Materials",
-    "section": "",
-    "text": "These are supplemental materials. Click to download."
+    "text": "Welcome to DATA 607, Data Acquisition and Management.\nHere is what you should do to get started:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nDownload, install, and configure R, then RStudio.\nSign up for a (free) GitHub account.\nIntroduce yourself on the course discussion forum.\nJoin our Slack channel:\n\nAttend our first meetup on Wednesday at 6:45 p.m. ET."
   },
   {
     "objectID": "course/software.html",
@@ -355,10 +359,25 @@
     ]
   },
   {
+    "objectID": "course/textbooks.html",
+    "href": "course/textbooks.html",
+    "title": "Textbooks",
+    "section": "",
+    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.",
+    "crumbs": [
+      "Course information",
+      "Textbooks"
+    ]
+  },
+  {
     "objectID": "course/overview.html",
     "href": "course/overview.html",
-    "title": "DATA606 - Statistics and Probability",
+    "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "This course covers basic techniques in probability and statistics that are important in the field of data analytics. Discrete probability models, sampling from infinite and finite populations, statistical distributions, basic Bayesian statistics, and non-parametric statistical techniques for categorical data are covered in this course. Each of these statistical concepts will be applied in a variety of real-world scenarios through the use of case studies and customized data sets."
+    "text": "In this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, and working with large datasets in a cloud computing environment.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
   }
 ]
