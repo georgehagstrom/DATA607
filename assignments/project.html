@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project – DATA 607 Fall 2024</title>
+<title>Data Project – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Project – DATA 607 Fall 2024">
+<meta property="og:title" content="Data Project – DATA 607 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -308,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/participation.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/project.html">Project</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Project</h1>
+<h1 class="title">Data Project</h1>
 </div>
 
 
@@ -325,116 +325,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>#<code>{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'} #source('../../config.R') #</code></p>
-<p>The purpose of the data project is for you to conduct a reproducible analysis with a data set of your choosing. There are two components to the project, the proposal, which will be graded on a pass/fail basis, and the final report. The outline for each of these are provided in the templates. When submitting the assignments, include the R Markdown file (change the name to include your last name, for example <code>Bryer-Proposal.Rmd</code> and <code>Bryer-Project.Rmd</code>) along with any supplementary files necessary to run the R Markdown file (e.g.&nbsp;data files, screenshots, etc.). Suggestions for possible data sources are included below, however you are free to use data not listed below. The only requirement is that you are allowed to share the data. Projects will be shared with others on this website so should be presented in a way that other students can reproduce your analysis.</p>
-<section id="project-proposal" class="level2">
-<h2 class="anchored" data-anchor-id="project-proposal">Project Proposal</h2>
-<p>The proposal can be more informal using bullet points where necessary and include R code and output. You must address the following areas:</p>
+<div style="float:right;position: relative; margin-left: 20px">
+<p>knitr::include_graphics(“img/laptop-3190194_1920.jpg”) ’’’</p>
+</div>
+<section id="explore-your-interests" class="level1">
+<h1>Explore your interests</h1>
+<p>The idea of this project is for you to find data and do something interesting with it that relates to the skills you have developed in this course.</p>
+<p>The project is intentionally open ended- this is an opportunity for you to explore your interests, through using techniques or technologies that branch off those that were introduced in this class, datasets related to problems you face in your career or that you are curious about, or both.</p>
+<p>A great project will demonstrate a complete “Data Science Workflow”, such as the one introduced at the beginning of the textbook, starting from multiple distinct datasets from public sources (if you have a private dataset that you want to use you may discuss that with me), data tidying, exploratory data analysis, cleaning, hypothesis generation, and lastly modeling. This course has not focused on modeling and the mathematical sophistication of your model will not factor heavily in your evaluation, but by this point in the semester you will have been exposed to enough modeling techniques in other courses to incorporate models within your project.</p>
+<p>The output of your project should software that allows me to reproduce your work and a research report which describes what you did with the data and your findings, which could be contained within a github repository. You will also present your project in a short presentation in the final week of the semester.</p>
+<section id="project-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="project-proposal">Project Proposal</h3>
+<p>The first step of your project is to submit an initial proposal, which will help to ensure that your project is both worthwhile and feasible in the time frame of the last half of the semester. Your proposal should describe the area that you are interested in (and if you have a specific question already you can describe that too), the datasets you are going to use, and your data analysis plan. Your proposal should be a maximum of 2 pages (excluding figures and references), and should include three sections (each with target length 1-2 paragraphs):</p>
 <ul>
-<li>Research question</li>
-<li>What are the cases, and how many are there?</li>
-<li>Describe the method of data collection.</li>
-<li>What type of study is this (observational/experiment)?</li>
-<li>Data Source: If you collected the data, state self-collected. If not, provide a citation/link.</li>
-<li>Response: What is the response variable, and what type is it (numerical/categorical)?</li>
-<li>Explanatory: What is the explanatory variable(s), and what type is it (numerical/categorical)?</li>
-<li>Relevant summary statistics</li>
+<li><p><strong>Section 1 - Introduction:</strong> The introduction should describe the motivation for your project, the subject matter area of your dataset, and any general research questions you may already have.</p></li>
+<li><p><strong>Section 2 - Data:</strong> At the time of submitting the proposal you should have already identified some datasets that you plan to use in your analysis. Give a quick description of those datasets here, describe where the data can be found, the number of variables and observations, and/or the output of the glimpse() or skim() functions on the data.</p></li>
+<li><p><strong>Section 3 - Data analysis plan:</strong> Describe your initial approach to analyzing your data. How will your datasets need to be processed in for your to make use of all of them in the analysis? Which sort of comparisons do you plan to make in your exploratory data analysis (you can share early visualizations of this is you have them)? What statistical methods do you think are appropriate to address the questions that motivated your interest?</p></li>
 </ul>
-<p>#* <a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/DATA606_proposal_template.Rmd">Download project proposal template</a> #* <a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/DATA606_project_template.Rmd">Download project template</a></p>
-<p>#<a href="http://htmlpreview.github.io/?https://github.com/jbryer/%60r%20github_link%60/blob/master/Project/Example_proposal.html">Example data project proposal</a> (<a href="https://raw.githubusercontent.com/jbryer/%60r%20github_link%60/master/Project/Example_proposal.Rmd">Source Rmarkdown file</a>)</p>
+<p>The proposal is preliminary, and you can include additional data or a different analysis as needs require.</p>
+<p>The grading scheme for the project proposal is as follows.</p>
 </section>
-<section id="final-project" class="level2">
-<h2 class="anchored" data-anchor-id="final-project">Final Project</h2>
-<p>#* You are required to attend ONLY ONE of those time slots. You will do your presentation, watch the other presentations, and provide peer feedback (will be shared anonymously afterward).</p>
-<p>#<a href="../slides/Example_Project_Slides.html#1">Example project slide deck</a></p>
-<section id="checklist-suggested-outline" class="level4">
-<h4 class="anchored" data-anchor-id="checklist-suggested-outline">Checklist / Suggested Outline</h4>
-<ul>
-<li>Abstract (no more than 300 words)</li>
-<li>Overview slide
-<ul>
-<li>Context on the data collection</li>
-<li>Description of the dependent variable (what is being measured)</li>
-<li>Description of the independent variable (what is being measured; include at least 2 variables)</li>
-<li>Research question</li>
-</ul></li>
-<li>Summary statistics</li>
-<li>Include appropriate data visualizations.</li>
-<li>Statistical output
-<ul>
-<li>Include the appropriate statistics for your method used.</li>
-<li>For null hypothesis tests (e.g.&nbsp;t-test, chi-squared, ANOVA, etc.), state the null and alternative hypotheses along with relevant statistic and p-value (and confidence interval if appropriate).</li>
-<li>For regression models, include the regression output and interpret the R-squared value.</li>
-</ul></li>
-<li>Conclusion
-<ul>
-<li>Why is this analysis important?</li>
-<li>Limitations of the analysis?</li>
-</ul></li>
-</ul>
+<section id="heilmeiers-questions" class="level2">
+<h2 class="anchored" data-anchor-id="heilmeiers-questions">Heilmeier's Questions</h2>
+<p>When writing proposals, I’ve found the following set of considerations, called “Heilmeier's Questions”, to be helpful to consider. Although this is just a short project, you might find them helpful as well, and useful for formulating future projects and proposals that you might have to complete. These questions were developed by Dr.&nbsp;George Heilmeier, who was the director of DARPA from 1975-1977. Heilmeier said that every proposal to DARPA needed to answer these questions clearly and completely in order to receive funding:</p>
+<ol type="1">
+<li>What are you trying to do? Articulate your objectives using absolutely no jargon. What is the problem? Why is it hard?</li>
+<li>How is it done today, and what are the limits of current practice?</li>
+<li>What is new in your approach, and why do you think it will be successful?</li>
+<li>Who cares?</li>
+<li>If you’re successful, what difference will it make? What applications are enabled as a result?</li>
+<li>What are the risks?</li>
+<li>How much will it cost?</li>
+<li>How long will it take?</li>
+<li>What are the midterm and final “exams” to check for success? How will progress be measured?</li>
+</ol>
 </section>
-<section id="rubric" class="level4">
-<h4 class="anchored" data-anchor-id="rubric">Rubric</h4>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 34%">
-<col style="width: 32%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Domain</th>
-<th style="text-align: left;">Accomplished</th>
-<th style="text-align: left;">Proficient</th>
-<th style="text-align: left;">Needs Improvement</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Abstract</td>
-<td style="text-align: left;">Abstract is less than 300 words, free of grammatical errors, summarizes the analysis conducted, has a conclusion and implicaitons</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Introduction</td>
-<td style="text-align: left;">The research question is clearly stated, can be answered by the data, and the context of the problem clearly explained.</td>
-<td style="text-align: left;">The research question is unclear and/or not supported by the data.</td>
-<td style="text-align: left;">Research question is ambiguous, unclear, or not stated.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Data Display</td>
-<td style="text-align: left;">Includes appropriate, well-labeled, accurate displays (graphs and tables) of the data.</td>
-<td style="text-align: left;">Includes appropriate, accurate displays of the data.</td>
-<td style="text-align: left;">Includes appropriate but no accurate displays of the data.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Data Analysis</td>
-<td style="text-align: left;">The appropriate statistical test(s) was used for the data and interpretation was clear.</td>
-<td style="text-align: left;">The appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.</td>
-<td style="text-align: left;">The incorrect statistical test was used an/or not justified for the data as presented.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Conclusion</td>
-<td style="text-align: left;">Conclusion includes a clear answer to the statistical question that is consistent with the data analysis and the method of data collection.</td>
-<td style="text-align: left;">Conclusion includes an answer to the statistical question that is consistent with the data but not with the data collection method.</td>
-<td style="text-align: left;">Conclusion does not include an answer to the statistical question that is consistent with the data analysis.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Overall Presentation</td>
-<td style="text-align: left;">Attractive, well-organized, well-written presentation</td>
-<td style="text-align: left;">Presentation has two of the three qualities: attractive, well-organized, well-written.</td>
-<td style="text-align: left;">Presentation is not attractive, organized, or written. There are numerous errors throughout.</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="example-data-sources" class="level2">
-<h2 class="anchored" data-anchor-id="example-data-sources">Example Data Sources</h2>
-<p>You are not to use data sources used in class or the textbooks. Possible data sources include, but are not limited to:</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The emphasis of class has been working with datasets that have different types of variables and which are messy or often heterogeneous. For this project you need to select data that comes from multiple sources (there should be at least two datasets). You should be able to access the data and it should be large enough and contain enough variables so that multiple interesting relationships can be explored. A good starting point is that across your dataset, there should be at least 50 observations and more than 10 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.</p>
+<p><strong>Note on reusing datasets from class:</strong> Do not reuse datasets used in examples, homework assignments, or labs in the class. Also do not use datasets exclusively from Kaggle or other sources of curated data for data science competitions (these have been made clean and tidy already).</p>
+<p>Below are a list of data repositories that might be of interest to browse. You're not limited to these resources, and in fact you're encouraged to venture beyond them. But you might find something interesting there:</p>
 <ul>
+<li><a href="https://opendata.cityofnewyork.us/">New York City Open Data</a></li>
 <li>FiveThirtyEight <a href="https://github.com/fivethirtyeight/data">https://github.com/fivethirtyeight/data</a></li>
 <li>RStudio data sources <a href="http://blog.rstudio.org/2014/07/23/new-data-packages/">http://blog.rstudio.org/2014/07/23/new-data-packages/</a></li>
 <li>Analyze Survey Data for Free (ASDFree) has many open data sources that can be used <a href="http://www.asdfree.com/">http://www.asdfree.com/</a></li>
@@ -452,9 +384,104 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/awesomedata/awesome-public-datasets">Awesome Public Datasets</a></li>
 <li><a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a> - See also this R package: https://github.com/tyluRp/ucimlr</li>
 <li><a href="https://www.openml.org/search?type=data&amp;sort=runs&amp;status=active">OpenML</a></li>
+<li><a href="https://www.bikeshare.com/data/">Bikeshare data portal</a></li>
+<li><a href="https://data.gov.uk/">UK Gov Data</a></li>
+<li><a href="https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au">Youth Risk Behavior Surveillance System (YRBSS)</a></li>
+<li><a href="https://www.icpsr.umich.edu/icpsrweb/content/ICPSR/fenway.html">PRISM Data Archive Project</a></li>
+<li><a href="https://dataverse.harvard.edu/">Harvard Dataverse</a></li>
 </ul>
+</section>
+<section id="project-report-and-code-repository" class="level2">
+<h2 class="anchored" data-anchor-id="project-report-and-code-repository">Project Report and Code Repository</h2>
+<p>The project report should include an Abstract which gives a summary of your project in under 300 words, and Introduction, a section on the Data which describes the cleaning, tidying, and exploratory data analysis steps you took and what hypotheses you generated, a section on the Data Analysis, and a Conclusion section. All of the code you used to perform your cleaning and analysis should be included either in a github repository or in your report (if you submit in a quarto format for example). You will be evaluated using the following rubric:</p>
+</section>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>You will record a short video presentation with a slide-deck presenting your project. It should cover the motivation for your project, describe the data and analysis, and show visualizations of your main conclusions. Each student is required to watch two of the uploaded presentations and provided anonymous feedback on the presentations.</p>
+</section>
+<section id="overall-grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="overall-grading-rubric">Overall Grading Rubric</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 34%">
+<col style="width: 32%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Domain</th>
+<th style="text-align: left;">Accomplished (100%)</th>
+<th style="text-align: left;">Proficient (80%)</th>
+<th style="text-align: left;">Needs Improvement (60%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Proposal (20 pts)</td>
+<td style="text-align: left;">Motivation explained well, data science workflow clearly present, datasets and proposed analysis appropriate</td>
+<td style="text-align: left;">Description of motivation, workflow, datasets, and analysis present but a few are not appropriate or unclear</td>
+<td style="text-align: left;">Several of motivation, workflow, datasets, and analysis are missing or inappropriate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Abstract (5 pts)</td>
+<td style="text-align: left;">Abstract is less than 300 words, free of grammatical errors, summarizes the project analysis, conclusions, and implications</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Introduction (20 pts)</td>
+<td style="text-align: left;">Clear explanation of motivation for the project, choice of data, and analysis methods/workflow.</td>
+<td style="text-align: left;">Rationale for the project, analysis/workflow, or choice of data is present but unclear.</td>
+<td style="text-align: left;">Rationale is unstated.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Datasets and Wrangling (30 pts)</td>
+<td style="text-align: left;">Multiple datasets used with different data types, data is properly tidied, reproducible code for tidying</td>
+<td style="text-align: left;">One of the previous criteria is missing.</td>
+<td style="text-align: left;">Several criteria not met: insufficient datasets and types, incorrect tidying, non-reproducible code</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Exploratory Data Analysis (30 pts)</td>
+<td style="text-align: left;">Appropriate summary statistics and visualization of distributions/covariance, hypotheses, and treatment of missing values/outliers, code reproducible</td>
+<td style="text-align: left;">EDA completed but some</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">of summary statistics, visualizations, hypotheses, and missing data treatment not appropriate</td>
+<td style="text-align: left;">EDA substantially inappropriate or has several aspects missing</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Data Display</td>
+<td style="text-align: left;">Includes appropriate, well-labeled, accurate displays (graphs and tables) of the data.</td>
+<td style="text-align: left;">Includes appropriate, accurate displays of the data.</td>
+<td style="text-align: left;">Includes appropriate but no accurate displays of the data.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Statistical Model (5 pts)</td>
+<td style="text-align: left;">statistical test(s) was used for the data and interpretation was clear.</td>
+<td style="text-align: left;">The appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.</td>
+<td style="text-align: left;">The incorrect statistical test was used an/or not justified for the data as presented.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conclusion (20 pts)</td>
+<td style="text-align: left;">Conclusion includes a clear description of results consistent with the EDA and statistical modeling and discusses limitations of analysis and how to go further.</td>
+<td style="text-align: left;">Conclusion describes results, limitations, and potential future steps but some descriptions inappropriate or unclear</td>
+<td style="text-align: left;">Description of results, limitations, and future steps missing and/or unclear</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Overall Presentation (20 pts)</td>
+<td style="text-align: left;">Attractive, well-organized, well-written presentation</td>
+<td style="text-align: left;">Presentation has two of the three qualities: attractive, well-organized, well-written.</td>
+<td style="text-align: left;">Presentation is not attractive, organized, or written. There are numerous errors throughout.</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
