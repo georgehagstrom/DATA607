@@ -53,9 +53,9 @@
   {
     "objectID": "modules/module7.html",
     "href": "modules/module7.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 7 - Working with Databases and SQL",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 19-21\nSoftware Carpentry SQL Tutorial\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nStanford Online SQL Course\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\n\n\n\nVideos\nSoftware Carpentry SQLite Intro Playlist",
     "crumbs": [
       "Topics",
       "7 - Working with Databases and SQL"
@@ -75,9 +75,9 @@
   {
     "objectID": "modules/module10.html",
     "href": "modules/module10.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
     "crumbs": [
       "Topics",
       "GIT and Collaboration"
@@ -86,9 +86,9 @@
   {
     "objectID": "modules/module8.html",
     "href": "modules/module8.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 8 - Web Scraping and APIs",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
     "crumbs": [
       "Topics",
       "8 - Web Scraping and APIs"
@@ -97,9 +97,9 @@
   {
     "objectID": "modules/module11.html",
     "href": "modules/module11.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 11 - Tidy Text and NLP",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nAdditional Resources:\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
     "crumbs": [
       "Topics",
       "Tidy Text and NLP"
@@ -195,9 +195,9 @@
   {
     "objectID": "modules/module12.html",
     "href": "modules/module12.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
     "crumbs": [
       "Topics",
       "Graphs and Graph Data"
@@ -206,9 +206,9 @@
   {
     "objectID": "modules/module9.html",
     "href": "modules/module9.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 9 - Advanced R Programming",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
     "crumbs": [
       "Topics",
       "9 - Advanced R Programming"
@@ -239,9 +239,9 @@
   {
     "objectID": "modules/module13.html",
     "href": "modules/module13.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "title": "Module 13 - Large Data and Distributed Computing",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
     "crumbs": [
       "Topics",
       "Big Data and Cloud Computing"
