@@ -1,0 +1,125 @@
+
+---
+title: "Lab 1: Airbnbs in NYC"
+format: html
+editor: source
+---
+
+
+## Airbnb in NYC (or your city)
+
+Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and 
+vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental
+prices and also on the daily lives of people living in neighborhoods where Airbnb is popular.
+This controversy has been particularly intense in NYC, where the debate been Airbnb proponents
+and detractors eventually led to the city imposing strong regulations on the use of Airbnb.
+
+Because Airbnb listings are available online through their website and app, it is possible
+for us to acquire and visualize the impacts of Airbnb on different cities, including 
+New York City. This is possible through the work of an organization called 
+[inside airbnb](https://insideairbnb.com/get-the-data/)
+
+## First Steps
+
+Before we introduce the data and the main assignment, let's begin with a few key 
+steps to configure the file and create a github repository for your first assignment.
+
+-   Start a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)
+-   Update the YAML, changing the author name to your name, and **knit** the document.
+-   Commit your changes with a meaningful commit message.
+-   Push your changes to GitHub.
+-   Go to your repo on GitHub and confirm that your changes are visible in your Qmd **and** md files. If anything is missing, commit and push again.
+
+## Packages
+
+We'll use the **tidyverse** package for much of the data wrangling and visualisation, and
+the **ggridges** package to make a ridge plot in the last exercise. You may need to install
+**ggridges** if you haven't already, you can do that using:
+
+```{r}
+#| eval: false
+
+install.packages("ggridges")
+
+```
+
+Then make sure to load both packages:
+```{r}
+#| label: load-packages
+#| include: false
+library(tidyverse)
+library(ggridges)
+```
+
+## Data
+
+The data for this assignment can be found on the course website at [nycbnb](https://github.com/georgehagstrom/DATA607/tree/main/website/data/nycbnb), or if you
+are adventurous and want to perform this assignment for a different city you can choose one 
+from [inside airbnb)](https://insideairbnb.com/get-the-data/). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis: 
+
+```{r}
+#| label: select
+#| eval: false
+  nycbnb = nycbnb |> 
+    select(
+      id, 
+      price, 
+      neighbourhood, 
+      accommodates, 
+      bathrooms, 
+      bedrooms, 
+      beds, 
+      review_scores_rating, 
+      number_of_reviews, 
+      listing_url )
+```
+
+You can read the data into R using the command:
+
+```{r}
+#| label: loadData
+#| warning: false
+#| include: true
+
+nycbnb = read_csv("/home/georgehagstrom/work/Teaching/DATA607/DATA607Lab1/nycbnb.csv")
+```
+
+
+where you should replace `nycbnb.csv` with the local path to your file. 
+
+Important note: It is generally not wise to include datasets in github repositories, especially
+if they are large and can change frequently.
+
+You can view the dataset as a spreadsheet using the `View()` function.
+Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn't really make sense...).
+When you run this in the console, you'll see the following **data viewer** window pop up.
+
+# Exercises
+                                                                                              
+**Problem 1.** How many observations (rows) does the dataset have? Instead of hard coding the number in your answer, use inline code.
+                                                                                               
+**Problem 2.** Run `View(nycbnb)` in your Console to view the data in the data viewer. What does each row in the dataset represent?
+                                                                                                                                         
+Each column represents a variable. We can get a list of the variables in the data frame using the `names()` function.
+                                                                                         
+```{r}
+#| label: namesCommand
+#| warning: false
+
+
+names(nycbnb)
+
+```
+
+
+You can find descriptions of each of the variables in the help file for the dataset, which
+you can find online at the inside airbnb [data dictionary](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?usp=sharing)
+                                                                                               
+**Problem 3.**  Create a faceted histogram where each facet represents a neighbourhood and displays the distribution of Airbnb prices in that neighbourhood. Think critically about whether it makes more sense to stack the facets on top of each other in a column, lay them out in a row, or wrap them around. Along with your visualisation, include your reasoning for the layout you chose for your facets.
+
+**Problem 4.**  Use a single pipeline to identity the neighbourhoods with the top five median listing prices. Then, in another pipeline filter the data for these five neighbourhoods and make ridge plots of the distributions of listing prices in these five neighbourhoods. In a third pipeline calculate the minimum, mean, median, standard deviation, IQR, and maximum listing price in each of these neighbourhoods. Use the visualisation and the summary statistics to describe the distribution of listing prices in the neighbourhoods. (Your answer will include three pipelines, one of which ends in a visualisation, and a narrative.)
+
+                                  
+**Problem 5.**  Create a visualization that will help you compare the distribution of review scores (`review_scores_rating`) across neighbourhoods. You get to decide what type of visualisation to create and there is more than one correct answer! In your answer, include a brief interpretation of how Airbnb guests rate properties in general and how the neighbourhoods compare to each other in terms of their ratings.
+                                   
+
