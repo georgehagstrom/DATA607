@@ -293,7 +293,7 @@
     "href": "assignments/labs/Lab8.html",
     "title": "Lab 8: Text Mining and NLP",
     "section": "",
-    "text": "Overview\nIn this lab, we will use the advanced R programming concepts that we studied to process a complex text file for analysis.\nProblem 1:\nIn Text Mining with R, Chapter 2 looks at Sentiment Analysis. In this assignment, you should start by getting the primary example code from chapter 2 working in an R Markdown document. You should provide a citation to this base code.\nProblem 2 Extend this base code in two ways:\nWork with a different corpus of your choosing  Incorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research)."
+    "text": "Overview\nIn this lab, we will use the advanced R programming concepts that we studied to process a complex text file for analysis.\nProblem 1:\nIn Text Mining with R, Chapter 2 looks at Sentiment Analysis. In this assignment, you should start by getting the primary example code from chapter 2 working in an R Markdown document. You should provide a citation to this base code.\nProblem 2 Extend this base code in two ways:\n\nWork with a different corpus of your choosing\nIncorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research)."
   },
   {
     "objectID": "assignments/labs/Lab1.html",
