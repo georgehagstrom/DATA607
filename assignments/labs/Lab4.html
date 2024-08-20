@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Labs – DATA 607 Fall 2024</title>
+<title>Lab 4: Data Transformations Studying College Majors – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assignments/project.html" rel="next">
-<link href="../assignments/participation.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,11 +101,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="../fullcalendar-lib/main.css" rel="stylesheet">
-<script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
+<link href="../../fullcalendar-lib/main.css" rel="stylesheet">
+<script type="text/javascript" src="../../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Labs – DATA 607 Fall 2024">
+<meta property="og:title" content="Lab 4: Data Transformations Studying College Majors – DATA 607 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -87,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/participation.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/labs.html">Labs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 4: Data Transformations Studying College Majors</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -101,8 +133,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/georgehagstrom/DATA607" title="Github" class="quarto-navigation-tool px-1" aria-label="Github" target="_blank"><i class="bi bi-github"></i></a>
@@ -140,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
@@ -155,43 +187,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/instructors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/instructors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/textbooks.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/textbooks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Textbooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/software.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
@@ -208,19 +240,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/participation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/participation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Participation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/labs.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../assignments/labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/project.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project</span></a>
   </div>
 </li>
@@ -237,79 +269,79 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1 - Data Science Workflow and Toolkit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2 - Visualizing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3 - Data Tidying</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4 - Advanced Visualizations and EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 - Data Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module6.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6 - Processing Strings and Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module7.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7 - Working with Databases and SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module8.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8 - Web Scraping and APIs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module9.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9 - Advanced R Programming</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module10.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10 - GIT and Collaboration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module11.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11 - Tidy Text and NLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module12.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12 - Graphs and Graph Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module13.html" class="sidebar-item-text sidebar-link">
+  <a href="../../modules/module13.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 - Big Data and Cloud Computing</span></a>
   </div>
 </li>
@@ -324,9 +356,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/participation.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/labs.html">Labs</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Labs</h1>
+<h1 class="title">Lab 4: Data Transformations Studying College Majors</h1>
 </div>
 
 
@@ -343,41 +375,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. <strong>Please submit a PDF (preferred) or HTML file along with your Rmarkdown file.</strong> Be sure to answer all questions in lab, not just the <em>on your own section.</em> Labs should be submitted on Blackboard.</p>
-<ol start="1">
-<li value="1">
-<a href="https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab1.html">Introduction to Data Visualization using ggplot</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab1/Lab1.qmd?raw=true'">Template</a>)
-</li>
-<li value="2">
-<a href="https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab2.html">Tidy Data</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab2/Lab2.qmd?raw=true">Template</a>)
-</li>
-<li value="3">
-<a href="https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab3.html">Exploratory Data Analysis</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab3/Lab3.qmd?raw=true">Template</a>)
-</li>
-<li value="4">
-<a href="https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab4.html">Data Transformations</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab4/Lab4.qmd?raw=true">Template</a>)
-</li>
-<li value="5">
-<a href="https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab5.html">Procesing Text and Strings</a> (<a href="https://georgehagstrom.github.io/DATA607/blob/master/inst/labs/Lab5/Lab5.qmd?raw=true">Template</a>)
-</li>
-<li value="6">
-<a href="https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.html">Databases and SQL</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.Rmd?raw=true">Template</a>)
-</li>
-<li value="7">
-<a href="https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.html">Web Scraping and APIs</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.Rmd?raw=true">Template</a>)
-</li>
-<li value="8">
-<a href="https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.html">Text Mining and NLP</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.Rmd?raw=true">Template</a>)
-</li>
-<li value="9">
-<a href="https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.html">Graphs and Graph Data</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.Rmd?raw=true">Template</a>)
-</li>
-<li value="10">
-<a href="https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.html">Large Datasets and Cloud Computing</a> (<a href="https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.Rmd?raw=true">Template</a>)
-</li>
-</ol>
+<p>The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">“The Economic Guide To Picking A College Major”</a>.</p>
+<p>These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see <a href="https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R">the code</a> FiveThirtyEight authors used.</p>
+<p>We should also note that there are many considerations that go into picking a major. Earnings potential and employment prospects are two of them, and they are important, but they don’t tell the whole story. Keep this in mind as you analyze the data.</p>
+<p>We’ll use the <code>tidyverse</code> package for much of the data wrangling and visualisation, the <code>scales</code> package for better formatting of labels on visualisations, and the data lives in the <code>fivethirtyeight</code> package. Make sure to install and load these packages if you don’t have them already. When you load ‘fivethirtyeight’ you gain access to a dataset called <code>college_recent_grads</code>, which is what your homework will be based on.</p>
+<p>The <code>college_recent_grads</code> data frame is a trove of information. Let’s think about some questions we might want to answer with these data:</p>
+<ul>
+<li>Which major has the lowest unemployment rate?</li>
+<li>Which major has the highest percentage of women?</li>
+<li>How do the distributions of median income compare across major categories?</li>
+<li>Do women tend to choose majors with lower or higher earnings?</li>
+</ul>
+<p>In the next section we aim to answer these questions.</p>
+<section id="problems" class="level1">
+<h1>Problems</h1>
+<p><strong>Problem 1</strong> Arrange the data by unemployment rate in ascending order in order find the major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: to reduce the number of digits displayed in the unemployment rate, use the percent() function to mutate the unemployment rate, i.e.&nbsp;pipe your output to <code>mutate(unemployment_rate = percent(unemployment_rate) )</code></p>
+<p><strong>Problem 2:</strong> Which major has the highest percentage of women? Determine the three majors with the highest percentage of women using arrange. Again use <code>select</code> to only display variables relevant to the question and pipe the final output to <code>top_n(3)</code> to display just the top 3 majors.</p>
+<p><strong>Problem 3</strong> This problem explores the distribution of median income across different majors.</p>
+<ul>
+<li>Plot the distribution of median income using a histogram. Make sure to experiment with the bin width to ensure that your histogram captures the most important features of the distribution.</li>
+<li>Summary statistics: calculate the mean, median, 25th and 75th quantiles of the median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).</li>
+<li>Plot the distribution of median income for each value of the <code>major_category</code> variable using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where “typical” comes from the summary statistic that you think best describes the distributions you observed in the histogram.</li>
+</ul>
+<p><strong>Problem 4:</strong> Which major category is the least popular in this sample? Use the <code>count</code> function along with <code>arrange</code> to accomplish this task, and make sure you arrange in ascending order.</p>
+<p><strong>Problem 5:</strong> Exploring differences between different STEM fields.</p>
+<p>One of the sections of the <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">FiveThirtyEight story</a> is “All STEM fields aren’t the same”.</p>
+<p>The STEM categories are the ones that match the vector</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Biology &amp; Life Science"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Computers &amp; Mathematics"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Engineering"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Physical Sciences"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use this vector to add a variable to your dataset that is True if the major is a STEM major and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors’ median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.</p>
+<p><strong>Problem 6:</strong> What types of majors do women tend to major in? Create a scatterplot of median income vs.&nbsp;proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -944,21 +979,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../assignments/participation.html" class="pagination-link" aria-label="Participation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Participation</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../assignments/project.html" class="pagination-link" aria-label="Project">
-        <span class="nav-page-text">Project</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/assignments/labs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/assignments/labs/Lab4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
