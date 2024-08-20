@@ -142,50 +142,25 @@
     "text": "Problem 1. Using the 173 majors listed in fivethirtyeight.com’s College Majors dataset, provide code that identifies the majors that contain either “DATA” or “STATISTICS”\nProblem 2 Write code that transforms the data below:\n[1] \"bell pepper\" \"bilberry\" \"blackberry\" \"blood orange\"\n[5] \"blueberry\" \"cantaloupe\" \"chili pepper\" \"cloudberry\"\n[9] \"elderberry\" \"lime\" \"lychee\" \"mulberry\"\n[13] \"olive\"  \"salal berry\"\n\nInto a format like this:\nc(\"bell pepper\", \"bilberry\", \"blackberry\", \"blood orange\", \"blueberry\", \"cantaloupe\", \"chili pepper\", \"cloudberry\", \"elderberry\", \"lime\", \"lychee\", \"mulberry\", \"olive\", \"salal berry\")\nProblem 3 Describe, in words, what these regular expressions will match:\n\n(.)\\1\\1\n\"(.)(.)\\\\2\\\\1\"\n(..)\\1\n\"(.).\\\\1.\\\\1\"\n\"(.)(.)(.).*\\\\3\\\\2\\\\1\"\n\nProblem 4. Construct regular expressions to match words that:\n\nStart and end with the same character.\nContain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)\nContain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)"
   },
   {
-    "objectID": "assignments/labs/Lab2.html",
-    "href": "assignments/labs/Lab2.html",
-    "title": "Lab 2: Data Tidying",
+    "objectID": "assignments/labs/Lab6.html",
+    "href": "assignments/labs/Lab6.html",
+    "title": "Lab 6: R and SQL",
     "section": "",
-    "text": "Overview\nConsider the following image which contains some data:\n\n\n\nPlaneData\n\n\nThe chart describes arrival delays for two different airlines across several destinations.\n\n\nProblems\nProblem 1: Create a csv file that contains all of the information in the above dataset. You are encouraged to use a “wide” structure similar to how the information appears above, so that you can practice tidying and transformations as described below.\nProblem 2: Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. In addition to providing code, please describe your data cleanup and tidying work.\nProblem 3: Perform analysis to compare the arrival delays for the two airlines. What are your conclusions?"
+    "text": "Overview\nThis projects involves data collection, creating a normalized SQL database representing the data you collected, and then loading the data from the SQL database into R.\n\n\nProblems\nProblem 1:\nSelect at least six popular movies that the people you will survey have a good chance of having watched. Ask at least five people that you know (friends, family, classmates, imaginary friends if necessary) to rate each of these movies that they have seen on a scale of 1 to 5. You may use online survey software if you find it easier and want to generate a larger sample.\nProblem 2:\nTake the results(observations) and store them in a SQL database of your choosing. I recommend SQLite or duckDB if you are undecided. Describe the normalization scheme you selected for your database and explain why you chose it.\nProblem 3:\nLoad the information from the SQL database into an R dataframe. This is by design a very open-ended assignment. In general, there’s no need here to ask “Can I…?” questions about your proposed approach. A variety of reasonable approaches are acceptable. You could for example access the SQL data directly from R, or you could create an intermediate .CSV file. I should be able to generate the SQL table(s) and data from your provided code—if you use a graphical user interface to create and populate tables, it should have a mechanism to generate corresponding SQL code. This assignment does not need to be 100% reproducible. You can (and should) blank out your SQL password if your solution requires it; otherwise, full credit requires that your code is “reproducible,” with the assumption that I have the same database server and R software. Handling missing data is a foundational skill when working with SQL or R. To receive full credit, you should demonstrate a reasonable approach for handling missing data. After all, how likely is it that all five of your friends have seen all six movies?\nProblem 4: Is there any benefit in standardizing ratings? How might you approach this?\n(Optional) Reading related to this assignment:\n\nJames Le, “The 4 Recommendation Engines That Can Predict Your Movie Tastes”, May 1, 2018. This a nice backgrounder on movie recommendation engines.\nSteve Blank, “The Customer Development Process. 2 Minutes to See Why”, Jul 29, 2014.. In this [&lt;3 minute] YouTube video “lean startup” founder Steve Blank talks about the importance of getting out of the building to talk to customers. I’d encourage you to adopt this “builder mentality” in your own data science work whenever it’s practical, by collecting data yourself, whether it’s related to a “business experiment” or a “scientific experiment.”"
   },
   {
-    "objectID": "assignments/tidygit/tidyextend.html",
-    "href": "assignments/tidygit/tidyextend.html",
+    "objectID": "assignments/labs/Lab3.html",
+    "href": "assignments/labs/Lab3.html",
+    "title": "Lab3: EDA on Rhode Island Open Policing",
+    "section": "",
+    "text": "Overview\nFor this laboratory assignment you will perform an exploratory data analysis on a subset of data from the Stanford Open Policing dataset. The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The rds file format is a compressed format that is much smaller than the corresponding csv file. You can load the data from it using the function read_rds.\n\n\nProblems\nProblem 1: The first step of an exploratory data analysis is to think of a set of interesting questions that your data set might be able to answer. This dataset has a large number of variables, so your questions can help you narrow down the questions you might be interested in. Write down a few questions about police stops that you might be interested in and list the rows in the dataset that you think might have important information to answer your question.\nThis is intentionally open ended, but if you need inspiration you could look at how factors like time of day, month, race and gender (of both the officer and subject), or department id are related to the frequency of stops, the reason for stops, or the outcome. For example one interesting question might be: Do racial differences in traffic stops decrease at night?\nProblem 2: Having identified the most important variables, you should study their variability, in order to better understand their distribution and to identify any potential problems with the data quality or unusual values. Calculate summary statistics as appropriate for whether you have categorical or numerical data and perform basic visualizations. Give justifications for the visualizations that you selected.\nProblem 3: You likely found that for some of your variables there were missing data, outlier values, or data points that indicate some sort of error. In order to continue with your analysis you will need to decide what to do with these. Modify your dataset appropriately so that you will be able to perform an analysis of the relationships you are interested in. In addition to the code, give justifications for your choices.\nProblem 4: Now it is time to visualize the relationships that you are interested in. Make plots showing how variables co-vary, faceting when necessary to explore relationships among up to 3 variables. Consier the following questions when you observe a pattern:\n\nCould this pattern be due to coincidence (i.e. random chance)?\nHow can you describe the relationship implied by the pattern?\nHow strong is the relationship implied by the pattern?\nWhat other variables might affect the relationship?\nDoes the relationship change if you look at individual subgroups of the data?\n\nIf the results of these initial visualizations inspire more questions, consider performing those as well. Briefly summarize the results of this exercise and relate it to your initial questions and hypotheses."
+  },
+  {
+    "objectID": "assignments/tidygit/tidycreate.html",
+    "href": "assignments/tidygit/tidycreate.html",
     "title": "DATA 607 Fall 2024",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
-  },
-  {
-    "objectID": "assignments/participation.html",
-    "href": "assignments/participation.html",
-    "title": "Participation",
-    "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
-    "crumbs": [
-      "Assignments",
-      "Participation"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/project.html",
@@ -254,18 +229,50 @@
     ]
   },
   {
-    "objectID": "assignments/tidygit/tidycreate.html",
-    "href": "assignments/tidygit/tidycreate.html",
-    "title": "DATA 607 Fall 2024",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
   },
   {
-    "objectID": "assignments/labs/Lab3.html",
-    "href": "assignments/labs/Lab3.html",
-    "title": "Lab3: EDA on Rhode Island Open Policing",
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
     "section": "",
-    "text": "Overview\nFor this laboratory assignment you will perform an exploratory data analysis on a subset of data from the Stanford Open Policing dataset. The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The rds file format is a compressed format that is much smaller than the corresponding csv file. You can load the data from it using the function read_rds.\n\n\nProblems\nProblem 1: The first step of an exploratory data analysis is to think of a set of interesting questions that your data set might be able to answer. This dataset has a large number of variables, so your questions can help you narrow down the questions you might be interested in. Write down a few questions about police stops that you might be interested in and list the rows in the dataset that you think might have important information to answer your question.\nThis is intentionally open ended, but if you need inspiration you could look at how factors like time of day, month, race and gender (of both the officer and subject), or department id are related to the frequency of stops, the reason for stops, or the outcome. For example one interesting question might be: Do racial differences in traffic stops decrease at night?\nProblem 2: Having identified the most important variables, you should study their variability, in order to better understand their distribution and to identify any potential problems with the data quality or unusual values. Calculate summary statistics as appropriate for whether you have categorical or numerical data and perform basic visualizations. Give justifications for the visualizations that you selected.\nProblem 3: You likely found that for some of your variables there were missing data, outlier values, or data points that indicate some sort of error. In order to continue with your analysis you will need to decide what to do with these. Modify your dataset appropriately so that you will be able to perform an analysis of the relationships you are interested in. In addition to the code, give justifications for your choices.\nProblem 4: Now it is time to visualize the relationships that you are interested in. Make plots showing how variables co-vary, faceting when necessary to explore relationships among up to 3 variables. Consier the following questions when you observe a pattern:\n\nCould this pattern be due to coincidence (i.e. random chance)?\nHow can you describe the relationship implied by the pattern?\nHow strong is the relationship implied by the pattern?\nWhat other variables might affect the relationship?\nDoes the relationship change if you look at individual subgroups of the data?\n\nIf the results of these initial visualizations inspire more questions, consider performing those as well. Briefly summarize the results of this exercise and relate it to your initial questions and hypotheses."
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
+    "crumbs": [
+      "Assignments",
+      "Participation"
+    ]
+  },
+  {
+    "objectID": "assignments/tidygit/tidyextend.html",
+    "href": "assignments/tidygit/tidyextend.html",
+    "title": "DATA 607 Fall 2024",
+    "section": "",
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+  },
+  {
+    "objectID": "assignments/labs/Lab2.html",
+    "href": "assignments/labs/Lab2.html",
+    "title": "Lab 2: Data Tidying",
+    "section": "",
+    "text": "Overview\nConsider the following image which contains some data:\n\n\n\nPlaneData\n\n\nThe chart describes arrival delays for two different airlines across several destinations.\n\n\nProblems\nProblem 1: Create a csv file that contains all of the information in the above dataset. You are encouraged to use a “wide” structure similar to how the information appears above, so that you can practice tidying and transformations as described below.\nProblem 2: Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. In addition to providing code, please describe your data cleanup and tidying work.\nProblem 3: Perform analysis to compare the arrival delays for the two airlines. What are your conclusions?"
   },
   {
     "objectID": "assignments/labs/Lab4.html",
