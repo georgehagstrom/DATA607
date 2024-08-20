@@ -1,5 +1,5 @@
 ---
-title: "Lab 8: Advanced R Programming"
+title: "Lab 8: Text Mining and NLP"
 format: html
 editor: source
 ---
@@ -11,22 +11,10 @@ complex text file for analysis.
 
 **Problem 1:**
 
-In this project, you’re given a text file with chess tournament results where the information has some structure. Your job is to create an R Markdown file that generates a .CSV file (that could for example be imported into a SQL database) with the following information for all of the players:
+In [Text Mining with R](https://tidytextmining.com), Chapter 2 looks at Sentiment Analysis. In this assignment, you should start by getting the primary example code from chapter 2 working in an R Markdown document. You should provide a citation to this base code. 
 
-*Player’s Name 
-*Player’s State 
-*Total Number of Points 
-*Player’s Pre-Rating 
-*Average Pre Chess Rating of Opponents
+**Problem 2** Extend this base code in two ways:
 
-For the first player, the information would be:
-
-Gary Hua, ON, 6.0, 1794, 1605
-
-1605 was calculated by using the pre-tournament opponents’ ratings of 1436, 1563, 1600, 1610, 1649, 1663, 1716, and dividing by the total number of games played.
-
-The data is contained in a file called [tournamentinfo.txt](tournamentinfo.txt)
-
-If you have questions about the meaning of the data or the results, please post them on Slack. Data science, like chess, is a game of back and forth…
-The chess rating system (invented by a Minnesota statistician named Arpad Elo) has been used in many other contexts, including assessing relative strength of employment candidates by human resource departments.
+*Work with a different corpus of your choosing
+* Incorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research).
 
