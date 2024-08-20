@@ -1,0 +1,60 @@
+---
+title: "Lab3: EDA on Rhode Island Open Policing"
+format: html
+editor: source
+---
+
+# Overview
+
+For this laboratory assignment you will perform an exploratory data analysis on a subset
+of data from the [Stanford Open Policing dataset](https://openpolicing.stanford.edu/data/). The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The 
+rds file format is a compressed format that is much smaller than the corresponding csv file. You
+can load the data from it using the function `read_rds`.
+
+# Problems
+
+**Problem 1**: The first step of an exploratory data analysis is to think of a set of 
+interesting questions that your data set might be able to answer. This dataset has a large
+number of variables, so your questions can help you narrow down the questions you might be
+interested in. Write down a few questions about police stops that you might be interested in
+and list the rows in the dataset that you think might have important information to 
+answer your question. 
+
+This is intentionally open ended, but if you need inspiration you could
+look at how factors like time of day, month, race and gender (of both the officer and subject),
+or department id are related to the frequency of stops, the reason for stops, or the outcome. 
+For example one interesting question might be: Do racial differences in traffic stops decrease at night?
+
+**Problem 2**: Having identified the most important variables, you should study their
+variability, in order to better understand their distribution and to identify any potential
+problems with the data quality or unusual values. Calculate summary statistics as appropriate
+for whether you have categorical or numerical data and perform basic visualizations. Give 
+justifications for the visualizations that you selected.
+
+**Problem 3**: You likely found that for some of your variables there were missing data, 
+outlier values, or data points that indicate some sort of error. In order to continue with
+your analysis you will need to decide what to do with these. Modify your dataset appropriately
+so that you will be able to perform an analysis of the relationships you are interested in.
+In addition to the code, give justifications for your choices.
+
+**Problem 4**: Now it is time to visualize the relationships that you are interested in. Make 
+plots showing how variables co-vary, faceting when necessary to explore relationships among
+up to 3 variables. Consier the following questions when you observe a pattern:
+
+* Could this pattern be due to coincidence (i.e. random chance)?
+* How can you describe the relationship implied by the pattern?
+* How strong is the relationship implied by the pattern?
+* What other variables might affect the relationship?
+* Does the relationship change if you look at individual subgroups of the data?
+
+If the results of these initial visualizations inspire more questions, consider performing
+those as well. Briefly summarize the results of this exercise and relate it to your initial
+questions and hypotheses.
+
+
+
+
+
+
+
+
