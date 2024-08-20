@@ -1,0 +1,75 @@
+---
+title: "Lab 4: Data Transformations Studying College Majors"
+format: html
+editor: visual
+---
+
+The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story ["The Economic Guide To Picking A College Major"](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).
+
+These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see [the code](https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R) FiveThirtyEight authors used.
+
+We should also note that there are many considerations that go into picking a major.
+Earnings potential and employment prospects are two of them, and they are important, but they don't tell the whole story. Keep this in mind as you analyze the data.
+
+We'll use the `tidyverse` package for much of the data wrangling and visualisation, the `scales` package for better formatting of labels on visualisations, and the data lives in the `fivethirtyeight` package. Make sure to install and load these packages if you don't have
+them already. When you load 'fivethirtyeight' you gain access to a dataset 
+called `college_recent_grads`, which is what your homework will be based on.
+
+The `college_recent_grads` data frame is a trove of information.
+Let's think about some questions we might want to answer with these data:
+
+-   Which major has the lowest unemployment rate?
+-   Which major has the highest percentage of women?
+-   How do the distributions of median income compare across major categories?
+-   Do women tend to choose majors with lower or higher earnings?
+
+In the next section we aim to answer these questions.
+
+# Problems
+
+**Problem 1** Arrange the data by unemployment rate in ascending order in order find the 
+major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number
+of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: 
+to reduce the number of digits displayed in the unemployment rate, use the percent() function 
+to mutate the unemployment rate, i.e. pipe your output to 
+`mutate(unemployment_rate = percent(unemployment_rate) )`
+
+**Problem 2:** Which major has the highest percentage of women? Determine the three majors with
+the highest percentage of women using arrange. Again use `select` to only display variables
+relevant to the question and pipe the final output to `top_n(3)` to display just the top 3 majors.
+
+**Problem 3** This problem explores the distribution of median income across different majors. 
+
+* Plot the distribution of median income using a histogram. Make sure to experiment with the
+bin width to ensure that your histogram captures the most important features of the distribution.
+* Summary statistics: calculate the mean, median, 25th and 75th quantiles of the 
+median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).
+* Plot the distribution of median income for each value of the `major_category` variable
+using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where "typical" comes from the summary statistic that you think best describes the distributions you observed in the histogram. 
+
+**Problem 4:**  Which major category is the least popular in this sample? Use the `count` 
+function along with `arrange` to accomplish this task, and make sure you arrange in 
+ascending order.
+
+
+**Problem 5:** Exploring differences between different STEM fields. 
+
+One of the sections of the [FiveThirtyEight story](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/) is "All STEM fields aren't the same".
+
+The STEM categories are the ones that match the vector
+
+```{r}
+#| eval: false
+c(
+  "Biology & Life Science",
+  "Computers & Mathematics",
+  "Engineering",
+  "Physical Sciences")
+```
+
+Use this vector to add a variable to your dataset that is True if the major is a STEM major
+and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors'
+median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.
+
+**Problem 6:** What types of majors do women tend to major in? Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
+
