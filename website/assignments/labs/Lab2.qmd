@@ -1,0 +1,27 @@
+---
+title: "Lab 2: Data Tidying"
+format: html
+editor: source
+---
+
+# Overview
+
+Consider the following image which contains some data:
+
+![PlaneData](Lab2Dataset.png)
+
+The chart describes arrival delays for two different airlines across several destinations.
+
+# Problems
+
+**Problem 1:** Create a `csv` file that contains all of the information in the above dataset. You are encouraged to use a "wide" structure similar to how the information appears above, so
+that you can practice tidying and transformations as described below.
+
+**Problem 2:** Read the information from your .CSV file into R, and use `tidyr` and `dplyr` as needed to tidy and transform your data. In addition to providing code, please describe 
+your data cleanup and tidying work.
+
+**Problem 3:** Perform analysis to compare the arrival delays for the two airlines. What
+are your conclusions?
+
+
+
