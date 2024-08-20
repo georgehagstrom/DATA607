@@ -15,6 +15,7 @@ In [Text Mining with R](https://tidytextmining.com), Chapter 2 looks at Sentimen
 
 **Problem 2** Extend this base code in two ways:
 
-*Work with a different corpus of your choosing
+* Work with a different corpus of your choosing
+
 * Incorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research).
 
