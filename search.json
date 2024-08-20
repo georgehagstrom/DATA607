@@ -125,7 +125,7 @@
     "href": "assignments/tidygit.html",
     "title": "GitHub/TidyVerse Create and Extend",
     "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nTidyverse Create (Template)\n\n\nTidyverse Extend (Template)",
     "crumbs": [
       "Assignments",
       "GitHub/Tidyverse Recipes"
