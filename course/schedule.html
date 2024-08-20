@@ -349,153 +349,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.</em></p>
-<p><a href="https://sps.cuny.edu/academics/academic-calendar">CUNY SPS Academic Calendar</a></p>
-<script>
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialDate: '2024-08-20',
-      initialView: 'dayGridMonth',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      },
-      height: 'auto',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      selectable: true,
-      selectMirror: true,
-      nowIndicator: true,
-      events: [
+<p>This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.</p>
+<section id="date-start-time-module-video" class="level2">
+<h2 class="anchored" data-anchor-id="date-start-time-module-video">| Date | Start Time | Module | Video |</h2>
+<div class="line-block">Aug 28 | 06:45PM | <a href="../modules/module1">Data Science Workflows and Toolkit</a> | |<br>
+Sep 4 | 06:45PM | <a href="../modules/module2">Visualizing Data</a> | |<br>
+Sep 11 | 06:45PM | <a href="../modules/module3">Data Tidying and Wrangling</a> | |<br>
+Sep 18 | 06:45PM | <a href="../modules/module4">Exploratory Data Analysis</a> | |<br>
+Sep 25 | 06:45PM | <a href="../modules/module5">Data Transformations</a> | |<br>
+Oct 2 | 06:45PM | <a href="../modules/module6">Text and Strings</a> | |<br>
+Oct 9 | 06:45PM | <a href="../modules/module7">Databases and SQL</a> | |<br>
+Oct 16 | 06:45PM | <a href="../modules/module8">Advanced R Programming</a> | |<br>
+Oct 23 | 06:45PM | <a href="../modules/module9">Webscraping and APIs</a> | |<br>
+Oct 30 | 06:45PM | <a href="../modules/module10">Git and Collaboration</a> | |<br>
+Nov 6 | 06:45PM | <a href="../modules/module11">Tidy Text and NLP</a> | |<br>
+Nov 13 | 06:45PM | <a href="../modules/module12">Graphs and Graph Data</a> | |<br>
+Nov 20 | 06:45PM | <a href="../modules/module13">Big Data</a> | |<br>
+Nov 27 | | No Meetup (Thansgiving) | |<br>
+Dec 4 | 06:45PM | <a href="../modules/module13">Cloud Computing</a> | |<br>
+Dec 11 | 06:45PM | | |</div>
 
 
-{ title: "Chapter 1 - Intro to Data, R, and RStudio",
-  url: "/chapters/chapter1/",
-  start: '2024-09-04',
-  end: '2024-09-11' },
- { title: "Chatper 2 - Summarizing Data",
-  url: "/chatpers/chapter2/",
-  start: '2024-09-11',
-  end: '2024-09-25' },
- { title: "Chapter 3 - Probability",
-  url: "/chapters/chapter3",
-  start: '2024-09-25',
-  end: '2024-10-02' },
- { title: "Chapter 4 - Distributions",
-  url: "/chapters/chapter4",
-  start: '2024-10-02',
-  end: '2024-10-09' },
- { title: "Chatper 5 - Foundation for Inference",
-  url: "/chapters/chapter5",
-  start: '2024-10-09',
-  end: '2024-10-16' },
- { title: "Midterm",
-  url: "/assesssments/midterm/",
-  start: '2024-10-16',
-  end: '2024-10-21' },
- { title: "Chapter 6 - Inference for Categorical Data",
-  url: "/chapters/chapter6",
-  start: '2024-10-16',
-  end: '2024-10-23' },
- { title: "Chapter 7 - Inference for Numerical Data",
-  url: "/chapters/chapter7",
-  start: '2024-10-23',
-  end: '2024-10-30' },
- { title: "Chapter 8 - Linear Regression",
-  url: "/chapters/chapter8",
-  start: '2024-10-30',
-  end: '2024-11-06' },
- { title: "Chapter 9 - Multiple & Logistic Regression",
-  url: "/chapters/chapter9",
-  start: '2024-11-06',
-  end: '2024-12-04' },
- { title: "Intro to Bayesian Analysis",
-  url: "/chatpers/bayesian/",
-  start: '2024-12-04',
-  end: '2024-12-11' },
- { title: "Final Exam",
-  url: "/assesssments/final/",
-  start: '2024-12-11',
-  end: '2024-12-16' },
- { title: 'Intro to the Course',
-  start: '2024-08-28T20:00:00',
-  end: '2024-08-28T21:00:00' },
- { title: 'Intro to Data',
-  url: "/chapters/chapter1.html",
-  start: '2024-09-04T20:00:00',
-  end: '2024-09-04T21:00:00' },
- { title: 'Summarizing Data Part 1',
-  url: "/chapters/chapter2.html",
-  start: '2024-09-11T20:00:00',
-  end: '2024-09-11T21:00:00' },
- { title: 'Summarizing Data Part 2',
-  url: "/chapters/chapter3.html",
-  start: '2024-09-18T20:00:00',
-  end: '2024-09-18T21:00:00' },
- { title: 'Probability',
-  url: "/chapters/chapter3.html",
-  start: '2024-09-25T20:00:00',
-  end: '2024-09-25T21:00:00' },
- { title: 'Distributions',
-  url: "/chapters/chapter4.html",
-  start: '2024-10-02T20:00:00',
-  end: '2024-10-02T21:00:00' },
- { title: 'Foundation for Inference',
-  url: "/chapters/chapter5.html",
-  start: '2024-10-09T20:00:00',
-  end: '2024-10-09T21:00:00' },
- { title: 'Inference for Categorical Data',
-  url: "/chapters/chapter6.html",
-  start: '2024-10-16T20:00:00',
-  end: '2024-10-16T21:00:00' },
- { title: 'Inference for Numerical Data',
-  url: "/chapters/chapter7.html",
-  start: '2024-10-23T20:00:00',
-  end: '2024-10-23T21:00:00' },
- { title: 'Linear Regression',
-  url: "/chapters/chapter8.html",
-  start: '2024-10-30T20:00:00',
-  end: '2024-10-30T21:00:00' },
- { title: 'Maximum Likelihood Estimation',
-  url: "/chapters/chapter9.html",
-  start: '2024-11-06T20:00:00',
-  end: '2024-11-06T21:00:00' },
- { title: 'Multiple Regression',
-  url: "/chapters/chapter9.html",
-  start: '2024-11-13T20:00:00',
-  end: '2024-11-13T21:00:00' },
- { title: 'Predictive Modeling',
-  start: '2024-11-20T20:00:00',
-  end: '2024-11-20T21:00:00' },
- { title: 'NO MEETUP - Thanksgiving',
-  start: 'NA',
-  end: 'NA' },
- { title: 'Bayesian Analysis',
-  url: "/chapters/bayesian.html",
-  start: '2024-12-04T20:00:00',
-  end: '2024-12-04T21:00:00' },
- { title: 'Final Meetup',
-  start: '2024-12-11T20:00:00',
-  end: '2024-12-11T21:00:00' }
-
-
-      ]
-    });
-
-    calendar.render();
-  });
-
-</script>
-<div id="calendar">
-
-</div>
-<p><a href="../Course_Calendar.ics">Click here to import the course calendar into your calendar application</a></p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

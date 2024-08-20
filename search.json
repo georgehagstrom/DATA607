@@ -15,7 +15,7 @@
     "href": "course/calendar.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
+    "text": "Note: Schedule is subject to change. Last updated August 20, 2024 06:23PM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
     "crumbs": [
       "Course information",
       "Calendar"
@@ -26,7 +26,18 @@
     "href": "course/schedule.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#date-start-time-module-video",
+    "href": "course/schedule.html#date-start-time-module-video",
+    "title": "DATA607 - Data Acquisition and Management",
+    "section": "| Date | Start Time | Module | Video |",
+    "text": "| Date | Start Time | Module | Video |\nAug 28 | 06:45PM | Data Science Workflows and Toolkit | |\nSep 4 | 06:45PM | Visualizing Data | |\nSep 11 | 06:45PM | Data Tidying and Wrangling | |\nSep 18 | 06:45PM | Exploratory Data Analysis | |\nSep 25 | 06:45PM | Data Transformations | |\nOct 2 | 06:45PM | Text and Strings | |\nOct 9 | 06:45PM | Databases and SQL | |\nOct 16 | 06:45PM | Advanced R Programming | |\nOct 23 | 06:45PM | Webscraping and APIs | |\nOct 30 | 06:45PM | Git and Collaboration | |\nNov 6 | 06:45PM | Tidy Text and NLP | |\nNov 13 | 06:45PM | Graphs and Graph Data | |\nNov 20 | 06:45PM | Big Data | |\nNov 27 | | No Meetup (Thansgiving) | |\nDec 4 | 06:45PM | Cloud Computing | |\nDec 11 | 06:45PM | | |",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -103,7 +114,7 @@
     "href": "modules/module12.html",
     "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nMath is Fun on Graphs",
     "crumbs": [
       "Topics",
       "12 - Graphs and Graph Data"
