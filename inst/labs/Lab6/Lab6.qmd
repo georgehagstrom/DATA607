@@ -1,0 +1,49 @@
+---
+title: "Lab 6: R and SQL"
+format: html
+editor: source
+---
+
+# Overview
+
+This projects involves data collection, creating a normalized SQL database representing the
+data you collected, and then loading the data from the SQL database into R.
+
+# Problems
+
+**Problem 1:**
+
+Select at least six popular movies that the people you will survey have a good chance of
+having watched. Ask at least five people that you know (friends, family, classmates, imaginary
+friends if necessary) to rate each of these movies that they have seen on a scale of 1 to 5. 
+You may use online survey software if you find it easier and want to generate a larger sample.
+
+**Problem 2:** 
+
+Take the results(observations) and store them in a SQL database of your choosing. I recommend
+SQLite or duckDB if you are undecided. Describe the normalization scheme you selected for
+your database and explain why you chose it. 
+
+**Problem 3:**
+
+Load the information from the SQL database into an R dataframe. This is by design a very open-ended assignment. In general, there’s no need here to ask “Can I…?” questions
+about your proposed approach. A variety of reasonable approaches are acceptable. You could for example access the SQL data directly from R, or you could create an intermediate .CSV file. I should be able to generate the SQL table(s) and data from your provided code—if you use a graphical user interface to create and populate
+tables, it should have a mechanism to generate corresponding SQL code.
+This assignment does not need to be 100% reproducible. You can (and should) blank out your SQL password if
+your solution requires it; otherwise, full credit requires that your code is “reproducible,” with the assumption
+that I have the same database server and R software.
+Handling missing data is a foundational skill when working with SQL or R. To receive full credit, you should
+demonstrate a reasonable approach for handling missing data. After all, how likely is it that all five of your
+friends have seen all six movies?
+
+**Problem 4:** Is there any benefit in standardizing ratings? How might you approach this?
+
+(Optional) Reading related to this assignment:
+
+* [James Le, “The 4 Recommendation Engines That Can Predict Your Movie Tastes”, May 1, 2018.](
+https://towardsdatascience.com/the-4-recommendation-engines-that-can-predict-your-movie-tastes109dc4e10c52) This a nice backgrounder on movie recommendation engines. 
+
+* [Steve Blank, “The Customer Development Process. 2 Minutes to See Why”, Jul 29, 2014.](
+https://www.youtube.com/watch?v=xr2zFXblSRM&t=27s). In this [<3 minute] YouTube video “lean
+startup” founder Steve Blank talks about the importance of getting out of the building to talk to customers. I’d encourage you to adopt this “builder mentality” in your own data science work
+whenever it’s practical, by collecting data yourself, whether it’s related to a “business experiment” or a “scientific experiment.”
