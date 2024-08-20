@@ -4,121 +4,77 @@
     "href": "course/instructors.html",
     "title": "Instructor",
     "section": "",
-    "text": "George Hagstrom, Ph.D.\nEmail: george.hagstrom@cuny.edu\nI am currently a Doctoral Lecturer in Data Science and Information Systems at the City University of New York. Additionally, I am a consultant with Princeton University where I development mathematical models of marine phytoplankton and heterotrophic bacteria to improve our understanding of the Earth’s Biogeochemical Cycles. Prior to joining CUNY, I was a Research Scientist at Princeton University in the Levin lab at the Department of Ecology and Evolutionary Biology and a postdoctoral researcher in the Magneto Fluids Division at the Courant Institute for Mathematical Sciences. My research interests include the application of Bayesian statistics and Machine Learning to incorporate nontraditional datasets (such as from ’omics) into mechanistic models of marine ecosystems and biogeochemical cycling, trait-based modeling, and critical transitions in complex ecological, social, or economic systems. In my free time, I enjoy cycling and exploring New York City.\n\nContact\nOffice Hours (Zoom is preferred): By appointment. You’re encouraged to schedule an appointment and I have time nearly everyday. You are also encouraged to ask us questions on Slack. If you wish to ask a question in private, you can email me directly.\nFor the most part, you can expect me to respond to questions by email within 24 hours. If you do not hear back from me within 48 hours of sending an email, please resend your message. I will be checking in on the course regularly, just about every day and likely several times each day. Please do not hesitate to ask if you have questions or concerns.",
-    "crumbs": [
-      "Course information",
-      "Instructors"
-    ]
+    "text": "George Hagstrom, Ph.D.\nEmail: george.hagstrom@cuny.edu\nI am currently a Doctoral Lecturer in Data Science and Information Systems at the City University of New York. Additionally, I am a consultant with Princeton University where I development mathematical models of marine phytoplankton and heterotrophic bacteria to improve our understanding of the Earth’s Biogeochemical Cycles. Prior to joining CUNY, I was a Research Scientist at Princeton University in the Levin lab at the Department of Ecology and Evolutionary Biology and a postdoctoral researcher in the Magneto Fluids Division at the Courant Institute for Mathematical Sciences. My research interests include the application of Bayesian statistics and Machine Learning to incorporate nontraditional datasets (such as from ’omics) into mechanistic models of marine ecosystems and biogeochemical cycling, trait-based modeling, and critical transitions in complex ecological, social, or economic systems. In my free time, I enjoy cycling and exploring New York City.\n\nContact\nOffice Hours (Zoom is preferred): By appointment. You’re encouraged to schedule an appointment and I have time nearly everyday. You are also encouraged to ask us questions on Slack. If you wish to ask a question in private, you can email me directly.\nFor the most part, you can expect me to respond to questions by email within 24 hours. If you do not hear back from me within 48 hours of sending an email, please resend your message. I will be checking in on the course regularly, just about every day and likely several times each day. Please do not hesitate to ask if you have questions or concerns."
   },
   {
     "objectID": "course/calendar.html",
     "href": "course/calendar.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
-    "crumbs": [
-      "Course information",
-      "Calendar"
-    ]
+    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application"
   },
   {
     "objectID": "course/schedule.html",
     "href": "course/schedule.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
+    "text": "Note: Schedule is subject to change. Last updated July 18, 2024 08:47AM.\nCUNY SPS Academic Calendar\n\n\n\n\nClick here to import the course calendar into your calendar application"
   },
   {
     "objectID": "course/syllabus.html",
     "href": "course/syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Instructor: George Hagstrom, Ph.D. Class Meetup: TBD Office Hours: By appointment abd TBD Email: george.hagstrom@cuny.edu\n\nCourse Description\nIn this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, feature engineering, and working with large datasets in a cloud computing environment.\nStudents will complete a project to create a working system for a large volume of data using publicly available data sets.\n\n\nCourse Learning Outcomes:\nBy then end of the course, students should be able to:\nLoad data into R from various data sources, including CSV files, Excel spreadsheets, relational databases, APIs, and web pages.  Perform various data cleansing and transformation work, including splitting, combining; resampling; variable creation; data aggregation; sorting and filtering data; strategies for working with outliers and missing data; data visualization and analysis in support of data cleansing activities. * Understand different information architectures, data types, and data structures. * Understand relational and non-relational database design and querying. * Cover relevant ethical issues including data privacy and misinformation.\n\n\nProgram Learning Outcomes addressed by the course:\n\nBusiness Understanding. Apply frameworks and processes to build out data analytics solutions from understanding of business goals.\nData Culture. Embody and champion the highest standards for the ethical and moral use of data; understand issues related to data privacy and data security.\nSolid foundational data programming skills, using industry standard tools, essential algorithms, and design patterns for working with structured data, unstructured data and big data.\nData understanding. Collect, describe, model, explore and verify data.\nData preparation. Selecting, cleaning, constructing, integrating, and formatting data.\n\n\n\nHow is this course relevant for data analytics professionals?\nMost data analytics professionals spend most of their time getting data and preparing it for analysis. This is the course that teaches these key skills, as we work with both structured and unstructured data.\n\n\nGrading\n\nMeetup Reflections (10%)\nLabs (50%)\nTidyVerse Recipes\nProject (30%)\n\n\nGrade Distribution\n\n\n\n\n\n\n\n\n\nQuality of Performance\nLetter Grade\nRange %\nGPA\n\n\n\n\nExcellent - work is of exceptional quality\nA\n93 - 100\n4\n\n\nExcellent\nA-\n90 - 92.9\n3.7\n\n\nGood - work is above average\nB+\n87 - 89.9\n3.3\n\n\nSatisfactory\nB\n83 - 86.9\n3\n\n\nBelow Average\nB-\n80 - 82.9\n2.7\n\n\nPoor\nC+\n77 - 79.9\n2.3\n\n\nPoor\nC\n70 - 76.9\n2\n\n\nFailure\nF\n&lt; 70\n0\n\n\n\n\n\n\nHow This Course Works\nThis course is conducted entirely online. Each week, you will have various resources made available, including weekly readings from the textbooks and occasionally additional readings provided by the instructor. Most weeks will have homework assignments and labs to be submitted (although some chapters will take more than one week, see the schedule for details). There will also be a presentation required and a forum post introduction required. You are expected to complete all assignments by their due dates.\nYou are expected to attend or watch every Meetup. I highly recommend attending the Meetups live if possible but understand that may not be possible for everyone. Recordings will be made available by the next morning on the Meetups page. In addition to highlighting key concepts from each learning module, some topics will be discussed that are not in the textbook. Moreover, we regularly make announcements in the Meetups that will be important to being successful in this course. At the end of each Meetup there will be a short reflective exercise. These will contribute to your participation grade.\nThe culmination of the course will be the presentation of the analysis of a dataset of your choosing. See the project for more information.\n\n\nTextbooks and Course Materials\n\nR for Data Science (2e) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. This is the primary text for the course. Available online for free at: https://r4ds.hadley.nz/\nHappy Git and GitHub for the userR, Jennifer Bryan. Available online for free at happygitwithr.com/. This is a short book introducing git and github from the perspective of the statistical computing and data science use cases, and showing how it can be integrated with R and RStudio.\nText Mining with R: A Tidy Approach, Julia Silge and David Robinson. O’Reilly, 2017. Available online for free at https://www.tidytextmining.com/\n\n\n\nAccessibility and Accommodations\nThe CUNY School of Professional Studies is firmly committed to making higher education accessible to students with disabilities by removing architectural barriers and providing programs and support services necessary for them to benefit from the instruction and resources of the University. Early planning is essential for many of the resources and accommodations provided. Please see: http://sps.cuny.edu/student_services/disabilityservices.html\n\n\nOnline Etiquette and Anti-Harassment Policy\nThe University strictly prohibits the use of University online resources or facilities, including Blackboard, for the purpose of harassment of any individual or for the posting of any material that is scandalous, libelous, offensive or otherwise against the University’s policies. Please see: http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf\n\n\nAcademic Integrity\nAcademic dishonesty is unacceptable and will not be tolerated. Cheating, forgery, plagiarism and collusion in dishonest acts undermine the educational mission of the City University of New York and the students’ personal and intellectual growth. Please see: http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf\n\n\nStudent Support Services\nIf you need any additional help, please visit Student Support Services: http://sps.cuny.edu/student_resources/",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
+    "text": "Instructor: George Hagstrom, Ph.D. Class Meetup: TBD Office Hours: By appointment abd TBD Email: george.hagstrom@cuny.edu\n\nCourse Description\nIn this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, feature engineering, and working with large datasets in a cloud computing environment.\nStudents will complete a project to create a working system for a large volume of data using publicly available data sets.\n\n\nCourse Learning Outcomes:\nBy then end of the course, students should be able to:\nLoad data into R from various data sources, including CSV files, Excel spreadsheets, relational databases, APIs, and web pages.  Perform various data cleansing and transformation work, including splitting, combining; resampling; variable creation; data aggregation; sorting and filtering data; strategies for working with outliers and missing data; data visualization and analysis in support of data cleansing activities. * Understand different information architectures, data types, and data structures. * Understand relational and non-relational database design and querying. * Cover relevant ethical issues including data privacy and misinformation.\n\n\nProgram Learning Outcomes addressed by the course:\n\nBusiness Understanding. Apply frameworks and processes to build out data analytics solutions from understanding of business goals.\nData Culture. Embody and champion the highest standards for the ethical and moral use of data; understand issues related to data privacy and data security.\nSolid foundational data programming skills, using industry standard tools, essential algorithms, and design patterns for working with structured data, unstructured data and big data.\nData understanding. Collect, describe, model, explore and verify data.\nData preparation. Selecting, cleaning, constructing, integrating, and formatting data.\n\n\n\nHow is this course relevant for data analytics professionals?\nMost data analytics professionals spend most of their time getting data and preparing it for analysis. This is the course that teaches these key skills, as we work with both structured and unstructured data.\n\n\nGrading\n\nMeetup Reflections (10%)\nLabs (50%)\nTidyVerse Recipes\nProject (30%)\n\n\nGrade Distribution\n\n\n\n\n\n\n\n\n\nQuality of Performance\nLetter Grade\nRange %\nGPA\n\n\n\n\nExcellent - work is of exceptional quality\nA\n93 - 100\n4\n\n\nExcellent\nA-\n90 - 92.9\n3.7\n\n\nGood - work is above average\nB+\n87 - 89.9\n3.3\n\n\nSatisfactory\nB\n83 - 86.9\n3\n\n\nBelow Average\nB-\n80 - 82.9\n2.7\n\n\nPoor\nC+\n77 - 79.9\n2.3\n\n\nPoor\nC\n70 - 76.9\n2\n\n\nFailure\nF\n&lt; 70\n0\n\n\n\n\n\n\nHow This Course Works\nThis course is conducted entirely online. Each week, you will have various resources made available, including weekly readings from the textbooks and occasionally additional readings provided by the instructor. Most weeks will have homework assignments and labs to be submitted (although some chapters will take more than one week, see the schedule for details). There will also be a presentation required and a forum post introduction required. You are expected to complete all assignments by their due dates.\nYou are expected to attend or watch every Meetup. I highly recommend attending the Meetups live if possible but understand that may not be possible for everyone. Recordings will be made available by the next morning on the Meetups page. In addition to highlighting key concepts from each learning module, some topics will be discussed that are not in the textbook. Moreover, we regularly make announcements in the Meetups that will be important to being successful in this course. At the end of each Meetup there will be a short reflective exercise. These will contribute to your participation grade.\nThe culmination of the course will be the presentation of the analysis of a dataset of your choosing. See the project for more information.\n\n\nTextbooks and Course Materials\n\nR for Data Science (2e) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. This is the primary text for the course. Available online for free at: https://r4ds.hadley.nz/\nHappy Git and GitHub for the userR, Jennifer Bryan. Available online for free at happygitwithr.com/. This is a short book introducing git and github from the perspective of the statistical computing and data science use cases, and showing how it can be integrated with R and RStudio.\nText Mining with R: A Tidy Approach, Julia Silge and David Robinson. O’Reilly, 2017. Available online for free at https://www.tidytextmining.com/\n\n\n\nAccessibility and Accommodations\nThe CUNY School of Professional Studies is firmly committed to making higher education accessible to students with disabilities by removing architectural barriers and providing programs and support services necessary for them to benefit from the instruction and resources of the University. Early planning is essential for many of the resources and accommodations provided. Please see: http://sps.cuny.edu/student_services/disabilityservices.html\n\n\nOnline Etiquette and Anti-Harassment Policy\nThe University strictly prohibits the use of University online resources or facilities, including Blackboard, for the purpose of harassment of any individual or for the posting of any material that is scandalous, libelous, offensive or otherwise against the University’s policies. Please see: http://media.sps.cuny.edu/filestore/8/4/9_d018dae29d76f89/849_3c7d075b32c268e.pdf\n\n\nAcademic Integrity\nAcademic dishonesty is unacceptable and will not be tolerated. Cheating, forgery, plagiarism and collusion in dishonest acts undermine the educational mission of the City University of New York and the students’ personal and intellectual growth. Please see: http://media.sps.cuny.edu/filestore/8/3/9_dea303d5822ab91/839_1753cee9c9d90e9.pdf\n\n\nStudent Support Services\nIf you need any additional help, please visit Student Support Services: http://sps.cuny.edu/student_resources/"
   },
   {
     "objectID": "modules/module4.html",
     "href": "modules/module4.html",
     "title": "Module 4 - Exploratory Data Analysis",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nUsing summary statistics\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 10-11\n\n\n\nAdditional Resources:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.",
-    "crumbs": [
-      "Topics",
-      "4 - Advanced Visualizations and EDA"
-    ]
+    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nUsing summary statistics\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 10-11\n\n\n\nAdditional Resources:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons."
   },
   {
     "objectID": "modules/module13.html",
     "href": "modules/module13.html",
     "title": "Module 13 - Large Data and Distributed Computing",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
-    "crumbs": [
-      "Topics",
-      "13 - Big Data and Cloud Computing"
-    ]
+    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos"
   },
   {
     "objectID": "modules/module3.html",
     "href": "modules/module3.html",
     "title": "Module 3 - Data Tidying",
     "section": "",
-    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 4-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
-    "crumbs": [
-      "Topics",
-      "3 - Data Tidying"
-    ]
+    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 4-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data"
   },
   {
     "objectID": "modules/module6.html",
     "href": "modules/module6.html",
     "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\n[Regex Buddy] (https://www.regular-expressions.info/tutorial.html)\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
-    "crumbs": [
-      "Topics",
-      "6 - Processing Strings and Text"
-    ]
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\n[Regex Buddy] (https://www.regular-expressions.info/tutorial.html)\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial."
   },
   {
     "objectID": "modules/module9.html",
     "href": "modules/module9.html",
     "title": "Module 9 - Advanced R Programming",
     "section": "",
-    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
-    "crumbs": [
-      "Topics",
-      "9 - Advanced R Programming"
-    ]
+    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming"
   },
   {
     "objectID": "modules/module12.html",
     "href": "modules/module12.html",
     "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos",
-    "crumbs": [
-      "Topics",
-      "12 - Graphs and Graph Data"
-    ]
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2\n\n\nVideos"
   },
   {
     "objectID": "modules/module5.html",
     "href": "modules/module5.html",
     "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.\n\n\nVideos",
-    "crumbs": [
-      "Topics",
-      "5 - Data Transformations"
-    ]
+    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.\n\n\nVideos"
   },
   {
     "objectID": "assignments/tidygit.html",
@@ -160,98 +116,63 @@
     "href": "assignments/participation.html",
     "title": "Participation",
     "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
-    "crumbs": [
-      "Assignments",
-      "Participation"
-    ]
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel."
   },
   {
     "objectID": "assignments/labs.html",
     "href": "assignments/labs.html",
     "title": "Labs",
     "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Announcements",
     "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "assignments/project.html",
     "href": "assignments/project.html",
     "title": "Data Project",
     "section": "",
-    "text": "knitr::include_graphics(“img/laptop-3190194_1920.jpg”) ’’’",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "knitr::include_graphics(“img/laptop-3190194_1920.jpg”) ’’’"
   },
   {
     "objectID": "assignments/project.html#heilmeiers-questions",
     "href": "assignments/project.html#heilmeiers-questions",
     "title": "Data Project",
     "section": "Heilmeier's Questions",
-    "text": "Heilmeier's Questions\nWhen writing proposals, I’ve found the following set of considerations, called “Heilmeier's Questions”, to be helpful to consider. Although this is just a short project, you might find them helpful as well, and useful for formulating future projects and proposals that you might have to complete. These questions were developed by Dr. George Heilmeier, who was the director of DARPA from 1975-1977. Heilmeier said that every proposal to DARPA needed to answer these questions clearly and completely in order to receive funding:\n\nWhat are you trying to do? Articulate your objectives using absolutely no jargon. What is the problem? Why is it hard?\nHow is it done today, and what are the limits of current practice?\nWhat is new in your approach, and why do you think it will be successful?\nWho cares?\nIf you’re successful, what difference will it make? What applications are enabled as a result?\nWhat are the risks?\nHow much will it cost?\nHow long will it take?\nWhat are the midterm and final “exams” to check for success? How will progress be measured?",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "Heilmeier's Questions\nWhen writing proposals, I’ve found the following set of considerations, called “Heilmeier's Questions”, to be helpful to consider. Although this is just a short project, you might find them helpful as well, and useful for formulating future projects and proposals that you might have to complete. These questions were developed by Dr. George Heilmeier, who was the director of DARPA from 1975-1977. Heilmeier said that every proposal to DARPA needed to answer these questions clearly and completely in order to receive funding:\n\nWhat are you trying to do? Articulate your objectives using absolutely no jargon. What is the problem? Why is it hard?\nHow is it done today, and what are the limits of current practice?\nWhat is new in your approach, and why do you think it will be successful?\nWho cares?\nIf you’re successful, what difference will it make? What applications are enabled as a result?\nWhat are the risks?\nHow much will it cost?\nHow long will it take?\nWhat are the midterm and final “exams” to check for success? How will progress be measured?"
   },
   {
     "objectID": "assignments/project.html#data",
     "href": "assignments/project.html#data",
     "title": "Data Project",
     "section": "Data",
-    "text": "Data\nThe emphasis of class has been working with datasets that have different types of variables and which are messy or often heterogeneous. For this project you need to select data that comes from multiple sources (there should be at least two datasets). You should be able to access the data and it should be large enough and contain enough variables so that multiple interesting relationships can be explored. A good starting point is that across your dataset, there should be at least 50 observations and more than 10 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class. Also do not use datasets exclusively from Kaggle or other sources of curated data for data science competitions (these have been made clean and tidy already).\nBelow are a list of data repositories that might be of interest to browse. You're not limited to these resources, and in fact you're encouraged to venture beyond them. But you might find something interesting there:\n\nNew York City Open Data\nFiveThirtyEight https://github.com/fivethirtyeight/data\nRStudio data sources http://blog.rstudio.org/2014/07/23/new-data-packages/\nAnalyze Survey Data for Free (ASDFree) has many open data sources that can be used http://www.asdfree.com/\nThe World Bank Data Catalog http://datacatalog.worldbank.org/\nGoogle Public Data search engine http://www.google.com/publicdata/directory\nVanderbilt data sources http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets\nProgramme of International Student Assessment (PISA) http://www.oecd.org/pisa/\nBehavioral Risk Factor Surveillance System (BRFSS) http://www.cdc.gov/brfss/\nWorld Values Survey http://www.worldvaluessurvey.org/wvs.jsp\nAmerican National Election Survey (ANES) http://www.electionstudies.org/\nGeneral Social Survey (GSS) http://www3.norc.org/GSS+Website/\nIntegrated Postsecondary Education Data System (IPEDS) https://nces.ed.gov/ipeds/\nU.S. Census and American Community Survey https://cran.r-project.org/web/packages/acs/index.html\n10 Standard Datasets for Practicing Applied Machine Learning\nAwesome Public Datasets\nUCI Machine Learning Repository - See also this R package: https://github.com/tyluRp/ucimlr\nOpenML\nBikeshare data portal\nUK Gov Data\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "Data\nThe emphasis of class has been working with datasets that have different types of variables and which are messy or often heterogeneous. For this project you need to select data that comes from multiple sources (there should be at least two datasets). You should be able to access the data and it should be large enough and contain enough variables so that multiple interesting relationships can be explored. A good starting point is that across your dataset, there should be at least 50 observations and more than 10 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class. Also do not use datasets exclusively from Kaggle or other sources of curated data for data science competitions (these have been made clean and tidy already).\nBelow are a list of data repositories that might be of interest to browse. You're not limited to these resources, and in fact you're encouraged to venture beyond them. But you might find something interesting there:\n\nNew York City Open Data\nFiveThirtyEight https://github.com/fivethirtyeight/data\nRStudio data sources http://blog.rstudio.org/2014/07/23/new-data-packages/\nAnalyze Survey Data for Free (ASDFree) has many open data sources that can be used http://www.asdfree.com/\nThe World Bank Data Catalog http://datacatalog.worldbank.org/\nGoogle Public Data search engine http://www.google.com/publicdata/directory\nVanderbilt data sources http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets\nProgramme of International Student Assessment (PISA) http://www.oecd.org/pisa/\nBehavioral Risk Factor Surveillance System (BRFSS) http://www.cdc.gov/brfss/\nWorld Values Survey http://www.worldvaluessurvey.org/wvs.jsp\nAmerican National Election Survey (ANES) http://www.electionstudies.org/\nGeneral Social Survey (GSS) http://www3.norc.org/GSS+Website/\nIntegrated Postsecondary Education Data System (IPEDS) https://nces.ed.gov/ipeds/\nU.S. Census and American Community Survey https://cran.r-project.org/web/packages/acs/index.html\n10 Standard Datasets for Practicing Applied Machine Learning\nAwesome Public Datasets\nUCI Machine Learning Repository - See also this R package: https://github.com/tyluRp/ucimlr\nOpenML\nBikeshare data portal\nUK Gov Data\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse"
   },
   {
     "objectID": "assignments/project.html#project-report-and-code-repository",
     "href": "assignments/project.html#project-report-and-code-repository",
     "title": "Data Project",
     "section": "Project Report and Code Repository",
-    "text": "Project Report and Code Repository\nThe project report should include an Abstract which gives a summary of your project in under 300 words, and Introduction, a section on the Data which describes the cleaning, tidying, and exploratory data analysis steps you took and what hypotheses you generated, a section on the Data Analysis, and a Conclusion section. All of the code you used to perform your cleaning and analysis should be included either in a github repository or in your report (if you submit in a quarto format for example). You will be evaluated using the following rubric:",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "Project Report and Code Repository\nThe project report should include an Abstract which gives a summary of your project in under 300 words, and Introduction, a section on the Data which describes the cleaning, tidying, and exploratory data analysis steps you took and what hypotheses you generated, a section on the Data Analysis, and a Conclusion section. All of the code you used to perform your cleaning and analysis should be included either in a github repository or in your report (if you submit in a quarto format for example). You will be evaluated using the following rubric:"
   },
   {
     "objectID": "assignments/project.html#presentation",
     "href": "assignments/project.html#presentation",
     "title": "Data Project",
     "section": "Presentation",
-    "text": "Presentation\nYou will record a short video presentation with a slide-deck presenting your project. It should cover the motivation for your project, describe the data and analysis, and show visualizations of your main conclusions. Each student is required to watch two of the uploaded presentations and provided anonymous feedback on the presentations.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "Presentation\nYou will record a short video presentation with a slide-deck presenting your project. It should cover the motivation for your project, describe the data and analysis, and show visualizations of your main conclusions. Each student is required to watch two of the uploaded presentations and provided anonymous feedback on the presentations."
   },
   {
     "objectID": "assignments/project.html#overall-grading-rubric",
     "href": "assignments/project.html#overall-grading-rubric",
     "title": "Data Project",
     "section": "Overall Grading Rubric",
-    "text": "Overall Grading Rubric\n\n\n\n\n\n\n\n\n\nDomain\nAccomplished (100%)\nProficient (80%)\nNeeds Improvement (60%)\n\n\n\n\nProposal (20 pts)\nMotivation explained well, data science workflow clearly present, datasets and proposed analysis appropriate\nDescription of motivation, workflow, datasets, and analysis present but a few are not appropriate or unclear\nSeveral of motivation, workflow, datasets, and analysis are missing or inappropriate\n\n\nAbstract (5 pts)\nAbstract is less than 300 words, free of grammatical errors, summarizes the project analysis, conclusions, and implications\nNA\nNA\n\n\nIntroduction (20 pts)\nClear explanation of motivation for the project, choice of data, and analysis methods/workflow.\nRationale for the project, analysis/workflow, or choice of data is present but unclear.\nRationale is unstated.\n\n\nDatasets and Wrangling (30 pts)\nMultiple datasets used with different data types, data is properly tidied, reproducible code for tidying\nOne of the previous criteria is missing.\nSeveral criteria not met: insufficient datasets and types, incorrect tidying, non-reproducible code\n\n\nExploratory Data Analysis (30 pts)\nAppropriate summary statistics and visualization of distributions/covariance, hypotheses, and treatment of missing values/outliers, code reproducible\nEDA completed but some of summary statistics, visualizations, hypotheses, and missing data treatment not appropriate\nEDA substantially inappropriate or has several aspects missing\n\n\nData Display (20 pts)\nIncludes appropriate, well-labeled, accurate displays (graphs and tables) of the data.\nIncludes appropriate, accurate displays of the data.\nIncludes appropriate but no accurate displays of the data.\n\n\nStatistical Model (5 pts)\nstatistical test(s) was used for the data and interpretation was clear.\nThe appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.\nThe incorrect statistical test was used an/or not justified for the data as presented.\n\n\nConclusion (20 pts)\nConclusion includes a clear description of results consistent with the EDA and statistical modeling and discusses limitations of analysis and how to go further.\nConclusion describes results, limitations, and potential future steps but some descriptions inappropriate or unclear\nDescription of results, limitations, and future steps missing and/or unclear\n\n\nOverall Presentation (20 pts)\nAttractive, well-organized, well-written presentation\nPresentation has two of the three qualities: attractive, well-organized, well-written.\nPresentation is not attractive, organized, or written. There are numerous errors throughout.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "text": "Overall Grading Rubric\n\n\n\n\n\n\n\n\n\nDomain\nAccomplished (100%)\nProficient (80%)\nNeeds Improvement (60%)\n\n\n\n\nProposal (20 pts)\nMotivation explained well, data science workflow clearly present, datasets and proposed analysis appropriate\nDescription of motivation, workflow, datasets, and analysis present but a few are not appropriate or unclear\nSeveral of motivation, workflow, datasets, and analysis are missing or inappropriate\n\n\nAbstract (5 pts)\nAbstract is less than 300 words, free of grammatical errors, summarizes the project analysis, conclusions, and implications\nNA\nNA\n\n\nIntroduction (20 pts)\nClear explanation of motivation for the project, choice of data, and analysis methods/workflow.\nRationale for the project, analysis/workflow, or choice of data is present but unclear.\nRationale is unstated.\n\n\nDatasets and Wrangling (30 pts)\nMultiple datasets used with different data types, data is properly tidied, reproducible code for tidying\nOne of the previous criteria is missing.\nSeveral criteria not met: insufficient datasets and types, incorrect tidying, non-reproducible code\n\n\nExploratory Data Analysis (30 pts)\nAppropriate summary statistics and visualization of distributions/covariance, hypotheses, and treatment of missing values/outliers, code reproducible\nEDA completed but some of summary statistics, visualizations, hypotheses, and missing data treatment not appropriate\nEDA substantially inappropriate or has several aspects missing\n\n\nData Display (20 pts)\nIncludes appropriate, well-labeled, accurate displays (graphs and tables) of the data.\nIncludes appropriate, accurate displays of the data.\nIncludes appropriate but no accurate displays of the data.\n\n\nStatistical Model (5 pts)\nstatistical test(s) was used for the data and interpretation was clear.\nThe appropriate statistical test(s) was used but interpretation was not fully clear or well articulated.\nThe incorrect statistical test was used an/or not justified for the data as presented.\n\n\nConclusion (20 pts)\nConclusion includes a clear description of results consistent with the EDA and statistical modeling and discusses limitations of analysis and how to go further.\nConclusion describes results, limitations, and potential future steps but some descriptions inappropriate or unclear\nDescription of results, limitations, and future steps missing and/or unclear\n\n\nOverall Presentation (20 pts)\nAttractive, well-organized, well-written presentation\nPresentation has two of the three qualities: attractive, well-organized, well-written.\nPresentation is not attractive, organized, or written. There are numerous errors throughout."
   },
   {
     "objectID": "assignments/tidygit/tidycreate.html",
@@ -328,66 +249,42 @@
     "href": "modules/module11.html",
     "title": "Module 11 - Tidy Text and NLP",
     "section": "",
-    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nAdditional Resources:\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
-    "crumbs": [
-      "Topics",
-      "11 - Tidy Text and NLP"
-    ]
+    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nAdditional Resources:\n\n\nVideos\n\nVideo Intro to Sentiment Analysis"
   },
   {
     "objectID": "modules/module8.html",
     "href": "modules/module8.html",
     "title": "Module 8 - Web Scraping and APIs",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
-    "crumbs": [
-      "Topics",
-      "8 - Web Scraping and APIs"
-    ]
+    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower"
   },
   {
     "objectID": "modules/module10.html",
     "href": "modules/module10.html",
     "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
-    "crumbs": [
-      "Topics",
-      "10 - GIT and Collaboration"
-    ]
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial"
   },
   {
     "objectID": "modules/module2.html",
     "href": "modules/module2.html",
     "title": "Module 2 - Data Vizualization and Basic Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2",
-    "crumbs": [
-      "Topics",
-      "2 - Visualizing Data"
-    ]
+    "text": "Learning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n*A Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\nThis paper explains the concepts and thinking behind ggplot2.\n*ggplot2 website. This is another excellent source of resources and information on ggplot2"
   },
   {
     "objectID": "modules/module7.html",
     "href": "modules/module7.html",
     "title": "Module 7 - Working with Databases and SQL",
     "section": "",
-    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 19-21\nSoftware Carpentry SQL Tutorial\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nStanford Online SQL Course\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\n\n\n\nVideos\nSoftware Carpentry SQLite Intro Playlist",
-    "crumbs": [
-      "Topics",
-      "7 - Working with Databases and SQL"
-    ]
+    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 19-21\nSoftware Carpentry SQL Tutorial\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nStanford Online SQL Course\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\n\n\n\nVideos\nSoftware Carpentry SQLite Intro Playlist"
   },
   {
     "objectID": "modules/module1.html",
     "href": "modules/module1.html",
     "title": "Module 1 - Introduction to R and the Data Science Workflow",
     "section": "",
-    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nHadley Wickham Introduces the Tidyverse",
-    "crumbs": [
-      "Topics",
-      "1 - Data Science Workflow and Toolkit"
-    ]
+    "text": "Learning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\nQuarto tutorial\nHappy Git and GitHub for the R User: Let’s Git Started, 1. Why Git? Why GitHub?\n\n\n\nVideos\nHadley Wickham Introduces the Tidyverse"
   },
   {
     "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
@@ -401,32 +298,20 @@
     "href": "course/software.html",
     "title": "Software",
     "section": "",
-    "text": "R and RStudio\n\nWe will make use of R, an open source statistics program and language. Be sure to install R and RStudio on your own computers within the first few days of the class.\n\nR - download for Windows, Mac, or Linux.\nRStudio - Download Windows, Mac, or Linux versions from here\n\nIf using Windows, you also need to download RTools.\n\n\nLaTeX\n\nLaTeX is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using &lt;TAG&gt;&lt;/TAG&gt; syntax, LaTeX uses \\TAG{} format. We will primarily use Markdown, and its extension R Markdown for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for Windows (MiKTeX) and Mac (BasicTeX). Alternatively, the tinytex R package provides an easier way of installing LaTeX directly from within R:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()\n\n\n\nSource Control\nAll course materials will be made available on Github which provides an implementation of the git open source version control system. RStudio supports git directly, but I recommend downloading Sourcetree. This is a free desktop client that provides an easier interface for working with Github. You will also need to create an account on Github.\nFor more information, Jenny Bryan’s Happy Git and Github for the useR is a free online book covering the important features of source control for R users.\n\n\nR Packages\n\nOnce everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):\n\ninstall.packages(c('openintro','devtools','tidyverse', 'ggplot2',\n                   'psych','reshape2','knitr','markdown','shiny','R.rsp',\n                   'fivethirtyeight'))",
-    "crumbs": [
-      "Course information",
-      "Software"
-    ]
+    "text": "R and RStudio\n\nWe will make use of R, an open source statistics program and language. Be sure to install R and RStudio on your own computers within the first few days of the class.\n\nR - download for Windows, Mac, or Linux.\nRStudio - Download Windows, Mac, or Linux versions from here\n\nIf using Windows, you also need to download RTools.\n\n\nLaTeX\n\nLaTeX is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using &lt;TAG&gt;&lt;/TAG&gt; syntax, LaTeX uses \\TAG{} format. We will primarily use Markdown, and its extension R Markdown for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for Windows (MiKTeX) and Mac (BasicTeX). Alternatively, the tinytex R package provides an easier way of installing LaTeX directly from within R:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()\n\n\n\nSource Control\nAll course materials will be made available on Github which provides an implementation of the git open source version control system. RStudio supports git directly, but I recommend downloading Sourcetree. This is a free desktop client that provides an easier interface for working with Github. You will also need to create an account on Github.\nFor more information, Jenny Bryan’s Happy Git and Github for the useR is a free online book covering the important features of source control for R users.\n\n\nR Packages\n\nOnce everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):\n\ninstall.packages(c('openintro','devtools','tidyverse', 'ggplot2',\n                   'psych','reshape2','knitr','markdown','shiny','R.rsp',\n                   'fivethirtyeight'))"
   },
   {
     "objectID": "course/textbooks.html",
     "href": "course/textbooks.html",
     "title": "Textbooks",
     "section": "",
-    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.",
-    "crumbs": [
-      "Course information",
-      "Textbooks"
-    ]
+    "text": "Required\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\n\nThis is an open source textbook that can be freely read online at r4ds.hadley.nz/ but can be purchased from Amazon. The textbook was written in quarto and the source code can be found on github. This is the primary textbook for this course and the one that we will follow most closely and comprehensively.\n\n\nJennifer Bryan. Happy Git and GitHub for the R User.\n\nThis is an open source textbook that can be freely read online at happygitwithr.com/. This short online textbook introduces Git and GitHub to data scientists and statisticians and illustrates how to integrate them with the R ecosystem/toolkit.\n\n\nJulia Silge and David Robinson. (2017). Text Mining with R. O’Reilly\n\nThis is an open source textbook that can be freely read online at www.tidytextmining.com/ but can be purchased from Amazon.\n\n\n\nRecommended\nWickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group.\n\nMost of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon."
   },
   {
     "objectID": "course/overview.html",
     "href": "course/overview.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "In this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, and working with large datasets in a cloud computing environment.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
+    "text": "In this course students will learn about core concepts of contemporary data collection and its management. Topics will include an introduction to programming and collaboration in statistical software packages, data visualization techniques, data wrangling and transformation, exploratory data analysis and data quality checks, data acquisition from a variety of sources including databases and the web, tools for working with textual and graph data, and working with large datasets in a cloud computing environment."
   }
 ]
