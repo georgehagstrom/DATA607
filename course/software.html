@@ -393,15 +393,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>If using Windows, you also need to download <a href="http://cran.r-project.org/bin/windows/Rtools/">RTools</a>.</p>
 </section>
-<section id="latex" class="level3">
-<h3 class="anchored" data-anchor-id="latex">LaTeX</h3>
-<p><img src="../images/hex/tinytex.png" alt="RStudio" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></p>
-<p><a href="https://www.latex-project.org/">LaTeX</a> is a typesetting language for preparing documents. Documents are written in plain text files. Formatting the document is done using specific markup. If you have used HTML, the framework is similar however instead of using <code>&lt;TAG&gt;&lt;/TAG&gt;</code> syntax, LaTeX uses <code>\TAG{}</code> format. We will primarily use <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, and its extension <a href="https://rmarkdown.rstudio.com/">R Markdown</a> for preparing documents in this class. However, when preparing PDF documents, the Markdown will first be converted to LaTeX before creating the PDF file. As such, a LaTeX converter is necessary. There are LaTeX installers for <a href="http://miktex.org/">Windows (MiKTeX)</a> and <a href="http://www.tug.org/mactex/morepackages.html">Mac (BasicTeX)</a>. Alternatively, the <a href="https://yihui.name/tinytex/"><code>tinytex</code></a> R package provides an easier way of installing LaTeX directly from within R:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="source-control" class="level3">
 <h3 class="anchored" data-anchor-id="source-control">Source Control</h3>
 <p>All course materials will be made available on <a href="https://github.com/georgehagstrom/DATA607/">Github</a> which provides an implementation of the <a href="https://git-scm.com/">git</a> open source version control system. RStudio supports git directly, but I recommend downloading <a href="https://www.sourcetreeapp.com/">Sourcetree</a>. This is a free desktop client that provides an easier interface for working with Github. You will also need to <a href="https://github.com/">create an account on Github</a>.</p>
@@ -412,9 +403,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="../images/hex/tidyverse.png" alt="RStudio" align="right" style="height:175px; padding-left:10px; padding-right:10px;"></p>
 <p>Once everything is installed, execute the following command in RStudio to install the packages we will use for this class (you can copy-and-paste):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'openintro'</span>,<span class="st">'devtools'</span>,<span class="st">'tidyverse'</span>, <span class="st">'ggplot2'</span>,</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'psych'</span>,<span class="st">'reshape2'</span>,<span class="st">'knitr'</span>,<span class="st">'markdown'</span>,<span class="st">'shiny'</span>,<span class="st">'R.rsp'</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'fivethirtyeight'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'openintro'</span>,<span class="st">'devtools'</span>,<span class="st">'tidyverse'</span>, <span class="st">'ggplot2'</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'psych'</span>,<span class="st">'reshape2'</span>,<span class="st">'knitr'</span>,<span class="st">'markdown'</span>,<span class="st">'shiny'</span>,<span class="st">'R.rsp'</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'fivethirtyeight'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
