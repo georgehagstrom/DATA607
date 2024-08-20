@@ -1,0 +1,58 @@
+---
+title: "Lab 9: Webscraping and APIs"
+format: html
+editor: source
+---
+
+# Overview
+
+This is a two part assignment. In the first part you will use the webscraping package `rvest` along with functions and iteration to download data from the internet on political contributions. In the second part, you will use `httr` to interact with the New York Times website apis.
+
+# Webscraping Open Secrets
+
+
+In this assignment we will scrape and work with data foreign connected PACs that donate to US political campaigns. In the United States, only American citizens and green card holders can contribute to federal elections, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees.
+
+First, we will get data foreign connected PAC contributions in the 2022 election cycle.
+Then, you will use a similar approach to get data such contributions from previous years so that we can examine trends over time.
+
+In order to complete this assignment you will need a Chrome browser with the [Selector Gadget extension](http://selectorgadget.com/) installed.
+
+In addition to `tidyverse`, you will need to install and load the packages `robotstxt`,
+`rvest`, and `scales`.
+
+**Problem 1:** Check that open secrets allows you to webscrape by running the `paths_allowed`
+function on the url `https://www.opensecrets.org`. Then write a function called 
+`scrape_pac()` that scrapes information from the Open Secrets webpage for foreign connected
+PAC contributions in a given year:
+
+* This function should take the url of the webpage as its only input and should output a data frame
+* It should rename scraped variables using the "snake_case" naming convention
+* clean up the `Country of Origin/Parent Company` variable with `str_squish()`.
+*  add a new column to the data frame for `year`. We will want this information when we ultimately have data from all years, so this is a good time to keep track of it. Our function doesn't take a year argument, but the year is embedded in the URL, so we can extract it out of there, and add it as a new column. Use the `str_sub()` function to extract the last 4 characters from the URL. You will probably want to look at the help for this function to figure out how to specify "last 4 characters".
+
+Define the URLs for 2022, 2020, and 2000 contributions.
+Then, test your function using these URLs as inputs.
+Does the function seem to do what you expected it to do?
+
+**Problem 2:** Construct a vector called `urls` that contains the URLs for each webpage that contains information on foreign-connected PAC contributions for a given year. Map the `scrape_pac()` function over `urls` in a way that will result in a data frame called `pac_all`.
+Write the data frame to a csv file called `pac-all.csv` in the `data` folder.
+
+**Problem 3:**  Clean your downloaded data file for visualization. 
+
+* First report the number of observations and variables that your scraped datasset contains.
+* Separate the `country_parent` into two such that country and parent company appear in different columns for country-level analysis.
+* Convert contribution amounts in `total`, `dems`, and `repubs` from character strings to numeric values.
+* Print out the top 10 rows of your data frame after completing these steps.
+  
+**Problem 4:**  Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years.
+    Once you have made the plot, write a brief interpretation of what the graph reveals.
+    Few hints to help you out:
+
+**Problem 5:** Create a line plot of contributions from UK companies to each of the Democratic 
+and Republican parties over time, with the lines colored according to party to differentiate them.
+
+# Using the NY Times API
+
+**Problem 6:** The New York Times web site provides a rich set of APIs, as described [here](https://developer.nytimes.com/apis) . You’ll need to start by signing up for an API key.
+Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it into an R DataFrame.
