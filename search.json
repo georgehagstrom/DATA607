@@ -125,7 +125,11 @@
     "href": "assignments/tidygit.html",
     "title": "GitHub/TidyVerse Create and Extend",
     "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcessing Strings and Text  (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)"
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)",
+    "crumbs": [
+      "Assignments",
+      "GitHub/Tidyverse Recipes"
+    ]
   },
   {
     "objectID": "assignments/labs/Lab5.html",
@@ -165,9 +169,9 @@
   {
     "objectID": "assignments/tidygit/tidycreate.html",
     "href": "assignments/tidygit/tidycreate.html",
-    "title": "DATA 607 Fall 2024",
+    "title": "Tidyverse Create",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Create an Example Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset.\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. .\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/project.html",
@@ -270,9 +274,9 @@
   {
     "objectID": "assignments/tidygit/tidyextend.html",
     "href": "assignments/tidygit/tidyextend.html",
-    "title": "DATA 607 Fall 2024",
+    "title": "Tidyverse Extend",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Extend an Existing Example. Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name on brightspace.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/labs/Lab2.html",
