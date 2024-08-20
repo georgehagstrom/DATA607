@@ -156,43 +156,18 @@
     "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood, \n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/DATA607Lab1/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
   },
   {
-    "objectID": "assignments/tidygit/tidyextend.html",
-    "href": "assignments/tidygit/tidyextend.html",
+    "objectID": "assignments/labs/Lab2.html",
+    "href": "assignments/labs/Lab2.html",
+    "title": "Lab 2: Data Tidying",
+    "section": "",
+    "text": "Overview\nConsider the following image which contains some data:\n\n\n\nPlaneData\n\n\nThe chart describes arrival delays for two different airlines across several destinations.\n\n\nProblems\nProblem 1: Create a csv file that contains all of the information in the above dataset. You are encouraged to use a “wide” structure similar to how the information appears above, so that you can practice tidying and transformations as described below.\nProblem 2: Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. In addition to providing code, please describe your data cleanup and tidying work.\nProblem 3: Perform analysis to compare the arrival delays for the two airlines. What are your conclusions?"
+  },
+  {
+    "objectID": "assignments/tidygit/tidycreate.html",
+    "href": "assignments/tidygit/tidycreate.html",
     "title": "DATA 607 Fall 2024",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
-  },
-  {
-    "objectID": "assignments/participation.html",
-    "href": "assignments/participation.html",
-    "title": "Participation",
-    "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
-    "crumbs": [
-      "Assignments",
-      "Participation"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/project.html",
@@ -261,11 +236,43 @@
     ]
   },
   {
-    "objectID": "assignments/tidygit/tidycreate.html",
-    "href": "assignments/tidygit/tidycreate.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Please read this post carefully.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
+    "crumbs": [
+      "Assignments",
+      "Participation"
+    ]
+  },
+  {
+    "objectID": "assignments/tidygit/tidyextend.html",
+    "href": "assignments/tidygit/tidyextend.html",
     "title": "DATA 607 Fall 2024",
     "section": "",
-    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/georgehagstrom/Fall2024TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Create an Example.  Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset. (25 points)\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "In this assignment, you’ll practice collaborating around a code project with GitHub.  You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository:  https://github.com/acatlin/SPRING2023TIDYVERSE\nFiveThirtyEight.com datasets.\nKaggle datasets. \nYour task here is to Extend an Existing Example.  Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code. (15 points)\nYou should clone the provided repository.  Once you have code to submit, you should make a pull request on the shared repository.  You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name in the submission link provided below.  This will let your instructor know that your work is ready to be peer-graded.\nYou should complete your submission on the schedule stated in the course syllabus."
   },
   {
     "objectID": "assignments/labs/Lab5.html",
