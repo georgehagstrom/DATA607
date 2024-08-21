@@ -26,7 +26,7 @@
     "href": "course/schedule.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Course Schedule\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\n\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\n\n\n\nSep 25\n06:45PM\nData Transformations\n\n\n\nOct 2\n06:45PM\nText and Strings\n\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\nDec 11\n06:45PM",
+    "text": "Course Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nVideo\nMain Deliverables\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\nSep 8 Lab 1\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\nSep 15 Lab 2\n\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\nSep 22 Lab 3\n\n\n\nSep 25\n06:45PM\nData Transformations\nSep 29 Lab 4\n\n\n\nOct 2\n06:45PM\nText and Strings\nOct 6 Lab 5\n\n\n\nOct 9\n06:45PM\nDatabases and SQL\nOct 13 Lab 6\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\nOct 20 Proj. Proposal\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\nOct 27 Lab 7\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\nNov 3 [TV Create](../assignments/tidygit/tidycreate\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\nNov 10 Lab 8\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\nNov 17 Lab 9\n\n\n\nNov 20\n06:45PM\nBig Data\nNov 24 TV Extend\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\nDec 8 Lab 10\n\n\n\nDec 11\n06:45PM\n\nDec 15 [Final Project](../assignments/project",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -95,7 +95,7 @@
     "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
     "crumbs": [
       "Topics",
-      "9 - Advanced R Programming"
+      "9 - Web Scraping and APIs"
     ]
   },
   {
@@ -381,7 +381,7 @@
     "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
     "crumbs": [
       "Topics",
-      "8 - Web Scraping and APIs"
+      "8 - Advanced R Programming"
     ]
   },
   {
