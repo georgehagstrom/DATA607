@@ -384,176 +384,176 @@
     "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
   },
   {
-    "objectID": "meetups/Meetup1.html#what-is-data-science",
-    "href": "meetups/Meetup1.html#what-is-data-science",
+    "objectID": "meetups/Meetup1/Meetup1.html#what-is-data-science",
+    "href": "meetups/Meetup1/Meetup1.html#what-is-data-science",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "What is Data Science?",
     "text": "What is Data Science?\n\nData science is a “discipline that allows you to transform raw data into understanding, insight, and knowledge”\n\n\nIs it just statistics with a clever brand name?"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow",
-    "href": "meetups/Meetup1.html#data-science-workflow",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from text"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-1",
-    "href": "meetups/Meetup1.html#data-science-workflow-1",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-1",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-1",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textLoad the data from files into software"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-2",
-    "href": "meetups/Meetup1.html#data-science-workflow-2",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-2",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-2",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTidy the data so it is stored in a consistent way"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-3",
-    "href": "meetups/Meetup1.html#data-science-workflow-3",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-3",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-3",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTransform the data to focus our analysis on observations of interest"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-4",
-    "href": "meetups/Meetup1.html#data-science-workflow-4",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-4",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-4",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textVisualize the data to find relationships, problems, and pose questions"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-5",
-    "href": "meetups/Meetup1.html#data-science-workflow-5",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-5",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-5",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textModel the data to answer questions precisely using statistics"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-6",
-    "href": "meetups/Meetup1.html#data-science-workflow-6",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-6",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-6",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textCommunicate to share results with others"
   },
   {
-    "objectID": "meetups/Meetup1.html#data-science-workflow-7",
-    "href": "meetups/Meetup1.html#data-science-workflow-7",
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-7",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-7",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Data Science Workflow",
     "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textThis class will focus on everything but modeling, i.e. the part of Data Science that isn’t statistics"
   },
   {
-    "objectID": "meetups/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
-    "href": "meetups/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "objectID": "meetups/Meetup1/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "href": "meetups/Meetup1/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Modeling can be small part of Data Science projects",
     "text": "Modeling can be small part of Data Science projects\nIt is said that 80% of time in data science projects is spent on data mining, cleaning, tidying, exploratory data analsys, etc\n\nFigure from ForbesPlease forgive the Pie Chart"
   },
   {
-    "objectID": "meetups/Meetup1.html#introcase-study",
-    "href": "meetups/Meetup1.html#introcase-study",
+    "objectID": "meetups/Meetup1/Meetup1.html#introcase-study",
+    "href": "meetups/Meetup1/Meetup1.html#introcase-study",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Intro/Case Study",
     "text": "Intro/Case Study\n\n\n\n\n\nTrait Correlations in Marine Bacteria\n\n\n\n\nData on how bacteria get their food in the ocean\nGetting data for this plot took months…..\nMany sources, data formats, quality issues, processing"
   },
   {
-    "objectID": "meetups/Meetup1.html#learning-objectives",
-    "href": "meetups/Meetup1.html#learning-objectives",
+    "objectID": "meetups/Meetup1/Meetup1.html#learning-objectives",
+    "href": "meetups/Meetup1/Meetup1.html#learning-objectives",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Learning objectives",
     "text": "Learning objectives\nBy the end of the course, you will have a foundation of skills in the Data Science Workflow\n\nFind data you need and do all steps to prep it for analysis\nBuild expertise in R and the tidyverse\nUse and understand relational databases and SQL\nCollaborate with Git and GitHub\nIntroduce you to distributed computing and other tools for large datasets\nImprove your programming ability"
   },
   {
-    "objectID": "meetups/Meetup1.html#vignette-electricity-and-co2",
-    "href": "meetups/Meetup1.html#vignette-electricity-and-co2",
+    "objectID": "meetups/Meetup1/Meetup1.html#vignette-electricity-and-co2",
+    "href": "meetups/Meetup1/Meetup1.html#vignette-electricity-and-co2",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Vignette: Electricity and CO2",
     "text": "Vignette: Electricity and CO2\n\nSources of Power, refs last slide"
   },
   {
-    "objectID": "meetups/Meetup1.html#electricity-generation-over-time",
-    "href": "meetups/Meetup1.html#electricity-generation-over-time",
+    "objectID": "meetups/Meetup1/Meetup1.html#electricity-generation-over-time",
+    "href": "meetups/Meetup1/Meetup1.html#electricity-generation-over-time",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Electricity Generation Over Time",
     "text": "Electricity Generation Over Time\n\nSource: Our World in Data"
   },
   {
-    "objectID": "meetups/Meetup1.html#carbon-intensity-of-electricity",
-    "href": "meetups/Meetup1.html#carbon-intensity-of-electricity",
+    "objectID": "meetups/Meetup1/Meetup1.html#carbon-intensity-of-electricity",
+    "href": "meetups/Meetup1/Meetup1.html#carbon-intensity-of-electricity",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Carbon Intensity of Electricity",
     "text": "Carbon Intensity of Electricity\n\nSource: Our World in Data"
   },
   {
-    "objectID": "meetups/Meetup1.html#controls-on-carbon-intensity",
-    "href": "meetups/Meetup1.html#controls-on-carbon-intensity",
+    "objectID": "meetups/Meetup1/Meetup1.html#controls-on-carbon-intensity",
+    "href": "meetups/Meetup1/Meetup1.html#controls-on-carbon-intensity",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Controls on Carbon Intensity",
     "text": "Controls on Carbon Intensity\n\nSource: Our World in Data"
   },
   {
-    "objectID": "meetups/Meetup1.html#link-to-the-vignette",
-    "href": "meetups/Meetup1.html#link-to-the-vignette",
+    "objectID": "meetups/Meetup1/Meetup1.html#link-to-the-vignette",
+    "href": "meetups/Meetup1/Meetup1.html#link-to-the-vignette",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Link to the Vignette",
     "text": "Link to the Vignette\nYou can download the vignette from my github by clicking here\nRemember to download the data if you want to render the file."
   },
   {
-    "objectID": "meetups/Meetup1.html#syllabus-and-course-site",
-    "href": "meetups/Meetup1.html#syllabus-and-course-site",
+    "objectID": "meetups/Meetup1/Meetup1.html#syllabus-and-course-site",
+    "href": "meetups/Meetup1/Meetup1.html#syllabus-and-course-site",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Syllabus and Course Site",
     "text": "Syllabus and Course Site\nFull Syllabus on the course website:\nhttps://georgehagstrom.github.io/DATA607/\nCourse website contains links to weekly reading and homework assignments, meetup videos, course schedule, and other course materials\nUse the Brightspace page to submit assignments, either in pdf format or a link to an html on some site I can access (ie github or rpubs)"
   },
   {
-    "objectID": "meetups/Meetup1.html#meetups",
-    "href": "meetups/Meetup1.html#meetups",
+    "objectID": "meetups/Meetup1/Meetup1.html#meetups",
+    "href": "meetups/Meetup1/Meetup1.html#meetups",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Meetups",
     "text": "Meetups\n6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can’t\nOffice Hours: On Zoom by appointment\nCommunication and collaboration: https://fall2024data607.slack.com"
   },
   {
-    "objectID": "meetups/Meetup1.html#assignments",
-    "href": "meetups/Meetup1.html#assignments",
+    "objectID": "meetups/Meetup1/Meetup1.html#assignments",
+    "href": "meetups/Meetup1/Meetup1.html#assignments",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Assignments",
     "text": "Assignments\n\nLabs (50%): Weekly Programming assignments\nTidyVerse Recipes (10%): Collaborative intro to Git\nProject (25%)\n\nAssemble and explore a data set of your choosing\nExplore your interests, build your portfolio!\n\nData Science in Context Presentation (5%)\n\nOne 5 minute presentation, sign up for your presentation slot asap!\n\nMeetup Reflections and Introduction (10%)"
   },
   {
-    "objectID": "meetups/Meetup1.html#schedule",
-    "href": "meetups/Meetup1.html#schedule",
+    "objectID": "meetups/Meetup1/Meetup1.html#schedule",
+    "href": "meetups/Meetup1/Meetup1.html#schedule",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Schedule",
     "text": "Schedule"
   },
   {
-    "objectID": "meetups/Meetup1.html#textbooks",
-    "href": "meetups/Meetup1.html#textbooks",
+    "objectID": "meetups/Meetup1/Meetup1.html#textbooks",
+    "href": "meetups/Meetup1/Meetup1.html#textbooks",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Textbooks",
     "text": "Textbooks\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\nJennifer Bryan. Happy Git and GitHub for the R User.\nJulia Silge and David Robinson (2017). Text Mining with R. O’Reilly\n\nRecommended: Wickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group."
   },
   {
-    "objectID": "meetups/Meetup1.html#tidyverse-opinionated-ecosystem",
-    "href": "meetups/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "objectID": "meetups/Meetup1/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "href": "meetups/Meetup1/Meetup1.html#tidyverse-opinionated-ecosystem",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Tidyverse: Opinionated Ecosystem",
     "text": "Tidyverse: Opinionated Ecosystem\n\n\n\n\n\nCollection of compatible packages\nShared philosophy, common grammar\nStrong Core, Many Extensions\nAdvantages and Disadvantages"
   },
   {
-    "objectID": "meetups/Meetup1.html#what-to-do-this-week",
-    "href": "meetups/Meetup1.html#what-to-do-this-week",
+    "objectID": "meetups/Meetup1/Meetup1.html#what-to-do-this-week",
+    "href": "meetups/Meetup1/Meetup1.html#what-to-do-this-week",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "What to do this week?",
     "text": "What to do this week?\n\nReadings:\n\nIntro and Chapter 28 of R4DS\nSections 1-15 of Happy Git\nQuarto Tutorial\nAppendix on R Help Files\n\nGet software installed and configured:\n\n\nR, RStudio, git, latex\n\n\nWrite a post introducing yourself on Brightspace Discussions\nSign up for your Data Science in Context Presentation"
   },
   {
-    "objectID": "meetups/Meetup1.html#image-references",
-    "href": "meetups/Meetup1.html#image-references",
+    "objectID": "meetups/Meetup1/Meetup1.html#image-references",
+    "href": "meetups/Meetup1/Meetup1.html#image-references",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Image References",
     "text": "Image References\n\nCoal: By Morgre - Own work, CC BY-SA 3.0\nGas/Methane: By Georg Slickers - Self-photographed, CC BY-SA 3.0\nHydro: By Source file: Le Grand PortageDerivative work: Rehman - File:Three_Gorges_Dam,_Yangtze_River,_China.jpg, CC BY 2.0\nSolar: By Parabel GmbH - Own work, CC BY-SA 3.0\nWind: By Erik Wilde from Berkeley, CA, USA - harvesting wind, CC BY-SA 2.0\n\n\n\n\n\nDATA 607"
