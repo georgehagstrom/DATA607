@@ -26,7 +26,7 @@
     "href": "course/schedule.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nVideo\nMain Deliverables\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\nSep 8 Lab 1\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\n\nSep 15 Lab 2\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\n\nSep 22 Lab 3\n\n\nSep 25\n06:45PM\nData Transformations\n\nSep 29 Lab 4\n\n\nOct 2\n06:45PM\nText and Strings\n\nOct 6 Lab 5\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\nOct 13 Lab 6\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\nOct 20 Proj. Proposal\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\nOct 27 Lab 7\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\nNov 3 TV Create\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\nNov 10 Lab 8\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\nNov 17 Lab 9\n\n\nNov 20\n06:45PM\nBig Data\n\nNov 24 TV Extend\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\nDec 8 Lab 10\n\n\nDec 11\n06:45PM\n\n\nDec 15 Final Project",
+    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n../meetups/Meetup1.qmd\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\n\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\n\n\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\n\n\n\n\nSep 25\n06:45PM\nData Transformations\n\n\n\n\nOct 2\n06:45PM\nText and Strings\n\n\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -37,7 +37,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nVideo\nMain Deliverables\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\nSep 8 Lab 1\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\n\nSep 15 Lab 2\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\n\nSep 22 Lab 3\n\n\nSep 25\n06:45PM\nData Transformations\n\nSep 29 Lab 4\n\n\nOct 2\n06:45PM\nText and Strings\n\nOct 6 Lab 5\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\nOct 13 Lab 6\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\nOct 20 Proj. Proposal\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\nOct 27 Lab 7\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\nNov 3 TV Create\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\nNov 10 Lab 8\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\nNov 17 Lab 9\n\n\nNov 20\n06:45PM\nBig Data\n\nNov 24 TV Extend\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\nDec 8 Lab 10\n\n\nDec 11\n06:45PM\n\n\nDec 15 Final Project",
+    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\n../meetups/Meetup1.qmd\n\n\n\nSep 4\n06:45PM\nVisualizing Data\n\n\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\n\n\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\n\n\n\n\nSep 25\n06:45PM\nData Transformations\n\n\n\n\nOct 2\n06:45PM\nText and Strings\n\n\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -77,59 +77,83 @@
     ]
   },
   {
-    "objectID": "modules/module3.html",
-    "href": "modules/module3.html",
-    "title": "Module 3 - Data Tidying",
+    "objectID": "modules/module1files/ElectricityVignette.html",
+    "href": "modules/module1files/ElectricityVignette.html",
+    "title": "Carbon Intensity and Power Generation",
     "section": "",
-    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 5-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
+    "text": "In this report we will look at power generation in several different countries, visualize how the share of electricity from different sources has changed over time, and look at how that associates with the carbon emissions from electricity generation.\n\n\nWe will use the tidyverse, lubridate, scales, patchwork, and ggthemes, for data wrangling and visualization, and the DT package for interactive display of tabular output.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(patchwork)\nlibrary(ggthemes)\nlibrary(DT)\n\n\nknitr::opts_chunk$set(warning=FALSE, message=FALSE)\n\n\n\n\nThe data we are using comes from the website Our World in Data. Specifically, we are using a dataset compiled there on energy production and use around the world. The dataset can be found at Our World in Data’s github page, which contains both the dataset and a codebook describing the meaning of all the variables. We used owid-energy-data.csv for this analysis.\n\nenergy_data = read_csv(\"owid-energy-data.csv\")"
+  },
+  {
+    "objectID": "modules/module1files/ElectricityVignette.html#introduction",
+    "href": "modules/module1files/ElectricityVignette.html#introduction",
+    "title": "Carbon Intensity and Power Generation",
+    "section": "",
+    "text": "In this report we will look at power generation in several different countries, visualize how the share of electricity from different sources has changed over time, and look at how that associates with the carbon emissions from electricity generation.\n\n\nWe will use the tidyverse, lubridate, scales, patchwork, and ggthemes, for data wrangling and visualization, and the DT package for interactive display of tabular output.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(patchwork)\nlibrary(ggthemes)\nlibrary(DT)\n\n\nknitr::opts_chunk$set(warning=FALSE, message=FALSE)\n\n\n\n\nThe data we are using comes from the website Our World in Data. Specifically, we are using a dataset compiled there on energy production and use around the world. The dataset can be found at Our World in Data’s github page, which contains both the dataset and a codebook describing the meaning of all the variables. We used owid-energy-data.csv for this analysis.\n\nenergy_data = read_csv(\"owid-energy-data.csv\")"
+  },
+  {
+    "objectID": "modules/module1files/ElectricityVignette.html#energy-production-over-time",
+    "href": "modules/module1files/ElectricityVignette.html#energy-production-over-time",
+    "title": "Carbon Intensity and Power Generation",
+    "section": "Energy Production over Time",
+    "text": "Energy Production over Time\nWe are going to display a visualization which shows how the energy generation in several different countries, specifically China, France, Germany, Sweden, and the United States, changed over time. It is possible to change the countries being visualized by changing the countries listed in the countries_included variable below replacing the iso_code labels with those corresponding to the countries of interest to you.\n\ncountries_included = c(\"USA\",\"DEU\",\"FRA\",\"SWE\",\"CHN\")\n\nWe picked a small subset of the variables available in this dataset to visualize, picking the ones that are most important for overall power generation and have greatest influence on carbon emissions, namely coal, natural gas (methane), hydro, nuclear, solar, and wind. These choices can similarly be changed by finding where they occur in the select and pivot_longer functions.\nSee the Appendix for a list of the countries and variables present in the data.\n\nplot1 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         year,\n         hydro_share_elec,\n         wind_share_elec,\n         solar_share_elec,\n         coal_share_elec,\n         gas_share_elec,\n         nuclear_share_elec) |&gt;\n  pivot_longer(\n    cols = c(\"hydro_share_elec\",\n             \"wind_share_elec\",\n             \"solar_share_elec\",\n             \"coal_share_elec\",\n             \"gas_share_elec\",\n             \"nuclear_share_elec\"),\n    names_to = \"GeneratorType\",\n    values_to = \"Electricity_Per_Capita\"\n  ) |&gt; \n  ggplot(aes(x=year,y=Electricity_Per_Capita,color=country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~ GeneratorType, scales = \"free\") +\n theme_classic() +\n  ylab(\"Share of Electricity from Different Sources\") +\n  xlab(\"Year\") +\n  labs(title = \"Change in Electricity Generation Share over time\",\n       color = \"Country\")\n\nplot1 \n\n\n\n\n\n\n\n\n\nImpact of Power Sources on Carbon Intensity of Electricity Production\nMany countries have set ambitious targets for reducing their carbon emissions. One way to visualize carbon emissions is to look at how much carbon dioxide is emitted for each unit of electrical energy generated. This measure called the carbon intensity of electricity generation. We will visualize carbon intensity in two ways: looking at how carbon intensity has changed over time in the selected countries, and also looking across the entire dataset and seeing how carbon intensity relates to coal power and the sum of all low carbon forms of power generation (nuclear, hydro, solar, wind).\n\nplot2 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         country,\n         year,\n         low_carbon_share_elec,\n         coal_share_elec,\n         carbon_intensity_elec\n  ) |&gt;\n  ggplot(aes(x=low_carbon_share_elec,y=coal_share_elec,color=carbon_intensity_elec,shape=country)) +\n  scale_color_viridis_c() +\n  geom_point(na.rm = TRUE) +\n  theme_classic() +\n  labs(title = \"Controls on Carbon Intensity\",\n       color = \"Carbon Intensity\",\n       x = \"Low Carbon Electricity Share\",\n       y = \"Coal Electricity Share\")\n  \nplot3 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         country,\n         year,\n         carbon_intensity_elec\n  ) |&gt;\n  ggplot(aes(x=year,y=carbon_intensity_elec,color=country)) +\n  geom_smooth(show.legend = FALSE, na.rm = TRUE, se = FALSE) +\n  geom_point(show.legend = FALSE, na.rm = TRUE) +\n  theme_classic() +\n  ylab(\"Carbon Intensity of Electricity Production\") +\n  xlab(\"Year\") +\n  labs(title = \"Carbon Intensity over Time\",\n       x = \"Year\",\n       y = \"Carbon Intensity of Electricity (CO2e / kWhr)\")\n\nplot3 + plot2;\n\n\n\n\n\n\n\n\n\n\nPutting it Together\nWe can create the original compound plot using the following command (made possible by the patchwork package):\n\nplot1 / (plot3 + plot2)\n\n\n\n\n\n\n\n\n\n\nReferences\n\nHannah Ritchie, Pablo Rosado and Max Roser (2023) - “Energy” Published online at OurWorldInData.org. Retrieved from: ‘https://ourworldindata.org/energy’ [Online Resource], underlying data:\n\n\nStatistical Review of World Energy, Energy Institute\n\n\nThis analysis was inspired by and adapted from the vignettes in the unvotes package vignette and the Data Science in a Box Course\n\n\n\nAppendix (#appendix)\nBelow is a list of countries in the dataset:"
+  },
+  {
+    "objectID": "modules/module2.html",
+    "href": "modules/module2.html",
+    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "section": "",
+    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
     "crumbs": [
       "Topics",
-      "3 - Data Tidying"
+      "2 - Visualizing Data"
     ]
   },
   {
-    "objectID": "modules/module6.html",
-    "href": "modules/module6.html",
-    "title": "Module 6 - Processing Strings and Text",
+    "objectID": "modules/module10.html",
+    "href": "modules/module10.html",
+    "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\nRegex Buddy\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
     "crumbs": [
       "Topics",
-      "6 - Processing Strings and Text"
+      "10 - GIT and Collaboration"
     ]
   },
   {
-    "objectID": "modules/module9.html",
-    "href": "modules/module9.html",
-    "title": "Module 9 - Web Scraping and APIs",
+    "objectID": "modules/module8.html",
+    "href": "modules/module8.html",
+    "title": "Module 8 - Advanced R Programming",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
+    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
     "crumbs": [
       "Topics",
-      "9 - Web Scraping and APIs"
+      "8 - Advanced R Programming"
     ]
   },
   {
-    "objectID": "modules/module12.html",
-    "href": "modules/module12.html",
-    "title": "Module 12 - Graphs and Graph Data",
+    "objectID": "modules/module11.html",
+    "href": "modules/module11.html",
+    "title": "Module 11 - Tidy Text and NLP",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nMath is Fun on Graphs",
+    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
     "crumbs": [
       "Topics",
-      "12 - Graphs and Graph Data"
+      "11 - Tidy Text and NLP"
     ]
   },
   {
-    "objectID": "modules/module5.html",
-    "href": "modules/module5.html",
-    "title": "Module 5 - Data Transformations",
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Attribution-ShareAlike 4.0 International",
     "section": "",
-    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
-    "crumbs": [
-      "Topics",
-      "5 - Data Transformations"
-    ]
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
   },
   {
     "objectID": "assignments/tidygit.html",
@@ -360,61 +384,233 @@
     "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+    "objectID": "meetups/Meetup1.html#what-is-data-science",
+    "href": "meetups/Meetup1.html#what-is-data-science",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "What is Data Science?",
+    "text": "What is Data Science?\n\nData science is a “discipline that allows you to transform raw data into understanding, insight, and knowledge”\n\n\nIs it just statistics with a clever brand name?"
   },
   {
-    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+    "objectID": "meetups/Meetup1.html#data-science-workflow",
+    "href": "meetups/Meetup1.html#data-science-workflow",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from text"
   },
   {
-    "objectID": "modules/module11.html",
-    "href": "modules/module11.html",
-    "title": "Module 11 - Tidy Text and NLP",
+    "objectID": "meetups/Meetup1.html#data-science-workflow-1",
+    "href": "meetups/Meetup1.html#data-science-workflow-1",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textLoad the data from files into software"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-2",
+    "href": "meetups/Meetup1.html#data-science-workflow-2",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTidy the data so it is stored in a consistent way"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-3",
+    "href": "meetups/Meetup1.html#data-science-workflow-3",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTransform the data to focus our analysis on observations of interest"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-4",
+    "href": "meetups/Meetup1.html#data-science-workflow-4",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textVisualize the data to find relationships, problems, and pose questions"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-5",
+    "href": "meetups/Meetup1.html#data-science-workflow-5",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textModel the data to answer questions precisely using statistics"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-6",
+    "href": "meetups/Meetup1.html#data-science-workflow-6",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textCommunicate to share results with others"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#data-science-workflow-7",
+    "href": "meetups/Meetup1.html#data-science-workflow-7",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textThis class will focus on everything but modeling, i.e. the part of Data Science that isn’t statistics"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "href": "meetups/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Modeling can be small part of Data Science projects",
+    "text": "Modeling can be small part of Data Science projects\nIt is said that 80% of time in data science projects is spent on data mining, cleaning, tidying, exploratory data analsys, etc\n\nFigure from ForbesPlease forgive the Pie Chart"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#introcase-study",
+    "href": "meetups/Meetup1.html#introcase-study",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Intro/Case Study",
+    "text": "Intro/Case Study\n\n\n\n\n\nTrait Correlations in Marine Bacteria\n\n\n\n\nData on how bacteria get their food in the ocean\nGetting data for this plot took months…..\nMany sources, data formats, quality issues, processing"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#learning-objectives",
+    "href": "meetups/Meetup1.html#learning-objectives",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the course, you will have a foundation of skills in the Data Science Workflow\n\nFind data you need and do all steps to prep it for analysis\nBuild expertise in R and the tidyverse\nUse and understand relational databases and SQL\nCollaborate with Git and GitHub\nIntroduce you to distributed computing and other tools for large datasets\nImprove your programming ability"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#vignette-electricity-and-co2",
+    "href": "meetups/Meetup1.html#vignette-electricity-and-co2",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Vignette: Electricity and CO2",
+    "text": "Vignette: Electricity and CO2\n\nSources of Power, refs last slide"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#electricity-generation-over-time",
+    "href": "meetups/Meetup1.html#electricity-generation-over-time",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Electricity Generation Over Time",
+    "text": "Electricity Generation Over Time\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#carbon-intensity-of-electricity",
+    "href": "meetups/Meetup1.html#carbon-intensity-of-electricity",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Carbon Intensity of Electricity",
+    "text": "Carbon Intensity of Electricity\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#controls-on-carbon-intensity",
+    "href": "meetups/Meetup1.html#controls-on-carbon-intensity",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Controls on Carbon Intensity",
+    "text": "Controls on Carbon Intensity\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#link-to-the-vignette",
+    "href": "meetups/Meetup1.html#link-to-the-vignette",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Link to the Vignette",
+    "text": "Link to the Vignette\nYou can download the vignette from my github by clicking here\nRemember to download the data if you want to render the file."
+  },
+  {
+    "objectID": "meetups/Meetup1.html#syllabus-and-course-site",
+    "href": "meetups/Meetup1.html#syllabus-and-course-site",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Syllabus and Course Site",
+    "text": "Syllabus and Course Site\nFull Syllabus on the course website:\nhttps://georgehagstrom.github.io/DATA607/\nCourse website contains links to weekly reading and homework assignments, meetup videos, course schedule, and other course materials\nUse the Brightspace page to submit assignments, either in pdf format or a link to an html on some site I can access (ie github or rpubs)"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#meetups",
+    "href": "meetups/Meetup1.html#meetups",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Meetups",
+    "text": "Meetups\n6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can’t\nOffice Hours: On Zoom by appointment\nCommunication and collaboration: https://fall2024data607.slack.com"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#assignments",
+    "href": "meetups/Meetup1.html#assignments",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Assignments",
+    "text": "Assignments\n\nLabs (50%): Weekly Programming assignments\nTidyVerse Recipes (10%): Collaborative intro to Git\nProject (25%)\n\nAssemble and explore a data set of your choosing\nExplore your interests, build your portfolio!\n\nData Science in Context Presentation (5%)\n\nOne 5 minute presentation, sign up for your presentation slot asap!\n\nMeetup Reflections and Introduction (10%)"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#schedule",
+    "href": "meetups/Meetup1.html#schedule",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Schedule",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#textbooks",
+    "href": "meetups/Meetup1.html#textbooks",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Textbooks",
+    "text": "Textbooks\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\nJennifer Bryan. Happy Git and GitHub for the R User.\nJulia Silge and David Robinson (2017). Text Mining with R. O’Reilly\n\nRecommended: Wickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group."
+  },
+  {
+    "objectID": "meetups/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "href": "meetups/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Tidyverse: Opinionated Ecosystem",
+    "text": "Tidyverse: Opinionated Ecosystem\n\n\n\n\n\nCollection of compatible packages\nShared philosophy, common grammar\nStrong Core, Many Extensions\nAdvantages and Disadvantages"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#what-to-do-this-week",
+    "href": "meetups/Meetup1.html#what-to-do-this-week",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "What to do this week?",
+    "text": "What to do this week?\n\nReadings:\n\nIntro and Chapter 28 of R4DS\nSections 1-15 of Happy Git\nQuarto Tutorial\nAppendix on R Help Files\n\nGet software installed and configured:\n\n\nR, RStudio, git, latex\n\n\nWrite a post introducing yourself on Brightspace Discussions\nSign up for your Data Science in Context Presentation"
+  },
+  {
+    "objectID": "meetups/Meetup1.html#image-references",
+    "href": "meetups/Meetup1.html#image-references",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Image References",
+    "text": "Image References\n\nCoal: By Morgre - Own work, CC BY-SA 3.0\nGas/Methane: By Georg Slickers - Self-photographed, CC BY-SA 3.0\nHydro: By Source file: Le Grand PortageDerivative work: Rehman - File:Three_Gorges_Dam,_Yangtze_River,_China.jpg, CC BY 2.0\nSolar: By Parabel GmbH - Own work, CC BY-SA 3.0\nWind: By Erik Wilde from Berkeley, CA, USA - harvesting wind, CC BY-SA 2.0\n\n\n\n\n\nDATA 607"
+  },
+  {
+    "objectID": "modules/module5.html",
+    "href": "modules/module5.html",
+    "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
+    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
     "crumbs": [
       "Topics",
-      "11 - Tidy Text and NLP"
+      "5 - Data Transformations"
     ]
   },
   {
-    "objectID": "modules/module8.html",
-    "href": "modules/module8.html",
-    "title": "Module 8 - Advanced R Programming",
+    "objectID": "modules/module12.html",
+    "href": "modules/module12.html",
+    "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nMath is Fun on Graphs",
     "crumbs": [
       "Topics",
-      "8 - Advanced R Programming"
+      "12 - Graphs and Graph Data"
     ]
   },
   {
-    "objectID": "modules/module10.html",
-    "href": "modules/module10.html",
-    "title": "Module 10 - Git and Collaboration",
+    "objectID": "modules/module9.html",
+    "href": "modules/module9.html",
+    "title": "Module 9 - Web Scraping and APIs",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
+    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
     "crumbs": [
       "Topics",
-      "10 - GIT and Collaboration"
+      "9 - Web Scraping and APIs"
     ]
   },
   {
-    "objectID": "modules/module2.html",
-    "href": "modules/module2.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "objectID": "modules/module6.html",
+    "href": "modules/module6.html",
+    "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\nRegex Buddy\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
     "crumbs": [
       "Topics",
-      "2 - Visualizing Data"
+      "6 - Processing Strings and Text"
+    ]
+  },
+  {
+    "objectID": "modules/module3.html",
+    "href": "modules/module3.html",
+    "title": "Module 3 - Data Tidying",
+    "section": "",
+    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 5-7\n\n\n\nAdditional Resources:\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
+    "crumbs": [
+      "Topics",
+      "3 - Data Tidying"
     ]
   },
   {

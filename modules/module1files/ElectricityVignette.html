@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="George I. Hagstrom">
 
-<title>Lab 1: Airbnbs in NYC – DATA 607 Fall 2024</title>
+<title>Carbon Intensity and Power Generation – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,11 +102,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../../site_libs/datatables-binding-0.17/datatables.js"></script>
+<link href="../../site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../../site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../../site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="../../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="../../fullcalendar-lib/main.css" rel="stylesheet">
 <script type="text/javascript" src="../../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Lab 1: Airbnbs in NYC – DATA 607 Fall 2024">
+<meta property="og:title" content="Carbon Intensity and Power Generation – DATA 607 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -119,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Airbnbs in NYC</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Carbon Intensity and Power Generation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -364,13 +374,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Airbnbs in NYC</h1>
+<h1 class="title">Carbon Intensity and Power Generation</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>George I. Hagstrom </p>
+          </div>
+  </div>
     
   
     
@@ -381,77 +397,170 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="airbnb-in-nyc-or-your-city" class="level2">
-<h2 class="anchored" data-anchor-id="airbnb-in-nyc-or-your-city">Airbnb in NYC (or your city)</h2>
-<p>Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.</p>
-<p>Because Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called <a href="https://insideairbnb.com/get-the-data/">inside airbnb</a></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this report we will look at power generation in several different countries, visualize how the share of electricity from different sources has changed over time, and look at how that associates with the carbon emissions from electricity generation.</p>
+<section id="packages" class="level3">
+<h3 class="anchored" data-anchor-id="packages">Packages</h3>
+<p>We will use the <strong>tidyverse</strong>, <strong>lubridate</strong>, <strong>scales</strong>, <strong>patchwork</strong>, and <strong>ggthemes</strong>, for data wrangling and visualization, and the <strong>DT</strong> package for interactive display of tabular output.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">warning=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="first-steps" class="level2">
-<h2 class="anchored" data-anchor-id="first-steps">First Steps</h2>
-<p>Before we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.</p>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>The data we are using comes from the website <a href="https://ourworldindata.org/">Our World in Data</a>. Specifically, we are using a dataset compiled there on energy production and use around the world. The dataset can be found at <a href="https://github.com/owid/energy-data?tab=readme-ov-file">Our World in Data’s github page</a>, which contains both the dataset and a codebook describing the meaning of all the variables. We used <a href="https://github.com/owid/energy-data/blob/master/owid-energy-data.csv">owid-energy-data.csv</a> for this analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>energy_data <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"owid-energy-data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="energy-production-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="energy-production-over-time">Energy Production over Time</h2>
+<p>We are going to display a visualization which shows how the energy generation in several different countries, specifically China, France, Germany, Sweden, and the United States, changed over time. It is possible to change the countries being visualized by changing the countries listed in the <code>countries_included</code> variable below replacing the <code>iso_code</code> labels with those corresponding to the countries of interest to you.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>countries_included <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"USA"</span>,<span class="st">"DEU"</span>,<span class="st">"FRA"</span>,<span class="st">"SWE"</span>,<span class="st">"CHN"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We picked a small subset of the variables available in this dataset to visualize, picking the ones that are most important for overall power generation and have greatest influence on carbon emissions, namely coal, natural gas (methane), hydro, nuclear, solar, and wind. These choices can similarly be changed by finding where they occur in the <code>select</code> and <code>pivot_longer</code> functions.</p>
+<p>See the <a href="#appendix">Appendix</a> for a list of the countries and variables present in the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">=</span> energy_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(iso_code <span class="sc">%in%</span> countries_included, year <span class="sc">&gt;</span> <span class="dv">1980</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(iso_code,country) <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(iso_code,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         year,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         hydro_share_elec,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         wind_share_elec,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         solar_share_elec,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         coal_share_elec,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         gas_share_elec,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         nuclear_share_elec) <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"hydro_share_elec"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>             <span class="st">"wind_share_elec"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>             <span class="st">"solar_share_elec"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>             <span class="st">"coal_share_elec"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>             <span class="st">"gas_share_elec"</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>             <span class="st">"nuclear_share_elec"</span>),</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"GeneratorType"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Electricity_Per_Capita"</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year,<span class="at">y=</span>Electricity_Per_Capita,<span class="at">color=</span>country)) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> GeneratorType, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Share of Electricity from Different Sources"</span>) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Year"</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Change in Electricity Generation Share over time"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Country"</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plot1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ElectricityVignette_files/figure-html/ElecGenerationOverTime-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="impact-of-power-sources-on-carbon-intensity-of-electricity-production" class="level3">
+<h3 class="anchored" data-anchor-id="impact-of-power-sources-on-carbon-intensity-of-electricity-production">Impact of Power Sources on Carbon Intensity of Electricity Production</h3>
+<p>Many countries have set ambitious targets for reducing their carbon emissions. One way to visualize carbon emissions is to look at how much carbon dioxide is emitted for each unit of electrical energy generated. This measure called the <strong>carbon intensity of electricity generation</strong>. We will visualize carbon intensity in two ways: looking at how carbon intensity has changed over time in the selected countries, and also looking across the entire dataset and seeing how carbon intensity relates to coal power and the sum of all low carbon forms of power generation (nuclear, hydro, solar, wind).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">=</span> energy_data <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(iso_code <span class="sc">%in%</span> countries_included, year <span class="sc">&gt;</span> <span class="dv">1980</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(iso_code,country) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(iso_code,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         country,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         year,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         low_carbon_share_elec,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>         coal_share_elec,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         carbon_intensity_elec</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>low_carbon_share_elec,<span class="at">y=</span>coal_share_elec,<span class="at">color=</span>carbon_intensity_elec,<span class="at">shape=</span>country)) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Controls on Carbon Intensity"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Carbon Intensity"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Low Carbon Electricity Share"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Coal Electricity Share"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plot3 <span class="ot">=</span> energy_data <span class="sc">|&gt;</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(iso_code <span class="sc">%in%</span> countries_included, year <span class="sc">&gt;</span> <span class="dv">1980</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(iso_code,country) <span class="sc">|&gt;</span> </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(iso_code,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>         country,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>         year,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>         carbon_intensity_elec</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year,<span class="at">y=</span>carbon_intensity_elec,<span class="at">color=</span>country)) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Carbon Intensity of Electricity Production"</span>) <span class="sc">+</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Year"</span>) <span class="sc">+</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carbon Intensity over Time"</span>,</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Carbon Intensity of Electricity (CO2e / kWhr)"</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>plot3 <span class="sc">+</span> plot2;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ElectricityVignette_files/figure-html/CarbonIntensity-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="putting-it-together" class="level3">
+<h3 class="anchored" data-anchor-id="putting-it-together">Putting it Together</h3>
+<p>We can create the original compound plot using the following command (made possible by the <code>patchwork</code> package):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">/</span> (plot3 <span class="sc">+</span> plot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ElectricityVignette_files/figure-html/CompoundFigure-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ol type="1">
+<li>Hannah Ritchie, Pablo Rosado and Max Roser (2023) - “Energy” Published online at OurWorldInData.org. Retrieved from: <a href="https://ourworldindata.org/energy">‘https://ourworldindata.org/energy’</a> [Online Resource], underlying data:</li>
+</ol>
 <ul>
-<li>Start a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)</li>
-<li>Update the YAML, changing the author name to your name, and <strong>knit</strong> the document.</li>
-<li>Commit your changes with a meaningful commit message.</li>
-<li>Push your changes to GitHub.</li>
-<li>Go to your repo on GitHub and confirm that your changes are visible in your Qmd <strong>and</strong> md files. If anything is missing, commit and push again.</li>
+<li><a href="https://www.energyinst.org/statistical-review">Statistical Review of World Energy</a>, Energy Institute</li>
 </ul>
+<ol start="2" type="1">
+<li>This analysis was inspired by and adapted from the vignettes in the <a href="https://cran.r-project.org/web/packages/unvotes/vignettes/unvotes.html">unvotes package vignette</a> and the <a href="https://github.com/tidyverse/datascience-box/blob/main/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd">Data Science in a Box Course</a></li>
+</ol>
 </section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>We’ll use the <strong>tidyverse</strong> package for much of the data wrangling and visualisation, and the <strong>ggridges</strong> package to make a ridge plot in the last exercise. You may need to install <strong>ggridges</strong> if you haven’t already, you can do that using:</p>
+<section id="appendix-appendix" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-appendix">Appendix (#appendix)</h3>
+<p>Below is a list of countries in the dataset:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggridges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then make sure to load both packages:</p>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The data for this assignment can be found on the course website at <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/data/nycbnb.csv">nycbnb</a>, or if you are adventurous and want to perform this assignment for a different city you can choose one from <a href="https://insideairbnb.com/get-the-data/">inside airbnb)</a>. If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  nycbnb <span class="ot">=</span> nycbnb <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      id, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      price, </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      neighbourhood_cleansed,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      neighbourhood_group_cleansed,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      accommodates, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      bathrooms, </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      bedrooms, </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      beds, </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      review_scores_rating, </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      number_of_reviews, </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      listing_url )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You will also need to do some postprocessing, including changing the price column from a string to a numerical variable. If you decide to go this custom route let me know and make sure to share your data, but I recommend sticking with the data I provided.</p>
-<p>You can read the data into R using the command:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nycbnb <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"/home/georgehagstrom/work/Teaching/DATA607/website/data/nycbnb.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>where you should replace <code>nycbnb.csv</code> with the local path to your file.</p>
-<p>Important note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.</p>
-<p>You can view the dataset as a spreadsheet using the <code>View()</code> function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following <strong>data viewer</strong> window pop up.</p>
-</section>
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
-<p><strong>Problem 1.</strong> How many observations (rows) does the dataset have? Instead of hard coding the number in your answer, use inline code.</p>
-<p><strong>Problem 2.</strong> Run <code>View(nycbnb)</code> in your Console to view the data in the data viewer. What does each row in the dataset represent?</p>
-<p>Each column represents a variable. We can get a list of the variables in the data frame using the <code>names()</code> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(nycbnb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "id"                   "price"                "neighborhood"        
- [4] "borough"              "accommodates"         "bathrooms"           
- [7] "bedrooms"             "beds"                 "review_scores_rating"
-[10] "number_of_reviews"    "listing_url"         </code></pre>
+<div class="cell-output-display">
+<div id="htmlwidget-0ebd632466782c7c9777" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0ebd632466782c7c9777">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294"],["Afghanistan","Africa","Africa (EI)","Africa (EIA)","Africa (Ember)","Africa (Shift)","Albania","Algeria","American Samoa","Angola","Antarctica","Antigua and Barbuda","Argentina","Armenia","Aruba","ASEAN (Ember)","Asia","Asia (Ember)","Asia &amp; Oceania (EIA)","Asia and Oceania (Shift)","Asia Pacific (EI)","Australia","Australia and New Zealand (EIA)","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central &amp; South America (EIA)","Central African Republic","Central America (EI)","Central and South America (Shift)","Chad","Chile","China","CIS (EI)","Colombia","Comoros","Congo","Cook Islands","Costa Rica","Cote d'Ivoire","Croatia","Cuba","Curacao","Cyprus","Czechia","Czechoslovakia","Democratic Republic of Congo","Denmark","Djibouti","Dominica","Dominican Republic","East Germany","East Timor","Eastern Africa (EI)","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","EU28 (Shift)","Eurasia (EIA)","Eurasia (Shift)","Europe","Europe (EI)","Europe (EIA)","Europe (Ember)","Europe (Shift)","European Union (27)","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Guiana","French Polynesia","G20 (Ember)","G7 (Ember)","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","High-income countries","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latin America and Caribbean (Ember)","Latvia","Lebanon","Lesotho","Liberia","Libya","Lithuania","Low-income countries","Lower-middle-income countries","Luxembourg","Macao","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Martinique","Mauritania","Mauritius","Mexico","Micronesia (country)","Middle Africa (EI)","Middle East (EI)","Middle East (EIA)","Middle East (Ember)","Middle East (Shift)","Moldova","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Niue","Non-OECD (EI)","Non-OECD (EIA)","Non-OPEC (EI)","Non-OPEC (EIA)","North America","North America (EI)","North America (Ember)","North America (Shift)","North Korea","North Macedonia","Northern Mariana Islands","Norway","Oceania","Oceania (Ember)","OECD (EI)","OECD (EIA)","OECD (Ember)","OECD (Shift)","Oman","OPEC (EI)","OPEC (EIA)","OPEC (Shift)","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Persian Gulf (EIA)","Persian Gulf (Shift)","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Helena","Saint Kitts and Nevis","Saint Lucia","Saint Pierre and Miquelon","Saint Vincent and the Grenadines","Samoa","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Serbia and Montenegro","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South America","South and Central America (EI)","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Turks and Caicos Islands","Tuvalu","U.S. Pacific Islands (EIA)","U.S. Territories (EIA)","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Pacific Islands (Shift)","United States Territories (Shift)","United States Virgin Islands","Upper-middle-income countries","Uruguay","USSR","Uzbekistan","Vanuatu","Venezuela","Vietnam","Wake Island (EIA)","Wake Island (Shift)","West Germany","Western Africa (EI)","Western Sahara","World","Yemen","Yugoslavia","Zambia","Zimbabwe"],["AFG",null,null,null,null,null,"ALB","DZA","ASM","AGO","ATA","ATG","ARG","ARM","ABW",null,null,null,null,null,null,"AUS",null,"AUT","AZE","BHS","BHR","BGD","BRB","BLR","BEL","BLZ","BEN","BMU","BTN","BOL","BIH","BWA","BRA","VGB","BRN","BGR","BFA","BDI","KHM","CMR","CAN","CPV","CYM",null,"CAF",null,null,"TCD","CHL","CHN",null,"COL","COM","COG","COK","CRI","CIV","HRV","CUB","CUW","CYP","CZE",null,"COD","DNK","DJI","DMA","DOM",null,"TLS",null,"ECU","EGY","SLV","GNQ","ERI","EST","SWZ","ETH",null,null,null,null,null,null,null,null,null,"FLK","FRO","FJI","FIN","FRA","GUF","PYF",null,null,"GAB","GMB","GEO","DEU","GHA","GIB","GRC","GRL","GRD","GLP","GUM","GTM","GIN","GNB","GUY","HTI",null,"HND","HKG","HUN","ISL","IND","IDN","IRN","IRQ","IRL","ISR","ITA","JAM","JPN","JOR","KAZ","KEN","KIR",null,"KWT","KGZ","LAO",null,"LVA","LBN","LSO","LBR","LBY","LTU",null,null,"LUX","MAC","MDG","MWI","MYS","MDV","MLI","MLT","MTQ","MRT","MUS","MEX","FSM",null,null,null,null,null,"MDA","MNG","MNE","MSR","MAR","MOZ","MMR","NAM","NRU","NPL","NLD","ANT","NCL","NZL","NIC","NER","NGA","NIU",null,null,null,null,null,null,null,null,"PRK","MKD","MNP","NOR",null,null,null,null,null,null,"OMN",null,null,null,"PAK","PSE","PAN","PNG","PRY",null,null,"PER","PHL","POL","PRT","PRI","QAT","REU","ROU","RUS","RWA","SHN","KNA","LCA","SPM","VCT","WSM","STP","SAU","SEN","SRB",null,"SYC","SLE","SGP","SVK","SVN","SLB","SOM","ZAF",null,null,"KOR","SSD","ESP","LKA","SDN","SUR","SWE","CHE","SYR","TWN","TJK","TZA","THA","TGO","TON","TTO","TUN","TUR","TKM","TCA","TUV",null,null,"UGA","UKR","ARE","GBR","USA",null,null,"VIR",null,"URY",null,"UZB","VUT","VEN","VNM",null,null,null,null,"ESH",null,"YEM",null,"ZMB","ZWE"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>country<\/th>\n      <th>iso_code<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>You can find descriptions of each of the variables in the help file for the dataset, which you can find online at the inside airbnb <a href="https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?usp=sharing">data dictionary</a></p>
-<p><strong>Problem 3.</strong> Pick one of the five boroughs of NYC (Manhattan, Queens, Brooklyn, the Bronx, or Staten Island), and create a faceted histogram where each facet represents a neighborhood in your chosen borough and displays the distribution of Airbnb prices in that neighborhood. Think critically about whether it makes more sense to stack the facets on top of each other in a column, lay them out in a row, or wrap them around. Along with your vizualisation, include your reasoning for the layout you chose for your facets.</p>
-<p><strong>Problem 4.</strong> Use a single pipeline to identity the neighborhoods with the top five median listing prices that have a minimum of 50 listings. Then, in another pipeline filter the data for these five neighborhoods and make ridge plots of the distributions of listing prices in these five neighborhoods. In a third pipeline calculate the minimum, mean, median, standard deviation, IQR, and maximum listing price in each of these neighborhoods. Use the visualization and the summary statistics to describe the distribution of listing prices in the neighborhoods. (Your answer will include three pipelines, one of which ends in a visualization, and a narrative.)</p>
-<p><strong>Problem 5.</strong> Create a visualization that will help you compare the distribution of review scores (<code>review_scores_rating</code>) across neighborhoods. You get to decide what type of visualization to create and which neighborhoods are most interesting to you, and there is more than one correct answer! In your answer, include a brief interpretation of how Airbnb guests rate properties in general and how the neighborhoods compare to each other in terms of their ratings.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1033,7 +1142,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/assignments/labs/Lab1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/modules/module1files/ElectricityVignette.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
