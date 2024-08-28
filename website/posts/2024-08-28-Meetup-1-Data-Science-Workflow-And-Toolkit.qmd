@@ -1,0 +1,20 @@
+---
+title: "Meetup 1: Data Science Workflow and Toolkit"
+author: "George I. Hagstrom"
+date: 2024-08-28
+draft: false
+description: "Click here for meetup 1 slides and Zoom link"
+image: "Meetup1.png"
+---
+
+Welcome to the start of the new semester! Tonight is the first class meetup. [Click here](
+https://us02web.zoom.us/j/81858708616?pwd=eE9ZGJFco9iicq3BsmANIfWUVLwy0x.1#success) to join the meetup on Zoom.
+
+You can find the [meetup slides here](../meetups/Meetup1/Meetup1.qmd) as well as a link to the [electricity and carbon dixoide emission vignette](https://github.com/georgehagstrom/DATA607/blob/main/website/modules/module1files/ElectricityVignette.qmd) if you want to experiment with it.
+
+Click the [Module 1 link](../modules/Module1.qmd) to see the course materials and instructions for this week.
+
+
+
+
+
