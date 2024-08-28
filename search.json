@@ -388,7 +388,7 @@
     "href": "meetups/Meetup1/Meetup1.html#what-is-data-science",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "What is Data Science?",
-    "text": "What is Data Science?\n\nData science is a “discipline that allows you to transform raw data into understanding, insight, and knowledge”\n\n\nIs it just statistics with a clever brand name?"
+    "text": "What is Data Science?\n\n\nData science is a “discipline that allows you to transform raw data into understanding, insight, and knowledge”\n\n\n\n\nI hear often: “Data Science is just statistics with a clever brand name”\n\n\n\n\nIs this a misconception?"
   },
   {
     "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow",
@@ -507,14 +507,14 @@
     "href": "meetups/Meetup1/Meetup1.html#syllabus-and-course-site",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Syllabus and Course Site",
-    "text": "Syllabus and Course Site\nFull Syllabus on the course website:\nhttps://georgehagstrom.github.io/DATA607/\nCourse website contains links to weekly reading and homework assignments, meetup videos, course schedule, and other course materials\nUse the Brightspace page to submit assignments, either in pdf format or a link to an html on some site I can access (ie github or rpubs)"
+    "text": "Syllabus and Course Site\n\nFull Syllabus on the course website:\n\nhttps://georgehagstrom.github.io/DATA607/\nCourse website contains links to weekly reading and homework assignments, meetup videos, course schedule, and other course materials\n\nUse the Brightspace page to submit assignments, either in pdf format or a link to an html on some site I can access (ie github or rpubs)"
   },
   {
     "objectID": "meetups/Meetup1/Meetup1.html#meetups",
     "href": "meetups/Meetup1/Meetup1.html#meetups",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "Meetups",
-    "text": "Meetups\n6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can’t\nOffice Hours: On Zoom by appointment\nCommunication and collaboration: https://fall2024data607.slack.com"
+    "text": "Meetups\n\n6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can’t\nOffice Hours: On Zoom by appointment\nCommunication and collaboration: https://fall2024data607.slack.com"
   },
   {
     "objectID": "meetups/Meetup1/Meetup1.html#assignments",
@@ -549,7 +549,7 @@
     "href": "meetups/Meetup1/Meetup1.html#what-to-do-this-week",
     "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "What to do this week?",
-    "text": "What to do this week?\n\nReadings:\n\nIntro and Chapter 28 of R4DS\nSections 1-15 of Happy Git\nQuarto Tutorial\nAppendix on R Help Files\n\nGet software installed and configured:\n\n\nR, RStudio, git, latex\n\n\nWrite a post introducing yourself on Brightspace Discussions\nSign up for your Data Science in Context Presentation"
+    "text": "What to do this week?\n\nReadings:\n\nIntro and Chapter 28 of R4DS\nSections 1-15 of Happy Git\nQuarto Tutorial\nAppendix on R Help Files\n\nGet software installed and configured:\n\n\n\nR, RStudio, git, latex\n\n\n\nWrite a post introducing yourself on Brightspace Discussions\nSign up for your Data Science in Context Presentation"
   },
   {
     "objectID": "meetups/Meetup1/Meetup1.html#image-references",
