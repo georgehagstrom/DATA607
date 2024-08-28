@@ -1,0 +1,237 @@
+---
+title: "Meetup 1: Data Science Workflow and Toolkit"
+format: revealjs
+logo: CUNY_SPS_Logo_Wide.png
+footer: "DATA 607"
+author: "George I. Hagstrom"
+date: "08/28/2024"
+---
+
+## What is Data Science?
+
+. . .
+
+Data science is a "discipline that allows you to transform raw data into understanding, insight, and knowledge"
+
+. . .
+
+Is it just statistics with a clever brand name?
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSWF.png){width="80%"}
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSWFImport.png){width="80%"}
+
+Load the data from files into software
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSWFTidy.png){width="80%"}
+
+Tidy the data so it is stored in a consistent way
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSFWTransform.png){width="80%"}
+
+Transform the data to focus our analysis on observations of interest
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSFWVisualize.png){width="80%"}
+
+Visualize the data to find relationships, problems, and pose questions
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSFWModel.png){width="80%"}
+
+Model the data to answer questions precisely using statistics
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSFWCommunicate.png){width="80%"}
+
+Communicate to share results with others
+
+## Data Science Workflow
+
+Consider this visualization of the process for converting raw data into knowledge:
+
+![Figure from text](DSFWNoModel.png){width="80%"}
+
+This class will focus on everything but modeling, i.e. the part of Data Science that isn't statistics
+
+## Modeling can be small part of Data Science projects
+
+It is said that 80% of time in data science projects is spent on data mining, cleaning, tidying, exploratory data analsys, etc
+
+![Figure from Forbes](DataTime.jpg)
+
+Please forgive the Pie Chart
+
+
+## Intro/Case Study
+
+:::: {.columns}
+
+::: {.column width=50%}
+
+![Trait Correlations in Marine Bacteria](TraitFigure.png){width="90%"}
+:::
+
+::: {.column width="50%"}
+- Data on how bacteria get their food in the ocean
+- Getting data for this plot took months.....
+- Many sources, data formats, quality issues, processing
+
+:::
+
+::::
+
+## Learning objectives
+
+By the end of the course, you will have a foundation of skills in the Data Science Workflow
+
+-   Find data you need and do all steps to prep it for analysis
+-   Build expertise in R and the `tidyverse`
+-   Use and understand relational databases and SQL
+-   Collaborate with Git and GitHub
+-   Introduce you to distributed computing and other tools for large datasets
+-   Improve your programming ability
+
+## Vignette: Electricity and CO2 
+
+![Sources of Power, refs last slide](PowerSources.png){width="90%"}
+
+
+## Electricity Generation Over Time
+
+
+![Source: Our World in Data](PowerOverTime.jpeg)
+
+## Carbon Intensity of Electricity
+
+![Source: Our World in Data](CarbonIntensity.jpeg){width="70%"}
+
+## Controls on Carbon Intensity
+
+![Source: Our World in Data](CarbonIntensityControls.jpeg)
+
+## Link to the Vignette 
+
+You can download the vignette from my github by [clicking here](https://github.com/georgehagstrom/DATA607/tree/main/website/modules/module1files/ElectricityVignette.qmd)
+
+Remember to [download the data](https://github.com/owid/energy-data/blob/master/owid-energy-data.csv) if you want to render the file.
+
+## Syllabus and Course Site
+
+Full Syllabus on the course website:
+
+\vspace{4em}
+
+[https://georgehagstrom.github.io/DATA607/](https://georgehagstrom.github.io/DATA607/course/syllabus.html)
+
+\vspace{4em}
+
+Course website contains links to weekly reading and homework assignments, 
+meetup videos, course schedule, and other course materials
+
+\vspace{4em}
+
+Use the Brightspace page to submit assignments, either in `pdf` format or a link to an `html` on some site I can access (ie `github` or `rpubs`)
+
+
+
+
+## Meetups
+
+6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can't
+
+Office Hours: On Zoom by appointment
+
+Communication and collaboration: <https://fall2024data607.slack.com>
+
+## Assignments
+
+-   Labs (50%): Weekly Programming assignments
+-   TidyVerse Recipes (10%): Collaborative intro to Git
+-   Project (25%)
+    -   Assemble and explore a data set of your choosing
+    -   Explore your interests, build your portfolio!
+-   Data Science in Context Presentation (5%)
+    -   One 5 minute presentation, sign up for your presentation slot asap!
+-   Meetup Reflections and Introduction (10%)
+
+## Schedule
+
+![](Schedule.png){width="93%"}
+
+## Textbooks
+
+1. Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). [*R for Data Science (2e)*](https://r4ds.hadley.nz/). O'Reilly
+
+2. Jennifer Bryan. [*Happy Git and GitHub for the R User.*](https://happygitwithr.com)
+
+3. Julia Silge and David Robinson (2017).
+[*Text Mining with R.*](https://www.tidytextmining.com/) O'Reilly
+
+**Recommended:** Wickham, H. *Advanced R.* Baca Raton, FL: Taylor & Francis Group.
+
+## Tidyverse: Opinionated Ecosystem
+
+:::: {.columns}
+
+::: {.column width=40%}
+
+![](TidyVerse.png)
+
+:::
+
+::: {.column width=60%}
+* Collection of compatible packages
+* Shared philosophy, common grammar
+* Strong Core, Many Extensions
+* Advantages and Disadvantages
+
+
+:::
+
+::::
+
+## What to do this week?
+
+1. Readings:
+    i) Intro and Chapter 28 of R4DS
+    i) Sections 1-15 of Happy Git
+    i) Quarto Tutorial
+    i) Appendix on R Help Files
+2. Get software installed and configured:
+  i) R, RStudio, git, latex
+3. Write a post introducing yourself on Brightspace Discussions
+4. Sign up for your Data Science in Context Presentation
+
+## Image References
+
+1. [Coal: By Morgre - Own work, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=19858375)
+2. [Gas/Methane: By Georg Slickers - Self-photographed, CC BY-SA 3.0]([https://commons.wikimedia.org/w/index.php?curid=1239195)
+3. [Hydro: By Source file: Le Grand PortageDerivative work: Rehman - File:Three_Gorges_Dam,_Yangtze_River,_China.jpg, CC BY 2.0](https://commons.wikimedia.org/w/index.php?curid=11425004)
+4. [Solar: By Parabel GmbH - Own work, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=32375257)
+5. [Wind: By Erik Wilde from Berkeley, CA, USA - harvesting wind, CC BY-SA 2.0](https://commons.wikimedia.org/w/index.php?curid=51105579)
