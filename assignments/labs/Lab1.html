@@ -353,6 +353,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -383,15 +389,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="airbnb-in-nyc-or-your-city" class="level2">
 <h2 class="anchored" data-anchor-id="airbnb-in-nyc-or-your-city">Airbnb in NYC (or your city)</h2>
-<p>Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.</p>
+<p>Airbnb has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that Airbnb has adverse impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong restrictions on the use of Airbnb.</p>
 <p>Because Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called <a href="https://insideairbnb.com/get-the-data/">inside airbnb</a></p>
 </section>
-<section id="first-steps" class="level2">
-<h2 class="anchored" data-anchor-id="first-steps">First Steps</h2>
-<p>Before we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.</p>
+<section id="github-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="github-instructions">Github Instructions</h2>
+<p>Before we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment. This is optional but I think it is a good idea to start getting familiar with github tools. These steps come from the happygitwithr tutorial.</p>
 <ul>
 <li>Start a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)</li>
-<li>Update the YAML, changing the author name to your name, and <strong>knit</strong> the document.</li>
+<li>Update the YAML, changing the author name to your name, and <strong>Render</strong> the document.</li>
 <li>Commit your changes with a meaningful commit message.</li>
 <li>Push your changes to GitHub.</li>
 <li>Go to your repo on GitHub and confirm that your changes are visible in your Qmd <strong>and</strong> md files. If anything is missing, commit and push again.</li>
@@ -423,12 +429,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      number_of_reviews, </span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      listing_url )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You will also need to do some postprocessing, including changing the price column from a string to a numerical variable. If you decide to go this custom route let me know and make sure to share your data, but I recommend sticking with the data I provided.</p>
+<p>You will also need to do some post-processing, including changing the price column from a string to a numerical variable. If you decide to go this custom route let me know and make sure to share your data, but I recommend sticking with the data I provided.</p>
 <p>You can read the data into R using the command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nycbnb <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"/home/georgehagstrom/work/Teaching/DATA607/website/data/nycbnb.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>where you should replace <code>nycbnb.csv</code> with the local path to your file.</p>
+<p>where you should replace <code>/home/georgehagstrom/work/Teaching/DATA607/website/data/nycbnb.csv"nycbnb.csv</code> with the local path to your file.</p>
 <p>Important note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.</p>
 <p>You can view the dataset as a spreadsheet using the <code>View()</code> function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following <strong>data viewer</strong> window pop up.</p>
 </section>
@@ -447,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>You can find descriptions of each of the variables in the help file for the dataset, which you can find online at the inside airbnb <a href="https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?usp=sharing">data dictionary</a></p>
-<p><strong>Problem 3.</strong> Pick one of the five boroughs of NYC (Manhattan, Queens, Brooklyn, the Bronx, or Staten Island), and create a faceted histogram where each facet represents a neighborhood in your chosen borough and displays the distribution of Airbnb prices in that neighborhood. Think critically about whether it makes more sense to stack the facets on top of each other in a column, lay them out in a row, or wrap them around. Along with your vizualisation, include your reasoning for the layout you chose for your facets.</p>
+<p><strong>Problem 3.</strong> Pick one of the five boroughs of NYC (Manhattan, Queens, Brooklyn, the Bronx, or Staten Island), and create a faceted histogram where each facet represents a neighborhood in your chosen borough and displays the distribution of Airbnb prices in that neighborhood. Think critically about whether it makes more sense to stack the facets on top of each other in a column, lay them out in a row, or wrap them around. Along with your visualization, include your reasoning for the layout you chose for your facets.</p>
 <p><strong>Problem 4.</strong> Use a single pipeline to identity the neighborhoods with the top five median listing prices that have a minimum of 50 listings. Then, in another pipeline filter the data for these five neighborhoods and make ridge plots of the distributions of listing prices in these five neighborhoods. In a third pipeline calculate the minimum, mean, median, standard deviation, IQR, and maximum listing price in each of these neighborhoods. Use the visualization and the summary statistics to describe the distribution of listing prices in the neighborhoods. (Your answer will include three pipelines, one of which ends in a visualization, and a narrative.)</p>
 <p><strong>Problem 5.</strong> Create a visualization that will help you compare the distribution of review scores (<code>review_scores_rating</code>) across neighborhoods. You get to decide what type of visualization to create and which neighborhoods are most interesting to you, and there is more than one correct answer! In your answer, include a brief interpretation of how Airbnb guests rate properties in general and how the neighborhoods compare to each other in terms of their ratings.</p>
 
