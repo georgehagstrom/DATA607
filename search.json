@@ -139,80 +139,249 @@
     ]
   },
   {
-    "objectID": "assignments/labs/tbd.html",
-    "href": "assignments/labs/tbd.html",
-    "title": "Lab TBD",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/Meetup2/Meetup2.html#why-make-graphs",
+    "href": "meetups/Meetup2/Meetup2.html#why-make-graphs",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Why Make Graphs?",
+    "text": "Why Make Graphs?\n\nGraphs are the main way we communicate data\nAlternative would be summary statistics, but visualizations are much richer."
   },
   {
-    "objectID": "assignments/labs/Lab5.html",
-    "href": "assignments/labs/Lab5.html",
-    "title": "Lab 5: Working with Text and Strings",
-    "section": "",
-    "text": "In this lab you will practice perform a series of exercises that use text and string manipulation to either analyze data with text, manipulate data containing strings, apply regular expressions, or handle data files with unusual formats or text strings.\n\n\nProblem 1. Using the 173 majors listed in fivethirtyeight.com’s College Majors dataset, provide code that identifies the majors that contain either “DATA” or “STATISTICS”\nProblem 2 Write code that transforms the data below:\n[1] \"bell pepper\" \"bilberry\" \"blackberry\" \"blood orange\"\n[5] \"blueberry\" \"cantaloupe\" \"chili pepper\" \"cloudberry\"\n[9] \"elderberry\" \"lime\" \"lychee\" \"mulberry\"\n[13] \"olive\"  \"salal berry\"\n\nInto a format like this:\nc(\"bell pepper\", \"bilberry\", \"blackberry\", \"blood orange\", \"blueberry\", \"cantaloupe\", \"chili pepper\", \"cloudberry\", \"elderberry\", \"lime\", \"lychee\", \"mulberry\", \"olive\", \"salal berry\")\nProblem 3 Describe, in words, what these regular expressions will match:\n\n(.)\\1\\1\n\"(.)(.)\\\\2\\\\1\"\n(..)\\1\n\"(.).\\\\1.\\\\1\"\n\"(.)(.)(.).*\\\\3\\\\2\\\\1\"\n\nProblem 4. Construct regular expressions to match words that:\n\nStart and end with the same character.\nContain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)\nContain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)"
+    "objectID": "meetups/Meetup2/Meetup2.html#anscombes-quartet",
+    "href": "meetups/Meetup2/Meetup2.html#anscombes-quartet",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Anscombe’s Quartet",
+    "text": "Anscombe’s Quartet\n\n\nSet 1:\n\n\n\n\n\nx\ny\n\n\n\n\n10\n8.04\n\n\n8\n6.95\n\n\n13\n7.58\n\n\n9\n8.81\n\n\n11\n8.33\n\n\n14\n9.96\n\n\n6\n7.24\n\n\n4\n4.26\n\n\n12\n10.84\n\n\n7\n4.82\n\n\n5\n5.68\n\n\n\n\n\n\nSet 2:\n\n\n\n\n\nx\ny\n\n\n\n\n10\n9.14\n\n\n8\n8.14\n\n\n13\n8.74\n\n\n9\n8.77\n\n\n11\n9.26\n\n\n14\n8.10\n\n\n6\n6.13\n\n\n4\n3.10\n\n\n12\n9.13\n\n\n7\n7.26\n\n\n5\n4.74\n\n\n\n\n\n\nSet 3:\n\n\n\n\n\nx\ny\n\n\n\n\n10\n7.46\n\n\n8\n6.77\n\n\n13\n12.74\n\n\n9\n7.11\n\n\n11\n7.81\n\n\n14\n8.84\n\n\n6\n6.08\n\n\n4\n5.39\n\n\n12\n8.15\n\n\n7\n6.42\n\n\n5\n5.73\n\n\n\n\n\n\nSet 4:\n\n\n\n\n\nx\ny\n\n\n\n\n8\n6.58\n\n\n8\n5.76\n\n\n8\n7.71\n\n\n8\n8.84\n\n\n8\n8.47\n\n\n8\n7.04\n\n\n8\n5.25\n\n\n19\n12.50\n\n\n8\n5.56\n\n\n8\n7.91\n\n\n8\n6.89"
   },
   {
-    "objectID": "assignments/labs/Lab5.html#problems",
-    "href": "assignments/labs/Lab5.html#problems",
-    "title": "Lab 5: Working with Text and Strings",
-    "section": "",
-    "text": "Problem 1. Using the 173 majors listed in fivethirtyeight.com’s College Majors dataset, provide code that identifies the majors that contain either “DATA” or “STATISTICS”\nProblem 2 Write code that transforms the data below:\n[1] \"bell pepper\" \"bilberry\" \"blackberry\" \"blood orange\"\n[5] \"blueberry\" \"cantaloupe\" \"chili pepper\" \"cloudberry\"\n[9] \"elderberry\" \"lime\" \"lychee\" \"mulberry\"\n[13] \"olive\"  \"salal berry\"\n\nInto a format like this:\nc(\"bell pepper\", \"bilberry\", \"blackberry\", \"blood orange\", \"blueberry\", \"cantaloupe\", \"chili pepper\", \"cloudberry\", \"elderberry\", \"lime\", \"lychee\", \"mulberry\", \"olive\", \"salal berry\")\nProblem 3 Describe, in words, what these regular expressions will match:\n\n(.)\\1\\1\n\"(.)(.)\\\\2\\\\1\"\n(..)\\1\n\"(.).\\\\1.\\\\1\"\n\"(.)(.)(.).*\\\\3\\\\2\\\\1\"\n\nProblem 4. Construct regular expressions to match words that:\n\nStart and end with the same character.\nContain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)\nContain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)"
+    "objectID": "meetups/Meetup2/Meetup2.html#anscombe-summary-stats",
+    "href": "meetups/Meetup2/Meetup2.html#anscombe-summary-stats",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Anscombe Summary Stats:",
+    "text": "Anscombe Summary Stats:\n\n\n\n\n\nSet\nmean(x)\nmean(y)\nsd(x)\nsd(y)\ncor(x,y)\n\n\n\n\n1\n9\n7.500909\n3.316625\n2.031568\n0.8164205\n\n\n2\n9\n7.500909\n3.316625\n2.031657\n0.8162365\n\n\n3\n9\n7.500000\n3.316625\n2.030424\n0.8162867\n\n\n4\n9\n7.500909\n3.316625\n2.030578\n0.8165214\n\n\n\n\n\nAre the datasets the basically the same?"
   },
   {
-    "objectID": "assignments/labs/Lab4.html",
-    "href": "assignments/labs/Lab4.html",
-    "title": "Lab 4: Data Transformations Studying College Majors",
-    "section": "",
-    "text": "The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story “The Economic Guide To Picking A College Major”.\nThese data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see the code FiveThirtyEight authors used.\nWe should also note that there are many considerations that go into picking a major. Earnings potential and employment prospects are two of them, and they are important, but they don’t tell the whole story. Keep this in mind as you analyze the data.\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, the scales package for better formatting of labels on visualisations, and the data lives in the fivethirtyeight package. Make sure to install and load these packages if you don’t have them already. When you load ‘fivethirtyeight’ you gain access to a dataset called college_recent_grads, which is what your homework will be based on.\nThe college_recent_grads data frame is a trove of information. Let’s think about some questions we might want to answer with these data:\n\nWhich major has the lowest unemployment rate?\nWhich major has the highest percentage of women?\nHow do the distributions of median income compare across major categories?\nDo women tend to choose majors with lower or higher earnings?\n\nIn the next section we aim to answer these questions.\n\nProblems\nProblem 1 Arrange the data by unemployment rate in ascending order in order find the major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: to reduce the number of digits displayed in the unemployment rate, use the percent() function to mutate the unemployment rate, i.e. pipe your output to mutate(unemployment_rate = percent(unemployment_rate) )\nProblem 2: Which major has the highest percentage of women? Determine the three majors with the highest percentage of women using arrange. Again use select to only display variables relevant to the question and pipe the final output to top_n(3) to display just the top 3 majors.\nProblem 3 This problem explores the distribution of median income across different majors.\n\nPlot the distribution of median income using a histogram. Make sure to experiment with the bin width to ensure that your histogram captures the most important features of the distribution.\nSummary statistics: calculate the mean, median, 25th and 75th quantiles of the median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).\nPlot the distribution of median income for each value of the major_category variable using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where “typical” comes from the summary statistic that you think best describes the distributions you observed in the histogram.\n\nProblem 4: Which major category is the least popular in this sample? Use the count function along with arrange to accomplish this task, and make sure you arrange in ascending order.\nProblem 5: Exploring differences between different STEM fields.\nOne of the sections of the FiveThirtyEight story is “All STEM fields aren’t the same”.\nThe STEM categories are the ones that match the vector\n\nc(\n  \"Biology & Life Science\",\n  \"Computers & Mathematics\",\n  \"Engineering\",\n  \"Physical Sciences\")\n\nUse this vector to add a variable to your dataset that is True if the major is a STEM major and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors’ median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.\nProblem 6: What types of majors do women tend to major in? Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables."
+    "objectID": "meetups/Meetup2/Meetup2.html#anscombe-visualized",
+    "href": "meetups/Meetup2/Meetup2.html#anscombe-visualized",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Anscombe Visualized:",
+    "text": "Anscombe Visualized:"
   },
   {
-    "objectID": "assignments/labs/Lab7.html",
-    "href": "assignments/labs/Lab7.html",
-    "title": "Lab 7: Webscraping and APIs",
-    "section": "",
-    "text": "Overview\nThis is a two part assignment. In the first part you will use the webscraping package rvest along with functions and iteration to download data from the internet on political contributions. In the second part, you will use httr to interact with the New York Times website apis.\n\n\nWebscraping Open Secrets\nIn this assignment we will scrape and work with data foreign connected PACs that donate to US political campaigns. In the United States, only American citizens and green card holders can contribute to federal elections, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees.\nFirst, we will get data foreign connected PAC contributions in the 2022 election cycle. Then, you will use a similar approach to get data such contributions from previous years so that we can examine trends over time.\nIn order to complete this assignment you will need a Chrome browser with the Selector Gadget extension installed.\nIn addition to tidyverse, you will need to install and load the packages robotstxt, rvest, and scales.\nProblem 1: Check that open secrets allows you to webscrape by running the paths_allowed function on the url https://www.opensecrets.org. Then write a function called scrape_pac() that scrapes information from the Open Secrets webpage for foreign connected PAC contributions in a given year:\n\nThis function should take the url of the webpage as its only input and should output a data frame\nIt should rename scraped variables using the “snake_case” naming convention\nclean up the Country of Origin/Parent Company variable with str_squish().\nadd a new column to the data frame for year. We will want this information when we ultimately have data from all years, so this is a good time to keep track of it. Our function doesn’t take a year argument, but the year is embedded in the URL, so we can extract it out of there, and add it as a new column. Use the str_sub() function to extract the last 4 characters from the URL. You will probably want to look at the help for this function to figure out how to specify “last 4 characters”.\n\nDefine the URLs for 2022, 2020, and 2000 contributions. Then, test your function using these URLs as inputs. Does the function seem to do what you expected it to do?\nProblem 2: Construct a vector called urls that contains the URLs for each webpage that contains information on foreign-connected PAC contributions for a given year. Map the scrape_pac() function over urls in a way that will result in a data frame called pac_all. Write the data frame to a csv file called pac-all.csv in the data folder.\nProblem 3: Clean your downloaded data file for visualization.\n\nFirst report the number of observations and variables that your scraped datasset contains.\nSeparate the country_parent into two such that country and parent company appear in different columns for country-level analysis.\nConvert contribution amounts in total, dems, and repubs from character strings to numeric values.\nPrint out the top 10 rows of your data frame after completing these steps.\n\nProblem 4: Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years. Once you have made the plot, write a brief interpretation of what the graph reveals. Few hints to help you out:\nProblem 5: Create a line plot of contributions from UK companies to each of the Democratic and Republican parties over time, with the lines colored according to party to differentiate them.\n\n\nUsing the NY Times API\nProblem 6: The New York Times web site provides a rich set of APIs, as described here . You’ll need to start by signing up for an API key. Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it into an R DataFrame."
+    "objectID": "meetups/Meetup2/Meetup2.html#one-d-example",
+    "href": "meetups/Meetup2/Meetup2.html#one-d-example",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "One D Example",
+    "text": "One D Example"
   },
   {
-    "objectID": "assignments/labs/Lab3.html",
-    "href": "assignments/labs/Lab3.html",
-    "title": "Lab3: EDA on Rhode Island Open Policing",
-    "section": "",
-    "text": "Overview\nFor this laboratory assignment you will perform an exploratory data analysis on a subset of data from the Stanford Open Policing dataset. The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The rds file format is a compressed format that is much smaller than the corresponding csv file. You can load the data from it using the function read_rds.\n\n\nProblems\nProblem 1: The first step of an exploratory data analysis is to think of a set of interesting questions that your data set might be able to answer. This dataset has a large number of variables, so your questions can help you narrow down the questions you might be interested in. Write down a few questions about police stops that you might be interested in and list the rows in the dataset that you think might have important information to answer your question.\nThis is intentionally open ended, but if you need inspiration you could look at how factors like time of day, month, race and gender (of both the officer and subject), or department id are related to the frequency of stops, the reason for stops, or the outcome. For example one interesting question might be: Do racial differences in traffic stops decrease at night?\nProblem 2: Having identified the most important variables, you should study their variability, in order to better understand their distribution and to identify any potential problems with the data quality or unusual values. Calculate summary statistics as appropriate for whether you have categorical or numerical data and perform basic visualizations. Give justifications for the visualizations that you selected.\nProblem 3: You likely found that for some of your variables there were missing data, outlier values, or data points that indicate some sort of error. In order to continue with your analysis you will need to decide what to do with these. Modify your dataset appropriately so that you will be able to perform an analysis of the relationships you are interested in. In addition to the code, give justifications for your choices.\nProblem 4: Now it is time to visualize the relationships that you are interested in. Make plots showing how variables co-vary, faceting when necessary to explore relationships among up to 3 variables. Consier the following questions when you observe a pattern:\n\nCould this pattern be due to coincidence (i.e. random chance)?\nHow can you describe the relationship implied by the pattern?\nHow strong is the relationship implied by the pattern?\nWhat other variables might affect the relationship?\nDoes the relationship change if you look at individual subgroups of the data?\n\nIf the results of these initial visualizations inspire more questions, consider performing those as well. Briefly summarize the results of this exercise and relate it to your initial questions and hypotheses."
+    "objectID": "meetups/Meetup2/Meetup2.html#datasaurus-dozen",
+    "href": "meetups/Meetup2/Meetup2.html#datasaurus-dozen",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Datasaurus Dozen",
+    "text": "Datasaurus Dozen"
   },
   {
-    "objectID": "assignments/tidygit/tidycreate.html",
-    "href": "assignments/tidygit/tidycreate.html",
-    "title": "Tidyverse Create",
-    "section": "",
-    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Create an Example Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset.\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. .\nYou should complete your submission on the schedule stated in the course syllabus."
+    "objectID": "meetups/Meetup2/Meetup2.html#non-contrived-example",
+    "href": "meetups/Meetup2/Meetup2.html#non-contrived-example",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Non-Contrived Example",
+    "text": "Non-Contrived Example\n\n\nTable shows the results of a linear regression between income inequality and voter turnout, claiming to show a statistically significant negative correlation (Jackman 1980)"
   },
   {
-    "objectID": "assignments/dsincontext.html",
-    "href": "assignments/dsincontext.html",
-    "title": "Data Science in Context Presentations",
-    "section": "",
-    "text": "Overview\nEach student needs to complete one data science in context presentation. These are short presentations with a target length of 5-7 minutes. At the beginning of the semester you should sign up for a presentation slot using this sign up sheet. The presentations will be made live in class, with an opportunity for a few minutes of question or discussion. You can pick any topic that interests you and is related to data science. If you have a strong preference not to present live, you may record and upload your presentation separately."
+    "objectID": "meetups/Meetup2/Meetup2.html#outlier-caused-relationship",
+    "href": "meetups/Meetup2/Meetup2.html#outlier-caused-relationship",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Outlier caused relationship",
+    "text": "Outlier caused relationship"
   },
   {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
+    "objectID": "meetups/Meetup2/Meetup2.html#graphs-as-comparisons",
+    "href": "meetups/Meetup2/Meetup2.html#graphs-as-comparisons",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Graphs as Comparisons",
+    "text": "Graphs as Comparisons\nTwo purposes for graphs:\n\nUnderstand and communicate the size and direction of comparisons that were already of interest\nDiscover new patterns\n\nA graph is often all someone will remember about your data analysis, can make the difference between convincing important decision makers or not."
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#improve-this-graph",
+    "href": "meetups/Meetup2/Meetup2.html#improve-this-graph",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Improve this Graph",
+    "text": "Improve this Graph"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#reformulating-the-data",
+    "href": "meetups/Meetup2/Meetup2.html#reformulating-the-data",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Reformulating the Data",
+    "text": "Reformulating the Data\n\n\nTwo Possible Stories\n\nChildren had higher accuracy than adults\nMultiple objects is harder than an individual object\n\nCaption suggests Adult vs. Child accuracy\n\n\n\nSolution:\n\n\nInstead of plotting responses, plot accuracy\nPlot Accuracy of each group on the same axis"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#case-study-solution-line-plot",
+    "href": "meetups/Meetup2/Meetup2.html#case-study-solution-line-plot",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Case Study Solution: Line Plot",
+    "text": "Case Study Solution: Line Plot"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#ggplot2-basics",
+    "href": "meetups/Meetup2/Meetup2.html#ggplot2-basics",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "ggplot2 Basics",
+    "text": "ggplot2 Basics\n\nggplot2 is tidyverse plotting package\nBased on Wilkinson’s Grammar of Graphics\nKey figure components\n\ndata maps to aesthetics\ninterpreted using geoms\nothers: theme, facets, coordiantes, stats"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#vignette-data-transformation-and-visualization-using-transit-costs",
+    "href": "meetups/Meetup2/Meetup2.html#vignette-data-transformation-and-visualization-using-transit-costs",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Vignette: Data Transformation and Visualization Using Transit Costs",
+    "text": "Vignette: Data Transformation and Visualization Using Transit Costs"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#categories-of-graphs",
+    "href": "meetups/Meetup2/Meetup2.html#categories-of-graphs",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Categories of Graphs",
+    "text": "Categories of Graphs"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#avoiding-wrong",
+    "href": "meetups/Meetup2/Meetup2.html#avoiding-wrong",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Avoiding Wrong",
+    "text": "Avoiding Wrong\nWrong figures are missing information needed to decipher the meaning or contain mathematical errors\n\nLabel all axes and provide units if ambiguous\nAll axes need scales\nAestethic elements accurately represent the data\nLegends and labels present when appropriate to identify meaning of other visual elements"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#ethics-principal-of-proportional-ink",
+    "href": "meetups/Meetup2/Meetup2.html#ethics-principal-of-proportional-ink",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Ethics: Principal of Proportional Ink",
+    "text": "Ethics: Principal of Proportional Ink\n\n“The representation of numbers, as physically measured on the surface of the graphic itself, should be directly proportional to the numerical quantities represented.” (1983, p.56) Edward Tufte, The Visual Display of Quantitative Information\n\n\nThis principle avoids many misleading visualizations"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#example",
+    "href": "meetups/Meetup2/Meetup2.html#example",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\nScale doesn’t start at 0\nWidth expands with height\nDanger in bar plots, filled line plots, plots with elements that scale with data"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#bar-plots-should-start-at-0",
+    "href": "meetups/Meetup2/Meetup2.html#bar-plots-should-start-at-0",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Bar Plots Should Start at 0",
+    "text": "Bar Plots Should Start at 0\n\n\nWrong\n\n\n\n\n\n\n\n\n\nOr make them line charts:\n\nRight"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#filled-plots-should-start-at-0",
+    "href": "meetups/Meetup2/Meetup2.html#filled-plots-should-start-at-0",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Filled Plots Should Start at 0",
+    "text": "Filled Plots Should Start at 0\n\n\nWrong\n\n\n\n\n\n\n\n\n\nOr transform data to represent a net change:\n\nRight"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#scale-area-not-radius",
+    "href": "meetups/Meetup2/Meetup2.html#scale-area-not-radius",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Scale Area not Radius",
+    "text": "Scale Area not Radius"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#data-science-in-context-presentations",
+    "href": "meetups/Meetup2/Meetup2.html#data-science-in-context-presentations",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Data Science in Context Presentations",
+    "text": "Data Science in Context Presentations"
+  },
+  {
+    "objectID": "meetups/Meetup2/Meetup2.html#acknowledgements",
+    "href": "meetups/Meetup2/Meetup2.html#acknowledgements",
+    "title": "Meetup 2: Visualizing Data",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nActive Statistics (Gelman, Hill, Vehtari)\nPrinciples of Data Visualization (Wilke)\nCalling BS (Bergstrom and West)\nData Visualization (Healy)\nImpact of Outliers on Income Inequality (Jackman)\n\n\n\n\n\nDATA 607"
+  },
+  {
+    "objectID": "assignments/tidygit.html",
+    "href": "assignments/tidygit.html",
+    "title": "GitHub/TidyVerse Create and Extend",
     "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nTidyverse Create (Template)\n\n\nTidyverse Extend (Template)",
     "crumbs": [
       "Assignments",
-      "Labs"
+      "GitHub/Tidyverse Recipes"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
+    "objectID": "assignments/labs/Lab1.html",
+    "href": "assignments/labs/Lab1.html",
+    "title": "Lab 1: Airbnbs in NYC",
     "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "href": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "",
+    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#first-steps",
+    "href": "assignments/labs/Lab1.html#first-steps",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "First Steps",
+    "text": "First Steps\nBefore we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.\n\nStart a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)\nUpdate the YAML, changing the author name to your name, and knit the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your Qmd and md files. If anything is missing, commit and push again."
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#packages",
+    "href": "assignments/labs/Lab1.html#packages",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, and the ggridges package to make a ridge plot in the last exercise. You may need to install ggridges if you haven’t already, you can do that using:\n\ninstall.packages(\"ggridges\")\n\nThen make sure to load both packages:"
+  },
+  {
+    "objectID": "assignments/labs/Lab1.html#data",
+    "href": "assignments/labs/Lab1.html#data",
+    "title": "Lab 1: Airbnbs in NYC",
+    "section": "Data",
+    "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood_cleansed,\n      neighbourhood_group_cleansed,\n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou will also need to do some postprocessing, including changing the price column from a string to a numerical variable. If you decide to go this custom route let me know and make sure to share your data, but I recommend sticking with the data I provided.\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/website/data/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
+  },
+  {
+    "objectID": "assignments/labs/Lab8.html",
+    "href": "assignments/labs/Lab8.html",
+    "title": "Lab 8: Text Mining and NLP",
+    "section": "",
+    "text": "Overview\nIn this lab, we will use the advanced R programming concepts that we studied to process a complex text file for analysis.\nProblem 1:\nIn Text Mining with R, Chapter 2 looks at Sentiment Analysis. In this assignment, you should start by getting the primary example code from chapter 2 working in an R Markdown document. You should provide a citation to this base code.\nProblem 2 Extend this base code in two ways:\n\nWork with a different corpus of your choosing\nIncorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research)."
+  },
+  {
+    "objectID": "assignments/labs/Lab6.html",
+    "href": "assignments/labs/Lab6.html",
+    "title": "Lab 6: R and SQL",
+    "section": "",
+    "text": "Overview\nThis projects involves data collection, creating a normalized SQL database representing the data you collected, and then loading the data from the SQL database into R.\n\n\nProblems\nProblem 1:\nSelect at least six popular movies that the people you will survey have a good chance of having watched. Ask at least five people that you know (friends, family, classmates, imaginary friends if necessary) to rate each of these movies that they have seen on a scale of 1 to 5. You may use online survey software if you find it easier and want to generate a larger sample.\nProblem 2:\nTake the results(observations) and store them in a SQL database of your choosing. I recommend SQLite or duckDB if you are undecided. Describe the normalization scheme you selected for your database and explain why you chose it.\nProblem 3:\nLoad the information from the SQL database into an R dataframe. This is by design a very open-ended assignment. In general, there’s no need here to ask “Can I…?” questions about your proposed approach. A variety of reasonable approaches are acceptable. You could for example access the SQL data directly from R, or you could create an intermediate .CSV file. I should be able to generate the SQL table(s) and data from your provided code—if you use a graphical user interface to create and populate tables, it should have a mechanism to generate corresponding SQL code. This assignment does not need to be 100% reproducible. You can (and should) blank out your SQL password if your solution requires it; otherwise, full credit requires that your code is “reproducible,” with the assumption that I have the same database server and R software. Handling missing data is a foundational skill when working with SQL or R. To receive full credit, you should demonstrate a reasonable approach for handling missing data. After all, how likely is it that all five of your friends have seen all six movies?\nProblem 4: Is there any benefit in standardizing ratings? How might you approach this?\n(Optional) Reading related to this assignment:\n\nJames Le, “The 4 Recommendation Engines That Can Predict Your Movie Tastes”, May 1, 2018. This a nice backgrounder on movie recommendation engines.\nSteve Blank, “The Customer Development Process. 2 Minutes to See Why”, Jul 29, 2014.. In this [&lt;3 minute] YouTube video “lean startup” founder Steve Blank talks about the importance of getting out of the building to talk to customers. I’d encourage you to adopt this “builder mentality” in your own data science work whenever it’s practical, by collecting data yourself, whether it’s related to a “business experiment” or a “scientific experiment.”"
+  },
+  {
+    "objectID": "assignments/labs/Lab2.html",
+    "href": "assignments/labs/Lab2.html",
+    "title": "Lab 2: Data Tidying",
+    "section": "",
+    "text": "Overview\nConsider the following image which contains some data:\n\n\n\nPlaneData\n\n\nThe chart describes arrival delays for two different airlines across several destinations.\n\n\nProblems\nProblem 1: Create a csv file that contains all of the information in the above dataset. You are encouraged to use a “wide” structure similar to how the information appears above, so that you can practice tidying and transformations as described below.\nProblem 2: Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. In addition to providing code, please describe your data cleanup and tidying work.\nProblem 3: Perform analysis to compare the arrival delays for the two airlines. What are your conclusions?"
+  },
+  {
+    "objectID": "assignments/tidygit/tidyextend.html",
+    "href": "assignments/tidygit/tidyextend.html",
+    "title": "Tidyverse Extend",
+    "section": "",
+    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Extend an Existing Example. Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name on brightspace.\nYou should complete your submission on the schedule stated in the course syllabus."
+  },
+  {
+    "objectID": "assignments/participation.html",
+    "href": "assignments/participation.html",
+    "title": "Participation",
+    "section": "",
+    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
     "crumbs": [
-      "Announcements"
+      "Assignments",
+      "Participation"
     ]
   },
   {
@@ -282,89 +451,256 @@
     ]
   },
   {
-    "objectID": "assignments/participation.html",
-    "href": "assignments/participation.html",
-    "title": "Participation",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
     "section": "",
-    "text": "One Minute Papers\nA “one minute paper” (Angelo & Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear. At the completion of each meetup (whether attended live or after watching the recording), complete the Google Form linked from the last slide.\n\n\nSlack\nPlease be an active participant in the Slack channel. In addition to being a good resource for asking and answer questions, we hope you begin to make connections with other students. Contribute at least one resource related to data science that you find and think would be useful to your fellow students. Please post it in the #resource channel.",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Assignments",
-      "Participation"
+      "Announcements"
     ]
   },
   {
-    "objectID": "assignments/tidygit/tidyextend.html",
-    "href": "assignments/tidygit/tidyextend.html",
-    "title": "Tidyverse Extend",
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
     "section": "",
-    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Extend an Existing Example. Using one of your classmate’s examples (as created above), extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve extended your classmate’s vignette, please submit your GitHub handle name on brightspace.\nYou should complete your submission on the schedule stated in the course syllabus."
-  },
-  {
-    "objectID": "assignments/labs/Lab2.html",
-    "href": "assignments/labs/Lab2.html",
-    "title": "Lab 2: Data Tidying",
-    "section": "",
-    "text": "Overview\nConsider the following image which contains some data:\n\n\n\nPlaneData\n\n\nThe chart describes arrival delays for two different airlines across several destinations.\n\n\nProblems\nProblem 1: Create a csv file that contains all of the information in the above dataset. You are encouraged to use a “wide” structure similar to how the information appears above, so that you can practice tidying and transformations as described below.\nProblem 2: Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. In addition to providing code, please describe your data cleanup and tidying work.\nProblem 3: Perform analysis to compare the arrival delays for the two airlines. What are your conclusions?"
-  },
-  {
-    "objectID": "assignments/labs/Lab6.html",
-    "href": "assignments/labs/Lab6.html",
-    "title": "Lab 6: R and SQL",
-    "section": "",
-    "text": "Overview\nThis projects involves data collection, creating a normalized SQL database representing the data you collected, and then loading the data from the SQL database into R.\n\n\nProblems\nProblem 1:\nSelect at least six popular movies that the people you will survey have a good chance of having watched. Ask at least five people that you know (friends, family, classmates, imaginary friends if necessary) to rate each of these movies that they have seen on a scale of 1 to 5. You may use online survey software if you find it easier and want to generate a larger sample.\nProblem 2:\nTake the results(observations) and store them in a SQL database of your choosing. I recommend SQLite or duckDB if you are undecided. Describe the normalization scheme you selected for your database and explain why you chose it.\nProblem 3:\nLoad the information from the SQL database into an R dataframe. This is by design a very open-ended assignment. In general, there’s no need here to ask “Can I…?” questions about your proposed approach. A variety of reasonable approaches are acceptable. You could for example access the SQL data directly from R, or you could create an intermediate .CSV file. I should be able to generate the SQL table(s) and data from your provided code—if you use a graphical user interface to create and populate tables, it should have a mechanism to generate corresponding SQL code. This assignment does not need to be 100% reproducible. You can (and should) blank out your SQL password if your solution requires it; otherwise, full credit requires that your code is “reproducible,” with the assumption that I have the same database server and R software. Handling missing data is a foundational skill when working with SQL or R. To receive full credit, you should demonstrate a reasonable approach for handling missing data. After all, how likely is it that all five of your friends have seen all six movies?\nProblem 4: Is there any benefit in standardizing ratings? How might you approach this?\n(Optional) Reading related to this assignment:\n\nJames Le, “The 4 Recommendation Engines That Can Predict Your Movie Tastes”, May 1, 2018. This a nice backgrounder on movie recommendation engines.\nSteve Blank, “The Customer Development Process. 2 Minutes to See Why”, Jul 29, 2014.. In this [&lt;3 minute] YouTube video “lean startup” founder Steve Blank talks about the importance of getting out of the building to talk to customers. I’d encourage you to adopt this “builder mentality” in your own data science work whenever it’s practical, by collecting data yourself, whether it’s related to a “business experiment” or a “scientific experiment.”"
-  },
-  {
-    "objectID": "assignments/labs/Lab8.html",
-    "href": "assignments/labs/Lab8.html",
-    "title": "Lab 8: Text Mining and NLP",
-    "section": "",
-    "text": "Overview\nIn this lab, we will use the advanced R programming concepts that we studied to process a complex text file for analysis.\nProblem 1:\nIn Text Mining with R, Chapter 2 looks at Sentiment Analysis. In this assignment, you should start by getting the primary example code from chapter 2 working in an R Markdown document. You should provide a citation to this base code.\nProblem 2 Extend this base code in two ways:\n\nWork with a different corpus of your choosing\nIncorporate at least one additional sentiment lexicon (possibly from another R package that you’ve found through research)."
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html",
-    "href": "assignments/labs/Lab1.html",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "",
-    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
-    "href": "assignments/labs/Lab1.html#airbnb-in-nyc-or-your-city",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "",
-    "text": "Airbnb is a startup company that has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that it Airbnb has negative impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong regulations on the use of Airbnb.\nBecause Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called inside airbnb"
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#first-steps",
-    "href": "assignments/labs/Lab1.html#first-steps",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "First Steps",
-    "text": "First Steps\nBefore we introduce the data and the main assignment, let’s begin with a few key steps to configure the file and create a github repository for your first assignment.\n\nStart a new github repository in your account, clone it to your computer (using RStudio to start a new project from a repository or any other way)\nUpdate the YAML, changing the author name to your name, and knit the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your Qmd and md files. If anything is missing, commit and push again."
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#packages",
-    "href": "assignments/labs/Lab1.html#packages",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "Packages",
-    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, and the ggridges package to make a ridge plot in the last exercise. You may need to install ggridges if you haven’t already, you can do that using:\n\ninstall.packages(\"ggridges\")\n\nThen make sure to load both packages:"
-  },
-  {
-    "objectID": "assignments/labs/Lab1.html#data",
-    "href": "assignments/labs/Lab1.html#data",
-    "title": "Lab 1: Airbnbs in NYC",
-    "section": "Data",
-    "text": "Data\nThe data for this assignment can be found on the course website at nycbnb, or if you are adventurous and want to perform this assignment for a different city you can choose one from inside airbnb). If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:\n\n  nycbnb = nycbnb |&gt; \n    select(\n      id, \n      price, \n      neighbourhood_cleansed,\n      neighbourhood_group_cleansed,\n      accommodates, \n      bathrooms, \n      bedrooms, \n      beds, \n      review_scores_rating, \n      number_of_reviews, \n      listing_url )\n\nYou will also need to do some postprocessing, including changing the price column from a string to a numerical variable. If you decide to go this custom route let me know and make sure to share your data, but I recommend sticking with the data I provided.\nYou can read the data into R using the command:\n\nnycbnb = read_csv(\"/home/georgehagstrom/work/Teaching/DATA607/website/data/nycbnb.csv\")\n\nwhere you should replace nycbnb.csv with the local path to your file.\nImportant note: It is generally not wise to include datasets in github repositories, especially if they are large and can change frequently.\nYou can view the dataset as a spreadsheet using the View() function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following data viewer window pop up."
-  },
-  {
-    "objectID": "assignments/tidygit.html",
-    "href": "assignments/tidygit.html",
-    "title": "GitHub/TidyVerse Create and Extend",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.\n\n\nTidyverse Create (Template)\n\n\nTidyverse Extend (Template)",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nDatabases and SQL (Template)\n\n\nWeb Scraping and APIs (Template)\n\n\nText Mining and NLP (Template)\n\n\nGraphs and Graph Data (Template)\n\n\nLarge Datasets and Cloud Computing (Template)",
     "crumbs": [
       "Assignments",
-      "GitHub/Tidyverse Recipes"
+      "Labs"
     ]
+  },
+  {
+    "objectID": "assignments/dsincontext.html",
+    "href": "assignments/dsincontext.html",
+    "title": "Data Science in Context Presentations",
+    "section": "",
+    "text": "Overview\nEach student needs to complete one data science in context presentation. These are short presentations with a target length of 5-7 minutes. At the beginning of the semester you should sign up for a presentation slot using this sign up sheet. The presentations will be made live in class, with an opportunity for a few minutes of question or discussion. You can pick any topic that interests you and is related to data science. If you have a strong preference not to present live, you may record and upload your presentation separately."
+  },
+  {
+    "objectID": "assignments/tidygit/tidycreate.html",
+    "href": "assignments/tidygit/tidycreate.html",
+    "title": "Tidyverse Create",
+    "section": "",
+    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Create an Example Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset.\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. .\nYou should complete your submission on the schedule stated in the course syllabus."
+  },
+  {
+    "objectID": "assignments/labs/Lab3.html",
+    "href": "assignments/labs/Lab3.html",
+    "title": "Lab3: EDA on Rhode Island Open Policing",
+    "section": "",
+    "text": "Overview\nFor this laboratory assignment you will perform an exploratory data analysis on a subset of data from the Stanford Open Policing dataset. The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The rds file format is a compressed format that is much smaller than the corresponding csv file. You can load the data from it using the function read_rds.\n\n\nProblems\nProblem 1: The first step of an exploratory data analysis is to think of a set of interesting questions that your data set might be able to answer. This dataset has a large number of variables, so your questions can help you narrow down the questions you might be interested in. Write down a few questions about police stops that you might be interested in and list the rows in the dataset that you think might have important information to answer your question.\nThis is intentionally open ended, but if you need inspiration you could look at how factors like time of day, month, race and gender (of both the officer and subject), or department id are related to the frequency of stops, the reason for stops, or the outcome. For example one interesting question might be: Do racial differences in traffic stops decrease at night?\nProblem 2: Having identified the most important variables, you should study their variability, in order to better understand their distribution and to identify any potential problems with the data quality or unusual values. Calculate summary statistics as appropriate for whether you have categorical or numerical data and perform basic visualizations. Give justifications for the visualizations that you selected.\nProblem 3: You likely found that for some of your variables there were missing data, outlier values, or data points that indicate some sort of error. In order to continue with your analysis you will need to decide what to do with these. Modify your dataset appropriately so that you will be able to perform an analysis of the relationships you are interested in. In addition to the code, give justifications for your choices.\nProblem 4: Now it is time to visualize the relationships that you are interested in. Make plots showing how variables co-vary, faceting when necessary to explore relationships among up to 3 variables. Consier the following questions when you observe a pattern:\n\nCould this pattern be due to coincidence (i.e. random chance)?\nHow can you describe the relationship implied by the pattern?\nHow strong is the relationship implied by the pattern?\nWhat other variables might affect the relationship?\nDoes the relationship change if you look at individual subgroups of the data?\n\nIf the results of these initial visualizations inspire more questions, consider performing those as well. Briefly summarize the results of this exercise and relate it to your initial questions and hypotheses."
+  },
+  {
+    "objectID": "assignments/labs/Lab7.html",
+    "href": "assignments/labs/Lab7.html",
+    "title": "Lab 7: Webscraping and APIs",
+    "section": "",
+    "text": "Overview\nThis is a two part assignment. In the first part you will use the webscraping package rvest along with functions and iteration to download data from the internet on political contributions. In the second part, you will use httr to interact with the New York Times website apis.\n\n\nWebscraping Open Secrets\nIn this assignment we will scrape and work with data foreign connected PACs that donate to US political campaigns. In the United States, only American citizens and green card holders can contribute to federal elections, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees.\nFirst, we will get data foreign connected PAC contributions in the 2022 election cycle. Then, you will use a similar approach to get data such contributions from previous years so that we can examine trends over time.\nIn order to complete this assignment you will need a Chrome browser with the Selector Gadget extension installed.\nIn addition to tidyverse, you will need to install and load the packages robotstxt, rvest, and scales.\nProblem 1: Check that open secrets allows you to webscrape by running the paths_allowed function on the url https://www.opensecrets.org. Then write a function called scrape_pac() that scrapes information from the Open Secrets webpage for foreign connected PAC contributions in a given year:\n\nThis function should take the url of the webpage as its only input and should output a data frame\nIt should rename scraped variables using the “snake_case” naming convention\nclean up the Country of Origin/Parent Company variable with str_squish().\nadd a new column to the data frame for year. We will want this information when we ultimately have data from all years, so this is a good time to keep track of it. Our function doesn’t take a year argument, but the year is embedded in the URL, so we can extract it out of there, and add it as a new column. Use the str_sub() function to extract the last 4 characters from the URL. You will probably want to look at the help for this function to figure out how to specify “last 4 characters”.\n\nDefine the URLs for 2022, 2020, and 2000 contributions. Then, test your function using these URLs as inputs. Does the function seem to do what you expected it to do?\nProblem 2: Construct a vector called urls that contains the URLs for each webpage that contains information on foreign-connected PAC contributions for a given year. Map the scrape_pac() function over urls in a way that will result in a data frame called pac_all. Write the data frame to a csv file called pac-all.csv in the data folder.\nProblem 3: Clean your downloaded data file for visualization.\n\nFirst report the number of observations and variables that your scraped datasset contains.\nSeparate the country_parent into two such that country and parent company appear in different columns for country-level analysis.\nConvert contribution amounts in total, dems, and repubs from character strings to numeric values.\nPrint out the top 10 rows of your data frame after completing these steps.\n\nProblem 4: Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years. Once you have made the plot, write a brief interpretation of what the graph reveals. Few hints to help you out:\nProblem 5: Create a line plot of contributions from UK companies to each of the Democratic and Republican parties over time, with the lines colored according to party to differentiate them.\n\n\nUsing the NY Times API\nProblem 6: The New York Times web site provides a rich set of APIs, as described here . You’ll need to start by signing up for an API key. Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it into an R DataFrame."
+  },
+  {
+    "objectID": "assignments/labs/Lab4.html",
+    "href": "assignments/labs/Lab4.html",
+    "title": "Lab 4: Data Transformations Studying College Majors",
+    "section": "",
+    "text": "The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story “The Economic Guide To Picking A College Major”.\nThese data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see the code FiveThirtyEight authors used.\nWe should also note that there are many considerations that go into picking a major. Earnings potential and employment prospects are two of them, and they are important, but they don’t tell the whole story. Keep this in mind as you analyze the data.\nWe’ll use the tidyverse package for much of the data wrangling and visualisation, the scales package for better formatting of labels on visualisations, and the data lives in the fivethirtyeight package. Make sure to install and load these packages if you don’t have them already. When you load ‘fivethirtyeight’ you gain access to a dataset called college_recent_grads, which is what your homework will be based on.\nThe college_recent_grads data frame is a trove of information. Let’s think about some questions we might want to answer with these data:\n\nWhich major has the lowest unemployment rate?\nWhich major has the highest percentage of women?\nHow do the distributions of median income compare across major categories?\nDo women tend to choose majors with lower or higher earnings?\n\nIn the next section we aim to answer these questions.\n\nProblems\nProblem 1 Arrange the data by unemployment rate in ascending order in order find the major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: to reduce the number of digits displayed in the unemployment rate, use the percent() function to mutate the unemployment rate, i.e. pipe your output to mutate(unemployment_rate = percent(unemployment_rate) )\nProblem 2: Which major has the highest percentage of women? Determine the three majors with the highest percentage of women using arrange. Again use select to only display variables relevant to the question and pipe the final output to top_n(3) to display just the top 3 majors.\nProblem 3 This problem explores the distribution of median income across different majors.\n\nPlot the distribution of median income using a histogram. Make sure to experiment with the bin width to ensure that your histogram captures the most important features of the distribution.\nSummary statistics: calculate the mean, median, 25th and 75th quantiles of the median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).\nPlot the distribution of median income for each value of the major_category variable using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where “typical” comes from the summary statistic that you think best describes the distributions you observed in the histogram.\n\nProblem 4: Which major category is the least popular in this sample? Use the count function along with arrange to accomplish this task, and make sure you arrange in ascending order.\nProblem 5: Exploring differences between different STEM fields.\nOne of the sections of the FiveThirtyEight story is “All STEM fields aren’t the same”.\nThe STEM categories are the ones that match the vector\n\nc(\n  \"Biology & Life Science\",\n  \"Computers & Mathematics\",\n  \"Engineering\",\n  \"Physical Sciences\")\n\nUse this vector to add a variable to your dataset that is True if the major is a STEM major and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors’ median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.\nProblem 6: What types of majors do women tend to major in? Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables."
+  },
+  {
+    "objectID": "assignments/labs/Lab5.html",
+    "href": "assignments/labs/Lab5.html",
+    "title": "Lab 5: Working with Text and Strings",
+    "section": "",
+    "text": "In this lab you will practice perform a series of exercises that use text and string manipulation to either analyze data with text, manipulate data containing strings, apply regular expressions, or handle data files with unusual formats or text strings.\n\n\nProblem 1. Using the 173 majors listed in fivethirtyeight.com’s College Majors dataset, provide code that identifies the majors that contain either “DATA” or “STATISTICS”\nProblem 2 Write code that transforms the data below:\n[1] \"bell pepper\" \"bilberry\" \"blackberry\" \"blood orange\"\n[5] \"blueberry\" \"cantaloupe\" \"chili pepper\" \"cloudberry\"\n[9] \"elderberry\" \"lime\" \"lychee\" \"mulberry\"\n[13] \"olive\"  \"salal berry\"\n\nInto a format like this:\nc(\"bell pepper\", \"bilberry\", \"blackberry\", \"blood orange\", \"blueberry\", \"cantaloupe\", \"chili pepper\", \"cloudberry\", \"elderberry\", \"lime\", \"lychee\", \"mulberry\", \"olive\", \"salal berry\")\nProblem 3 Describe, in words, what these regular expressions will match:\n\n(.)\\1\\1\n\"(.)(.)\\\\2\\\\1\"\n(..)\\1\n\"(.).\\\\1.\\\\1\"\n\"(.)(.)(.).*\\\\3\\\\2\\\\1\"\n\nProblem 4. Construct regular expressions to match words that:\n\nStart and end with the same character.\nContain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)\nContain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)"
+  },
+  {
+    "objectID": "assignments/labs/Lab5.html#problems",
+    "href": "assignments/labs/Lab5.html#problems",
+    "title": "Lab 5: Working with Text and Strings",
+    "section": "",
+    "text": "Problem 1. Using the 173 majors listed in fivethirtyeight.com’s College Majors dataset, provide code that identifies the majors that contain either “DATA” or “STATISTICS”\nProblem 2 Write code that transforms the data below:\n[1] \"bell pepper\" \"bilberry\" \"blackberry\" \"blood orange\"\n[5] \"blueberry\" \"cantaloupe\" \"chili pepper\" \"cloudberry\"\n[9] \"elderberry\" \"lime\" \"lychee\" \"mulberry\"\n[13] \"olive\"  \"salal berry\"\n\nInto a format like this:\nc(\"bell pepper\", \"bilberry\", \"blackberry\", \"blood orange\", \"blueberry\", \"cantaloupe\", \"chili pepper\", \"cloudberry\", \"elderberry\", \"lime\", \"lychee\", \"mulberry\", \"olive\", \"salal berry\")\nProblem 3 Describe, in words, what these regular expressions will match:\n\n(.)\\1\\1\n\"(.)(.)\\\\2\\\\1\"\n(..)\\1\n\"(.).\\\\1.\\\\1\"\n\"(.)(.)(.).*\\\\3\\\\2\\\\1\"\n\nProblem 4. Construct regular expressions to match words that:\n\nStart and end with the same character.\nContain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)\nContain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)"
+  },
+  {
+    "objectID": "assignments/labs/tbd.html",
+    "href": "assignments/labs/tbd.html",
+    "title": "Lab TBD",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#what-is-data-science",
+    "href": "meetups/Meetup1/Meetup1.html#what-is-data-science",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "What is Data Science?",
+    "text": "What is Data Science?\n\n\nData science is a “discipline that allows you to transform raw data into understanding, insight, and knowledge”\n\n\n\n\nI hear often: “Data Science is just statistics with a clever brand name”\n\n\n\n\nIs this a misconception?"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from text"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-1",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-1",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textLoad the data from files into software"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-2",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-2",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTidy the data so it is stored in a consistent way"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-3",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-3",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textTransform the data to focus our analysis on observations of interest"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-4",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-4",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textVisualize the data to find relationships, problems, and pose questions"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-5",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-5",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textModel the data to answer questions precisely using statistics"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-6",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-6",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textCommunicate to share results with others"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#data-science-workflow-7",
+    "href": "meetups/Meetup1/Meetup1.html#data-science-workflow-7",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Data Science Workflow",
+    "text": "Data Science Workflow\nConsider this visualization of the process for converting raw data into knowledge:\n\nFigure from textThis class will focus on everything but modeling, i.e. the part of Data Science that isn’t statistics"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "href": "meetups/Meetup1/Meetup1.html#modeling-can-be-small-part-of-data-science-projects",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Modeling can be small part of Data Science projects",
+    "text": "Modeling can be small part of Data Science projects\nIt is said that 80% of time in data science projects is spent on data mining, cleaning, tidying, exploratory data analysis, etc\n\nFigure from ForbesPlease forgive the Pie Chart"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#introcase-study",
+    "href": "meetups/Meetup1/Meetup1.html#introcase-study",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Intro/Case Study",
+    "text": "Intro/Case Study\n\n\n\n\n\nTrait Correlations in Marine Bacteria\n\n\n\n\nData on how bacteria get their food in the ocean\nGetting data for this plot took months…..\nMany sources, data formats, quality issues, processing"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#learning-objectives",
+    "href": "meetups/Meetup1/Meetup1.html#learning-objectives",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the course, you will have a foundation of skills in the Data Science Workflow\n\nFind data you need and do all steps to prep it for analysis\nBuild expertise in R and the tidyverse\nUse and understand relational databases and SQL\nCollaborate with Git and GitHub\nIntroduce you to distributed computing and other tools for large datasets\nImprove your programming ability"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#vignette-electricity-and-co2",
+    "href": "meetups/Meetup1/Meetup1.html#vignette-electricity-and-co2",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Vignette: Electricity and CO2",
+    "text": "Vignette: Electricity and CO2\n\nSources of Power, refs last slide"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#electricity-generation-over-time",
+    "href": "meetups/Meetup1/Meetup1.html#electricity-generation-over-time",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Electricity Generation Over Time",
+    "text": "Electricity Generation Over Time\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#carbon-intensity-of-electricity",
+    "href": "meetups/Meetup1/Meetup1.html#carbon-intensity-of-electricity",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Carbon Intensity of Electricity",
+    "text": "Carbon Intensity of Electricity\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#controls-on-carbon-intensity",
+    "href": "meetups/Meetup1/Meetup1.html#controls-on-carbon-intensity",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Controls on Carbon Intensity",
+    "text": "Controls on Carbon Intensity\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#link-to-the-vignette",
+    "href": "meetups/Meetup1/Meetup1.html#link-to-the-vignette",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Link to the Vignette",
+    "text": "Link to the Vignette\nYou can download the vignette from my github by clicking here\nRemember to download the data if you want to render the file."
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#syllabus-and-course-site",
+    "href": "meetups/Meetup1/Meetup1.html#syllabus-and-course-site",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Syllabus and Course Site",
+    "text": "Syllabus and Course Site\n\nFull Syllabus on the course website:\n\nhttps://georgehagstrom.github.io/DATA607/\nCourse website contains links to weekly reading and homework assignments, meetup videos, course schedule, and other course materials\n\nUse the Brightspace page to submit assignments, either in pdf format or a link to an html on some site I can access (ie github or rpubs)"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#meetups",
+    "href": "meetups/Meetup1/Meetup1.html#meetups",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Meetups",
+    "text": "Meetups\n\n6:45-7:45 on Wednesday evening. Attending live preferred, watch video after if you can’t\nOffice Hours: On Zoom by appointment\nCommunication and collaboration: https://fall2024data607.slack.com"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#assignments",
+    "href": "meetups/Meetup1/Meetup1.html#assignments",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Assignments",
+    "text": "Assignments\n\nLabs (50%): Weekly Programming assignments\nTidyVerse Recipes (10%): Collaborative intro to Git\nProject (25%)\n\nAssemble and explore a data set of your choosing\nExplore your interests, build your portfolio!\n\nData Science in Context Presentation (5%)\n\nOne 5 minute presentation, sign up for your presentation slot asap!\n\nMeetup Reflections and Introduction (10%)"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#schedule",
+    "href": "meetups/Meetup1/Meetup1.html#schedule",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Schedule",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#textbooks",
+    "href": "meetups/Meetup1/Meetup1.html#textbooks",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Textbooks",
+    "text": "Textbooks\n\nHadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. (2023). R for Data Science (2e). O’Reilly\nJennifer Bryan. Happy Git and GitHub for the R User.\nJulia Silge and David Robinson (2017). Text Mining with R. O’Reilly\n\nRecommended: Wickham, H. Advanced R. Baca Raton, FL: Taylor & Francis Group."
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "href": "meetups/Meetup1/Meetup1.html#tidyverse-opinionated-ecosystem",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Tidyverse: Opinionated Ecosystem",
+    "text": "Tidyverse: Opinionated Ecosystem\n\n\n\n\n\nCollection of compatible packages\nShared philosophy, common grammar\nStrong Core, Many Extensions\nAdvantages and Disadvantages"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#what-to-do-this-week",
+    "href": "meetups/Meetup1/Meetup1.html#what-to-do-this-week",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "What to do this week?",
+    "text": "What to do this week?\n\nReadings:\n\nIntro and Chapter 28 of R4DS\nSections 1-15 of Happy Git\nQuarto Tutorial\nAppendix on R Help Files\n\nGet software installed and configured:\n\n\n\nR, RStudio, git, latex\n\n\n\nWrite a post introducing yourself on Brightspace Discussions\nSign up for your Data Science in Context Presentation"
+  },
+  {
+    "objectID": "meetups/Meetup1/Meetup1.html#image-references",
+    "href": "meetups/Meetup1/Meetup1.html#image-references",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "section": "Image References",
+    "text": "Image References\n\nCoal: By Morgre - Own work, CC BY-SA 3.0\nGas/Methane: By Georg Slickers - Self-photographed, CC BY-SA 3.0\nHydro: By Source file: Le Grand PortageDerivative work: Rehman - File:Three_Gorges_Dam,_Yangtze_River,_China.jpg, CC BY 2.0\nSolar: By Parabel GmbH - Own work, CC BY-SA 3.0\nWind: By Erik Wilde from Berkeley, CA, USA - harvesting wind, CC BY-SA 2.0\n\n\n\n\n\nDATA 607"
   },
   {
     "objectID": "license.html",
@@ -418,7 +754,7 @@
     "href": "modules/module2.html",
     "title": "Module 2 - Data Vizualization and Basic Transformations",
     "section": "",
-    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables\nGrammar of Graphics\ntidyverse code conventions\nBasic Data Transofrmations\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
+    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup (finish the reading first if you can)\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables with ggplot2\nLearn principles of good visualizations\nggplot2 syntax\ntidyverse code conventions\nBasic Data Transofrmations with `\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nCalling BS: Principle of Proportional Ink\nCalling BS: Misleading Axes\n\nTwo good articles on making honest visualizations and identifying dishonest ones.\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nData Visualization: A Practical Introduction. Kieran Healey.\n\nWell written book on R and data visualization. This is a good place to turn if you are struggling with the style of the main course textbook.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
     "crumbs": [
       "Topics",
       "2 - Visualizing Data"
