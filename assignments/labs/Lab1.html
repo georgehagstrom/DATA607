@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="airbnb-in-nyc-or-your-city" class="level2">
 <h2 class="anchored" data-anchor-id="airbnb-in-nyc-or-your-city">Airbnb in NYC (or your city)</h2>
-<p>Airbnb has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that Airbnb has adverse impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong restrictions on the use of Airbnb.</p>
+<p>Airbnb has had a disruptive effect on the hotel, rental home, and vacation industry throughout the world. The success of Airbnb has not come without controversies, with critics arguing that Airbnb has adverse impacts on housing and rental prices and also on the daily lives of people living in neighborhoods where Airbnb is popular. This controversy has been particularly intense in NYC, where the debate been Airbnb proponents and detractors eventually led to the city imposing strong restrictions on the use of Airbnb. If you find this issue interesting and want to go deeper, there is the potential for an interesting project that brings in hotels (which have interesting regulations in NYC), hotel price data, and rental data and looks at these things together.</p>
 <p>Because Airbnb listings are available online through their website and app, it is possible for us to acquire and visualize the impacts of Airbnb on different cities, including New York City. This is possible through the work of an organization called <a href="https://insideairbnb.com/get-the-data/">inside airbnb</a></p>
 </section>
 <section id="github-instructions" class="level2">
@@ -413,7 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The data for this assignment can be found on the course website at <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/data/nycbnb.csv">nycbnb</a>, or if you are adventurous and want to perform this assignment for a different city you can choose one from <a href="https://insideairbnb.com/get-the-data/">inside airbnb)</a>. If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:</p>
+<p><em>The data for this assignment can be found on my github page <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/data/nycbnb.csv">by clicking here and downloading nycbnb.csv</a></em></p>
+<p>If you are adventurous and want to perform this assignment for a different city you can choose one from <a href="https://insideairbnb.com/get-the-data/">inside airbnb)</a>. If you go that route, make sure to download the file listings.csv.gz for the city you selected (gz is an archive format which you should be able to expand), and you will only need to keep the following columns for this analysis:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  nycbnb <span class="ot">=</span> nycbnb <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>

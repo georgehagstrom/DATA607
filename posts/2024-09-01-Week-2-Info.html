@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="George I. Hagstrom">
+<meta name="dcterms.date" content="2024-09-01">
+<meta name="description" content="Click here for info on Week 2">
 
-<title>Module 2 - Data Vizualization and Basic Transformations – DATA 607 Fall 2024</title>
+<title>Week 2 Info: Data Visualizations and Transformations – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/module3.html" rel="next">
-<link href="../modules/module1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,8 +74,9 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Module 2 - Data Vizualization and Basic Transformations – DATA 607 Fall 2024">
-<meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
+<meta property="og:title" content="Week 2 Info: Data Visualizations and Transformations – DATA 607 Fall 2024">
+<meta property="og:description" content="Click here for info on Week 2">
+<meta property="og:image" content="https://georgehagstrom.github.io/DATA607/posts/ ">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
 
@@ -87,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module2.html">2 - Visualizing Data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2 Info: Data Visualizations and Transformations</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -249,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2 - Visualizing Data</span></a>
   </div>
 </li>
@@ -336,16 +338,33 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module2.html">2 - Visualizing Data</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 2 - Data Vizualization and Basic Transformations</h1>
+<h1 class="title">Week 2 Info: Data Visualizations and Transformations</h1>
 </div>
 
+<div>
+  <div class="description">
+    Click here for info on Week 2
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>George I. Hagstrom </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 1, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -355,74 +374,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- 
-See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
-The solution, put backticks (`) around the LaTeX equation
--->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<section id="overview-and-deliverables" class="level3">
-<h3 class="anchored" data-anchor-id="overview-and-deliverables">Overview and Deliverables</h3>
-<p>This module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use <code>ggplot2</code> for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:</p>
-<ul>
-<li>9/04: Attend the class meetup (finish the reading first if you can)</li>
-<li>9/06: Submit meetup reflections</li>
-<li>9/08: Submit <a href="../assignments/labs/Lab1">Lab 1</a> on the Brightspace page for the course</li>
-</ul>
-</section>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<ul>
-<li>Data Visualization for Numerical and Categorical Variables with <code>ggplot2</code></li>
-<li>Learn principles of good visualizations</li>
-<li>tidyverse code conventions</li>
-<li>Basic Data Transofrmations with <code>dplyr</code></li>
-</ul>
-</section>
-<section id="readings" class="level3">
-<h3 class="anchored" data-anchor-id="readings">Readings</h3>
-<ul>
-<li><strong>RDS</strong> (R for Data Science): <a href="https://r4ds.hadley.nz/whole-game">Chapters 1-4</a></li>
-</ul>
-</section>
-<section id="additional-resources" class="level3">
-<h3 class="anchored" data-anchor-id="additional-resources">Additional Resources:</h3>
-<ul>
-<li><a href="https://callingbullshit.org/tools/tools_proportional_ink.html"><em>Calling BS</em>: Principle of Proportional Ink</a></li>
-<li><a href="https://callingbullshit.org/tools/tools_misleading_axes.html"><em>Calling BS</em>: Misleading Axes</a></li>
-</ul>
-<p>Two good articles on making honest visualizations and identifying dishonest ones.</p>
-<ul>
-<li><a href="https://clauswilke.com/dataviz/"><em>Fundamentals of Data Visualization</em></a>. Claus O. Wilkey. (2019). O’Reilly.</li>
-</ul>
-<p>This is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.</p>
-<ul>
-<li><a href="https://socviz.co/lookatdata.html">Data Visualization: A Practical Introduction</a>. Kieran Healey.</li>
-</ul>
-<p>Well written book on R and data visualization. This is a good place to turn if you are struggling with the style of the main course textbook.</p>
-<ul>
-<li><a href="https://vita.had.co.nz/papers/layered-grammar.pdf"><em>A Layered Grammar of Graphics</em></a>. Hadley Wickham. <em>Journal of computational and graphical statistics</em> 19.1 (2010): 3-28.</li>
-</ul>
-<p>This paper explains the concepts and thinking behind ggplot2.</p>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org/">ggplot2 website</a>. This is another excellent source of resources and information on ggplot2</li>
-</ul>
+<p>Hello Class, it is the start of Week 2. During the first week (really half a week with a long weekend) you should have completed the reading assignments, familiarized yourself with R, RStudio, quarto, and git, and made sure these are working on your computer. It was really nice to read all of your intro posts on Brightspace, thanks for putting in the effort to describe your interests and background in data science.</p>
+<p>The biggest difference from Week 2 to Week 1 is that you will have your first homework assignment, a lab assignment titled <a href="../assignments/labs/Lab1">Airbnb in NYC</a>. It will be due next Sunday at midnight.</p>
+<p>For your reading assignments and more details about this week, head over to <a href="../modules/module2">Module 2</a>. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -989,18 +945,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../modules/module1.html" class="pagination-link" aria-label="1 - Data Science Workflow and Toolkit">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1 - Data Science Workflow and Toolkit</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../modules/module3.html" class="pagination-link" aria-label="3 - Data Tidying">
-        <span class="nav-page-text">3 - Data Tidying</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1015,7 +959,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/modules/module2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/posts/2024-09-01-Week-2-Info.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
