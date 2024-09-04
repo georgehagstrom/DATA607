@@ -1,0 +1,504 @@
+---
+title: "Meetup 2: Visualizing Data"
+author: "George I. Hagstrom"
+format: revealjs
+logo: CUNY_SPS_Logo_Wide.png
+footer: "DATA 607"
+date: 09-04-2024
+---
+
+```{r}
+#| echo: False
+library(tidyverse)
+library(kableExtra)
+library(ggrepel)
+library(lubridate)
+library(scales)
+library(patchwork)
+library(ggthemes)
+library(DT)
+
+```
+
+## Week Summary and Questions about Last Week
+
+1. Read Chapters 1-4 of R4DS (Work out the problems as you go!)
+  - Supplementary Readings- Data Viz (Wilke), Calling BS (West and Bergstrom)
+2. Lab 1: Airbnb in NYC- submit qmd file and pdf or html link on Brightspace by Sunday Midnight
+3. Data Science in Context- sign up if you haven't yet
+4. If you don't have a working software setup speak up in Slack!!!
+
+
+
+
+## Why Make Graphs? 
+
+
+
+* Graphs are the main way we communicate data
+* Alternative would be summary statistics, but visualizations are *much* richer.
+* Big debate within statistics community because summary stats perceived as more "rigorous"
+* Graphs won the debate- they are the main and most important thing people will remember about your data analyses
+
+
+## Anscombe's Quartet {.smaller}
+
+::: columns
+::: {.column width="25%"}
+Set 1:
+
+```{r}
+#| eval: True
+
+anscombe |> pivot_longer(
+  everything(),
+  cols_vary = "slowest",
+  names_to = c(".value","set"),
+  names_pattern = "(.)(.)"
+)  |> 
+  filter(set == 1) |> 
+  select(x,y) |> 
+  kable()
+```
+:::
+
+::: {.column width="25%"}
+Set 2:
+
+```{r}
+#| eval: True
+
+anscombe |> pivot_longer(
+  everything(),
+  cols_vary = "slowest",
+  names_to = c(".value","set"),
+  names_pattern = "(.)(.)"
+)  |> 
+  filter(set == 2) |> 
+  select(x,y) |> 
+  kable()
+```
+:::
+
+::: {.column width="25%"}
+Set 3:
+
+```{r}
+#| eval: True
+
+anscombe |> pivot_longer(
+  everything(),
+  cols_vary = "slowest",
+  names_to = c(".value","set"),
+  names_pattern = "(.)(.)"
+)  |> 
+  filter(set == 3) |> 
+  select(x,y) |> 
+  kable()
+```
+:::
+
+::: {.column width="25%"}
+Set 4:
+
+```{r}
+#| eval: True
+
+anscombe |> pivot_longer(
+  everything(),
+  cols_vary = "slowest",
+  names_to = c(".value","set"),
+  names_pattern = "(.)(.)"
+)  |> 
+  filter(set == 4) |> 
+  select(x,y) |> 
+  kable()
+```
+:::
+:::
+
+## Anscombe Summary Stats:
+
+```{r}
+
+newAnscombe = anscombe |> pivot_longer(
+  everything(),
+  cols_vary = "slowest",
+  names_to = c(".value","set"),
+  names_pattern = "(.)(.)"
+) 
+
+newAnscombe |> group_by(set) |>
+summarise(
+    mean_x = mean(x), 
+    mean_y = mean(y),
+    sd_x = sd(x),
+    sd_y = sd(y),
+    r = cor(x, y)
+  ) |> 
+  kable(col.names = c("Set","mean(x)", "mean(y)","sd(x)", "sd(y)","cor(x,y)"))
+
+```
+
+Are the datasets the basically the same?
+
+## Anscombe Visualized:
+
+```{r}
+
+newAnscombe |> 
+  ggplot(aes(x=x,y=y)) +
+  geom_point(color="blue") +
+  facet_wrap(~set) +
+  theme_bw(base_size = 18)
+
+```
+
+## 1D Example
+
+![](Cleveland_NrVsGraphSummaries.png){fig-align="center"}
+
+## Datasaurus Dozen
+
+```{r fig.width=18, fig.height=12, out.width="100%"}
+library(datasauRus)
+datasauRus::datasaurus_dozen |> ggplot(aes(x=x,y=y)) +
+  geom_point(color="blue") +
+  facet_wrap(~dataset) +
+  theme_bw(base_size = 18)
+```
+
+## Non-Contrived Example
+
+![](JackmanTable.png){fig-align="center"}
+
+-   Table shows the results of a linear regression between income inequality and voter turnout, claiming to show a statistically significant negative correlation (Jackman 1980)
+
+## Outlier caused relationship
+
+![](JackmanViz.png){fig-align="center"}
+
+## Graphs as Comparisons
+
+Two purposes for graphs:
+
+1.  Understand and communicate the size and direction of comparisons that were already of interest
+2.  Discover new patterns
+
+A graph is often all someone will remember about your data analysis, can make the difference between convincing important decision makers or not.
+
+## Improve this Graph
+
+![](PlotExample.png)
+
+## Reformulating the Data {.incremental}
+
+::: {.incremental}
+* Two Possible Stories
+  - Children had higher accuracy than adults
+  - Multiple objects is harder than an individual object
+* Caption suggests Adult vs. Child accuracy
+:::
+
+. . .
+
+Solution: 
+
+::: {.incremental}
+1.  Instead of plotting responses, plot accuracy
+2.  Plot Accuracy of each group on the same axis
+:::
+
+## Case Study Solution: Line Plot
+
+::: columns
+::: {.column width="80%"}
+```{r, fig.height=8}
+gopnikData = read_csv("gopnikData.csv")
+
+
+gopnikLabel = gopnikData |> group_by(Age_Category) |> summarise(meanAccuracy = mean(Accuracy))
+gopnikLabel$Condition = 0.5
+
+gopnikData |> mutate(numberCondition = ifelse(Condition == "Single",0,1)) |> 
+  ggplot(aes(x=numberCondition,y=Accuracy,color=Age_Category)) +
+  geom_point(show.legend = FALSE,size = 4) +
+  geom_line(show.legend = FALSE, size = 1.5) +
+  geom_pointrange(aes(ymin=Accuracy - se, ymax=Accuracy*( (Accuracy + se) > 1) + (Accuracy + se) * ((Accuracy + se) < 1  )),
+                  show.legend = FALSE) +
+  scale_y_continuous(limit = c(0,1.01),breaks = seq(0,1,by=0.5)) +
+  scale_x_continuous(limit = c(0,1),
+                     breaks = seq(0,1,by=1),
+                     labels = c("Single","Multiple")) +
+  theme_bw(base_size = 24,) +
+  xlab("Experiment Condition") +
+  ylab("Fraction Who Answer Correctly") +
+  labs(color="Age",title = "Adults vs Children Accuracy in a Selection Task") +
+  geom_text_repel(data = gopnikLabel,aes(x=Condition,y=meanAccuracy,label=Age_Category,color=Age_Category),
+                  show.legend = FALSE,
+                  size = 8)
+ 
+
+```
+:::
+:::
+
+## ggplot2 Basics
+
+* `ggplot2` is tidyverse plotting package
+* Based on Wilkinson's Grammar of Graphics
+* Key figure components
+  - data maps to aesthetics
+  - interpreted using geoms
+  - others: theme, facets, coordinates, stats 
+
+
+
+## Vignette: Transit Costs
+
+```{r}
+#| fig-height: 10
+#| fig-width: 16
+
+transit_costs = read_csv("transit_cost.csv")
+
+cities_label = c("New York","London","Barcelona","Milan","Paris","Mexico City","Beijing","Singapore","Istanbul")
+
+transit_costs |>  
+  group_by(city) |> 
+  summarise(mean_cpm = mean(cost_km_millions)) |>  
+  arrange(desc(mean_cpm)) |> 
+  mutate(order = rank(-mean_cpm)) |> 
+  mutate(is_nyc = (city == "New York")) |> 
+  filter(mean_cpm > 100) |> 
+  ggplot(aes(x=order,y=mean_cpm,color=is_nyc,size = mean_cpm)) +
+  geom_point(show.legend = FALSE) +
+  scale_size_area() +
+  geom_text_repel( data = .%>%  filter(city %in% cities_label),
+                   aes(x=order,y=mean_cpm,label = city),
+                   color="black",
+                   size=8,
+                   show.legend = FALSE) +
+  theme_bw(base_size = 24) +
+  labs(
+    x = "Rank",
+    y = "Mean Cost in Millions per KM",
+    title = "Cities Ranked by Cost of Transit",
+    size = "Mean CPM"
+  ) 
+
+
+```
+
+[Data: tidy tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md)
+[Download Vignette](https://github.com/georgehagstrom/DATA607/website/course/meetups/Meetup2/TransitCostsVignette.R)
+
+## Data Science in Context Presentation
+
+
+## Categories of Graphs
+
+```{r fig.height=8, fig.width = 12}
+
+library(palmerpenguins)
+
+
+good = penguins |> ggplot(aes(x=species)) + 
+  geom_bar() +
+  theme_bw(base_size = 24) +
+  labs(title = "Good",
+       y = "Count",
+       x = "Species")
+
+ugly = penguins |> ggplot(aes(x=species,fill=species)) +
+  geom_bar(show.legend = FALSE) +
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(text=element_text(size=38,  family="Arial",color="Purple")) +
+  labs(title = "Ugly",
+       y = "Count",
+       x = "Species")
+
+
+bad = penguins |> ggplot(aes(x=species)) + 
+  geom_bar() +
+  theme_bw(base_size = 24) +
+  labs(title = "Bad",
+       y = "Count",
+       x = "Species") +
+  coord_cartesian(ylim = c(55, 150))
+
+  wrong = penguins |> filter(body_mass_g <4300, sex == "female") |>   ggplot(aes(x=species)) + 
+  geom_bar() +
+    theme_bw() +
+    theme(axis.title.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        text = element_text(size=24)) +
+  labs(title = "Wrong",
+       y ="",
+       x = "")
+
+(good + ugly)/(bad + wrong)
+
+```
+
+## Avoiding Wrong
+
+Wrong figures are missing information needed to decipher the meaning or contain mathematical errors
+
+-   Label all axes and provide units if ambiguous
+-   All axes need scales
+-   Aestethic elements accurately represent the data
+-   Legends and labels present when appropriate to identify meaning of other visual elements
+
+## Ethics: Principal of Proportional Ink
+
+> "The representation of numbers, as physically measured on the surface of the graphic itself, should be directly proportional to the numerical quantities represented." (1983, p.56) Edward Tufte, The Visual Display of Quantitative Information
+
+-   This principle avoids many misleading visualizations
+
+## Example
+
+::: columns
+::: {.column width="50%"}
+![](BadHeightGraph.jpeg)
+:::
+
+::: {.column width="50%"}
+-   Scale doesn't start at 0
+-   Width expands with height
+-   Danger in bar plots, filled line plots, plots with elements that scale with data
+:::
+:::
+
+## Bar Plots Should Start at 0
+
+::: columns
+::: {.column width="50%"}
+Wrong
+
+```{r}
+library(openintro)
+nycflights |> mutate(month = as.factor(month)) |> ggplot(aes(x=month)) +
+  geom_bar() +
+  coord_cartesian(ylim = c(2000, 3000)) +
+  theme_bw(base_size = 18) +
+  labs(title = "NYC Flights by Month")
+
+```
+
+Or make them line charts:
+:::
+
+::: {.column width="50%"}
+Right
+
+```{r}
+library(openintro)
+nycflights |> mutate(month = as.factor(month)) |> ggplot(aes(x=month)) +
+  geom_bar() +
+  theme_bw(base_size = 18) +
+  labs(title = "NYC Flights by Month") 
+
+```
+
+```{r}
+library(openintro)
+nycflights |> group_by(month) |> 
+  summarise(count = n()) |> ggplot(aes(x=month,y=count)) +
+  geom_line() +
+  theme_bw(base_size = 18) +
+  labs(title = "NYC Flights by Month") +
+  scale_x_continuous(breaks = seq(1,12,by=1))
+
+```
+:::
+:::
+
+## Filled Plots Should Start at 0
+
+::: columns
+::: {.column width="50%"}
+Wrong
+
+```{r}
+library(openintro)
+sp500_1950_2018 |> mutate(Date = as.Date(Date)) |> 
+  filter(Date > as.Date("2015-01-01") ) |> ggplot(aes(x=Date,y=Close)) +
+  geom_area(fill = "blue",alpha = 0.5) +
+  geom_line() +
+  theme_bw(base_size = 24) +
+  labs(title = "S&P 500 Closing Price") +
+  coord_cartesian(ylim = c(1750, 3000))
+  
+
+```
+
+Or transform data to represent a net change:
+:::
+
+::: {.column width="50%"}
+Right
+
+```{r}
+library(openintro)
+sp500_1950_2018 |> mutate(Date = as.Date(Date)) |> 
+  filter(Date > as.Date("2015-01-01") ) |> ggplot(aes(x=Date,y=Close)) +
+  geom_area(fill = "blue",alpha = 0.5) +
+  geom_line() +
+  theme_bw(base_size = 24) +
+  labs(title = "S&P 500 Closing Price") 
+  
+
+```
+
+```{r}
+
+
+library(openintro)
+
+Initial_Date = sp500_1950_2018 |> filter(Date == "2015-01-02") 
+Initial_Open = Initial_Date$Open[1]
+
+sp500_1950_2018 |> mutate(Date = as.Date(Date)) |> 
+  filter(Date > as.Date("2015-01-03") ) |> 
+  mutate(Price_Change = Close - Initial_Open) |> ggplot(aes(x=Date,y=Price_Change)) +
+  geom_area(fill = "blue",alpha = 0.5) +
+  geom_line() +
+  theme_bw(base_size = 24) +
+  labs(title = "S&P 500 Closing Price",
+       y = "Price Change\n from 1-Jan-2015")
+
+```
+:::
+:::
+
+## Scale Area not Radius
+
+```{r fig.height=8}
+
+plotWrong = penguins |> ggplot(aes(x=bill_depth_mm,y=bill_length_mm,size = body_mass_g,color=species)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Wrong") +
+  theme_bw(base_size = 18) +
+  scale_radius()
+
+plotRight = penguins |> ggplot(aes(x=bill_depth_mm,y=bill_length_mm,size = body_mass_g,color=species)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Right") +
+  scale_size_area() +
+  theme_bw(base_size = 18)
+
+
+plotWrong / plotRight
+
+```
+
+## Acknowledgements 
+
+1.  [Active Statistics](https://avehtari.github.io/ActiveStatistics/#List_of_classroom_activities) (Gelman, Hill, Vehtari)
+2.  [Principles of Data Visualization](https://clauswilke.com/dataviz/introduction.html#ugly-bad-and-wrong-figures) (Wilke)
+3.  [Calling BS](https://callingbullshit.org/tools/tools_proportional_ink.html) (Bergstrom and West)
+4. [Data Visualization](https://socviz.co/lookatdata.html) (Healy)
+5. [Impact of Outliers on Income Inequality](https://www.jstor.org/stable/2095134?casa_token=g9TQfE56twsAAAAA%3AQVugVldexnQ7RSu1Kve96O4priQrXTzYXmYZB5SI9lKtONG4YgywONfSw92MzmGTLg2fgLDNgqeLs43Lm4IC1zVfpHAg-uBaQ54O2wIBK5_Uab_ZXY8) (Jackman)
+

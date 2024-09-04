@@ -1,0 +1,5 @@
+Adult, Combination, N_single, N_multiple
+0, 0, 25, 0
+0, 1, 4, 21
+1, 0, 23, 5
+1, 1, 18, 10
