@@ -654,7 +654,7 @@
     "href": "meetups/Meetup2/Meetup2.html#ggplot2-basics",
     "title": "Meetup 2: Visualizing Data",
     "section": "ggplot2 Basics",
-    "text": "ggplot2 Basics\n\nggplot2 is tidyverse plotting package\nBased on Wilkinson’s Grammar of Graphics\nKey figure components\n\ndata maps to aesthetics\ninterpreted using geoms\nothers: theme, facets, coordinates, stats"
+    "text": "ggplot2 Basics\n\n\n\nggplot2 is tidyverse plotting package\nGrammar of Graphics\nKey figure components\n\ndata maps to aesthetics\ninterpreted using geoms\nothers: theme, facets, coordinates, stats\n\n\n\n Source: DS-Box"
   },
   {
     "objectID": "meetups/Meetup2/Meetup2.html#vignette-transit-costs",
