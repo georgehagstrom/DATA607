@@ -640,7 +640,7 @@
     "href": "meetups/Meetup2/Meetup2.html#reformulating-the-data",
     "title": "Meetup 2: Visualizing Data",
     "section": "Reformulating the Data",
-    "text": "Reformulating the Data\n\n\nTwo Possible Stories\n\nChildren had higher accuracy than adults\nMultiple objects is harder than an individual object\n\nCaption suggests Adult vs. Child accuracy\n\n\n\nSolution:\n\nInstead of plotting responses, plot accuracy\nPlot Accuracy of each group on the same axis"
+    "text": "Reformulating the Data\n\nTwo Possible Stories\n\nChildren had higher accuracy than adults\nMultiple objects is harder than an individual object\n\nCaption suggests Adult vs. Child accuracy\n\nSolution:\n\nInstead of plotting responses, plot accuracy\nPlot Accuracy of each group on the same axis"
   },
   {
     "objectID": "meetups/Meetup2/Meetup2.html#case-study-solution-line-plot",
