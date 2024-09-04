@@ -559,11 +559,11 @@
     ]
   },
   {
-    "objectID": "meetups/Meetup2/Meetup2.html#week-summary-and-questions-about-last-week",
-    "href": "meetups/Meetup2/Meetup2.html#week-summary-and-questions-about-last-week",
+    "objectID": "meetups/Meetup2/Meetup2.html#week-summary",
+    "href": "meetups/Meetup2/Meetup2.html#week-summary",
     "title": "Meetup 2: Visualizing Data",
-    "section": "Week Summary and Questions about Last Week",
-    "text": "Week Summary and Questions about Last Week\n\nRead Chapters 1-4 of R4DS (Work out the problems as you go!)\n\n\nSupplementary Readings- Data Viz (Wilke), Calling BS (West and Bergstrom)\n\n\nLab 1: Airbnb in NYC- submit qmd file and pdf or html link on Brightspace by Sunday Midnight\nData Science in Context- sign up if you haven’t yet\nIf you don’t have a working software setup speak up in Slack!!!"
+    "section": "Week Summary",
+    "text": "Week Summary\n\n1. Read Chapters 1-4 of R4DS (Work out the problems as you go!)\n\n2. Supplementary Readings- Data Viz (Wilke), Calling BS (West and Bergstrom)\n\n3. Lab 1: Airbnb in NYC- submit qmd file and pdf or html link on Brightspace by Sunday Midnight\n\n4. Data Science in Context- sign up if you haven’t yet\n\n5. If you don’t have a working software setup speak up in Slack!!!"
   },
   {
     "objectID": "meetups/Meetup2/Meetup2.html#why-make-graphs",
@@ -640,7 +640,7 @@
     "href": "meetups/Meetup2/Meetup2.html#reformulating-the-data",
     "title": "Meetup 2: Visualizing Data",
     "section": "Reformulating the Data",
-    "text": "Reformulating the Data\n\n\nTwo Possible Stories\n\nChildren had higher accuracy than adults\nMultiple objects is harder than an individual object\n\nCaption suggests Adult vs. Child accuracy\n\n\n\nSolution:\n\n\nInstead of plotting responses, plot accuracy\nPlot Accuracy of each group on the same axis"
+    "text": "Reformulating the Data\n\n\nTwo Possible Stories\n\nChildren had higher accuracy than adults\nMultiple objects is harder than an individual object\n\nCaption suggests Adult vs. Child accuracy\n\n\n\nSolution:\n\nInstead of plotting responses, plot accuracy\nPlot Accuracy of each group on the same axis"
   },
   {
     "objectID": "meetups/Meetup2/Meetup2.html#case-study-solution-line-plot",
@@ -661,7 +661,7 @@
     "href": "meetups/Meetup2/Meetup2.html#vignette-transit-costs",
     "title": "Meetup 2: Visualizing Data",
     "section": "Vignette: Transit Costs",
-    "text": "Vignette: Transit Costs\n\nData: tidy tuesday Download Vignette"
+    "text": "Vignette: Transit Costs\n\nSource tidy tuesday Download Vignette Download Data"
   },
   {
     "objectID": "meetups/Meetup2/Meetup2.html#data-science-in-context-presentation",
