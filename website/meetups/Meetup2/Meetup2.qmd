@@ -20,13 +20,18 @@ library(DT)
 
 ```
 
-## Week Summary and Questions about Last Week
+## Week Summary {.smaller}
 
-1. Read Chapters 1-4 of R4DS (Work out the problems as you go!)
-  - Supplementary Readings- Data Viz (Wilke), Calling BS (West and Bergstrom)
-2. Lab 1: Airbnb in NYC- submit qmd file and pdf or html link on Brightspace by Sunday Midnight
-3. Data Science in Context- sign up if you haven't yet
-4. If you don't have a working software setup speak up in Slack!!!
+|
+| 1. Read Chapters 1-4 of R4DS (Work out the problems as you go!)
+|
+| 2. Supplementary Readings- Data Viz (Wilke), Calling BS (West and Bergstrom)
+|
+| 3. Lab 1: Airbnb in NYC- submit qmd file and pdf or html link on Brightspace by Sunday Midnight
+|
+| 4. Data Science in Context- sign up if you haven't yet
+|
+| 5. If you don't have a working software setup speak up in Slack!!!
 
 
 
@@ -204,10 +209,8 @@ A graph is often all someone will remember about your data analysis, can make th
 
 Solution: 
 
-::: {.incremental}
 1.  Instead of plotting responses, plot accuracy
 2.  Plot Accuracy of each group on the same axis
-:::
 
 ## Case Study Solution: Line Plot
 
@@ -290,8 +293,9 @@ transit_costs |>
 
 ```
 
-[Data: tidy tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md)
-[Download Vignette](https://github.com/georgehagstrom/DATA607/website/course/meetups/Meetup2/TransitCostsVignette.R)
+[Source tidy tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md)
+[Download Vignette](https://github.com/georgehagstrom/DATA607/blob/main/website/meetups/Meetup2/TransitCostsVignette.R)
+[Download Data](https://github.com/georgehagstrom/DATA607/blob/main/website/meetups/Meetup2/transit_cost.csv)
 
 ## Data Science in Context Presentation
 
