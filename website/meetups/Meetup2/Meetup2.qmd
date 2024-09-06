@@ -247,14 +247,22 @@ gopnikData |> mutate(numberCondition = ifelse(Condition == "Single",0,1)) |>
 :::
 
 ## ggplot2 Basics
-
+:::: {.columns}
+::: {.column width=50%}
 * `ggplot2` is tidyverse plotting package
-* Based on Wilkinson's Grammar of Graphics
+* Grammar of Graphics
 * Key figure components
   - data maps to aesthetics
   - interpreted using geoms
   - others: theme, facets, coordinates, stats 
+:::
 
+::: {.column width=50%}
+![](gglayers.png)
+Source: DS-Box
+:::
+
+::::
 
 
 ## Vignette: Transit Costs
