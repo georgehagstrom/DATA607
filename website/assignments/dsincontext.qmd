@@ -6,8 +6,12 @@ format: html
 ### Overview
 
 Each student needs to complete one data science in context presentation. These are short presentations with a target length of 5-7 minutes. At the beginning of the semester you should sign
-up for a presentation slot using this [google form](). The presentations will be made live in class, with an opportunity for a few minutes of question or discussion. You can pick any
+up for a presentation slot using this [sign up sheet](https://doodle.com/sign-up-sheet/participate/73d10cce-87fd-48eb-9e20-760138efedfb/select). The presentations will be made live in class, with an opportunity for a few minutes of question or discussion. You can pick any
 topic that interests you and is related to data science. If you have a strong preference not to present live, you may record and upload your presentation separately. 
+
+
+
+
 
 
 

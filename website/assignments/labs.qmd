@@ -3,27 +3,27 @@ title: "Labs"
 ---
 
 The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different
-data sets. **Please submit a PDF (preferred) or HTML file along with your Rmarkdown file.** Be sure to answer all questions in lab, not just the *on your own section.* Labs should be submitted on Blackboard.
+data sets. **Please submit a PDF (preferred) or HTML file along with your qmd file.** Labs should be submitted on Blackboard.
 
-<ol start='1'>
-<li value='1'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab1.html'>Introduction to Data Visualization using ggplot</a> (<a href=https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab1/Lab1.qmd?raw=true'>Template</a>)</li>
+<col start='1'>
+<li value='1'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab1.html'>Introduction to Data Visualization using ggplot</a> (<a href=https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab1/Lab1.qmd?raw=true'>Template</a>)</li>
 
-<li value='2'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab2/Lab2_Tidy_Data.html'>Tidy Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab2/Lab2_tidy_data.Rmd?raw=true'>Template</a>)</li>
+<li value='2'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Tidy Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab2/Lab2.qmd?raw=true'>Template</a>)</li>
 
-<li value='3'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab3/Lab3_EDA.html'>Exploratory Data Analysis</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab3/Lab3_EDA.Rmd?raw=true'>Template</a>)</li>
+<li value='3'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Exploratory Data Analysis</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab3/Lab3.qmd?raw=true'>Template</a>)</li>
 
-<li value='4'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab4/Lab4_Data_Transformations.html'>Data Transformations</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab5/Lab5.qmd?raw=true'>Template</a>)</li>
+<li value='4'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Data Transformations</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab4/Lab4.qmd?raw=true'>Template</a>)</li>
 
-<li value='5'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/Lab5.html'>Procesing Text and Strings</a> (<a href='https://georgehagstrom.github.io/DATA607/blob/master/inst/labs/Lab5/Lab5.qmd?raw=true'>Template</a>)</li>
+<li value='5'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Procesing Text and Strings</a> (<a href='https://georgehagstrom.github.io/DATA607/blob/main/website/assignments/labs/Lab5/Lab5.qmd?raw=true'>Template</a>)</li>
 
-<li value='6'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.html'>Databases and SQL</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab6/Lab6_databases.Rmd?raw=true'>Template</a>)</li>
+<li value='6'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Databases and SQL</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab6/Lab6.qmd?raw=true'>Template</a>)</li>
 
-<li value='7'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.html'>Web Scraping and APIs</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab7/Lab7_web_scraping.Rmd?raw=true'>Template</a>)</li>
+<li value='7'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Web Scraping and APIs</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab7/Lab7.qmd?raw=true'>Template</a>)</li>
 
-<li value='8'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.html'>Text Mining and NLP</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab8/Lab8_nlp.Rmd?raw=true'>Template</a>)</li>
+<li value='8'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Text Mining and NLP</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/Lab8/Lab8.qmd?raw=true'>Template</a>)</li>
 
-<li value='9'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.html'>Graphs and Graph Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab9/Lab9_graph_data.Rmd?raw=true'>Template</a>)</li>
+<li value='9'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Graphs and Graph Data</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/tbd/tbd.qmd?raw=true'>Template</a>)</li>
 
-<li value='10'> <a href='https://htmlpreview.github.io/?https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.html'>Large Datasets and Cloud Computing</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/Lab10/Lab10_large_data.Rmd?raw=true'>Template</a>)</li>
+<li value='10'> <a href='https://htmlpreview.github.io/?https://georgehagstrom.github.io/DATA607/assignments/labs/tbd.html'>Large Datasets and Cloud Computing</a> (<a href='https://github.com/georgehagstrom/DATA607/blob/master/inst/labs/tbd/tbd.qmd?raw=true'>Template</a>)</li>
 
 </ol>

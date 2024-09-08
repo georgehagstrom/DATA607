@@ -3,12 +3,6 @@ title: "Data Project"
 format: html
 ---
 
-::: {style="float:right;position: relative; margin-left: 20px"}
-```{r setup, echo=FALSE, fig.align="right"}
-knitr::include_graphics("img/laptop-3190194_1920.jpg")
-'''
-:::
-
 # Explore your interests
 
 The idea of this project is for you to find data and do something interesting with it that relates to the skills you have developed in this course.
