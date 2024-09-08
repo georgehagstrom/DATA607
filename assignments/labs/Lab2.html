@@ -353,14 +353,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level1">
-<h1>Overview</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/flightdelays.csv">flightdelays.csv</a>, and the second called <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv">MixedDrinkRecipes-Prep.csv</a>.</p>
 <p>The most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the <a href="https://tidyr.tidyverse.org/articles/pivot.html"><code>tidyr</code> vignette on pivoting</a> and the ggplot help page on the <a href="https://ggplot2.tidyverse.org/reference/geom_dotplot.html">geom_dotplot</a>.</p>
 <p>Submit your completed assignment on the course brightspace page by uploading your <code>.qmd</code> file and a compiled <code>pdf</code> or link to a compiled <code>html</code>, which you could host on your <code>github</code> or <code>rpubs</code> page as you wish.</p>
 </section>
-<section id="part-1-airplane-flight-delays" class="level1">
-<h1>Part 1: Airplane flight delays</h1>
+<section id="part-1-airplane-flight-delays" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-airplane-flight-delays">Part 1: Airplane flight delays</h2>
 <p>Consider the following dataset:</p>
 <table class="caption-top table">
 <colgroup>
@@ -424,19 +424,19 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>The above table describes arrival delays for two different airlines across several destinations. The numbers correspond the the number of flights that were in either the delayed category or the on time category.</p>
 </section>
-<section id="problems" class="level1">
-<h1>Problems</h1>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
 <p><strong>Problem 1:</strong> Read the information from <code>flightdelays.csv</code> into R, and use <code>tidyr</code> and <code>dplyr</code> to convert this data into a tidy/tall format with names and complete data for all columns. Your final data frame should have <code>City</code>, <code>On_Time_Flights</code> and <code>Delayed_Flights</code> as columns (the exact names are up to you). In addition to <code>pivot_longer</code>, <code>pivot_wider</code> and <code>rename</code>, you might find the <code>tidyr</code> function <a href="https://tidyr.tidyverse.org/reference/fill.html"><code>fill</code></a> helpful for completing this task efficiently. Although this is a small dataset that you could easily reshape by hand, you should solve this problem using tidyverse functions that do the work for you.</p>
 <p><strong>Problem 2:</strong> Take the data-frame that you tidied and cleaned in Problem 1 and create additional columns which contain the fraction of on-time and delayed flights at each airport. Then create a dot-plot using the <code>geom_dotplot</code> function (see the <a href="">ggplot page for dotplot</a>) to visualize the difference in flight delays between the two airlines at each city in the dataset. What conclusions can you draw from the dotplot?</p>
 <p>Optional: If you want to make a fancier visualization consider adding text labels containing the airline names above the dots using <code>geom_text</code> and <code>position = position_nudge(...)</code> with appropriate arguments.</p>
 </section>
-<section id="part-2-mixed-drink-recipes" class="level1">
-<h1>Part 2: Mixed Drink Recipes</h1>
+<section id="part-2-mixed-drink-recipes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-mixed-drink-recipes">Part 2: Mixed Drink Recipes</h2>
 <p>In the second part of this assignment we will be working with a dataset containing ingredients for different types of mixed drinks. This dataset is untidy and messy- it is in a wide data format and contains some inconsistencies that should be fixed.</p>
 </section>
-<section id="problems-1" class="level1">
-<h1>Problems</h1>
-<p><strong>Problem 3</strong> Load the mixed drink recipe dataset into R from the file <code>MixedDrinkRecipes-prep.csv</code>, which you can download from my github page by <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv">clicking here</a>. The variables <code>ingredient1</code> through <code>ingredient6</code> list the ingredients of the cocktail listed in the <code>name</code> column. Notice that there are many <code>NA</code> values in the ingredient columns, indicating that most cocktails have under 6 ingredients.</p>
+<section id="problems-1" class="level2">
+<h2 class="anchored" data-anchor-id="problems-1">Problems</h2>
+<p><strong>Problem 3:</strong> Load the mixed drink recipe dataset into R from the file <code>MixedDrinkRecipes-prep.csv</code>, which you can download from my github page by <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv">clicking here</a>. The variables <code>ingredient1</code> through <code>ingredient6</code> list the ingredients of the cocktail listed in the <code>name</code> column. Notice that there are many <code>NA</code> values in the ingredient columns, indicating that most cocktails have under 6 ingredients.</p>
 <p>Tidy this dataset using <code>pivot_longer</code> to create a new data frame where each there is a row corresponding to each ingredient of all the cocktails, and an additional variable specifying the “rank” of that cocktail in the original recipe, i.e.&nbsp;it should look like this:</p>
 <table class="caption-top table">
 <colgroup>
