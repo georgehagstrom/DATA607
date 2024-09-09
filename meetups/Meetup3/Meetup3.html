@@ -341,8 +341,66 @@ George Hagstrom
 
   <p class="date">2024-09-04</p>
 </section>
-<section id="unstructured-vs.-structured-data" class="slide level2">
-<h2>Unstructured vs.&nbsp;Structured Data</h2>
+<section id="unstructured-data" class="slide level2">
+<h2>Unstructured Data</h2>
+<p>Need to reinvent wheel every time to analyze:</p>
+
+<img data-src="UnstructuredData.png" class="r-stretch quarto-figure-center"><p class="caption">Data from ACS</p></section>
+<section id="tidy-data-rebranded-data-matrix" class="slide level2">
+<h2>Tidy Data (Rebranded Data Matrix?)</h2>
+<ol type="1">
+<li>Columns are variables</li>
+<li>Rows are observations</li>
+<li>One value per cell</li>
+</ol>
+
+<img data-src="tidy-1.png" class="r-stretch quarto-figure-center"><p class="caption">Fig 5.1 from R4DS</p></section>
+<section id="example" class="slide level2 smaller">
+<h2>Example</h2>
+<p>Untidy:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,788 × 58
+   country  year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544 new_sp_m4554
+   &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Afghan…  2001         129          379          349          274          204
+ 2 Afghan…  2002          90          476          481          368          246
+ 3 Afghan…  2003         127          511          436          284          256
+ 4 Afghan…  2004         139          537          568          360          358
+ 5 Afghan…  2005         151          606          560          472          453
+ 6 Afghan…  2006         193          837          791          574          572
+ 7 Afghan…  2007         186          856          840          597          566
+ 8 Afghan…  2008         187          941          773          545          570
+ 9 Afghan…  2009         200          906          705          499          491
+10 Afghan…  2010         197          986          819          491          490
+# ℹ 2,778 more rows
+# ℹ 51 more variables: new_sp_m5564 &lt;dbl&gt;, new_sp_m65 &lt;dbl&gt;, new_sp_f014 &lt;dbl&gt;,
+#   new_sp_f1524 &lt;dbl&gt;, new_sp_f2534 &lt;dbl&gt;, new_sp_f3544 &lt;dbl&gt;,
+#   new_sp_f4554 &lt;dbl&gt;, new_sp_f5564 &lt;dbl&gt;, new_sp_f65 &lt;dbl&gt;,
+#   new_sn_m014 &lt;dbl&gt;, new_sn_m1524 &lt;dbl&gt;, new_sn_m2534 &lt;dbl&gt;,
+#   new_sn_m3544 &lt;dbl&gt;, new_sn_m4554 &lt;dbl&gt;, new_sn_m5564 &lt;dbl&gt;,
+#   new_sn_m65 &lt;dbl&gt;, new_sn_f014 &lt;dbl&gt;, new_sn_f1524 &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<p>Tidy:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 405,440 × 6
+   country      year diagnosis gender age   count
+   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
+ 1 Afghanistan  1980 new       sp     m014     NA
+ 2 Afghanistan  1980 new       sp     m1524    NA
+ 3 Afghanistan  1980 new       sp     m2534    NA
+ 4 Afghanistan  1980 new       sp     m3544    NA
+ 5 Afghanistan  1980 new       sp     m4554    NA
+ 6 Afghanistan  1980 new       sp     m5564    NA
+ 7 Afghanistan  1980 new       sp     m65      NA
+ 8 Afghanistan  1980 new       sp     f014     NA
+ 9 Afghanistan  1980 new       sp     f1524    NA
+10 Afghanistan  1980 new       sp     f2534    NA
+# ℹ 405,430 more rows</code></pre>
+</div>
+</div>
 </section>
 <section id="why-does-the-tidyverse-work" class="slide level2">
 <h2>Why Does the TidyVerse Work?</h2>
@@ -582,6 +640,44 @@ George Hagstrom
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
