@@ -341,6 +341,9 @@ George Hagstrom
 
   <p class="date">2024-09-04</p>
 </section>
+<section id="unstructured-vs.-structured-data" class="slide level2">
+<h2>Unstructured vs.&nbsp;Structured Data</h2>
+</section>
 <section id="why-does-the-tidyverse-work" class="slide level2">
 <h2>Why Does the TidyVerse Work?</h2>
 </section>
@@ -352,14 +355,6 @@ George Hagstrom
 </section>
 <section id="is-it-just-a-data-matrix" class="slide level2">
 <h2>Is it just a Data Matrix?</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-      n
-  &lt;int&gt;
-1     4</code></pre>
-</div>
-</div>
 </section>
 <section id="wide-versus-tall-data-formats" class="slide level2">
 <h2>Wide Versus Tall Data Formats</h2>
@@ -587,44 +582,6 @@ George Hagstrom
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
