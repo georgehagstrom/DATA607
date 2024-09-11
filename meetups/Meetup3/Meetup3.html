@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="George Hagstrom">
-  <meta name="dcterms.date" content="2024-09-04">
+  <meta name="dcterms.date" content="2024-09-11">
   <title>DATA 607 Fall 2024 – Meetup 3: Tidy Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -321,6 +386,8 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <meta property="og:title" content="Meetup 3: Tidy Data – DATA 607 Fall 2024">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -339,13 +406,13 @@ George Hagstrom
 </div>
 </div>
 
-  <p class="date">2024-09-04</p>
+  <p class="date">2024-09-11</p>
 </section>
 <section id="unstructured-data" class="slide level2">
 <h2>Unstructured Data</h2>
 <p>Need to reinvent wheel every time to analyze:</p>
 
-<img data-src="UnstructuredData.png" class="r-stretch quarto-figure-center"><p class="caption">Data from ACS</p></section>
+<img data-src="UnstructuredData.png" style="width:100.0%" class="r-stretch"></section>
 <section id="tidy-data-rebranded-data-matrix" class="slide level2">
 <h2>Tidy Data (Rebranded Data Matrix?)</h2>
 <ol type="1">
@@ -360,68 +427,478 @@ George Hagstrom
 <p>Untidy:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,788 × 58
-   country  year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544 new_sp_m4554
-   &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
- 1 Afghan…  2001         129          379          349          274          204
- 2 Afghan…  2002          90          476          481          368          246
- 3 Afghan…  2003         127          511          436          284          256
- 4 Afghan…  2004         139          537          568          360          358
- 5 Afghan…  2005         151          606          560          472          453
- 6 Afghan…  2006         193          837          791          574          572
- 7 Afghan…  2007         186          856          840          597          566
- 8 Afghan…  2008         187          941          773          545          570
- 9 Afghan…  2009         200          906          705          499          491
-10 Afghan…  2010         197          986          819          491          490
-# ℹ 2,778 more rows
+<pre><code># A tibble: 5 × 58
+  country   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544 new_sp_m4554
+  &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+1 Afghani…  2001         129          379          349          274          204
+2 Afghani…  2002          90          476          481          368          246
+3 Afghani…  2003         127          511          436          284          256
+4 Afghani…  2004         139          537          568          360          358
+5 Afghani…  2005         151          606          560          472          453
 # ℹ 51 more variables: new_sp_m5564 &lt;dbl&gt;, new_sp_m65 &lt;dbl&gt;, new_sp_f014 &lt;dbl&gt;,
 #   new_sp_f1524 &lt;dbl&gt;, new_sp_f2534 &lt;dbl&gt;, new_sp_f3544 &lt;dbl&gt;,
 #   new_sp_f4554 &lt;dbl&gt;, new_sp_f5564 &lt;dbl&gt;, new_sp_f65 &lt;dbl&gt;,
 #   new_sn_m014 &lt;dbl&gt;, new_sn_m1524 &lt;dbl&gt;, new_sn_m2534 &lt;dbl&gt;,
 #   new_sn_m3544 &lt;dbl&gt;, new_sn_m4554 &lt;dbl&gt;, new_sn_m5564 &lt;dbl&gt;,
-#   new_sn_m65 &lt;dbl&gt;, new_sn_f014 &lt;dbl&gt;, new_sn_f1524 &lt;dbl&gt;, …</code></pre>
+#   new_sn_m65 &lt;dbl&gt;, new_sn_f014 &lt;dbl&gt;, new_sn_f1524 &lt;dbl&gt;,
+#   new_sn_f2534 &lt;dbl&gt;, new_sn_f3544 &lt;dbl&gt;, new_sn_f4554 &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 <p>Tidy:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 405,440 × 6
+<pre><code># A tibble: 156,128 × 6
    country      year diagnosis gender age   count
    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
- 1 Afghanistan  1980 new       sp     m014     NA
- 2 Afghanistan  1980 new       sp     m1524    NA
- 3 Afghanistan  1980 new       sp     m2534    NA
- 4 Afghanistan  1980 new       sp     m3544    NA
- 5 Afghanistan  1980 new       sp     m4554    NA
- 6 Afghanistan  1980 new       sp     m5564    NA
- 7 Afghanistan  1980 new       sp     m65      NA
- 8 Afghanistan  1980 new       sp     f014     NA
- 9 Afghanistan  1980 new       sp     f1524    NA
-10 Afghanistan  1980 new       sp     f2534    NA
-# ℹ 405,430 more rows</code></pre>
+ 1 Afghanistan  2001 sp        m      014     129
+ 2 Afghanistan  2001 sp        m      1524    379
+ 3 Afghanistan  2001 sp        m      2534    349
+ 4 Afghanistan  2001 sp        m      3544    274
+ 5 Afghanistan  2001 sp        m      4554    204
+ 6 Afghanistan  2001 sp        m      5564    139
+ 7 Afghanistan  2001 sp        m      65      103
+ 8 Afghanistan  2001 sp        f      014     146
+ 9 Afghanistan  2001 sp        f      1524    799
+10 Afghanistan  2001 sp        f      2534    888
+# ℹ 156,118 more rows</code></pre>
 </div>
 </div>
 </section>
 <section id="why-does-the-tidyverse-work" class="slide level2">
 <h2>Why Does the TidyVerse Work?</h2>
-</section>
-<section id="tidy-data" class="slide level2">
-<h2>Tidy Data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Tidyverse functions:</p>
+<ul>
+<li>Take tidy data as input</li>
+<li>Return tidy data as output</li>
+<li>Can freely chain together functions</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>tidyDataset <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">filter</span>(...) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">mutate</span>(...) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a></a>  <span class="fu">select</span>(...) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a></a>  <span class="fu">group_by</span>(...) <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a></a>  <span class="fu">summarise</span>(...) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(...)) <span class="sc">+</span></span>
+<span id="cb3-8"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+<p>Tidyverse is successful because it insists on the tidy format and because it is designed around it. Other ecosystems (base R, pandas, etc) don’t always return tidy output from tidy input.</p>
 </section>
 <section id="originated-from-relational-databases" class="slide level2">
 <h2>Originated from Relational Databases</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Original Tidy Data Def:</p>
+<ol type="1">
+<li>Columns are variables</li>
+<li>Rows are observations</li>
+<li><span style="color:red;">One observational unit per table</span></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="TidyDataPaper.png"></p>
+<figcaption>Original Tidy Data Paper</figcaption>
+</figure>
+</div>
+</div></div>
+<p>If you have studied relational databases you might recognize Codd’s 3rd normal form.</p>
 </section>
-<section id="is-it-just-a-data-matrix" class="slide level2">
-<h2>Is it just a Data Matrix?</h2>
+<section id="new-versus-old-tidy" class="slide level2">
+<h2>New Versus Old Tidy</h2>
+<p><img data-src="BillboardNewTidy.png" alt="Fig 8 of Tidy Data Paper"> New Tidy- repeats a lot of data on songs but easier to analyze because of flat structure</p>
 </section>
-<section id="wide-versus-tall-data-formats" class="slide level2">
-<h2>Wide Versus Tall Data Formats</h2>
+<section id="new-versus-old-tidy-1" class="slide level2">
+<h2>New Versus Old Tidy</h2>
+<p><img data-src="BillboardOGTidy.png" alt="Fig 13 of Tidy Data Paper"> Old tidy: Space efficient like a database</p>
+</section>
+<section id="wide-data" class="slide level2 smaller">
+<h2>Wide Data</h2>
+<ul>
+<li>All data corresponding to a single observational unit in a single row</li>
+<li>Values of First Column unique</li>
+<li>Easy to process visually</li>
+<li>Some software works better with wide data</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">track</th>
+<th style="text-align: right;">wk1</th>
+<th style="text-align: right;">wk2</th>
+<th style="text-align: right;">wk3</th>
+<th style="text-align: right;">wk4</th>
+<th style="text-align: right;">wk5</th>
+<th style="text-align: right;">wk6</th>
+<th style="text-align: right;">wk7</th>
+<th style="text-align: right;">wk8</th>
+<th style="text-align: right;">wk9</th>
+<th style="text-align: right;">wk10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Hardest Part Of …</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kryptonite</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loser</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wobble Wobble</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">57</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="tall-data" class="slide level2 smaller">
+<h2>Tall Data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>First column values repeat</li>
+<li>Works well with software like R</li>
+<li>Harder to process visually</li>
+<li>Tidy data typically Tall</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">track</th>
+<th style="text-align: right;">Week</th>
+<th style="text-align: right;">Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Baby Don’t Cry (Keep…</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">99</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Hardest Part Of …</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">91</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+<p>Tall and wide can contain the same info, distinction between them is not always completely precise.</p>
 </section>
 <section id="pivot-longer" class="slide level2">
 <h2>Pivot Longer</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: right;">bp1</th>
+<th style="text-align: right;">bp2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">125</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">measurement</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">125</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
 </section>
+<section id="pivot-longer-1" class="slide level2">
+<h2>Pivot Longer</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>df_long <span class="ot">=</span> df <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb4-2"><a></a>                   <span class="at">cols =</span> bp1<span class="sc">:</span>bp2,</span>
+<span id="cb4-3"><a></a>                   <span class="at">names_to =</span> <span class="st">"measurement"</span>,</span>
+<span id="cb4-4"><a></a>                   <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb4-5"><a></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  id    measurement value
+  &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;
+1 A     bp1           100
+2 A     bp2           120
+3 B     bp1           140
+4 B     bp2           115
+5 C     bp1           120
+6 C     bp2           125</code></pre>
+</div>
+</div>
+</section>
+<section id="pivot-longer-2" class="slide level2">
+<h2>Pivot Longer</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df_long <span class="ot">=</span> df <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb6-2"><a></a>                   <span class="at">cols =</span> bp1<span class="sc">:</span>bp2,</span>
+<span id="cb6-3"><a></a>                   <span class="at">names_to =</span> <span class="st">"measurement"</span>,</span>
+<span id="cb6-4"><a></a>                   <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb6-5"><a></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="PivotLongerFig53.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 5.3</p></section>
+<section id="pivot-longer-3" class="slide level2">
+<h2>Pivot Longer</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>df_long <span class="ot">=</span> df <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb7-2"><a></a>                   <span class="at">cols =</span> bp1<span class="sc">:</span>bp2,</span>
+<span id="cb7-3"><a></a>                   <span class="at">names_to =</span> <span class="st">"measurement"</span>,</span>
+<span id="cb7-4"><a></a>                   <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb7-5"><a></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="PivotLongerFit54.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 5.4</p></section>
+<section id="pivot-longer-4" class="slide level2">
+<h2>Pivot Longer</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>df_long <span class="ot">=</span> df <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb8-2"><a></a>                   <span class="at">cols =</span> bp1<span class="sc">:</span>bp2,</span>
+<span id="cb8-3"><a></a>                   <span class="at">names_to =</span> <span class="st">"measurement"</span>,</span>
+<span id="cb8-4"><a></a>                   <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb8-5"><a></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="PivotLonger55.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 5.5</p></section>
 <section id="pivot-wider" class="slide level2">
 <h2>Pivot Wider</h2>
+<ul>
+<li>Select column for names and column for values</li>
+<li>Distinct values in column become new column headers</li>
+<li>Values get mapped from other column</li>
+<li>Potential for <code>NA</code> values…..</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">measurement</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: red !important;">B</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: red !important;">bp2</td>
+<td style="text-align: right; font-weight: bold; color: white !important; background-color: red !important;">115</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="ways-data-is-untidy" class="slide level2">
+<h2>Ways Data is Untidy</h2>
+<p>Problem: Column Names Contain Data</p>
+<p>Solution: Pivot Longer</p>
+</section>
+<section id="ways-data-is-untidy-1" class="slide level2">
+<h2>Ways Data is Untidy</h2>
+<p>Problem: Column Names Contain Data</p>
+<p>Solution: Pivot Longer</p>
+</section>
+<section id="tidy-data-defined-based-on-your-goals" class="slide level2">
+<h2>Tidy Data Defined Based on Your Goals</h2>
+</section>
+<section id="data-science-in-context-presentation" class="slide level2">
+<h2>Data Science in Context Presentation</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>

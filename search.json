@@ -91,27 +91,6 @@
     ]
   },
   {
-    "objectID": "modules/module1files/ElectricityVignette.html",
-    "href": "modules/module1files/ElectricityVignette.html",
-    "title": "Carbon Intensity and Power Generation",
-    "section": "",
-    "text": "In this report we will look at power generation in several different countries, visualize how the share of electricity from different sources has changed over time, and look at how that associates with the carbon emissions from electricity generation.\n\n\nWe will use the tidyverse, lubridate, scales, patchwork, and ggthemes, for data wrangling and visualization, and the DT package for interactive display of tabular output.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(patchwork)\nlibrary(ggthemes)\nlibrary(DT)\n\n\nknitr::opts_chunk$set(warning=FALSE, message=FALSE)\n\n\n\n\nThe data we are using comes from the website Our World in Data. Specifically, we are using a dataset compiled there on energy production and use around the world. The dataset can be found at Our World in Data’s github page, which contains both the dataset and a codebook describing the meaning of all the variables. We used owid-energy-data.csv for this analysis.\n\nenergy_data = read_csv(\"owid-energy-data.csv\")"
-  },
-  {
-    "objectID": "modules/module1files/ElectricityVignette.html#introduction",
-    "href": "modules/module1files/ElectricityVignette.html#introduction",
-    "title": "Carbon Intensity and Power Generation",
-    "section": "",
-    "text": "In this report we will look at power generation in several different countries, visualize how the share of electricity from different sources has changed over time, and look at how that associates with the carbon emissions from electricity generation.\n\n\nWe will use the tidyverse, lubridate, scales, patchwork, and ggthemes, for data wrangling and visualization, and the DT package for interactive display of tabular output.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(patchwork)\nlibrary(ggthemes)\nlibrary(DT)\n\n\nknitr::opts_chunk$set(warning=FALSE, message=FALSE)\n\n\n\n\nThe data we are using comes from the website Our World in Data. Specifically, we are using a dataset compiled there on energy production and use around the world. The dataset can be found at Our World in Data’s github page, which contains both the dataset and a codebook describing the meaning of all the variables. We used owid-energy-data.csv for this analysis.\n\nenergy_data = read_csv(\"owid-energy-data.csv\")"
-  },
-  {
-    "objectID": "modules/module1files/ElectricityVignette.html#energy-production-over-time",
-    "href": "modules/module1files/ElectricityVignette.html#energy-production-over-time",
-    "title": "Carbon Intensity and Power Generation",
-    "section": "Energy Production over Time",
-    "text": "Energy Production over Time\nWe are going to display a visualization which shows how the energy generation in several different countries, specifically China, France, Germany, Sweden, and the United States, changed over time. It is possible to change the countries being visualized by changing the countries listed in the countries_included variable below replacing the iso_code labels with those corresponding to the countries of interest to you.\n\ncountries_included = c(\"USA\",\"DEU\",\"FRA\",\"SWE\",\"CHN\")\n\nWe picked a small subset of the variables available in this dataset to visualize, picking the ones that are most important for overall power generation and have greatest influence on carbon emissions, namely coal, natural gas (methane), hydro, nuclear, solar, and wind. These choices can similarly be changed by finding where they occur in the select and pivot_longer functions.\nSee the Appendix for a list of the countries and variables present in the data.\n\nplot1 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         year,\n         hydro_share_elec,\n         wind_share_elec,\n         solar_share_elec,\n         coal_share_elec,\n         gas_share_elec,\n         nuclear_share_elec) |&gt;\n  pivot_longer(\n    cols = c(\"hydro_share_elec\",\n             \"wind_share_elec\",\n             \"solar_share_elec\",\n             \"coal_share_elec\",\n             \"gas_share_elec\",\n             \"nuclear_share_elec\"),\n    names_to = \"GeneratorType\",\n    values_to = \"Electricity_Per_Capita\"\n  ) |&gt; \n  ggplot(aes(x=year,y=Electricity_Per_Capita,color=country)) +\n  geom_point() +\n  geom_smooth() +\n  facet_wrap(~ GeneratorType, scales = \"free\") +\n theme_classic() +\n  ylab(\"Share of Electricity from Different Sources\") +\n  xlab(\"Year\") +\n  labs(title = \"Change in Electricity Generation Share over time\",\n       color = \"Country\")\n\nplot1 \n\n\n\n\n\n\n\n\n\nImpact of Power Sources on Carbon Intensity of Electricity Production\nMany countries have set ambitious targets for reducing their carbon emissions. One way to visualize carbon emissions is to look at how much carbon dioxide is emitted for each unit of electrical energy generated. This measure called the carbon intensity of electricity generation. We will visualize carbon intensity in two ways: looking at how carbon intensity has changed over time in the selected countries, and also looking across the entire dataset and seeing how carbon intensity relates to coal power and the sum of all low carbon forms of power generation (nuclear, hydro, solar, wind).\n\nplot2 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         country,\n         year,\n         low_carbon_share_elec,\n         coal_share_elec,\n         carbon_intensity_elec\n  ) |&gt;\n  ggplot(aes(x=low_carbon_share_elec,y=coal_share_elec,color=carbon_intensity_elec,shape=country)) +\n  scale_color_viridis_c() +\n  geom_point(na.rm = TRUE) +\n  theme_classic() +\n  labs(title = \"Controls on Carbon Intensity\",\n       color = \"Carbon Intensity\",\n       x = \"Low Carbon Electricity Share\",\n       y = \"Coal Electricity Share\")\n  \nplot3 = energy_data |&gt; \n  filter(iso_code %in% countries_included, year &gt; 1980) |&gt; \n  group_by(iso_code,country) |&gt; \n  select(iso_code,\n         country,\n         year,\n         carbon_intensity_elec\n  ) |&gt;\n  ggplot(aes(x=year,y=carbon_intensity_elec,color=country)) +\n  geom_smooth(show.legend = FALSE, na.rm = TRUE, se = FALSE) +\n  geom_point(show.legend = FALSE, na.rm = TRUE) +\n  theme_classic() +\n  ylab(\"Carbon Intensity of Electricity Production\") +\n  xlab(\"Year\") +\n  labs(title = \"Carbon Intensity over Time\",\n       x = \"Year\",\n       y = \"Carbon Intensity of Electricity (CO2e / kWhr)\")\n\nplot3 + plot2;\n\n\n\n\n\n\n\n\n\n\nPutting it Together\nWe can create the original compound plot using the following command (made possible by the patchwork package):\n\nplot1 / (plot3 + plot2)\n\n\n\n\n\n\n\n\n\n\nReferences\n\nHannah Ritchie, Pablo Rosado and Max Roser (2023) - “Energy” Published online at OurWorldInData.org. Retrieved from: ‘https://ourworldindata.org/energy’ [Online Resource], underlying data:\n\n\nStatistical Review of World Energy, Energy Institute\n\n\nThis analysis was inspired by and adapted from the vignettes in the unvotes package vignette and the Data Science in a Box Course\n\n\n\nAppendix (#appendix)\nBelow is a list of countries in the dataset:"
-  },
-  {
     "objectID": "modules/module2.html",
     "href": "modules/module2.html",
     "title": "Module 2 - Data Vizualization and Basic Transformations",
@@ -685,14 +664,14 @@
     "href": "assignments/labs/Lab2.html",
     "title": "Lab 2: Data Tidying",
     "section": "",
-    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called flightdelays.csv, and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
+    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called [flightdelays.csv]https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/flightdelays.csv), and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
   },
   {
     "objectID": "assignments/labs/Lab2.html#overview",
     "href": "assignments/labs/Lab2.html#overview",
     "title": "Lab 2: Data Tidying",
     "section": "",
-    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called flightdelays.csv, and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
+    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called [flightdelays.csv]https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/flightdelays.csv), and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
   },
   {
     "objectID": "assignments/labs/Lab2.html#part-1-airplane-flight-delays",
@@ -787,7 +766,7 @@
     "href": "meetups/Meetup3/Meetup3.html#unstructured-data",
     "title": "Meetup 3: Tidy Data",
     "section": "Unstructured Data",
-    "text": "Unstructured Data\nNeed to reinvent wheel every time to analyze:\n\nData from ACS"
+    "text": "Unstructured Data\nNeed to reinvent wheel every time to analyze:"
   },
   {
     "objectID": "meetups/Meetup3/Meetup3.html#tidy-data-rebranded-data-matrix",
@@ -801,56 +780,119 @@
     "href": "meetups/Meetup3/Meetup3.html#example",
     "title": "Meetup 3: Tidy Data",
     "section": "Example",
-    "text": "Example\nUntidy:\n\n\n# A tibble: 2,788 × 58\n   country  year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544 new_sp_m4554\n   &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n 1 Afghan…  2001         129          379          349          274          204\n 2 Afghan…  2002          90          476          481          368          246\n 3 Afghan…  2003         127          511          436          284          256\n 4 Afghan…  2004         139          537          568          360          358\n 5 Afghan…  2005         151          606          560          472          453\n 6 Afghan…  2006         193          837          791          574          572\n 7 Afghan…  2007         186          856          840          597          566\n 8 Afghan…  2008         187          941          773          545          570\n 9 Afghan…  2009         200          906          705          499          491\n10 Afghan…  2010         197          986          819          491          490\n# ℹ 2,778 more rows\n# ℹ 51 more variables: new_sp_m5564 &lt;dbl&gt;, new_sp_m65 &lt;dbl&gt;, new_sp_f014 &lt;dbl&gt;,\n#   new_sp_f1524 &lt;dbl&gt;, new_sp_f2534 &lt;dbl&gt;, new_sp_f3544 &lt;dbl&gt;,\n#   new_sp_f4554 &lt;dbl&gt;, new_sp_f5564 &lt;dbl&gt;, new_sp_f65 &lt;dbl&gt;,\n#   new_sn_m014 &lt;dbl&gt;, new_sn_m1524 &lt;dbl&gt;, new_sn_m2534 &lt;dbl&gt;,\n#   new_sn_m3544 &lt;dbl&gt;, new_sn_m4554 &lt;dbl&gt;, new_sn_m5564 &lt;dbl&gt;,\n#   new_sn_m65 &lt;dbl&gt;, new_sn_f014 &lt;dbl&gt;, new_sn_f1524 &lt;dbl&gt;, …\n\n\nTidy:\n\n\n# A tibble: 405,440 × 6\n   country      year diagnosis gender age   count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;\n 1 Afghanistan  1980 new       sp     m014     NA\n 2 Afghanistan  1980 new       sp     m1524    NA\n 3 Afghanistan  1980 new       sp     m2534    NA\n 4 Afghanistan  1980 new       sp     m3544    NA\n 5 Afghanistan  1980 new       sp     m4554    NA\n 6 Afghanistan  1980 new       sp     m5564    NA\n 7 Afghanistan  1980 new       sp     m65      NA\n 8 Afghanistan  1980 new       sp     f014     NA\n 9 Afghanistan  1980 new       sp     f1524    NA\n10 Afghanistan  1980 new       sp     f2534    NA\n# ℹ 405,430 more rows"
+    "text": "Example\nUntidy:\n\n\n# A tibble: 5 × 58\n  country   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544 new_sp_m4554\n  &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 Afghani…  2001         129          379          349          274          204\n2 Afghani…  2002          90          476          481          368          246\n3 Afghani…  2003         127          511          436          284          256\n4 Afghani…  2004         139          537          568          360          358\n5 Afghani…  2005         151          606          560          472          453\n# ℹ 51 more variables: new_sp_m5564 &lt;dbl&gt;, new_sp_m65 &lt;dbl&gt;, new_sp_f014 &lt;dbl&gt;,\n#   new_sp_f1524 &lt;dbl&gt;, new_sp_f2534 &lt;dbl&gt;, new_sp_f3544 &lt;dbl&gt;,\n#   new_sp_f4554 &lt;dbl&gt;, new_sp_f5564 &lt;dbl&gt;, new_sp_f65 &lt;dbl&gt;,\n#   new_sn_m014 &lt;dbl&gt;, new_sn_m1524 &lt;dbl&gt;, new_sn_m2534 &lt;dbl&gt;,\n#   new_sn_m3544 &lt;dbl&gt;, new_sn_m4554 &lt;dbl&gt;, new_sn_m5564 &lt;dbl&gt;,\n#   new_sn_m65 &lt;dbl&gt;, new_sn_f014 &lt;dbl&gt;, new_sn_f1524 &lt;dbl&gt;,\n#   new_sn_f2534 &lt;dbl&gt;, new_sn_f3544 &lt;dbl&gt;, new_sn_f4554 &lt;dbl&gt;, …\n\n\nTidy:\n\n\n# A tibble: 156,128 × 6\n   country      year diagnosis gender age   count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;\n 1 Afghanistan  2001 sp        m      014     129\n 2 Afghanistan  2001 sp        m      1524    379\n 3 Afghanistan  2001 sp        m      2534    349\n 4 Afghanistan  2001 sp        m      3544    274\n 5 Afghanistan  2001 sp        m      4554    204\n 6 Afghanistan  2001 sp        m      5564    139\n 7 Afghanistan  2001 sp        m      65      103\n 8 Afghanistan  2001 sp        f      014     146\n 9 Afghanistan  2001 sp        f      1524    799\n10 Afghanistan  2001 sp        f      2534    888\n# ℹ 156,118 more rows"
   },
   {
     "objectID": "meetups/Meetup3/Meetup3.html#why-does-the-tidyverse-work",
     "href": "meetups/Meetup3/Meetup3.html#why-does-the-tidyverse-work",
     "title": "Meetup 3: Tidy Data",
     "section": "Why Does the TidyVerse Work?",
-    "text": "Why Does the TidyVerse Work?"
-  },
-  {
-    "objectID": "meetups/Meetup3/Meetup3.html#tidy-data",
-    "href": "meetups/Meetup3/Meetup3.html#tidy-data",
-    "title": "Meetup 3: Tidy Data",
-    "section": "Tidy Data",
-    "text": "Tidy Data"
+    "text": "Why Does the TidyVerse Work?\n\n\nTidyverse functions:\n\nTake tidy data as input\nReturn tidy data as output\nCan freely chain together functions\n\n\n\ntidyDataset |&gt; \n  filter(...) |&gt; \n  mutate(...) |&gt; \n  select(...) |&gt; \n  group_by(...) |&gt; \n  summarise(...) |&gt; \n  ggplot(aes(...)) +\n  ...\n\n\nTidyverse is successful because it insists on the tidy format and because it is designed around it. Other ecosystems (base R, pandas, etc) don’t always return tidy output from tidy input."
   },
   {
     "objectID": "meetups/Meetup3/Meetup3.html#originated-from-relational-databases",
     "href": "meetups/Meetup3/Meetup3.html#originated-from-relational-databases",
     "title": "Meetup 3: Tidy Data",
     "section": "Originated from Relational Databases",
-    "text": "Originated from Relational Databases"
+    "text": "Originated from Relational Databases\n\n\nOriginal Tidy Data Def:\n\nColumns are variables\nRows are observations\nOne observational unit per table\n\n\n\n\n\nOriginal Tidy Data Paper\n\n\n\nIf you have studied relational databases you might recognize Codd’s 3rd normal form."
   },
   {
-    "objectID": "meetups/Meetup3/Meetup3.html#is-it-just-a-data-matrix",
-    "href": "meetups/Meetup3/Meetup3.html#is-it-just-a-data-matrix",
+    "objectID": "meetups/Meetup3/Meetup3.html#new-versus-old-tidy",
+    "href": "meetups/Meetup3/Meetup3.html#new-versus-old-tidy",
     "title": "Meetup 3: Tidy Data",
-    "section": "Is it just a Data Matrix?",
-    "text": "Is it just a Data Matrix?"
+    "section": "New Versus Old Tidy",
+    "text": "New Versus Old Tidy\n New Tidy- repeats a lot of data on songs but easier to analyze because of flat structure"
   },
   {
-    "objectID": "meetups/Meetup3/Meetup3.html#wide-versus-tall-data-formats",
-    "href": "meetups/Meetup3/Meetup3.html#wide-versus-tall-data-formats",
+    "objectID": "meetups/Meetup3/Meetup3.html#new-versus-old-tidy-1",
+    "href": "meetups/Meetup3/Meetup3.html#new-versus-old-tidy-1",
     "title": "Meetup 3: Tidy Data",
-    "section": "Wide Versus Tall Data Formats",
-    "text": "Wide Versus Tall Data Formats"
+    "section": "New Versus Old Tidy",
+    "text": "New Versus Old Tidy\n Old tidy: Space efficient like a database"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#wide-data",
+    "href": "meetups/Meetup3/Meetup3.html#wide-data",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Wide Data",
+    "text": "Wide Data\n\nAll data corresponding to a single observational unit in a single row\nValues of First Column unique\nEasy to process visually\nSome software works better with wide data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntrack\nwk1\nwk2\nwk3\nwk4\nwk5\nwk6\nwk7\nwk8\nwk9\nwk10\n\n\n\n\nBaby Don’t Cry (Keep…\n87\n82\n72\n77\n87\n94\n99\nNA\nNA\nNA\n\n\nThe Hardest Part Of …\n91\n87\n92\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nKryptonite\n81\n70\n68\n67\n66\n57\n54\n53\n51\n51\n\n\nLoser\n76\n76\n72\n69\n67\n65\n55\n59\n62\n61\n\n\nWobble Wobble\n57\n34\n25\n17\n17\n31\n36\n49\n53\n57"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#tall-data",
+    "href": "meetups/Meetup3/Meetup3.html#tall-data",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Tall Data",
+    "text": "Tall Data\n\n\n\nFirst column values repeat\nWorks well with software like R\nHarder to process visually\nTidy data typically Tall\n\n\n\n\n\n\n\ntrack\nWeek\nRank\n\n\n\n\nBaby Don’t Cry (Keep…\n1\n87\n\n\nBaby Don’t Cry (Keep…\n2\n82\n\n\nBaby Don’t Cry (Keep…\n3\n72\n\n\nBaby Don’t Cry (Keep…\n4\n77\n\n\nBaby Don’t Cry (Keep…\n5\n87\n\n\nBaby Don’t Cry (Keep…\n6\n94\n\n\nBaby Don’t Cry (Keep…\n7\n99\n\n\nThe Hardest Part Of …\n1\n91\n\n\n\n\n\n\nTall and wide can contain the same info, distinction between them is not always completely precise."
   },
   {
     "objectID": "meetups/Meetup3/Meetup3.html#pivot-longer",
     "href": "meetups/Meetup3/Meetup3.html#pivot-longer",
     "title": "Meetup 3: Tidy Data",
     "section": "Pivot Longer",
-    "text": "Pivot Longer"
+    "text": "Pivot Longer\n\n\n\n\n\n\n\nid\nbp1\nbp2\n\n\n\n\nA\n100\n120\n\n\nB\n140\n115\n\n\nC\n120\n125\n\n\n\n\n\n\n\n\n\n\n\nid\nmeasurement\nvalue\n\n\n\n\nA\nbp1\n100\n\n\nA\nbp2\n120\n\n\nB\nbp1\n140\n\n\nB\nbp2\n115\n\n\nC\nbp1\n120\n\n\nC\nbp2\n125"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#pivot-longer-1",
+    "href": "meetups/Meetup3/Meetup3.html#pivot-longer-1",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\ndf_long = df |&gt; pivot_longer(\n                   cols = bp1:bp2,\n                   names_to = \"measurement\",\n                   values_to = \"value\"\n                   )\n\n\n\n# A tibble: 6 × 3\n  id    measurement value\n  &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;\n1 A     bp1           100\n2 A     bp2           120\n3 B     bp1           140\n4 B     bp2           115\n5 C     bp1           120\n6 C     bp2           125"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#pivot-longer-2",
+    "href": "meetups/Meetup3/Meetup3.html#pivot-longer-2",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\ndf_long = df |&gt; pivot_longer(\n                   cols = bp1:bp2,\n                   names_to = \"measurement\",\n                   values_to = \"value\"\n                   )\n\n\nR4DS 5.3"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#pivot-longer-3",
+    "href": "meetups/Meetup3/Meetup3.html#pivot-longer-3",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\ndf_long = df |&gt; pivot_longer(\n                   cols = bp1:bp2,\n                   names_to = \"measurement\",\n                   values_to = \"value\"\n                   )\n\n\nR4DS 5.4"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#pivot-longer-4",
+    "href": "meetups/Meetup3/Meetup3.html#pivot-longer-4",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\ndf_long = df |&gt; pivot_longer(\n                   cols = bp1:bp2,\n                   names_to = \"measurement\",\n                   values_to = \"value\"\n                   )\n\n\nR4DS 5.5"
   },
   {
     "objectID": "meetups/Meetup3/Meetup3.html#pivot-wider",
     "href": "meetups/Meetup3/Meetup3.html#pivot-wider",
     "title": "Meetup 3: Tidy Data",
     "section": "Pivot Wider",
-    "text": "Pivot Wider\n\n\n\n\nDATA 607"
+    "text": "Pivot Wider\n\nSelect column for names and column for values\nDistinct values in column become new column headers\nValues get mapped from other column\nPotential for NA values…..\n\n\n\n\n\n\nid\nmeasurement\nvalue\n\n\n\n\nA\nbp1\n100\n\n\nA\nbp1\n102\n\n\nA\nbp2\n120\n\n\nB\nbp1\n140\n\n\nB\nbp2\n115"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#ways-data-is-untidy",
+    "href": "meetups/Meetup3/Meetup3.html#ways-data-is-untidy",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Ways Data is Untidy",
+    "text": "Ways Data is Untidy\nProblem: Column Names Contain Data\nSolution: Pivot Longer"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#ways-data-is-untidy-1",
+    "href": "meetups/Meetup3/Meetup3.html#ways-data-is-untidy-1",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Ways Data is Untidy",
+    "text": "Ways Data is Untidy\nProblem: Column Names Contain Data\nSolution: Pivot Longer"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#tidy-data-defined-based-on-your-goals",
+    "href": "meetups/Meetup3/Meetup3.html#tidy-data-defined-based-on-your-goals",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Tidy Data Defined Based on Your Goals",
+    "text": "Tidy Data Defined Based on Your Goals"
+  },
+  {
+    "objectID": "meetups/Meetup3/Meetup3.html#data-science-in-context-presentation",
+    "href": "meetups/Meetup3/Meetup3.html#data-science-in-context-presentation",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Data Science in Context Presentation",
+    "text": "Data Science in Context Presentation\n\n\n\n\nDATA 607"
   },
   {
     "objectID": "acknowledgements.html",
