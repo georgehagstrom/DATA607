@@ -664,14 +664,14 @@
     "href": "assignments/labs/Lab2.html",
     "title": "Lab 2: Data Tidying",
     "section": "",
-    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called [flightdelays.csv]https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/flightdelays.csv), and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
+    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called flightdelays.csv, and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
   },
   {
     "objectID": "assignments/labs/Lab2.html#overview",
     "href": "assignments/labs/Lab2.html#overview",
     "title": "Lab 2: Data Tidying",
     "section": "",
-    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called [flightdelays.csv]https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/flightdelays.csv), and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
+    "text": "In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small dataset contained in a csv file called flightdelays.csv, and the second called MixedDrinkRecipes-Prep.csv.\nThe most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. Also helpful are the tidyr vignette on pivoting and the ggplot help page on the geom_dotplot.\nSubmit your completed assignment on the course brightspace page by uploading your .qmd file and a compiled pdf or link to a compiled html, which you could host on your github or rpubs page as you wish."
   },
   {
     "objectID": "assignments/labs/Lab2.html#part-1-airplane-flight-delays",
