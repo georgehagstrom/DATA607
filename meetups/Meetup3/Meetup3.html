@@ -447,20 +447,16 @@ George Hagstrom
 <p>Tidy:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 156,128 × 6
-   country      year diagnosis gender age   count
-   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
- 1 Afghanistan  2001 sp        m      014     129
- 2 Afghanistan  2001 sp        m      1524    379
- 3 Afghanistan  2001 sp        m      2534    349
- 4 Afghanistan  2001 sp        m      3544    274
- 5 Afghanistan  2001 sp        m      4554    204
- 6 Afghanistan  2001 sp        m      5564    139
- 7 Afghanistan  2001 sp        m      65      103
- 8 Afghanistan  2001 sp        f      014     146
- 9 Afghanistan  2001 sp        f      1524    799
-10 Afghanistan  2001 sp        f      2534    888
-# ℹ 156,118 more rows</code></pre>
+<pre><code># A tibble: 7 × 6
+  country      year diagnosis gender age   count
+  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
+1 Afghanistan  2001 sp        m      014     129
+2 Afghanistan  2001 sp        m      1524    379
+3 Afghanistan  2001 sp        m      2534    349
+4 Afghanistan  2001 sp        m      3544    274
+5 Afghanistan  2001 sp        m      4554    204
+6 Afghanistan  2001 sp        m      5564    139
+7 Afghanistan  2001 sp        m      65      103</code></pre>
 </div>
 </div>
 </section>
@@ -833,7 +829,7 @@ George Hagstrom
 </div>
 
 <img data-src="PivotLonger55.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 5.5</p></section>
-<section id="pivot-wider" class="slide level2">
+<section id="pivot-wider" class="slide level2 smaller">
 <h2>Pivot Wider</h2>
 <ul>
 <li>Select column for names and column for values</li>
@@ -863,19 +859,19 @@ George Hagstrom
 <td style="text-align: right;">102</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: left;">bp2</td>
 <td style="text-align: right;">120</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">B</td>
-<td style="text-align: left;">bp1</td>
+<td style="text-align: left;">bp2</td>
 <td style="text-align: right;">140</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; font-weight: bold; color: white !important; background-color: red !important;">B</td>
-<td style="text-align: left; font-weight: bold; color: white !important; background-color: red !important;">bp2</td>
-<td style="text-align: right; font-weight: bold; color: white !important; background-color: red !important;">115</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp3</td>
+<td style="text-align: right;">115</td>
 </tr>
 </tbody>
 </table>
@@ -884,21 +880,575 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="ways-data-is-untidy" class="slide level2">
-<h2>Ways Data is Untidy</h2>
-<p>Problem: Column Names Contain Data</p>
-<p>Solution: Pivot Longer</p>
+<section id="pivot-wider-1" class="slide level2">
+<h2>Pivot Wider</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">meas</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp3</td>
+<td style="text-align: right;">115</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: right;">bp1</th>
+<th style="text-align: right;">bp2</th>
+<th style="text-align: right;">bp3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb9-2"><a></a>  <span class="at">names_from =</span> meas,</span>
+<span id="cb9-3"><a></a>  <span class="at">values_from =</span> val</span>
+<span id="cb9-4"><a></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="ways-data-is-untidy-1" class="slide level2">
-<h2>Ways Data is Untidy</h2>
-<p>Problem: Column Names Contain Data</p>
-<p>Solution: Pivot Longer</p>
+<section id="pivot-wider-non-unique-values" class="slide level2">
+<h2>Pivot Wider: Non-unique values</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">meas</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">115</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">bp1</th>
+<th style="text-align: left;">bp2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">140, 115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">102</td>
+<td style="text-align: left;">120</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb10-2"><a></a>  <span class="at">names_from =</span> meas,</span>
+<span id="cb10-3"><a></a>  <span class="at">values_from =</span> val</span>
+<span id="cb10-4"><a></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pivot-wider-multiple-rows" class="slide level2 smaller">
+<h2>Pivot Wider: Multiple Rows</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">meas</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">val</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">day</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp1</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: left;">night</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: left;">night</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp2</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: left;">day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">bp3</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: left;">morning</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">time</th>
+<th style="text-align: right;">bp1</th>
+<th style="text-align: right;">bp2</th>
+<th style="text-align: right;">bp3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">day</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">night</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">morning</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">115</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+</section>
+<section id="when-to-use-each-pivot" class="slide level2 smaller">
+<h2>When to use each pivot</h2>
+<ul>
+<li><code>pivot_longer</code> tidies data where variables and/or data are in the column names</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 7%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">sp_m_014</th>
+<th style="text-align: right;">sp_m_1524</th>
+<th style="text-align: right;">sp_m_2534</th>
+<th style="text-align: right;">sp_m_3544</th>
+<th style="text-align: right;">sp_m_4554</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">1980</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">1981</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">1982</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">1983</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="when-to-use-each-pivot-1" class="slide level2 smaller">
+<h2>When to use each pivot</h2>
+<ul>
+<li><code>pivot_wider</code> tidies data where measurements are spread across multiple rows</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">station</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">measure</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/01</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: left;">25.0 C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/01</td>
+<td style="text-align: left;">pressure</td>
+<td style="text-align: left;">700mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/01</td>
+<td style="text-align: left;">humidity</td>
+<td style="text-align: left;">60%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/01</td>
+<td style="text-align: left;">rain</td>
+<td style="text-align: left;">.2in</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/02</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: left;">22.0 C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/02</td>
+<td style="text-align: left;">pressure</td>
+<td style="text-align: left;">800mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/09/02</td>
+<td style="text-align: left;">humidity</td>
+<td style="text-align: left;">40%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="tidy-data-defined-based-on-your-goals" class="slide level2">
 <h2>Tidy Data Defined Based on Your Goals</h2>
+<ul>
+<li><p>Definition of “variable” and “measurement” is partially up to you!</p></li>
+<li><p>Pick the definitions that are best suited for you analysis</p></li>
+</ul>
 </section>
 <section id="data-science-in-context-presentation" class="slide level2">
 <h2>Data Science in Context Presentation</h2>
+</section>
+<section id="meetup-reflectionone-minute-paper" class="slide level2">
+<h2>Meetup Reflection/One Minute Paper</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
+</section>
+<section id="weather-station-vignette" class="slide level2 smaller">
+<h2>Weather Station Vignette</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">month</th>
+<th style="text-align: left;">element</th>
+<th style="text-align: right;">d1</th>
+<th style="text-align: right;">d2</th>
+<th style="text-align: right;">d3</th>
+<th style="text-align: right;">d4</th>
+<th style="text-align: right;">d5</th>
+<th style="text-align: right;">d6</th>
+<th style="text-align: right;">d7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">tmax</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">tmin</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">tmax</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">24.1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">tmin</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">tmax</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">32.1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">tmin</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">14.2</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">tmax</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">tmin</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">tmax</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MX17004</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">tmin</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
