@@ -408,6 +408,15 @@ George Hagstrom
 
   <p class="date">2024-09-11</p>
 </section>
+<section id="lab-1-and-tidyverse" class="slide level2">
+<h2>Lab 1 and Tidyverse</h2>
+<ul>
+<li>Graded most of Lab 1</li>
+<li>Check the feedback even if your score was great</li>
+<li>Biggest challenge was faceted histogram</li>
+<li>Tidyverse vs.&nbsp;Base R</li>
+</ul>
+</section>
 <section id="unstructured-data" class="slide level2">
 <h2>Unstructured Data</h2>
 <p>Need to reinvent wheel every time to analyze:</p>
@@ -1293,162 +1302,6 @@ George Hagstrom
 <h2>Meetup Reflection/One Minute Paper</h2>
 <p>Please fill out the following google form after the meeting or watching the video:</p>
 <p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
-</section>
-<section id="weather-station-vignette" class="slide level2 smaller">
-<h2>Weather Station Vignette</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">id</th>
-<th style="text-align: right;">year</th>
-<th style="text-align: right;">month</th>
-<th style="text-align: left;">element</th>
-<th style="text-align: right;">d1</th>
-<th style="text-align: right;">d2</th>
-<th style="text-align: right;">d3</th>
-<th style="text-align: right;">d4</th>
-<th style="text-align: right;">d5</th>
-<th style="text-align: right;">d6</th>
-<th style="text-align: right;">d7</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">tmax</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">tmin</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">tmax</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">27.3</td>
-<td style="text-align: right;">24.1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">tmin</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">14.4</td>
-<td style="text-align: right;">14.4</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">tmax</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">32.1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">tmin</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">14.2</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">tmax</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">tmin</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">tmax</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MX17004</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">tmin</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>

@@ -163,6 +163,13 @@
     ]
   },
   {
+    "objectID": "meetups/Meetup3/Meetup3.html#lab-1-and-tidyverse",
+    "href": "meetups/Meetup3/Meetup3.html#lab-1-and-tidyverse",
+    "title": "Meetup 3: Tidy Data",
+    "section": "Lab 1 and Tidyverse",
+    "text": "Lab 1 and Tidyverse\n\nGraded most of Lab 1\nCheck the feedback even if your score was great\nBiggest challenge was faceted histogram\nTidyverse vs. Base R"
+  },
+  {
     "objectID": "meetups/Meetup3/Meetup3.html#unstructured-data",
     "href": "meetups/Meetup3/Meetup3.html#unstructured-data",
     "title": "Meetup 3: Tidy Data",
@@ -321,14 +328,7 @@
     "href": "meetups/Meetup3/Meetup3.html#meetup-reflectionone-minute-paper",
     "title": "Meetup 3: Tidy Data",
     "section": "Meetup Reflection/One Minute Paper",
-    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here"
-  },
-  {
-    "objectID": "meetups/Meetup3/Meetup3.html#weather-station-vignette",
-    "href": "meetups/Meetup3/Meetup3.html#weather-station-vignette",
-    "title": "Meetup 3: Tidy Data",
-    "section": "Weather Station Vignette",
-    "text": "Weather Station Vignette\n\n\n\n\n\nid\nyear\nmonth\nelement\nd1\nd2\nd3\nd4\nd5\nd6\nd7\n\n\n\n\nMX17004\n2010\n1\ntmax\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n1\ntmin\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n2\ntmax\nNA\n27.3\n24.1\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n2\ntmin\nNA\n14.4\n14.4\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n3\ntmax\nNA\nNA\nNA\nNA\n32.1\nNA\nNA\n\n\nMX17004\n2010\n3\ntmin\nNA\nNA\nNA\nNA\n14.2\nNA\nNA\n\n\nMX17004\n2010\n4\ntmax\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n4\ntmin\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n5\ntmax\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nMX17004\n2010\n5\ntmin\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n\n\n\n\n\n\n\nDATA 607"
+    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here\n\n\n\n\nDATA 607"
   },
   {
     "objectID": "assignments/tidygit.html",
@@ -521,7 +521,7 @@
     "href": "index.html",
     "title": "Announcements",
     "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPivot Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: Data Tidying\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nSep 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 2: Visualizing Data\n\n\n\n\n\nClick here for meetup 2 slides and Zoom link\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Data Visualizations and Transformations\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPivot Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 3: Tidy Data\n\n\n\n\n\nClick here for meetup 2 slides and Zoom link\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: Data Tidying\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nSep 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Data Visualizations and Transformations\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Announcements"
     ]
@@ -1033,9 +1033,9 @@
   {
     "objectID": "posts/2024-09-04-Meetup-2_Visualizing-Data.html",
     "href": "posts/2024-09-04-Meetup-2_Visualizing-Data.html",
-    "title": "Meetup 2: Visualizing Data",
+    "title": "Meetup 3: Tidy Data",
     "section": "",
-    "text": "Meetup 2 will cover basic principles of data visualization. Click here to join the meetup on Zoom.\nYou can find the meetup slides here as well as a link to the transit costs if you want to experiment with it.\nClick the Module 2 link to see the course materials and instructions for this week."
+    "text": "Meetup 3 will cover basic principles of data visualization. Click here to join the meetup on Zoom.\nYou can find the meetup slides here\nClick the Module 3 link to see the course materials and instructions for this week."
   },
   {
     "objectID": "posts/2024-09-08-Week-3-Info.html",
