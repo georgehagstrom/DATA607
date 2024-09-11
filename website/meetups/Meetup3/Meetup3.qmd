@@ -1,0 +1,453 @@
+---
+title: "Meetup 3: Tidy Data"
+author: "George Hagstrom"
+format: revealjs
+
+logo: CUNY_SPS_Logo_Wide.png
+footer: "DATA 607"
+date: 09-11-2024
+---
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(kableExtra)
+
+```
+
+## Unstructured Data
+
+Need to reinvent wheel every time to analyze:
+
+![](UnstructuredData.png){width="100%"}
+
+## Tidy Data (Rebranded Data Matrix?)
+
+1.  Columns are variables
+2.  Rows are observations
+3.  One value per cell
+
+![Fig 5.1 from R4DS](tidy-1.png)
+
+## Example {.smaller}
+
+Untidy:
+
+```{r}
+who |> select(1, 4:60) |>  filter(year>2000) |> head(5)
+```
+
+Tidy:
+
+```{r}
+who2 |> filter(year>2000) |> 
+    pivot_longer(
+    cols = !(country:year),
+    names_to = c("diagnosis", "gender", "age"), 
+    names_sep = "_",
+    values_to = "count"
+  ) |> 
+  head(7)
+```
+
+## Why Does the TidyVerse Work?
+
+::: columns
+::: {.column width="50%"}
+Tidyverse functions:
+
+-   Take tidy data as input
+-   Return tidy data as output
+-   Can freely chain together functions
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| echo: true
+
+tidyDataset |> 
+  filter(...) |> 
+  mutate(...) |> 
+  select(...) |> 
+  group_by(...) |> 
+  summarise(...) |> 
+  ggplot(aes(...)) +
+  ...
+
+```
+:::
+:::
+
+Tidyverse is successful because it insists on the tidy format and because it is designed around it. Other ecosystems (base R, pandas, etc) don't always return tidy output from tidy input.
+
+## Originated from Relational Databases
+
+::: columns
+::: {.column width="50%"}
+Original Tidy Data Def:
+
+1.  Columns are variables
+2.  Rows are observations
+3.  [One observational unit per table]{style="color:red;"}
+:::
+
+::: {.column width="50%"}
+![Original Tidy Data Paper](TidyDataPaper.png)
+:::
+:::
+
+If you have studied relational databases you might recognize Codd's 3rd normal form.
+
+## New Versus Old Tidy
+
+![Fig 8 of Tidy Data Paper](BillboardNewTidy.png) New Tidy- repeats a lot of data on songs but easier to analyze because of flat structure
+
+## New Versus Old Tidy
+
+![Fig 13 of Tidy Data Paper](BillboardOGTidy.png) Old tidy: Space efficient like a database
+
+## Wide Data {.smaller}
+
+-   All data corresponding to a single observational unit in a single row
+-   Values of First Column unique
+-   Easy to process visually
+-   Some software works better with wide data
+
+```{r}
+
+
+billboard |> select(!c(artist,date.entered)) |> head(5) |> select(track:wk10) |> kableExtra::kable()
+
+
+```
+
+## Tall Data {.smaller}
+
+::: columns
+::: {.column width="50%"}
+-   First column values repeat
+-   Works well with software like R
+-   Harder to process visually
+-   Tidy data typically Tall
+:::
+
+::: {.column width="50%"}
+```{r}
+
+
+billboard |> select(!c(artist,date.entered)) |> head(5) |> select(track:wk10) |>
+  pivot_longer(cols = starts_with("wk"),
+               names_to = "Week",
+               values_to = "Rank",
+               values_drop_na = TRUE) |> 
+    mutate(Week = parse_number(Week)) |> 
+          head(8) |> 
+          kableExtra::kable()
+
+
+```
+:::
+:::
+
+Tall and wide can contain the same info, distinction between them is not always completely precise.
+
+## Pivot Longer
+
+::: columns
+::: {.column width="50%"}
+```{r}
+df <- tribble(
+  ~id,  ~bp1, ~bp2,
+   "A",  100,  120,
+   "B",  140,  115,
+   "C",  120,  125
+)
+
+kable(df)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+df |> pivot_longer(cols = starts_with("bp"),
+                   names_to = "measurement",
+                   values_to = "value") |> 
+  kable()
+
+
+```
+:::
+:::
+
+## Pivot Longer
+
+```{r}
+#| echo: true
+
+df_long = df |> pivot_longer(
+                   cols = bp1:bp2,
+                   names_to = "measurement",
+                   values_to = "value"
+                   )
+```
+
+```{r}
+df_long
+```
+
+## Pivot Longer
+
+```{r}
+#| echo: true
+#| code-line-numbers: "2"
+df_long = df |> pivot_longer(
+                   cols = bp1:bp2,
+                   names_to = "measurement",
+                   values_to = "value"
+                   )
+```
+
+![R4DS 5.3](PivotLongerFig53.png)
+
+## Pivot Longer
+
+```{r}
+#| echo: true
+#| code-line-numbers: "2-3"
+df_long = df |> pivot_longer(
+                   cols = bp1:bp2,
+                   names_to = "measurement",
+                   values_to = "value"
+                   )
+```
+
+![R4DS 5.4](PivotLongerFit54.png)
+
+## Pivot Longer
+
+```{r}
+#| echo: true
+#| code-line-numbers: "3"
+df_long = df |> pivot_longer(
+                   cols = bp1:bp2,
+                   names_to = "measurement",
+                   values_to = "value"
+                   )
+```
+
+![R4DS 5.5](PivotLonger55.png)
+
+
+## Pivot Wider  {.smaller} 
+
+
+-   Select column for names and column for values
+-   Distinct values in column become new column headers
+-   Values get mapped from other column
+-   Potential for `NA` values.....
+
+```{r}
+
+df <- tribble(
+  ~id, ~measurement, ~value,
+  "A",        "bp1",    100,
+  "A",        "bp1",    102,
+  "B",        "bp2",    120,
+  "B",        "bp2",    140, 
+  "A",        "bp3",    115
+)
+
+df |> kable() |> 
+  kable_styling() 
+```
+
+## Pivot Wider
+:::: columns
+
+::: {.column width=35%}
+```{r}
+
+df <- tribble(
+  ~id, ~meas, ~val,
+  "A",        "bp1",    100, 
+  "B",        "bp1",    102, 
+  "B",        "bp2",    120, 
+  "A",        "bp2",    140, 
+  "A",        "bp3",    115 
+)
+
+df |> kable() |> 
+  kable_styling() 
+# |> 
+#  row_spec(5, bold = T, color = "white", background = "red")
+```
+:::
+
+::: {.column width=60%}
+```{r}
+
+df |> pivot_wider(
+  names_from = meas,
+  values_from = val
+) |> 
+  kable()
+
+```
+:::
+::::
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |> pivot_wider(
+  names_from = meas,
+  values_from = val
+) 
+
+```
+
+
+## Pivot Wider: Non-unique values 
+
+:::: columns
+
+::: {.column width=35%}
+```{r}
+
+df <- tribble(
+  ~id, ~meas, ~val,
+  "A",        "bp1",    100, 
+  "B",        "bp1",    102, 
+  "B",        "bp2",    120, 
+  "A",        "bp2",    140, 
+  "A",        "bp2",    115 
+)
+
+df |> kable() |> 
+  kable_styling() 
+# |> 
+#  row_spec(5, bold = T, color = "white", background = "red")
+```
+:::
+
+::: {.column width=60%}
+```{r}
+
+df |> pivot_wider(
+  names_from = meas,
+  values_from = val
+) |> 
+  kable()
+
+```
+:::
+::::
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |> pivot_wider(
+  names_from = meas,
+  values_from = val
+) 
+
+```
+
+
+## Pivot Wider: Multiple Rows {.smaller}
+
+:::: columns
+
+::: {.column width=35%}
+```{r}
+
+df <- tribble(
+  ~id, ~meas, ~val, ~time,
+  "A",        "bp1",    100, "day",
+  "B",        "bp1",    102, "night",
+  "B",        "bp2",    120, "night",
+  "A",        "bp2",    140, "day",
+  "A",        "bp3",    115 , "morning"
+)
+
+df |> kable() |> 
+  kable_styling() 
+# |> 
+#  row_spec(5, bold = T, color = "white", background = "red")
+```
+:::
+
+::: {.column width=60%}
+```{r}
+
+df |> pivot_wider(
+  names_from = meas,
+  values_from = val
+) |> 
+  kable()
+
+```
+:::
+::::
+
+## When to use each pivot {.smaller}
+
+* `pivot_longer` tidies data where variables and/or data are in the column names
+
+```{r}
+
+who2 |> head(5) |> select(country:sp_m_4554) |> kable()
+
+```
+
+## When to use each pivot {.smaller}
+
+
+* `pivot_wider` tidies data where measurements are spread across multiple rows
+
+```{r}
+
+df <- tribble(
+  ~station, ~date, ~measure, ~value,
+  "1",        "2024/09/01",    "temp", "25.0 C",
+  "1",        "2024/09/01",    "pressure", "700mmHg",
+  "1",        "2024/09/01",    "humidity", "60%",
+  "1",        "2024/09/01",    "rain", ".2in",
+  "1",        "2024/09/02",    "temp" , "22.0 C",
+  "1",        "2024/09/02",    "pressure", "800mmHg",
+  "1",        "2024/09/02",    "humidity", "40%",
+)
+
+df |> kable()
+```
+
+
+
+## Tidy Data Defined Based on Your Goals
+
+* Definition of "variable" and "measurement" is partially up to you!
+
+* Pick the definitions that are best suited for you analysis
+
+
+## Data Science in Context Presentation
+
+## Meetup Reflection/One Minute Paper
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+## Weather Station Vignette {.smaller}
+
+```{r}
+
+weather = read_csv("weather.csv")
+
+weather |> select(id:d7) |> head(10) |> kable()
+
+```
