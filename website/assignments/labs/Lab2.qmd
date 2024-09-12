@@ -4,10 +4,10 @@ format: html
 editor: source
 ---
 
-# Overview
+## Overview
 
 In this assignment you will work to tidy, clean, and analyze two different datasets, the first is a small
-dataset contained in a csv file called [flightdelays.csv](https://github.com/georgehagstrom/DATA607/website/assignments/labs/labData/flightdelays.csv), and the second called [MixedDrinkRecipes-Prep.csv](https://github.com/georgehagstrom/DATA607/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv).
+dataset contained in a csv file called [flightdelays.csv](https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/flightdelays.csv), and the second called [MixedDrinkRecipes-Prep.csv](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv).
 
 The most important book chapters which cover the techniques you will practice here are R4DS Chapters 5 and 7. 
 Also helpful are the [`tidyr` vignette on pivoting](https://tidyr.tidyverse.org/articles/pivot.html) and the
@@ -17,7 +17,7 @@ Submit your completed assignment on the course brightspace page by uploading you
 `pdf` or link to a compiled `html`, which you could host on your `github` or `rpubs` page as you wish. 
 
 
-# Part 1: Airplane flight delays
+## Part 1: Airplane flight delays
 
 
 Consider the following dataset:
@@ -34,25 +34,25 @@ Consider the following dataset:
 The above table describes arrival delays for two different airlines across several destinations. The numbers
 correspond the the number of flights that were in either the delayed category or the on time category. 
 
-# Problems
+## Problems
 
 **Problem 1:** Read the information from  `flightdelays.csv` into R, and use `tidyr` and `dplyr` to convert this data into a tidy/tall format with names and complete data for all columns. Your final data frame should have `City`, `On_Time_Flights` and `Delayed_Flights` as columns (the exact names are up to you). In addition to `pivot_longer`, `pivot_wider` and `rename`, you might find the `tidyr` function [`fill`](https://tidyr.tidyverse.org/reference/fill.html) helpful for completing this task efficiently. Although this is a small dataset that you could easily reshape by hand, you should solve this problem using 
 tidyverse functions that do the work for you.
 
-**Problem 2:** Take the data-frame that you tidied and cleaned in Problem 1 and create additional columns which contain the fraction of on-time and delayed flights at each airport. Then create a dot-plot using the `geom_dotplot` function (see the [ggplot page for dotplot]()) to visualize the difference in flight delays 
-between the two airlines at each city in the dataset. What conclusions can you draw from the dotplot?
+**Problem 2:** Take the data-frame that you tidied and cleaned in Problem 1 and create additional columns which contain the fraction of on-time and delayed flights at each airport. Then create a Cleveland Multiway Dot Plot (see [this tutorial page for a description for how](https://uc-r.github.io/cleveland-dot-plots)) to visualize the difference in flight delays 
+between the two airlines at each city in the dataset. Compare the airlines and airports using the dot-plot- what are your conclusions?
 
 Optional: If you want to make a fancier visualization consider adding text labels containing the airline names above the dots using `geom_text` and `position = position_nudge(...)` with appropriate arguments.
 
-# Part 2: Mixed Drink Recipes
+## Part 2: Mixed Drink Recipes
 
 In the second part of this assignment we will be working with a dataset containing ingredients for different
 types of mixed drinks. This dataset is untidy and messy- it is in a wide data format and contains some inconsistencies that should be fixed.
 
-# Problems
+## Problems
 
-**Problem 3** Load the mixed drink recipe dataset into R from the file `MixedDrinkRecipes-prep.csv`, which
-you can download from my github page by [clicking here](https://github.com/georgehagstrom/DATA607/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv). 
+**Problem 3:** Load the mixed drink recipe dataset into R from the file `MixedDrinkRecipes-prep.csv`, which
+you can download from my github page by [clicking here](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/MixedDrinkRecipes-Prep.csv). 
 The variables `ingredient1` through `ingredient6` list the ingredients of the cocktail listed in the `name` column. Notice that there are many `NA` values in the ingredient columns, indicating that most cocktails have under 6 ingredients. 
 
 Tidy this dataset using `pivot_longer` to create a new data frame where each there is a row corresponding to each ingredient of all the cocktails, and an additional variable specifying the "rank" of that cocktail in
@@ -68,14 +68,14 @@ the original recipe, i.e. it should look like this:
 
 where the data-type of `Ingredient_Rank` is an integer. Hint: Use the `parse_number()` function in mutate after your initial pivot. 
 
-**Problem 4:** Some of the ingredients in the ingredient list have different names, but are nearly the same thing. An example include `Lemon Juice` versus `Juice of a lemon`. Make a list of the ingredients appearing in the ingredient list ranked by how commonly they occur along with the number of occurrences, and print the first 10 elements of the list here. Then check more ingredients (I suggest looking at more ingredients and even sorting them alphabetically using `arrange(asc(ingredient)))` and see if you can spot pairs of ingredients that are similar but have different names. Use `if_else`( [click here for if_else](https://dplyr.tidyverse.org/reference/if_else.html) ) in combination with `mutate` to make it so that the pairs of ingredients you found have the same name. You don't have to find all pairs, but find at least 5 pairs of ingredients to rename. Because the purpose of this renaming is to facilitate a hypothetical future analysis, you can choose your own criteria for similarity as long as it is somewhat justifiable. 
+**Problem 4:** Some of the ingredients in the ingredient list have different names, but are nearly the same thing. An example of such a pair is `Lemon Juice` and `Juice of a lemon`, which are considered different ingredients in this dataset, but which perhaps should be treated as the same depending on the analysis you are doing. Make a list of the ingredients appearing in the ingredient list ranked by how commonly they occur along with the number of occurrences, and print the first 10 elements of the list here. Then check more ingredients (I suggest looking at more ingredients and even sorting them alphabetically using `arrange(asc(ingredient)))` and see if you can spot pairs of ingredients that are similar but have different names. Use `if_else`( [click here for if_else](https://dplyr.tidyverse.org/reference/if_else.html) ) or `case_when` in combination with `mutate` to make it so that the pairs of ingredients you found have the same name. You don't have to find all pairs, but find at least 5 pairs of ingredients to rename. Because the purpose of this renaming is to facilitate a hypothetical future analysis, you can choose your own criteria for similarity as long as it is somewhat justifiable. 
 
 Notice that there are some ingredients that appear to be two or more ingredients strung together with commas. These would be candidates for more cleaning though this exercise doesn't ask you to fix them.
 
 **Problem 5:** Some operations are easier to do on `wide` data rather than `tall` data.
 Find the 10 most common pairs of ingredients occurring in the top 2 ingredients in a recipe. It is much
 easier to do this with a `wide` dataset, so use `pivot_wider` to change the data so that each row contains all of the ingredients of a single cocktail, just like in the format of the original data-set. Then use `count`
-on the `1` and `2` rows to determine the most common pairs (see chapter 3 for a refresher on `count`).
+on the `1` and `2` columns to determine the most common pairs (see chapter 3 for a refresher on `count`).
 
 Note: You may be interested to read about the `widyr` package here: [widyr page](https://rdrr.io/cran/widyr/f/README.md). It is designed to solve problems like this one and uses internal pivot steps to accomplish it so that the final result is tidy. I'm actually unaware of any easy ways of solving problem 5 without pivoting to a wide dataset. 
 
