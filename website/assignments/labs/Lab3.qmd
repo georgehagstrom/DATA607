@@ -1,60 +1,69 @@
 ---
-title: "Lab3: EDA on Rhode Island Open Policing"
+title: "Lab3: Exploratory Data Analysis"
 format: html
 editor: source
 ---
 
-# Overview
+## Overview
 
-For this laboratory assignment you will perform an exploratory data analysis on a subset
-of data from the [Stanford Open Policing dataset](https://openpolicing.stanford.edu/data/). The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The 
-rds file format is a compressed format that is much smaller than the corresponding csv file. You
-can load the data from it using the function `read_rds`.
+This is a two part lab where each part will focus on a different dataset: the first part
+will use a dataset containing a series of diagnostic measurements taken on members of the Akimel O'odham people (an indigenous group living in the Southwestern United States who are also called the Pima) to understand diabetes risk ([click here to download diabetes.csv]()), and the second dataset contains information on traffic accidents in New York City in the months of July and August of this year, and was compiled by NYC Open Data ([click here to download crashes.csv]()). 
 
-# Problems
+For this problem set you will need to install the `skimr` and `GGally` packages, and in particular the functions `skim` and `ggpairs`. 
 
-**Problem 1**: The first step of an exploratory data analysis is to think of a set of 
-interesting questions that your data set might be able to answer. This dataset has a large
-number of variables, so your questions can help you narrow down the questions you might be
-interested in. Write down a few questions about police stops that you might be interested in
-and list the rows in the dataset that you think might have important information to 
-answer your question. 
+## Part 1: Health Diagnostics and Diabetes Incidence
 
-This is intentionally open ended, but if you need inspiration you could
-look at how factors like time of day, month, race and gender (of both the officer and subject),
-or department id are related to the frequency of stops, the reason for stops, or the outcome. 
-For example one interesting question might be: Do racial differences in traffic stops decrease at night?
+Problem 1: Data Description and Outliers. Load `diabetes.csv` into R and take a look at the data using the `skimr` package (make sure to install it if you don't have it). Skimr provides a tidy 
+summary function called `skim`. Use `skim` on the data frame that you loaded from diabetes.csv.
 
-**Problem 2**: Having identified the most important variables, you should study their
-variability, in order to better understand their distribution and to identify any potential
-problems with the data quality or unusual values. Calculate summary statistics as appropriate
-for whether you have categorical or numerical data and perform basic visualizations. Give 
-justifications for the visualizations that you selected.
+Skim will list several variables. Pregnancies is the past number of pregnancies (this dataset includes women 21 years or older), glucose describes the concentration of glucose in the blood after an oral glucose tolerance test (drinking a sugary drink and measuring two hours later), skin thickness is the result of a skinfold thickness test taken at the triceps (upper arm), Insulin is the insulin concentration in the blood taken at the same time as the glucose measurement (Insulin is a hormone that transports glucose into cells), BMI is "Body Mass Index", Diabetes Pedigree Function is a measure of diabetes risk based on the family history of diabetes for each patient (this is an engineered feature) and outcome is equal to 1 if the patient was diagnosed with diabetes with 5 years and 0 otherwise.
 
-**Problem 3**: You likely found that for some of your variables there were missing data, 
-outlier values, or data points that indicate some sort of error. In order to continue with
-your analysis you will need to decide what to do with these. Modify your dataset appropriately
-so that you will be able to perform an analysis of the relationships you are interested in.
-In addition to the code, give justifications for your choices.
+(a) Skim should show no missing data, but should indicate potential data issues. Do any of the 
+percentile ranges (p0, p25, p50, p75, or p100) for the reported variables suggest a potential
+problem? 
 
-**Problem 4**: Now it is time to visualize the relationships that you are interested in. Make 
-plots showing how variables co-vary, faceting when necessary to explore relationships among
-up to 3 variables. Consier the following questions when you observe a pattern:
+Further investigate the dataset to find potentially problematic variables using a qq-plot (`geom_qq`) or `group_by` combined with `count` and `arrange`. For which variables do you find repeated values and what are those values? Do you believe these values represent real measurements or could they correspond to missing data? Do the repeated variables occur in
+the same rows or different rows?
+
+Write an overview of which values are missing and replace all missing values with NA for
+the next stage of analysis.
+
+Problem 2: Pair Plots
+
+Use the `GGally` package and its function `ggpair` on both the original dataset and the cleaned 
+dataset. Which correlations change the most? What are the strongest correlations between variables overall and with the `Outcome`? 
+
+
+* Remark: This dataset has been used an model dataset for the construction of binary classifiers using machine learning and there are a large number of published studies showing 
+these analyses. However, many of these analyses did not exclude the missing
+values erroneously coded as zero, as is discussed in this interesting paper by [Breault](https://www.researchgate.net/profile/Joseph-Breault/publication/215899115_Data_mining_diabetic_databases_Are_rough_sets_a_useful_addition/links/0912f504615e8b6e0a000000/Data-mining-diabetic-databases-Are-rough-sets-a-useful-addition.pdf), leading to degraded accuracy and
+potential poor interpretability of results. For example, the typical accuracy in many of these studies is only slightly more than a "stupid" algorithm which just declares all patients non-diabetic.
+
+## Part 2: Car Crashes in NYC
+
+Problem 3: Finding Inliers and Missing Data
+
+Load the NYC car crash dataset using `read_csv`. You can download the data from the course website by [clicking here](). 
+
+a) Which variables have missing data (use `skim` or another tool of your choosing)? Some missing values have a different interpretation than others- what does it mean when `VEHICLE TYPE CODE 2` is missing compared to `LOCATION`?
+
+b) Latitude and Longitude have the same number of missing values. Verify that they always occur 
+in the same row. Check the counts of latitude and longitude values- do you find any hidden missing values? If so recode them as NA.
+
+c) Many of the geographic values are missing, but geographic information is redundant in multiple values in the dataset. For example, with effort you could determine the borough of an accident from the zip code, the latitude and longitude, or the streets (not part of the assignment for this week). Consider the borough variable- what percentage of the missing values of borough have values present of *at least* one of zip code or latitude. What about if we include all the street name variables? What fraction of rows don't have any detailed location information (latitude, zip code, or street names)?
+
+d) The crash time variable has no missing values. Compute the count of how many times each
+individual time occurs in the crash data set. This will suggest that there are some inliers in
+the data. Compute summary statistics on the count data, how many inliers are there (define an inlier as a time where the count is greater than 1.5*IQR + P75, i.e. 1.5 times the interquartile range past the 75th percentile.) For which inliers do you believe the time is most likely to
+be accurate? For which is it least likely to be accurate and why do you think so?
+
+Problem 4: Formulate a question about crash data in NYC and make visualizations to explore your question. It could be related to the geographical distribution of accidents, the timing of
+accidents, which types of vehicles lead to more or less dangerous accidents, or anything else you want. Make notes about what you observe in all visualizations you make and how it impacts your initial hypotheses.
+
+Useful questions to consider when you observe a pattern:
 
 * Could this pattern be due to coincidence (i.e. random chance)?
 * How can you describe the relationship implied by the pattern?
 * How strong is the relationship implied by the pattern?
 * What other variables might affect the relationship?
 * Does the relationship change if you look at individual subgroups of the data?
-
-If the results of these initial visualizations inspire more questions, consider performing
-those as well. Briefly summarize the results of this exercise and relate it to your initial
-questions and hypotheses.
-
-
-
-
-
-
-
-
