@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab3: EDA on Rhode Island Open Policing – DATA 607 Fall 2024</title>
+<title>Lab3: Exploratory Data Analysis – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Lab3: EDA on Rhode Island Open Policing – DATA 607 Fall 2024">
+<meta property="og:title" content="Lab3: Exploratory Data Analysis – DATA 607 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab3: EDA on Rhode Island Open Policing</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab3: Exploratory Data Analysis</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -336,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab3: EDA on Rhode Island Open Policing</h1>
+<h1 class="title">Lab3: Exploratory Data Analysis</h1>
 </div>
 
 
@@ -353,17 +353,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>For this laboratory assignment you will perform an exploratory data analysis on a subset of data from the <a href="https://openpolicing.stanford.edu/data/">Stanford Open Policing dataset</a>. The particular subset we will be focused on is a record of stops made by the Rhode Island State Patrol between 2005 and 2015. This dataset is contained in the file RIOpenPolicing.rds . The rds file format is a compressed format that is much smaller than the corresponding csv file. You can load the data from it using the function <code>read_rds</code>.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This is a two part lab where each part will focus on a different dataset: the first part will use a dataset containing a series of diagnostic measurements taken on members of the Akimel O’odham people (an indigenous group living in the Southwestern United States who are also called the Pima) to understand diabetes risk (<a href="https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/diabetes.csv">click here to download diabetes.csv</a>), and the second dataset contains information on traffic accidents in New York City in the months of July and August of this year, and was compiled by NYC Open Data (<a href="https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/crashes.csv">click here to download crashes.csv</a>).</p>
+<p>For this problem set you will need to install the <code>skimr</code> and <code>GGally</code> packages, and in particular the functions <code>skim</code> and <code>ggpairs</code>.</p>
+<p>We will also explore the concept of an <em>inlier</em>, which is an erroneous value that occurs in the interior of the distribution of a variable, rather than in the tails of the variable. The US Census <a href="https://www.census.gov/content/dam/Census/library/working-papers/1998/adrm/rr9805.pdf">published an article on the problem of inliers here</a></p>
 </section>
-<section id="problems" class="level1">
-<h1>Problems</h1>
-<p><strong>Problem 1</strong>: The first step of an exploratory data analysis is to think of a set of interesting questions that your data set might be able to answer. This dataset has a large number of variables, so your questions can help you narrow down the questions you might be interested in. Write down a few questions about police stops that you might be interested in and list the rows in the dataset that you think might have important information to answer your question.</p>
-<p>This is intentionally open ended, but if you need inspiration you could look at how factors like time of day, month, race and gender (of both the officer and subject), or department id are related to the frequency of stops, the reason for stops, or the outcome. For example one interesting question might be: Do racial differences in traffic stops decrease at night?</p>
-<p><strong>Problem 2</strong>: Having identified the most important variables, you should study their variability, in order to better understand their distribution and to identify any potential problems with the data quality or unusual values. Calculate summary statistics as appropriate for whether you have categorical or numerical data and perform basic visualizations. Give justifications for the visualizations that you selected.</p>
-<p><strong>Problem 3</strong>: You likely found that for some of your variables there were missing data, outlier values, or data points that indicate some sort of error. In order to continue with your analysis you will need to decide what to do with these. Modify your dataset appropriately so that you will be able to perform an analysis of the relationships you are interested in. In addition to the code, give justifications for your choices.</p>
-<p><strong>Problem 4</strong>: Now it is time to visualize the relationships that you are interested in. Make plots showing how variables co-vary, faceting when necessary to explore relationships among up to 3 variables. Consier the following questions when you observe a pattern:</p>
+<section id="part-1-health-diagnostics-and-diabetes-incidence" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-health-diagnostics-and-diabetes-incidence">Part 1: Health Diagnostics and Diabetes Incidence</h2>
+<p><strong>Problem 1: Data Description and Outliers.</strong></p>
+<p>Load <code>diabetes.csv</code> into R and take a look at the data using the <code>skimr</code> package (make sure to install it if you don’t have it). Skimr provides a tidy summary function called <code>skim</code>. Use <code>skim</code> on the data frame that you loaded from diabetes.csv.</p>
+<p>Skim will list several variables. Pregnancies is the past number of pregnancies (this dataset includes women 21 years or older), glucose describes the concentration of glucose in the blood after an oral glucose tolerance test (drinking a sugary drink and measuring two hours later), skin thickness is the result of a skinfold thickness test taken at the triceps (upper arm), Insulin is the insulin concentration in the blood taken at the same time as the glucose measurement (Insulin is a hormone that transports glucose into cells), BMI is “Body Mass Index”, Diabetes Pedigree Function is a measure of diabetes risk based on the family history of diabetes for each patient (this is an engineered feature) and outcome is equal to 1 if the patient was diagnosed with diabetes with 5 years and 0 otherwise.</p>
+<ol type="a">
+<li><p>Skim should show no missing data, but should indicate potential data issues. Do any of the percentile ranges (p0, p25, p50, p75, or p100) for the reported variables suggest a potential problem?</p></li>
+<li><p>Further investigate the dataset to find potentially problematic variables using a qq-plot (<code>geom_qq</code>) or <code>group_by</code> combined with <code>count</code> and <code>arrange</code>. For which variables do you find repeated values and what are those values? Do you believe these values represent real measurements or could they correspond to missing data? Do the repeated variables occur in the same rows or different rows?</p></li>
+</ol>
+<p>Write an overview of which values are missing and replace all missing values with NA for the next stage of analysis.</p>
+<ol start="3" type="a">
+<li>Perform Tukey Box plots on each variable to identify potential outliers. Which variables have the most outliers? Are there any outliers that you think come from measurement error? If so remove them.</li>
+</ol>
+<p><strong>Problem 2: Pair Plots</strong></p>
+<p>Use the <code>GGally</code> package and its function <code>ggpair</code> on both the original dataset and the cleaned dataset. Which correlations change the most? What are the strongest correlations between variables overall and with the <code>Outcome</code>?</p>
+<ul>
+<li>Remark: This dataset has been used an model dataset for the construction of binary classifiers using machine learning and there are a large number of published studies showing these analyses. However, many of these analyses did not exclude the missing values erroneously coded as zero, as is discussed in this interesting paper by <a href="https://www.researchgate.net/profile/Joseph-Breault/publication/215899115_Data_mining_diabetic_databases_Are_rough_sets_a_useful_addition/links/0912f504615e8b6e0a000000/Data-mining-diabetic-databases-Are-rough-sets-a-useful-addition.pdf">Breault</a>, leading to highly degraded accuracy.</li>
+</ul>
+</section>
+<section id="part-2-car-crashes-in-nyc" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-car-crashes-in-nyc">Part 2: Car Crashes in NYC</h2>
+<p><strong>Problem 3: Finding Inliers and Missing Data</strong></p>
+<p>Load the NYC car crash dataset using <code>read_csv</code>. You can download the data from the course website by <a href="https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/crashes.csv">clicking here</a>.</p>
+<ol type="a">
+<li><p>Which variables have missing data (use <code>skim</code> or another tool of your choosing)? Some missing values have a different interpretation than others- what does it mean when <code>VEHICLE TYPE CODE 2</code> is missing compared to <code>LATITUDE</code>?</p></li>
+<li><p>Latitude and Longitude have the same number of missing values. Verify that they always occur in the same row. Check the counts of latitude and longitude values- do you find any hidden missing values? If so recode them as NA.</p></li>
+<li><p>Many of the geographic values are missing, but geographic information is redundant in multiple variables in the dataset. For example, with effort you could determine the borough of an accident from the zip code, the latitude and longitude, or the streets (not part of the assignment for this week). Consider the borough variable- what percentage of the missing values of borough have values present of <em>at least</em> one of zip code or latitude. What about if we include all the street name variables? What fraction of rows don’t have any detailed location information (latitude, zip code, or street names)?</p></li>
+<li><p>The <code>CRASH TIME</code> variable has no missing values. Compute the count of how many times each individual time occurs in the crash data set. This will suggest that there are some inliers in the data. Compute summary statistics on the count data, and determine how many inliers there are (define an inlier as a data value where the count is an outlier, i.e.&nbsp;the count of that value is greater than 1.5*IQR + P75, i.e.&nbsp;1.5 times the interquartile range past the 75th percentile for the distribution of counts for values of that variable.) For which inliers do you believe the time is most likely to be accurate? For which is it least likely to be accurate and why do you think so?</p></li>
+</ol>
+<p><strong>Problem 4: Finding Patterns in the Data</strong></p>
+<p>Formulate a question about crash data in NYC and make visualizations to explore your question. It could be related to the geographical distribution of accidents, the timing of accidents, which types of vehicles lead to more or less dangerous accidents, or anything else you want. Write comments/notes describing your observations in each visualizations you create and mention how these observations impact your initial hypotheses.</p>
+<p>Useful questions to consider when you observe a pattern:</p>
 <ul>
 <li>Could this pattern be due to coincidence (i.e.&nbsp;random chance)?</li>
 <li>How can you describe the relationship implied by the pattern?</li>
@@ -371,7 +398,6 @@ ul.task-list li input[type="checkbox"] {
 <li>What other variables might affect the relationship?</li>
 <li>Does the relationship change if you look at individual subgroups of the data?</li>
 </ul>
-<p>If the results of these initial visualizations inspire more questions, consider performing those as well. Briefly summarize the results of this exercise and relate it to your initial questions and hypotheses.</p>
 
 
 </section>
