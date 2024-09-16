@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="George I. Hagstrom">
+<meta name="dcterms.date" content="2024-09-16">
+<meta name="description" content="Click here for info on Week 4">
 
-<title>Module 4 - Exploratory Data Analysis – DATA 607 Fall 2024</title>
+<title>Week 4 Info: Exploratory Data Analysis – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/module5.html" rel="next">
-<link href="../modules/module3.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,9 +74,12 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Module 4 - Exploratory Data Analysis – DATA 607 Fall 2024">
-<meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
+<meta property="og:title" content="Week 4 Info: Exploratory Data Analysis – DATA 607 Fall 2024">
+<meta property="og:description" content="Click here for info on Week 4">
+<meta property="og:image" content="https://georgehagstrom.github.io/DATA607/posts/EDA.png">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
+<meta property="og:image:height" content="237">
+<meta property="og:image:width" content="448">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -87,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module4.html">4 - Advanced Visualizations and EDA</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 4 Info: Exploratory Data Analysis</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -261,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module4.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4 - Advanced Visualizations and EDA</span></a>
   </div>
 </li>
@@ -336,16 +340,33 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module4.html">4 - Advanced Visualizations and EDA</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 4 - Exploratory Data Analysis</h1>
+<h1 class="title">Week 4 Info: Exploratory Data Analysis</h1>
 </div>
 
+<div>
+  <div class="description">
+    Click here for info on Week 4
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>George I. Hagstrom </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 16, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -355,62 +376,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- 
-See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
-The solution, put backticks (`) around the LaTeX equation
--->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<ul>
-<li>Understand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling</li>
-<li>Visualizing variation and covariation for categorical and numerical data</li>
-<li>Data checks, data cleaning, outliers, missing data summary statistics</li>
-<li>Layers and Stats in ggplot</li>
-<li>Reproducible Examples</li>
-</ul>
-</section>
-<section id="readings" class="level3">
-<h3 class="anchored" data-anchor-id="readings">Readings</h3>
-<ul>
-<li><strong>RDS</strong> (R for Data Science): <a href="https://r4ds.hadley.nz/workflow-help">Chapters 8-11</a> (Chapter 10 is the most substantial part of the reading assignment)</li>
-</ul>
-</section>
-<section id="additional-reading" class="level3">
-<h3 class="anchored" data-anchor-id="additional-reading">Additional Reading:</h3>
-<p>There are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:</p>
-<ul>
-<li><em>Exploratory Data Analysis.</em> J. W. Tukey. (1977).</li>
-<li><em>Visualizing Data.</em> W. S. Cleveland. (1993). Hobart press.</li>
-<li><em>Exploratory data mining and data cleaning.</em> T. Dasu and T. Johnson. (2003). John Wiley &amp; Sons.</li>
-</ul>
-<p>Here is an example of a newer book which is also excellent:</p>
-<ul>
-<li><em>Exploratory Data Analysis Using R</em>. Roland Pearson. CRC Press. (2015).</li>
-</ul>
-</section>
-<section id="videos" class="level3">
-<h3 class="anchored" data-anchor-id="videos">Videos</h3>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=go5Au01Jrvs">Whole Game</a> Live demo of an Exploratory Data Analysis by Hadley Wickham. This isn’t a super polished video but its really nice to see examples of experts going through their process. The code he typed and data that he used can be found on <a href="https://github.com/hadley/building-permits">github</a>. This video has more of a focus on exploring and finding patterns rather than finding problems in a poor dataset.</li>
-</ul>
+<p>Hello Class,</p>
+<p>Today is the start of week 4, which has as its main topic something called exploratory data analysis. Exploratory data analysis is set of techniques applied at the beginning of a statistical analysis to find errors in the data, to discover patterns, and to explore hypotheses. EDA uses visualizations as one of its primary tools, and we will deepen our knowledge of how to make visualizations in ggplot.</p>
+<p>You will have a lab assignment titled <a href="../assignments/labs/Lab3">Exploratory Data Analysis</a> due next Sunday at midnight.</p>
+<p>For your reading assignments and more details about this week, head over to <a href="../modules/module4">Module 4</a>. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -977,18 +948,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../modules/module3.html" class="pagination-link" aria-label="3 - Data Tidying">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3 - Data Tidying</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../modules/module5.html" class="pagination-link" aria-label="5 - Data Transformations">
-        <span class="nav-page-text">5 - Data Transformations</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1003,7 +962,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/modules/module4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/posts/2024-09-16-Week-4-Info.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
