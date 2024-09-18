@@ -170,11 +170,11 @@
     ]
   },
   {
-    "objectID": "meetups/Meetup4/Meetup4.html#lab-2-comments",
-    "href": "meetups/Meetup4/Meetup4.html#lab-2-comments",
+    "objectID": "meetups/Meetup4/Meetup4.html#week-overview",
+    "href": "meetups/Meetup4/Meetup4.html#week-overview",
     "title": "Meetup 4: Exploratory Data Analysis",
-    "section": "Lab 2 Comments",
-    "text": "Lab 2 Comments"
+    "section": "Week Overview",
+    "text": "Week Overview\n\nGraded Most of Lab 2\n\nPlease submit pdf and wrap your code in code chunks!\n\nEDA Lab due Sunday at midnight\nPosted coding demo on reprex/debugging\nHadley Wickham EDA Demo\nSign up for Data Science in Context!\nToday’s focus is EDA (Chapter 10)\n\nVast subject, entire books on it\nNot from book: Inliers, QQ-Plots, Dot-Plots, Pair Plots"
   },
   {
     "objectID": "meetups/Meetup4/Meetup4.html#case-study-barley-yields-in-mn",
@@ -237,7 +237,7 @@
     "href": "meetups/Meetup4/Meetup4.html#quantile-quantile-qq-plots",
     "title": "Meetup 4: Exploratory Data Analysis",
     "section": "Quantile-Quantile (QQ) Plots",
-    "text": "Quantile-Quantile (QQ) Plots\n\nSorts data in increasing order, plots against sorted data from a probability distribution (usually Gaussian) or other dataset\nMost powerful/underused univariate visualization\nHow it works in detail:\n\nData set of N points in ascending order\nCreate percentile vec seq(0,1,1/(N+1))\nDrop ends and calculate data using qnorm(seq)\nScatterplot of Gaussian quantiles on x axis, your data on y\ngeom_qq, stat_qq do this for you"
+    "text": "Quantile-Quantile (QQ) Plots\n\nSorts data in increasing order, plots against sorted data from a probability distribution (usually Gaussian) or other dataset\nMost powerful/underused univariate visualization\n\nCreate percentile vec seq(0,1,1/(N+1))\nDrop ends and calculate data using qnorm(seq)\nScatterplot of Gaussian quantiles on x axis, your data on y\ngeom_qq, stat_qq do this for you"
   },
   {
     "objectID": "meetups/Meetup4/Meetup4.html#qq-plot-for-us-cereals-data",
@@ -398,7 +398,7 @@
     "href": "meetups/Meetup4/Meetup4.html#multiway-visualizations-dot-plots",
     "title": "Meetup 4: Exploratory Data Analysis",
     "section": "Multiway Visualizations: Dot Plots",
-    "text": "Multiway Visualizations: Dot Plots\n\nMultiple categorical variables and a response\nCleveland and McGill 1984Studied perceptual visualizations to see how we best assimilated visual data\nIn order from best to last:\n\n\n\nDot-Chart created to emphasize comparing position along a common scale"
+    "text": "Multiway Visualizations: Dot Plots\n\nMultiple categorical variables and a response\nCleveland and McGill 1984\nBest to worst rank of perceptual cues for learning:\n\n\n\nDot-Chart created to emphasize position comparisons"
   },
   {
     "objectID": "meetups/Meetup4/Meetup4.html#dot-plots",
@@ -419,7 +419,14 @@
     "href": "meetups/Meetup4/Meetup4.html#what-didnt-we-talk-about",
     "title": "Meetup 4: Exploratory Data Analysis",
     "section": "What Didn’t We Talk About",
-    "text": "What Didn’t We Talk About\n\nSimple Models are used a lot in EDA\n\nSee example in Chapter 10\nResiduals remove the effect of a major variable and see what remains\n\nTransformations\n\nWe will discuss transformations more next week\nReexpress data in new way\nMost important by far is log transform\nPower transforms also useful, but domain dependent"
+    "text": "What Didn’t We Talk About\n\nSimple Models are used a lot in EDA\n\nSee example in Chapter 10\nResiduals remove the effect of a major variable and see what remains\n\nTransformations\n\nWe will discuss transformations more next week\nReexpress data in new way\nMost important by far is log transform"
+  },
+  {
+    "objectID": "meetups/Meetup4/Meetup4.html#meetup-reflectionone-minute-paper",
+    "href": "meetups/Meetup4/Meetup4.html#meetup-reflectionone-minute-paper",
+    "title": "Meetup 4: Exploratory Data Analysis",
+    "section": "Meetup Reflection/One Minute Paper",
+    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here"
   },
   {
     "objectID": "meetups/Meetup1/Meetup1.html#what-is-data-science",

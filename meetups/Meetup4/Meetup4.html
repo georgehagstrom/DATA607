@@ -406,8 +406,23 @@ George Hagstrom
 
   <p class="date">2024-09-18</p>
 </section>
-<section id="lab-2-comments" class="slide level2">
-<h2>Lab 2 Comments</h2>
+<section id="week-overview" class="slide level2">
+<h2>Week Overview</h2>
+<ul>
+<li>Graded Most of Lab 2
+<ul>
+<li>Please submit pdf and wrap your code in code chunks!</li>
+</ul></li>
+<li>EDA Lab due Sunday at midnight</li>
+<li>Posted coding demo on reprex/debugging</li>
+<li>Hadley Wickham EDA Demo</li>
+<li>Sign up for Data Science in Context!</li>
+<li>Today’s focus is EDA (Chapter 10)
+<ul>
+<li>Vast subject, entire books on it</li>
+<li>Not from book: Inliers, QQ-Plots, Dot-Plots, Pair Plots</li>
+</ul></li>
+</ul>
 </section>
 <section id="case-study-barley-yields-in-mn" class="slide level2">
 <h2>Case Study: Barley Yields in MN</h2>
@@ -497,18 +512,10 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="visualize-the-data" class="slide level2 nostretch">
+<section id="visualize-the-data" class="slide level2">
 <h2>Visualize the Data</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:80.0%" class="r-stretch"></section>
 <section id="swapped-years-at-morris" class="slide level2">
 <h2>Swapped Years at Morris?</h2>
 
@@ -550,10 +557,8 @@ George Hagstrom
 <h2>Quantile-Quantile (QQ) Plots</h2>
 <ul>
 <li>Sorts data in increasing order, plots against sorted data from a probability distribution (usually Gaussian) or other dataset</li>
-<li>Most powerful/underused univariate visualization</li>
-<li>How it works in detail:
+<li>Most powerful/underused univariate visualization
 <ul>
-<li>Data set of N points in ascending order</li>
 <li>Create percentile vec <code>seq(0,1,1/(N+1))</code></li>
 <li>Drop ends and calculate data using <code>qnorm(seq)</code></li>
 <li>Scatterplot of Gaussian quantiles on x axis, your data on y</li>
@@ -561,42 +566,18 @@ George Hagstrom
 </ul></li>
 </ul>
 </section>
-<section id="qq-plot-for-us-cereals-data" class="slide level2 nostretch">
+<section id="qq-plot-for-us-cereals-data" class="slide level2">
 <h2>QQ Plot for US Cereals Data</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="qq-plot-for-us-cereals-data-1" class="slide level2 nostretch">
+
+<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:80.0%" class="r-stretch"></section>
+<section id="qq-plot-for-us-cereals-data-1" class="slide level2">
 <h2>QQ Plot for US Cereals Data</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="qq-plot-for-us-cereals-data-2" class="slide level2 nostretch">
+
+<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:80.0%" class="r-stretch"></section>
+<section id="qq-plot-for-us-cereals-data-2" class="slide level2">
 <h2>QQ Plot for US Cereals Data</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:80.0%" class="r-stretch"></section>
 <section id="comparing-visualizations" class="slide level2">
 <h2>Comparing visualizations</h2>
 
@@ -779,27 +760,19 @@ George Hagstrom
 <h2>Multiway Visualizations: Dot Plots</h2>
 <ul>
 <li>Multiple categorical variables and a response</li>
-<li><a href="https://www.jstor.org/stable/2288400?seq=1#page_scan_tab_contents">Cleveland and McGill 1984</a>Studied perceptual visualizations to see how we best assimilated visual data</li>
-<li>In order from best to last:</li>
+<li><a href="https://www.jstor.org/stable/2288400?seq=1#page_scan_tab_contents">Cleveland and McGill 1984</a></li>
+<li>Best to worst rank of perceptual cues for learning:</li>
 </ul>
 <p><img data-src="PerceptualTasks.png" style="width:60.0%"></p>
 <ul>
-<li>Dot-Chart created to emphasize comparing position along a common scale</li>
+<li>Dot-Chart created to emphasize position comparisons</li>
 </ul>
 </section>
-<section id="dot-plots" class="slide level2 nostretch">
+<section id="dot-plots" class="slide level2">
 <h2>Dot Plots</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="dot-plots-1" class="slide level2 smaller">
+
+<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:80.0%" class="r-stretch"></section>
+<section id="dot-plots-1" class="slide level2">
 <h2>Dot Plots</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>barley <span class="sc">|&gt;</span> </span>
@@ -807,9 +780,8 @@ George Hagstrom
 <span id="cb6-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb6-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>site,<span class="at">nrow =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb6-5"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
 </div>
-<img data-src="Meetup4_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
+</section>
 <section id="what-didnt-we-talk-about" class="slide level2">
 <h2>What Didn’t We Talk About</h2>
 <ul>
@@ -823,9 +795,13 @@ George Hagstrom
 <li>We will discuss transformations more next week</li>
 <li><strong>Reexpress</strong> data in new way</li>
 <li>Most important by far is <code>log</code> transform</li>
-<li>Power transforms also useful, but domain dependent</li>
 </ul></li>
 </ul>
+</section>
+<section id="meetup-reflectionone-minute-paper" class="slide level2">
+<h2>Meetup Reflection/One Minute Paper</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
