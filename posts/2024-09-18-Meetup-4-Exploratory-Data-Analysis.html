@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="George I. Hagstrom">
+<meta name="dcterms.date" content="2024-09-18">
+<meta name="description" content="Click here for meetup 4 slides and Zoom link">
 
-<title>Announcements – DATA 607 Fall 2024</title>
+<title>Meetup 4: Exploratory Data Analysis – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course/overview.html" rel="next">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,71 +70,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<link href="../fullcalendar-lib/main.css" rel="stylesheet">
+<script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<link href="./fullcalendar-lib/main.css" rel="stylesheet">
-<script type="text/javascript" src="./fullcalendar-lib/main.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Announcements – DATA 607 Fall 2024">
-<meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
+<meta property="og:title" content="Meetup 4: Exploratory Data Analysis – DATA 607 Fall 2024">
+<meta property="og:description" content="Click here for meetup 4 slides and Zoom link">
+<meta property="og:image" content="https://georgehagstrom.github.io/DATA607/posts/Meetup4.png">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
+<meta property="og:image:height" content="715">
+<meta property="og:image:width" content="1056">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -146,7 +91,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Announcements</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Meetup 4: Exploratory Data Analysis</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,8 +105,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/course_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/georgehagstrom/DATA607" title="Github" class="quarto-navigation-tool px-1" aria-label="Github" target="_blank"><i class="bi bi-github"></i></a>
@@ -199,7 +144,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Announcements</span></a>
   </div>
 </li>
@@ -214,43 +159,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/instructors.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/instructors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/textbooks.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/textbooks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Textbooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/software.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course/calendar.html" class="sidebar-item-text sidebar-link">
+  <a href="../course/calendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calendar</span></a>
   </div>
 </li>
@@ -267,25 +212,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments/participation.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/participation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Participation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments/labs.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments/project.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments/tidygit.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/tidygit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub/Tidyverse Recipes</span></a>
   </div>
 </li>
@@ -302,79 +247,79 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module1.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1 - Data Science Workflow and Toolkit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module2.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2 - Visualizing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module3.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3 - Data Tidying</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module4.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4 - Advanced Visualizations and EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module5.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 - Data Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module6.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6 - Processing Strings and Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module7.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7 - Working with Databases and SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module8.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8 - Advanced R Programming</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module9.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9 - Web Scraping and APIs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module10.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10 - GIT and Collaboration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module11.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11 - Tidy Text and NLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module12.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12 - Graphs and Graph Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/module13.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/module13.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 - Big Data and Cloud Computing</span></a>
   </div>
 </li>
@@ -382,7 +327,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+  <a href="../acknowledgements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
@@ -397,14 +342,31 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Announcements</h1>
+<h1 class="title">Meetup 4: Exploratory Data Analysis</h1>
 </div>
 
+<div>
+  <div class="description">
+    Click here for meetup 4 slides and Zoom link
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>George I. Hagstrom </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 18, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -414,243 +376,13 @@ window.Quarto = {
 </header>
 
 
-<p>Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.</p>
+<p>Meetup 4 will cover basic principles of data visualization. <a href="https://us02web.zoom.us/j/81858708616?pwd=eE9ZGJFco9iicq3BsmANIfWUVLwy0x.1#success">Click here</a> to join the meetup on Zoom.</p>
+<p>You can find the <a href="../meetups/Meetup4/Meetup4.html">meetup slides here</a></p>
+<p>Click the <a href="../modules/Module4.qmd">Module 4 link</a> to see the course materials and instructions for this week.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1726632000000" data-listing-file-modified-sort="1726684702791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external"></a></p><a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external">
-<p><img loading="lazy" src="./posts/Reprex.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external">How to find help and make a reproducible example (Debugging)</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external">Click here for a link to a code vignette and a youtube video of a coding demo focused on debugging and reprex</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-18-How-to-seek-coding-help.html" class="no-external">
-<div class="listing-date">
-Sep 18, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1726632000000" data-listing-file-modified-sort="1726696484627" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external"></a></p><a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external">
-<p><img loading="lazy" src="./posts/Meetup4.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external">Meetup 4: Exploratory Data Analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external">Click here for meetup 4 slides and Zoom link</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html" class="no-external">
-<div class="listing-date">
-Sep 18, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1726459200000" data-listing-file-modified-sort="1726463222111" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="127">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-16-Week-4-Info.html" class="no-external"></a></p><a href="./posts/2024-09-16-Week-4-Info.html" class="no-external">
-<p><img loading="lazy" src="./posts/EDA.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-16-Week-4-Info.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-16-Week-4-Info.html" class="no-external">Week 4 Info: Exploratory Data Analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-16-Week-4-Info.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-16-Week-4-Info.html" class="no-external">Click here for info on Week 4</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-16-Week-4-Info.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726086333491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="85">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external"></a></p><a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external">
-<p><img loading="lazy" src="./posts/WeatherStation.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external">Pivot Coding Demo</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external">Click here for a link to a code vignette and a youtube video of a coding demo</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-11-Pivot-Demo.html" class="no-external">
-<div class="listing-date">
-Sep 11, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726093676239" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external"></a></p><a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external">
-<p><img loading="lazy" src="./posts/Meetup3.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external">Meetup 3: Tidy Data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external">Click here for meetup 2 slides and Zoom link</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-04-Meetup-2_Visualizing-Data.html" class="no-external">
-<div class="listing-date">
-Sep 11, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1725768000000" data-listing-file-modified-sort="1725853805067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-08-Week-3-Info.html" class="no-external"></a></p><a href="./posts/2024-09-08-Week-3-Info.html" class="no-external">
-<p><img loading="lazy" src="./meetups/Meetup3/tidy-1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-08-Week-3-Info.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-08-Week-3-Info.html" class="no-external">Week 3 Info: Data Tidying</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-08-Week-3-Info.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-08-Week-3-Info.html" class="no-external">Click here for info on Week 3</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-08-Week-3-Info.html" class="no-external">
-<div class="listing-date">
-Sep 8, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1725163200000" data-listing-file-modified-sort="1725240491854" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-01-Week-2-Info.html" class="no-external"></a></p><a href="./posts/2024-09-01-Week-2-Info.html" class="no-external">
-<p><img loading="lazy" src="./posts/Ggplot2_hex_logo.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-01-Week-2-Info.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-01-Week-2-Info.html" class="no-external">Week 2 Info: Data Visualizations and Transformations</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-01-Week-2-Info.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-01-Week-2-Info.html" class="no-external">Click here for info on Week 2</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-01-Week-2-Info.html" class="no-external">
-<div class="listing-date">
-Sep 1, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1724817600000" data-listing-file-modified-sort="1725241090331" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="62">
-<div class="thumbnail">
-<p><a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external"></a></p><a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external">
-<p><img loading="lazy" src="./posts/Meetup1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external">Meetup 1: Data Science Workflow and Toolkit</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external">Click here for meetup 1 slides and Zoom link</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html" class="no-external">
-<div class="listing-date">
-Aug 28, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1723867200000" data-listing-file-modified-sort="1725239657848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="119">
-<div class="thumbnail">
-<p><a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external"></a></p><a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-08-28-Welcome.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external">Welcome to DATA 607</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external">Important information on how to get started with this course. Click this post now for instructions on getting started.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-08-28-Welcome_to_DATA_607.html" class="no-external">
-<div class="listing-date">
-Aug 17, 2024
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1215,22 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course/overview.html" class="pagination-link" aria-label="Overview">
-        <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./license.html">
+    <a class="nav-link" href="../license.html">
 <p>License</p>
 </a>
   </li>  
@@ -1238,7 +961,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
