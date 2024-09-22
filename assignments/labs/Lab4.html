@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 4: Data Transformations Studying College Majors – DATA 607 Fall 2024</title>
+<title>Lab 4: Data Transformations – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,8 +104,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../fullcalendar-lib/main.css" rel="stylesheet">
 <script type="text/javascript" src="../../fullcalendar-lib/main.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Lab 4: Data Transformations Studying College Majors – DATA 607 Fall 2024">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Lab 4: Data Transformations – DATA 607 Fall 2024">
 <meta property="og:description" content="DATA 607 - Data Acquisition and Management - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
@@ -119,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 4: Data Transformations Studying College Majors</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 4: Data Transformations</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -370,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 4: Data Transformations Studying College Majors</h1>
+<h1 class="title">Lab 4: Data Transformations</h1>
 </div>
 
 
@@ -387,41 +416,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">“The Economic Guide To Picking A College Major”</a>.</p>
-<p>These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see <a href="https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R">the code</a> FiveThirtyEight authors used.</p>
-<p>We should also note that there are many considerations that go into picking a major. Earnings potential and employment prospects are two of them, and they are important, but they don’t tell the whole story. Keep this in mind as you analyze the data.</p>
-<p>We’ll use the <code>tidyverse</code> package for much of the data wrangling and visualisation, the <code>scales</code> package for better formatting of labels on visualisations, and the data lives in the <code>fivethirtyeight</code> package. Make sure to install and load these packages if you don’t have them already. When you load ‘fivethirtyeight’ you gain access to a dataset called <code>college_recent_grads</code>, which is what your homework will be based on.</p>
-<p>The <code>college_recent_grads</code> data frame is a trove of information. Let’s think about some questions we might want to answer with these data:</p>
+<section id="overview-large-technology-stocks" class="level2">
+<h2 class="anchored" data-anchor-id="overview-large-technology-stocks">Overview: Large Technology Stocks</h2>
+<p>For this assignment we practice data transformation using a dataset of the daily prices and daily trading volumes of a group of large technology stocks that trade on US stock exchanges. <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/stocks.csv">Click here to download stocks.csv</a>, which contains data going back to 2000. The dataset contains several variables, including:</p>
 <ul>
-<li>Which major has the lowest unemployment rate?</li>
-<li>Which major has the highest percentage of women?</li>
-<li>How do the distributions of median income compare across major categories?</li>
-<li>Do women tend to choose majors with lower or higher earnings?</li>
+<li><code>symbol</code>: which is the ticker symbol for the stock</li>
+<li><code>date</code>: which is the trading date</li>
+<li><code>open</code>, <code>high</code>, <code>low</code>, and <code>close</code>, which are the price at the start of trading, the high price during the day, the low price during the day, and the stock price at the close of trading (unit is USD)</li>
+<li><code>adjusted</code>: which is the stock price at close adjusted for the financial effects of special events (such as dividends). Unit is USD</li>
+<li><code>volume</code>: which is the number of shares which traded during a given trading day.</li>
 </ul>
-<p>In the next section we aim to answer these questions.</p>
-<section id="problems" class="level1">
-<h1>Problems</h1>
-<p><strong>Problem 1</strong> Arrange the data by unemployment rate in ascending order in order find the major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: to reduce the number of digits displayed in the unemployment rate, use the percent() function to mutate the unemployment rate, i.e.&nbsp;pipe your output to <code>mutate(unemployment_rate = percent(unemployment_rate) )</code></p>
-<p><strong>Problem 2:</strong> Which major has the highest percentage of women? Determine the three majors with the highest percentage of women using arrange. Again use <code>select</code> to only display variables relevant to the question and pipe the final output to <code>top_n(3)</code> to display just the top 3 majors.</p>
-<p><strong>Problem 3</strong> This problem explores the distribution of median income across different majors.</p>
-<ul>
-<li>Plot the distribution of median income using a histogram. Make sure to experiment with the bin width to ensure that your histogram captures the most important features of the distribution.</li>
-<li>Summary statistics: calculate the mean, median, 25th and 75th quantiles of the median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).</li>
-<li>Plot the distribution of median income for each value of the <code>major_category</code> variable using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where “typical” comes from the summary statistic that you think best describes the distributions you observed in the histogram.</li>
-</ul>
-<p><strong>Problem 4:</strong> Which major category is the least popular in this sample? Use the <code>count</code> function along with <code>arrange</code> to accomplish this task, and make sure you arrange in ascending order.</p>
-<p><strong>Problem 5:</strong> Exploring differences between different STEM fields.</p>
-<p>One of the sections of the <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">FiveThirtyEight story</a> is “All STEM fields aren’t the same”.</p>
-<p>The STEM categories are the ones that match the vector</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Biology &amp; Life Science"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Computers &amp; Mathematics"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Engineering"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Physical Sciences"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TTR)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>stocks <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"/home/georgehagstrom/work/Teaching/DATA607/website/assignments/labs/labData/stocks.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(stocks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 78,237 × 8
+   symbol date        open  high   low close     volume adjusted
+   &lt;chr&gt;  &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+ 1 AAPL   2000-01-03 0.936 1.00  0.908 0.999  535796800    0.844
+ 2 AAPL   2000-01-04 0.967 0.988 0.903 0.915  512377600    0.773
+ 3 AAPL   2000-01-05 0.926 0.987 0.920 0.929  778321600    0.784
+ 4 AAPL   2000-01-06 0.948 0.955 0.848 0.848  767972800    0.716
+ 5 AAPL   2000-01-07 0.862 0.902 0.853 0.888  460734400    0.750
+ 6 AAPL   2000-01-10 0.911 0.913 0.846 0.873  505064000    0.737
+ 7 AAPL   2000-01-11 0.857 0.887 0.808 0.828  441548800    0.699
+ 8 AAPL   2000-01-12 0.848 0.853 0.772 0.778  976068800    0.657
+ 9 AAPL   2000-01-13 0.844 0.882 0.826 0.864 1032684800    0.729
+10 AAPL   2000-01-14 0.893 0.913 0.887 0.897  390376000    0.757
+# ℹ 78,227 more rows</code></pre>
 </div>
-<p>Use this vector to add a variable to your dataset that is True if the major is a STEM major and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors’ median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.</p>
-<p><strong>Problem 6:</strong> What types of majors do women tend to major in? Create a scatterplot of median income vs.&nbsp;proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.</p>
+</div>
+<p>All of the the stock prices and the trading volume have been adjusted for stock splits, so that the data provide a continuous record of how prices and trading volume changed.</p>
+<p>There are several important functions and packages that you will need to use to complete this exercise.</p>
+<ul>
+<li>We will make a lot of use of window functions in <code>dplyr</code>, which are very helpful for making transformations (including <code>lead</code>, <code>lag</code>, <code>percent_rank</code>). The <a href="https://dplyr.tidyverse.org/articles/window-functions.html"><code>dplyr</code> vignettes and articles are incredibly useful for learning about all the different functions available</a></li>
+<li>We will use the <code>TTR</code> package (which is part of the <code>tidyquant</code> family of packages, <a href="https://cran.r-project.org/web/packages/tidyquant/vignettes/TQ02-quant-integrations-in-tidyquant.html">see here</a>). The main function we will use is called <code>runMean</code>. An alternative package that is also very nice but not part of the <code>tidyverse</code> is <a href="https://CRAN.R-project.org/package=RcppRoll"><code>RcppRoll</code></a></li>
+<li>If you aren’t very comfortable with logarithms, you should read more about them. They are one of the most important mathematical functions for data science. We aren’t using their mathematical properties much this week but they will be important throughout your data science journey. <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms">Khan Academy has a decent video</a>, and <a href="https://www.nature.com/articles/news.2008.866">this article in the journal nature</a> has some more context.</li>
+<li>We will calculate some correlation coefficients, using the <code>cor</code> function from base R (<code>?cor</code> to see how it is used). There is also a <code>tidyverse</code> package called <code>corrr</code> that is useful for calculating correlations on data frames, but we won’t use it for this lab.</li>
+<li>The motivation for today’s assignment came from some news articles a few years ago about how big tech stocks collectively had a miniature meltdown after powering the stock market for several consecutive years, see <a href="https://www.morningstar.com/markets/5-charts-big-tech-stocks-collapse">this article at Morningstar</a></li>
+<li>The <a href="https://en.wikipedia.org/wiki/Market_impact">wikipedia page on Market Impact</a> has some references to Kyle’s <span class="math inline">\(\lambda\)</span>, which we will calculate this week.</li>
+</ul>
+<p><strong>Problem 1:</strong> The price of a stock on a given day only conveys information in relation to the stock price on other days. One useful measure is the daily <code>return</code> of the stock, which we will define as the ratio of the adjusted closing price on the current day of trading to the adjusted closing price on the previous day of trading. Read the following article on <em>window functions</em> in <code>dplyr</code>: <a href="https://dplyr.tidyverse.org/articles/window-functions.html">window functions in dplyr</a>. Find a function there that will help you calculate the daily return and use it along with mutate to add a <code>return</code> column to the data frame containing the daily return. Hint: make sure to use group_by(symbol), otherwise your calculation might transpose prices from a different stock at the beginning of each time series.</p>
+<p>Differences between the adjusted return and the return measured on the close price should indicate special corporate events such as dividends. Calculate the un-adjusted return using the same technique you used to calculate the return, but replacing the <code>adjusted</code> variable with the <code>close</code> variable, and find the datapoint in the dataset where the return exceeded the unadjusted return by the greatest margin. (Hint to check you have done it right: it happened in November 2004).</p>
+<p><em>If you are curious:</em> Look for an old news article describing the significance of that event and tell me what happened</p>
+<p><strong>Problem 2:</strong> When working with stock price fluctuations or other processes where a quantity increases or decreases according to some multiplicative process like a growth rate (for example population growth) it is often better to work with the <code>log</code> of the growth rate rather than the growth rate itself. This allows standard summary statistics such as the mean to have a useful interpretation (otherwise you would have to use the geometric mean). Furthermore, the <code>log</code> transform is often useful to use on variables that are strictly positive, such as population growth rates or daily stock returns. To see why, consider a hypothetical stock which had a return of 0.5 (50% loss) on one day and 1.8 on the next day (80% gain). The mean of these two returns would be 1.075, or 7.5% per day. However, at the end of the two day period the stock would have lost 10% of its value (0.5*1.8 = 0.9). If we had computed the mean of the log(return) instead, we would have found that (log(0.5)+log(1.8))/2 = log(0.9^(1/2)), or approximately -5.2% per day, matching the observed price change.</p>
+<p>Create a new variable called <code>log_return</code> which is the log of the return variable you calculated in the previous problem. Generate either a histogram or density plot of the distribution of <code>log_return</code> for the entire dataset. Then create a QQ-plot of <code>log_return</code> using <code>geom_qq()</code> and <code>geom_qq_line()</code>. What do you notice about the “tails” (right and left side/extreme edges) of the distribution from the QQ-plot? Are there visible signs of this in the density plot/histogram that you made?</p>
+<p><strong>Problem 3:</strong> Volume measures how many shares were traded in a given stock over a set time period, and high volume days often associate with important events or market dynamics. Make a scatter plot of <code>volume</code> versus <code>log_return</code>, faceted by symbol to account for the fact that different stocks have different trading volumes. Do you see an association between volume and log_return in these scatter plots?</p>
+<p>Use the <code>cor</code> function to compute the pearson’s correlation coefficient between <code>volume</code> and <code>log_return</code> for each symbol. Why do you think the correlations are close to 0? (Hint: use it with summarize and don’t forget that cor is a base R function so you will either need to filter NA values for volume and log_return or appropriately choose the <code>use</code> flag in the argument- see ?cor for more info).</p>
+<p>Next compute the correlation in the same manner but this time transform log_return using the absolute value function. Recreate the faceted scatter-plots from the first part of the problem but with the absolute-value transformed log_return. How have the correlations changed from the previous summary?</p>
+<p><strong>Problem 4:</strong> For this problem we will implement a more complicated mathematical transformation of data by calculating a measure of liquidity for each stock.</p>
+<p>Liquidity is defined loosely as the ability for a given asset to be bought or sold without a large impact on price. Liquid assets can be bought and sold quickly and easily, whereas illiquid assets have large increases or decreases in their price when someone tries to buy or sell them in large quantities. Liquidity is considered an important property of a well functioning financial market, and declines in liquidity have been blamed for worsening or triggering stock market crashes.</p>
+<p>Many methods have been invented to measure liquidity, but for this problem we will focus on one a method called “Kyle’s <span class="math inline">\(\lambda\)</span>”. Kyle’s <span class="math inline">\(\lambda\)</span> estimates liquidity by using a linear regression between the absolute value daily return of a stock and the logarithm of the dollar volume of that stock. The time periods used to estimate this regression can vary, but here we will use daily returns and a one month (defined as 20 trading days). You will learn a lot about linear models in DATA 606 and other classes, but to be complete, <span class="math inline">\(\lambda\)</span> is a coefficient in the following linear model: <span class="math display">\[
+|R_t-1| = c + \lambda \log((\mathrm{Volume})_t (\mathrm{close})_t) + \epsilon_t
+\]</span> where the coefficients <span class="math inline">\(c\)</span> and <span class="math inline">\(\lambda\)</span> will be calculated to minimize the error <span class="math inline">\(\epsilon_t\)</span> over the past 20 trading days.</p>
+<p><span class="math inline">\(\lambda\)</span> stands for the amount that the stock price will move in units of basis points for a given <span class="math inline">\(\log\)</span> dollar volume of trade. A small <span class="math inline">\(\lambda\)</span> indicates high liquidity, and a high <span class="math inline">\(\lambda\)</span> indicates low liquidity.</p>
+<p><span class="math inline">\(\lambda\)</span> can be be calculated using rolling averages on the time series data with the <code>TTR</code> package, specifically the function <code>runMean</code> which when used within a <code>dplyr</code> pipeline will calculate the mean over the past <span class="math inline">\(n\)</span> data points. For example, the command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TTR)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>stocks <span class="sc">|&gt;</span> <span class="fu">group_by</span>(symbol) <span class="sc">|&gt;</span>  <span class="fu">mutate</span>(<span class="at">log_return_20d =</span> <span class="fu">runMean</span>(log_return,<span class="at">n=</span><span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>adds a new variable which is equal to the mean of the log_return over the past 20 days. The mathematical formula for <span class="math inline">\(\lambda\)</span> is: <span class="math display">\[
+\lambda = \frac{\mathrm{mean}(R_a\log( p_c V )/20
+- \mathrm{mean}\left(R_a\right) \mathrm{mean}\left(\log\left(p_c V\right) \right) }
+{\mathrm{mean}\left(\log\left( p_c V \right)^2\right)/20.0
+-\mathrm{mean}\left( p_c V\right)^2 }
+\]</span> where to make the formula easier to read we have defined <span class="math inline">\(R_a = |\mathrm{return} -1|\)</span>, <span class="math inline">\(p_c = \mathrm{close}\)</span> and <span class="math inline">\(V = \mathrm{volume}\)</span>, and the averages have been taken over the past 20 days of data.</p>
+<p>Add a new variable called <code>kyle</code> to the data frame by implementing the above formula for <span class="math inline">\(\lambda\)</span>. Make sure to read and implement the formula very carefully, and to use the <code>runMean</code> function to calculate the rolling average correctly.</p>
+<p>Plot Kyle’s lambda for each stock over time (I would use a faceted scatterplot). What do you notice about how this measure of liquidity behaves (remember liquidity is high when <span class="math inline">\(\lambda\)</span> is small)?</p>
+<p>Next add a new variable to the dataframe called <code>extreme</code> which is true when the log_return for a given stock is <em>either</em> greater than 95% of other values of the log_return <em>or</em> less than 95% of all values of log_return. Use the <code>percent_rank</code> function along with logical operators to create this variable. Then for each stock calculate the mean value of Kyle’s lambda for the days when the log_return had extreme values and for when it didn’t (as identified by the <code>extreme</code> variable). What do your calculations and figures indicate about liquidity during extreme events?</p>
 
 
 </section>
