@@ -1,75 +1,118 @@
 ---
-title: "Lab 4: Data Transformations Studying College Majors"
+title: "Lab 4: Data Transformations"
 format: html
 editor: visual
 ---
+ 
+## Overview: Large Technology Stocks
 
-The first step in the process of turning information into knowledge process is to summarize and describe the raw information - the data. In this assignment we explore data on college majors and earnings, specifically the data begin the FiveThirtyEight story ["The Economic Guide To Picking A College Major"](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).
+For this assignment we practice data transformation using a dataset of the daily prices and daily trading volumes of a
+group of large technology stocks that trade on US stock exchanges. [Click here to download stocks.csv](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/stocks.csv), which contains data going back to 2000. 
+The dataset contains 
+several variables, including:
 
-These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series. While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see [the code](https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R) FiveThirtyEight authors used.
+* `symbol`: which is the ticker symbol for the stock 
+* `date`: which is the trading date
+* `open`, `high`, `low`, and `close`, which are the 
+price at the start of trading, the high price during the day, the low price during the day, and the stock price at the close of trading (unit is USD)
+* `adjusted`: which is the stock price at close adjusted for the financial effects of special events (such as dividends). Unit is USD 
+* `volume`: which is the number of shares which traded during a given trading day. 
 
-We should also note that there are many considerations that go into picking a major.
-Earnings potential and employment prospects are two of them, and they are important, but they don't tell the whole story. Keep this in mind as you analyze the data.
-
-We'll use the `tidyverse` package for much of the data wrangling and visualisation, the `scales` package for better formatting of labels on visualisations, and the data lives in the `fivethirtyeight` package. Make sure to install and load these packages if you don't have
-them already. When you load 'fivethirtyeight' you gain access to a dataset 
-called `college_recent_grads`, which is what your homework will be based on.
-
-The `college_recent_grads` data frame is a trove of information.
-Let's think about some questions we might want to answer with these data:
-
--   Which major has the lowest unemployment rate?
--   Which major has the highest percentage of women?
--   How do the distributions of median income compare across major categories?
--   Do women tend to choose majors with lower or higher earnings?
-
-In the next section we aim to answer these questions.
-
-# Problems
-
-**Problem 1** Arrange the data by unemployment rate in ascending order in order find the 
-major with the lowest unemployment rate. Hint 1: Use the select function to reduce the number
-of variables displayed when you sort so that it is easier for you to see the answer. Hint 2: 
-to reduce the number of digits displayed in the unemployment rate, use the percent() function 
-to mutate the unemployment rate, i.e. pipe your output to 
-`mutate(unemployment_rate = percent(unemployment_rate) )`
-
-**Problem 2:** Which major has the highest percentage of women? Determine the three majors with
-the highest percentage of women using arrange. Again use `select` to only display variables
-relevant to the question and pipe the final output to `top_n(3)` to display just the top 3 majors.
-
-**Problem 3** This problem explores the distribution of median income across different majors. 
-
-* Plot the distribution of median income using a histogram. Make sure to experiment with the
-bin width to ensure that your histogram captures the most important features of the distribution.
-* Summary statistics: calculate the mean, median, 25th and 75th quantiles of the 
-median income distribution using the summarise function. Qualitatively describe the distribution (shape, center, spread, and any unusual observations).
-* Plot the distribution of median income for each value of the `major_category` variable
-using facets. Use group_by, summarise, and arrange to determine which major category has the highest typical median income, where "typical" comes from the summary statistic that you think best describes the distributions you observed in the histogram. 
-
-**Problem 4:**  Which major category is the least popular in this sample? Use the `count` 
-function along with `arrange` to accomplish this task, and make sure you arrange in 
-ascending order.
-
-
-**Problem 5:** Exploring differences between different STEM fields. 
-
-One of the sections of the [FiveThirtyEight story](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/) is "All STEM fields aren't the same".
-
-The STEM categories are the ones that match the vector
 
 ```{r}
-#| eval: false
-c(
-  "Biology & Life Science",
-  "Computers & Mathematics",
-  "Engineering",
-  "Physical Sciences")
+#| warning: false
+library(tidyverse)
+library(TTR)
+
+
+stocks = read_csv("/home/georgehagstrom/work/Teaching/DATA607/website/assignments/labs/labData/stocks.csv")
+
+print(stocks)
+
+
+
 ```
 
-Use this vector to add a variable to your dataset that is True if the major is a STEM major
-and FALSE otherwise. Then determine the STEM majors which have median salaries equal to or less than the median for all majors'
-median earnings. Your output should only show the major name and median, 25th and 75th percentile earnings, and should be sorted in descending order of median income.
+All of the the stock prices and the trading volume have been adjusted for stock splits, so that the data provide a continuous record of how prices and trading volume changed. 
 
-**Problem 6:** What types of majors do women tend to major in? Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
+There are several important functions and packages that you will need to use to complete this exercise.
+
+* We will make a lot of use of window functions in `dplyr`, which are very helpful for making transformations (including `lead`, `lag`, `percent_rank`). The 
+[`dplyr` vignettes and articles are incredibly useful for learning about all the different functions available](https://dplyr.tidyverse.org/articles/window-functions.html)
+* We will use the `TTR` package (which is part of the `tidyquant` family of packages, [see here](https://cran.r-project.org/web/packages/tidyquant/vignettes/TQ02-quant-integrations-in-tidyquant.html)). The main function we will use is called `runMean`. An alternative package that is also very nice but not part of the `tidyverse` is [`RcppRoll`](https://CRAN.R-project.org/package=RcppRoll)
+* If you aren't very comfortable with logarithms, you should read more about them. They are one of the most important mathematical functions for data science. We aren't using their mathematical properties much this week but they will be important throughout your data science journey. [Khan Academy has a decent video](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms), and [this article in the journal nature](https://www.nature.com/articles/news.2008.866) has some more context.
+* We will calculate some correlation coefficients, using the `cor` function from base R (`?cor` to see how it is used). There is also a `tidyverse` package called `corrr` that is useful for calculating correlations on data frames, but we won't use it for this lab.
+* The motivation for today's assignment came from some news articles a few years ago about how big tech stocks collectively had a miniature meltdown after powering the stock market for several consecutive years, see [this article at Morningstar](https://www.morningstar.com/markets/5-charts-big-tech-stocks-collapse)
+* The [wikipedia page on Market Impact](https://en.wikipedia.org/wiki/Market_impact) has some references to Kyle's $\lambda$, which we will calculate this week. 
+
+
+**Problem 1:** The price of a stock on a given day only conveys information in relation to the stock price on other days. One useful measure is the daily `return` of the stock, which we will define as the ratio of the adjusted closing price on the current
+day of trading to the adjusted closing price on the previous day of trading. Read 
+the following article on _window functions_ in `dplyr`: [window functions in dplyr](https://dplyr.tidyverse.org/articles/window-functions.html). Find a function
+there that will help you calculate the daily return and use it along with mutate
+to add a `return` column to the data frame containing the daily return. Hint: make sure to use group_by(symbol), otherwise your calculation might transpose prices from a different stock at the beginning of each time series.
+
+Differences between the adjusted return and the return measured on the close price should indicate special corporate events such as dividends. Calculate the un-adjusted return using the same technique you used to calculate the return, but replacing the `adjusted` variable with the `close` variable, and find the datapoint in the dataset where the return exceeded the unadjusted return by the greatest margin. (Hint to check you have done it right: it happened in November 2004). 
+
+*If you are curious:* Look for an old news article describing the significance of that event and tell me what happened
+
+**Problem 2:** When working with stock price fluctuations or other processes where a
+quantity increases or decreases according to some multiplicative process like a growth rate (for example population growth) it is often better to work with the `log` of the
+growth rate rather than the growth rate itself. This allows standard summary statistics such as the mean to have a useful interpretation (otherwise you would have to use the geometric mean). Furthermore, the `log` transform is often useful to use on variables that are strictly positive, such as population growth rates or daily stock returns. To see why, consider a hypothetical stock which had a return of 0.5 (50% loss) on one day and 1.8 on the next day (80% gain). The mean of these two returns would be 1.075, or 7.5% per day. However, at the end of the two day period the stock would have lost 10% of its value (0.5*1.8 = 0.9). If we had computed the mean of the log(return) instead, we would have found that (log(0.5)+log(1.8))/2 = log(0.9^(1/2)), or approximately -5.2% per day, matching the observed price change.
+
+Create a new variable called `log_return` which is the log of the return variable you calculated in the previous problem. Generate either a histogram or density plot of the distribution of `log_return` for the entire dataset. Then create a QQ-plot of
+`log_return` using `geom_qq()` and `geom_qq_line()`. What do you notice about the "tails" (right and left side/extreme edges) of the distribution from the QQ-plot? Are there visible signs of this in the density plot/histogram that you made?
+
+**Problem 3:** Volume measures how many shares were traded in a given stock over a set time period, and high volume days often associate with important events or market dynamics. Make a scatter plot of `volume` versus `log_return`, faceted by symbol to account for the fact that different stocks have different trading volumes. Do you see an association between volume and log_return in these scatter plots?
+
+Use the `cor` function to compute the pearson's correlation coefficient between `volume` and `log_return` for each symbol. Why do you think the correlations are close to 0? (Hint: use it with summarize and don't forget that cor is a base R function so you will either need to filter NA values for volume and log_return or appropriately choose the `use` flag in the argument- see ?cor for more info).
+
+Next compute the correlation in the same manner but this time transform log_return using the absolute value function. Recreate the faceted scatter-plots from the first
+part of the problem but with the absolute-value transformed log_return. How have the
+correlations changed from the previous summary?
+
+**Problem 4:** For this problem we will implement a more complicated mathematical 
+transformation of data by calculating a measure of liquidity for each stock.
+
+Liquidity is defined loosely as the ability for a given asset to be bought or sold without a large impact on price. Liquid assets can be bought and sold quickly and easily, whereas illiquid assets have large increases or decreases in their price when someone tries to buy or sell them in large quantities. Liquidity is considered an important property of a well functioning financial market, and declines in liquidity have been blamed for worsening or triggering stock market crashes. 
+
+Many methods have been invented to measure liquidity, but for this problem we will focus on one a method
+called "Kyle's $\lambda$". Kyle's $\lambda$ estimates liquidity by using a linear regression between the absolute value daily return of a stock and the logarithm of the
+dollar volume of that stock. The time periods used to estimate this regression can vary, but here we will use daily returns and a one month (defined as 20 trading days).
+You will learn a lot about linear models in DATA 606 and other classes, but to be complete, $\lambda$ is a coefficient in the following linear model:
+$$ 
+|R_t-1| = c + \lambda \log((\mathrm{Volume})_t (\mathrm{close})_t) + \epsilon_t
+$$
+where the coefficients $c$ and $\lambda$ will be calculated to minimize the error $\epsilon_t$ over the past 20 trading days. 
+
+$\lambda$ stands for the amount that the stock price will move in units of basis points for a given $\log$ dollar volume of trade. A small $\lambda$ indicates high liquidity, and a high $\lambda$ indicates low liquidity.
+
+$\lambda$ can be be calculated using rolling averages on the time series data with the `TTR` package, specifically the function `runMean` which when used within a `dplyr` pipeline will calculate the mean over the past $n$ data points. For example, the command:
+```{r}
+#| eval: false
+#| echo: true
+
+library(TTR)
+stocks |> group_by(symbol) |>  mutate(log_return_20d = runMean(log_return,n=20))
+
+```
+adds a new variable which is equal to the mean of the log_return over the past 20 days. The mathematical formula for $\lambda$ is:
+$$
+\lambda = \frac{\mathrm{mean}(R_a\log( p_c V )/20
+- \mathrm{mean}\left(R_a\right) \mathrm{mean}\left(\log\left(p_c V\right) \right) }
+{\mathrm{mean}\left(\log\left( p_c V \right)^2\right)/20.0
+-\mathrm{mean}\left( p_c V\right)^2 }
+$$
+where to make the formula easier to read we have defined $R_a = |\mathrm{return} -1|$,
+$p_c = \mathrm{close}$ and $V = \mathrm{volume}$, and the averages have been taken
+over the past 20 days of data. 
+
+Add a new variable called `kyle` to the data frame by implementing the above
+formula for $\lambda$. Make sure to read and implement the formula very carefully, and to use the `runMean` function to calculate the rolling average correctly. 
+
+Plot Kyle's lambda for each stock over time (I would use a faceted scatterplot). What do you notice about how this measure of liquidity behaves (remember liquidity is high when $\lambda$ is small)? 
+
+Next add a new variable to the dataframe called `extreme` which is true when the log_return for a given stock is _either_ greater than 95% of other values of the log_return _or_ less than 95% of all values of log_return. Use the `percent_rank` function along with logical operators to create this variable. Then for each stock calculate the mean value of Kyle's lambda for the days when the log_return had extreme values and for when it didn't (as identified by the `extreme` variable). 
+What do your calculations and figures indicate about liquidity during extreme events?
+
 

@@ -1,0 +1,507 @@
+---
+title: "Meetup 4: Exploratory Data Analysis"
+author: "George Hagstrom"
+format: revealjs
+date: 09/18/2024
+---
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(lattice)
+library(skimr)
+```
+
+## Week Overview
+
+* Graded Most of Lab 2
+  * Please submit pdf and wrap your code in code chunks!
+* EDA Lab due Sunday at midnight
+* Posted coding demo on reprex/debugging 
+* Hadley Wickham EDA Demo
+* Sign up for Data Science in Context!
+* Today's focus is EDA (Chapter 10)
+  * Vast subject, entire books on it
+  * Not from book: Inliers, QQ-Plots, Dot-Plots, Pair Plots
+
+## Case Study: Barley Yields in MN
+
+-   10 Varieties of Barley
+-   Grown at 6 Different Sites
+-   Yield Measured in 1931 and 1932
+-   Data Used as an Exemplar in Stats Literature
+
+## Barley Data {.smaller}
+
+```{r}
+library(kableExtra)
+barley |> select(site,year,variety,yield) |> head(10) |> kable()
+
+```
+
+## Visualize the Data 
+
+```{r}
+#| out-width: 80%
+#| fig-asp: 0.67
+
+barley |> 
+  ggplot(aes(x=yield,y=variety,color=year)) +
+  geom_point(size=2.5) +
+  facet_wrap(~site,nrow = 3) +
+  theme_bw(base_size = 14)
+
+```
+
+## Swapped Years at Morris?
+
+```{r}
+
+barley |> group_by(site,year) |> summarise(Yield = mean(yield)) |> 
+  ggplot(aes(x=Yield,y=site,color=year)) +
+  geom_point(size=5) +
+  theme_bw(base_size = 24)
+
+```
+
+## 80 Years Later... Investigation Commences
+
+```{r}
+
+barley_swapped = barley 
+barley_swapped[barley$site == "Morris" & barley$year ==1931,c("yield")   ] = barley[barley$site == "Morris" & barley$year == 1932,c("yield")]
+barley_swapped[barley$site == "Morris" & barley$year ==1932, c("yield")  ] = barley[barley$site == "Morris" & barley$year == 1931,c("yield")]
+
+barley_swapped |> group_by(site,year) |> summarise(Yield = mean(yield)) |> 
+  ggplot(aes(x=Yield,y=site,color=year)) +
+  geom_point(size=5) +
+  theme_bw(base_size = 24) +
+  labs(title = "Swapped Data")
+
+
+
+
+```
+
+## Evidence Emerges
+
+-   Ambiguity in years of study noticed (1930 and 1931 versus 1931 and 1932)
+-   Swapping of a different sample discovered
+-   Statistical fits *much* more parsimonious on swapped data
+-   I would bet on data error, but we may never know without more experiments
+
+## What is Exploratory Data Analysis
+
+Exploratory Data Analysis is the art of looking at data in a systematic way in order to understand the the underlying structure of the data.
+
+Two main goals:
+
+-   Ensure data quality
+-   Uncover patterns to guide future analysis
+
+EDA is detective work- you ask and answer questions, which inspires more questions
+
+## EDA Steps
+
+1.  General Characteristics of Data and Descriptive Stats (summary, skim, counts)
+2.  Visualize Variation (Histograms, QQ Plots, Box plots, ...)
+3.  Deal with outliers, inliers, missing data
+4.  Visualize relationships (bivariate and multivariate plots)
+5.  Iterate
+
+## Quantile-Quantile (QQ) Plots
+
+-   Sorts data in increasing order, plots against sorted data from a probability distribution (usually Gaussian) or other dataset
+-   Most powerful/underused univariate visualization
+    -   Create percentile vec `seq(0,1,1/(N+1))`
+    -   Drop ends and calculate data using `qnorm(seq)`
+    -   Scatterplot of Gaussian quantiles on x axis, your data on y
+    -   `geom_qq`, `stat_qq` do this for you
+
+## QQ Plot for US Cereals Data 
+
+```{r }
+#| out-width: "80%"
+#| fig-asp: 0.67
+
+library(MASS)
+library(ggforce)
+
+
+UScereal |> ggplot(aes(sample=fibre)) + 
+  labs(title="QQ-Plot Fibre Content in US Cereal Brands",
+       x="Theoretical Quantile",
+       y="Fibre Content") +
+  theme_bw(base_size=24) +
+  coord_cartesian(ylim = c(-0.1, 35)) +
+  stat_qq(size = 3) + 
+  stat_qq_line(color="red") 
+  
+
+```
+
+## QQ Plot for US Cereals Data 
+
+```{r }
+#| out-width: "80%"
+#| fig-asp: 0.67
+
+
+
+UScereal = UScereal |> mutate(outlier = if_else(fibre>20,"Outlier","Normal"))
+UScereal = UScereal |> mutate(inlier = if_else(fibre == 0,"Inlier","Normal"))
+
+UScereal |> ggplot(aes(sample=fibre)) + 
+  labs(title="QQ-Plot Fibre Content in US Cereal Brands",
+       x="Theoretical Quantile",
+       y="Fibre Content") +
+  theme_bw(base_size=24) +
+  coord_cartesian(ylim = c(-0.1, 35)) +
+  stat_qq(size = 3) + 
+  stat_qq_line(color="red") +
+  annotate("rect",xmin=1.5,xmax=2.5,ymin=25,ymax=35,,alpha = .2,linewidth=1,fill="red") +
+  annotate("text",x=2,y=22,label="Potential Outliers",size = 8)
+  
+
+```
+
+## QQ Plot for US Cereals Data 
+
+```{r }
+#| out-width: "80%"
+#| fig-asp: 0.67
+
+
+
+UScereal = UScereal |> mutate(outlier = if_else(fibre>20,"Outlier","Normal"))
+UScereal = UScereal |> mutate(inlier = if_else(fibre == 0,"Inlier","Normal"))
+
+UScereal |> ggplot(aes(sample=fibre)) + 
+  labs(title="QQ-Plot Fibre Content in US Cereal Brands",
+       x="Theoretical Quantile",
+       y="Fibre Content") +
+  theme_bw(base_size=24) +
+  coord_cartesian(ylim = c(-0.1, 35)) +
+  stat_qq(size = 3) + 
+  stat_qq_line(color="red") +
+  annotate("rect",xmin=-2.5,xmax=-0.6,ymin=-1,ymax=2,,alpha = .2,linewidth=1,fill="orange") +
+  annotate("text",x=-2,y=4,label="Potential Inliers",size = 8)
+  
+
+```
+
+## Comparing visualizations
+
+```{r }
+#| out-width: "100%"
+#| fig-asp: 0.67
+library(patchwork)
+
+p1 = UScereal |> ggplot(aes(sample=fibre)) + 
+  labs(title="QQ-Plot Fibre Content in US Cereal Brands",
+       x="Theoretical Quantile",
+       y="Fibre Content") +
+  theme_bw(base_size=24) +
+  coord_cartesian(ylim = c(-0.1, 35)) +
+  stat_qq(size = 3) + 
+  stat_qq_line(color="red") 
+  
+
+p2 = UScereal |> ggplot(aes(x=fibre)) + 
+  geom_histogram() +
+  labs(title="Histogram",
+       x="Fibre Content",
+       y="Number") +
+  theme_bw(base_size=24) 
+
+p3 = UScereal |> ggplot(aes(x=fibre)) + geom_density() +
+  labs(title="Density",
+       x="Fibre Content",
+       y="Number") +
+  theme_bw(base_size=24) 
+
+
+p4 = UScereal |> group_by(fibre) |> summarise(count = n()) |> arrange(desc(count)) |> 
+  ggplot(aes(x=fibre,y=count)) +
+  geom_point() +
+  labs(title="Counts",
+       x="Fibre Content",
+       y="Count") +
+  theme_bw(base_size=24) 
+  
+(p2 + p3)/(p1 + p4)
+
+```
+
+## Outliers
+
+-   Outlier is a data point you suspect was generated by a different mechanism than the rest of your dataset
+-   Could be a *spurrious value* or a major discovery
+-   Heuristic for *suspecting* outliers:
+
+$$ y > p_{75} + k \mathrm{IQR}$$ Common to pick $k=1.5$
+
+-   Your domain specific expertise tells you what to do with outliers!
+
+## Inliers
+
+-   Inliers: Value in the interior of the distribution of your data that is in error
+-   Much more subtle and pernicious than outliers
+-   Often Disguised Missing Data
+    -   NA values systematically coded as 0 or some other default
+    -   Business or government transactions that require a some information for a form to be filled out that isn't always available
+-   Common Manifestation in Repated Values
+
+## Check for Inliers
+
+-   Flat regions of your QQ-Plot
+-   Look for outliers of your count data:
+
+```{r}
+#| echo: true
+#| eval: false
+UScereal |> 
+  group_by(fibre) |>
+  summarise(count = n()) |> 
+  arrange(desc(count)) |> 
+  ggplot(aes(x=fibre,y=count)) +
+  geom_point()
+```
+
+-   Once you find them investigate
+-   Can also use boxplots, look at your data, or compute summary statistics
+
+## Visualizing Covariation
+
+-   Covariation is how two variables vary together
+-   Numerical and Categorical
+    -   Numerical variable has difference distribution for different values of the categorical variable
+        -   Tools: Boxplots, violin plots
+    -   Two Numerical Variables
+        -   Scatterplots, 2D density plots such as hex-plots
+        -   Pairs Plots
+
+## Tukey Box Plot
+
+-   The Tukey Box Plot is a robust visualization
+-   Median, IQR, potential outliers
+
+```{r}
+
+ggplot(diamonds, aes(x = cut, y = price)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## Tukey Box Plot
+
+-   The Tukey Box Plot is a robust visualization
+-   Median, IQR, potential outliers
+
+```{r}
+
+
+
+ggplot(diamonds, aes(x = cut, y = price)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## Tukey Box Plot
+
+-   The Tukey Box Plot is a robust visualization
+-   Median, IQR, potential outliers
+-   Code:
+
+```{r}
+#| eval: false
+#| echo: true
+
+
+ggplot(diamonds, aes(x = cut, y = price)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## EDA Detective Work
+
+-   When you make a plot- ask questions
+-   Shouldn't high quality cost more?
+
+```{r}
+
+
+
+ggplot(diamonds, aes(x = cut, y = price)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## Look at other variables
+
+-   Clearer diamonds aren't more expensive
+
+```{r}
+
+
+
+ggplot(diamonds, aes(x = clarity, y = price)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## Look at other variables
+
+-   Bigger diamonds **are** very pricey
+
+```{r}
+
+
+
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point() +
+  theme_bw(base_size=24)
+```
+
+## How does size covary with cut/clarity?
+
+-   Big diamonds have worse clarity
+
+```{r}
+
+
+
+ggplot(diamonds, aes(x = clarity, y = carat)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## How does size covary with cut/clarity?
+
+-   Big diamonds have slightly worse clarity
+
+```{r}
+
+ggplot(diamonds, aes(x = cut, y = carat)) +
+  geom_boxplot() +
+  theme_bw(base_size=24)
+```
+
+## Simpson's Paradox
+
+-   For fixed size, quality leads to higher price
+-   Size is a common cause of price and quality
+
+```{r}
+
+ggplot(diamonds, aes(x = carat, y = price,color=clarity)) +
+  geom_point(alpha=0.5) +
+  theme_bw(base_size=24) 
+```
+
+## Density Plots
+
+-   When there are lots of points, density plots are better than scatter plots
+
+```{r}
+
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_hex() +
+  theme_bw(base_size=24) 
+
+```
+
+## Density Plots
+
+-   When there are lots of points, density plots are better than scatter plots
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_hex() +
+  theme_bw(base_size=24) 
+
+```
+
+## Pair Plots to Visualize All Combos
+
+-   `GGally` package `ggpairs` function
+
+```{r}
+library(GGally)
+library(palmerpenguins)
+penguins |> ggpairs(columns=3:6)
+
+```
+
+## Pair Plots to Visualize All Combos
+
+```{r}
+#| echo: True
+penguins |> ggpairs(columns=3:6)
+
+```
+
+## Fancy Pairs
+
+```{r}
+#| echo: True
+penguins |> ggpairs(columns=3:6,ggplot2::aes(colour = species))
+
+```
+
+## Multiway Visualizations: Dot Plots {.nostretch .smaller}
+
+-   Multiple categorical variables and a response
+-   [Cleveland and McGill 1984](https://www.jstor.org/stable/2288400?seq=1#page_scan_tab_contents) 
+  -   Best to worst rank of perceptual cues for learning:
+
+![](PerceptualTasks.png){width="60%"}
+
+-   Dot-Chart created to emphasize position comparisons
+
+## Dot Plots 
+
+```{r}
+#| out-width: 80%
+#| fig-asp: 0.67
+
+barley |> 
+  ggplot(aes(x=yield,y=variety,color=year)) +
+  geom_point(size=2.5) +
+  facet_wrap(~site,nrow = 3) +
+  theme_bw(base_size = 14)
+
+```
+
+## Dot Plots 
+
+```{r}
+#| echo: true
+#| eval: false
+barley |> 
+  ggplot(aes(x=yield,y=variety,color=year)) +
+  geom_point(size=2) +
+  facet_wrap(~site,nrow = 3) +
+  theme_bw(base_size = 10)
+
+```
+
+## What Didn't We Talk About
+
+-   Simple Models are used a lot in EDA
+    -   See example in Chapter 10
+    -   **Residuals** remove the effect of a major variable and see what remains
+-   Transformations
+    -   We will discuss transformations more next week
+    -   **Reexpress** data in new way
+    -   Most important by far is `log` transform
+
+## Meetup Reflection/One Minute Paper
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
