@@ -416,6 +416,21 @@ window.Quarto = {
 </header>
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <section id="overview-large-technology-stocks" class="level2">
 <h2 class="anchored" data-anchor-id="overview-large-technology-stocks">Overview: Large Technology Stocks</h2>
 <p>For this assignment we practice data transformation using a dataset of the daily prices and daily trading volumes of a group of large technology stocks that trade on US stock exchanges. <a href="https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/stocks.csv">Click here to download stocks.csv</a>, which contains data going back to 2000. The dataset contains several variables, including:</p>
