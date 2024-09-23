@@ -1203,7 +1203,7 @@
     "href": "modules/module5.html",
     "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "Learning Objectives\n\nReview of basic data types and classes\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nFactors and categorical data\nMissing values\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 16, 18\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
+    "text": "Learning Objectives\n\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nUsing dplyr window functions\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 17\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
     "crumbs": [
       "Topics",
       "5 - Data Transformations"
@@ -1236,7 +1236,7 @@
     "href": "modules/module6.html",
     "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 13, 14, 17\n\n\n\nAdditional Resources:\n\nRegex Buddy\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.",
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with Dates in R and recoding\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 14, 15, 16\n\n\n\nAdditional Resources:\n\nRegex Buddy\n\nRegular expressions are useful in a large number of applications. This website provides an advanced tutorial.\n\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
     "crumbs": [
       "Topics",
       "6 - Processing Strings and Text"
