@@ -429,8 +429,139 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TTR)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>stocks <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"/home/georgehagstrom/work/Teaching/DATA607/website/assignments/labs/labData/stocks.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>stocks <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"/home/georgehagstrom/work/Teaching/DATA607/website/assignments/labs/labData/stocks.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>stocks <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">symbol</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">open</th>
+<th style="text-align: right;">high</th>
+<th style="text-align: right;">low</th>
+<th style="text-align: right;">close</th>
+<th style="text-align: right;">volume</th>
+<th style="text-align: right;">adjusted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-03</td>
+<td style="text-align: right;">0.936384</td>
+<td style="text-align: right;">1.004464</td>
+<td style="text-align: right;">0.907924</td>
+<td style="text-align: right;">0.999442</td>
+<td style="text-align: right;">535796800</td>
+<td style="text-align: right;">0.8440041</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-04</td>
+<td style="text-align: right;">0.966518</td>
+<td style="text-align: right;">0.987723</td>
+<td style="text-align: right;">0.903460</td>
+<td style="text-align: right;">0.915179</td>
+<td style="text-align: right;">512377600</td>
+<td style="text-align: right;">0.7728457</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-05</td>
+<td style="text-align: right;">0.926339</td>
+<td style="text-align: right;">0.987165</td>
+<td style="text-align: right;">0.919643</td>
+<td style="text-align: right;">0.928571</td>
+<td style="text-align: right;">778321600</td>
+<td style="text-align: right;">0.7841553</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-06</td>
+<td style="text-align: right;">0.947545</td>
+<td style="text-align: right;">0.955357</td>
+<td style="text-align: right;">0.848214</td>
+<td style="text-align: right;">0.848214</td>
+<td style="text-align: right;">767972800</td>
+<td style="text-align: right;">0.7162958</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-07</td>
+<td style="text-align: right;">0.861607</td>
+<td style="text-align: right;">0.901786</td>
+<td style="text-align: right;">0.852679</td>
+<td style="text-align: right;">0.888393</td>
+<td style="text-align: right;">460734400</td>
+<td style="text-align: right;">0.7502258</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-10</td>
+<td style="text-align: right;">0.910714</td>
+<td style="text-align: right;">0.912946</td>
+<td style="text-align: right;">0.845982</td>
+<td style="text-align: right;">0.872768</td>
+<td style="text-align: right;">505064000</td>
+<td style="text-align: right;">0.7370310</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-11</td>
+<td style="text-align: right;">0.856585</td>
+<td style="text-align: right;">0.887277</td>
+<td style="text-align: right;">0.808036</td>
+<td style="text-align: right;">0.828125</td>
+<td style="text-align: right;">441548800</td>
+<td style="text-align: right;">0.6993311</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-12</td>
+<td style="text-align: right;">0.848214</td>
+<td style="text-align: right;">0.852679</td>
+<td style="text-align: right;">0.772321</td>
+<td style="text-align: right;">0.778460</td>
+<td style="text-align: right;">976068800</td>
+<td style="text-align: right;">0.6573902</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-13</td>
+<td style="text-align: right;">0.843610</td>
+<td style="text-align: right;">0.881696</td>
+<td style="text-align: right;">0.825893</td>
+<td style="text-align: right;">0.863839</td>
+<td style="text-align: right;">1032684800</td>
+<td style="text-align: right;">0.7294905</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: left;">2000-01-14</td>
+<td style="text-align: right;">0.892857</td>
+<td style="text-align: right;">0.912946</td>
+<td style="text-align: right;">0.887277</td>
+<td style="text-align: right;">0.896763</td>
+<td style="text-align: right;">390376000</td>
+<td style="text-align: right;">0.7572942</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>All of the the stock prices and the trading volume have been adjusted for stock splits, so that the data provide a continuous record of how prices and trading volume changed.</p>
 <p>There are several important functions and packages that you will need to use to complete this exercise.</p>
@@ -442,17 +573,32 @@ window.Quarto = {
 <li>The motivation for today’s assignment came from some news articles a few years ago about how big tech stocks collectively had a miniature meltdown after powering the stock market for several consecutive years, see <a href="https://www.morningstar.com/markets/5-charts-big-tech-stocks-collapse">this article at Morningstar</a></li>
 <li>The <a href="https://en.wikipedia.org/wiki/Market_impact">wikipedia page on Market Impact</a> has some references to Kyle’s <span class="math inline">\(\lambda\)</span>, which we will calculate this week.</li>
 </ul>
-<p><strong>Problem 1:</strong> The price of a stock on a given day only conveys information in relation to the stock price on other days. One useful measure is the daily <code>return</code> of the stock, which we will define as the ratio of the adjusted closing price on the current day of trading to the adjusted closing price on the previous day of trading. Read the following article on <em>window functions</em> in <code>dplyr</code>: <a href="https://dplyr.tidyverse.org/articles/window-functions.html">window functions in dplyr</a>. Find a function there that will help you calculate the daily return and use it along with mutate to add a <code>return</code> column to the data frame containing the daily return. Hint: make sure to use group_by(symbol), otherwise your calculation might transpose prices from a different stock at the beginning of each time series.</p>
-<p>Differences between the adjusted return and the return measured on the close price should indicate special corporate events such as dividends. Calculate the un-adjusted return using the same technique you used to calculate the return, but replacing the <code>adjusted</code> variable with the <code>close</code> variable, and find the datapoint in the dataset where the return exceeded the unadjusted return by the greatest margin. (Hint to check you have done it right: it happened in November 2004).</p>
+<p><strong>Problem 1:</strong> The price of a stock on a given day only conveys information in relation to the stock price on other days. One useful measure is the daily <code>return</code> of the stock, which we will define as the ratio of the adjusted closing price on the current day of trading to the adjusted closing price on the previous day of trading. Read the following article on <em>window functions</em> in <code>dplyr</code>: <a href="https://dplyr.tidyverse.org/articles/window-functions.html">window functions in dplyr</a>.</p>
+<ul>
+<li>Find a function there that will help you calculate the daily return and use it along with mutate to add a <code>return</code> column to the data frame containing the daily return.</li>
+</ul>
+<p>Hint: make sure to use group_by(symbol), otherwise your calculation might transpose prices from a different stock at the beginning of each time series.</p>
+<p>Differences between the adjusted return and the return measured on the close price should indicate special corporate events such as dividends.</p>
+<ul>
+<li>Calculate the un-adjusted return using the same technique you used to calculate the return, but replacing the <code>adjusted</code> variable with the <code>close</code> variable, and find the datapoint in the dataset where the return exceeded the unadjusted return by the greatest margin. (Hint to check you have done it right: it happened in November 2004). The reason that the <code>close</code> price and the <code>adjusted</code> price differ is because stock prices typically decrease when a dividend is paid (to account for the cash paid out). The <code>adjusted</code> value has been modified from the beginning of the initial data record to increase <code>adjusted</code> to compensate for dividends. A dividend is just a payment that a company makes periodically to those who hold stock.</li>
+</ul>
 <p><em>If you are curious:</em> Look for an old news article describing the significance of that event and tell me what happened</p>
 <p><strong>Problem 2:</strong> When working with stock price fluctuations or other processes where a quantity increases or decreases according to some multiplicative process like a growth rate (for example population growth) it is often better to work with the <code>log</code> of the growth rate rather than the growth rate itself. This allows standard summary statistics such as the mean to have a useful interpretation (otherwise you would have to use the geometric mean). Furthermore, the <code>log</code> transform is often useful to use on variables that are strictly positive, such as population growth rates or daily stock returns. To see why, consider a hypothetical stock which had a return of 0.5 (50% loss) on one day and 1.8 on the next day (80% gain). The mean of these two returns would be 1.075, or 7.5% per day. However, at the end of the two day period the stock would have lost 10% of its value (0.5*1.8 = 0.9). If we had computed the mean of the log(return) instead, we would have found that (log(0.5)+log(1.8))/2 = log(0.9^(1/2)), or approximately -5.2% per day, matching the observed price change.</p>
-<p>Create a new variable called <code>log_return</code> which is the log of the return variable you calculated in the previous problem. Generate either a histogram or density plot of the distribution of <code>log_return</code> for the entire dataset. Then create a QQ-plot of <code>log_return</code> using <code>geom_qq()</code> and <code>geom_qq_line()</code>. What do you notice about the “tails” (right and left side/extreme edges) of the distribution from the QQ-plot? Are there visible signs of this in the density plot/histogram that you made?</p>
-<p><strong>Problem 3:</strong> Volume measures how many shares were traded in a given stock over a set time period, and high volume days often associate with important events or market dynamics. Make a scatter plot of <code>volume</code> versus <code>log_return</code>, faceted by symbol to account for the fact that different stocks have different trading volumes. Do you see an association between volume and log_return in these scatter plots?</p>
-<p>Use the <code>cor</code> function to compute the pearson’s correlation coefficient between <code>volume</code> and <code>log_return</code> for each symbol. Why do you think the correlations are close to 0? (Hint: use it with summarize and don’t forget that cor is a base R function so you will either need to filter NA values for volume and log_return or appropriately choose the <code>use</code> flag in the argument- see ?cor for more info).</p>
-<p>Next compute the correlation in the same manner but this time transform log_return using the absolute value function. Recreate the faceted scatter-plots from the first part of the problem but with the absolute-value transformed log_return. How have the correlations changed from the previous summary?</p>
+<ul>
+<li>Create a new variable called <code>log_return</code> which is the log of the return variable you calculated in the previous problem. Generate either a histogram or density plot of the distribution of <code>log_return</code> for the entire dataset. Then create a QQ-plot of <code>log_return</code> using <code>geom_qq()</code> and <code>geom_qq_line()</code>. What do you notice about the “tails” (right and left side/extreme edges) of the distribution from the QQ-plot? Are there visible signs of this in the density plot/histogram that you made?</li>
+</ul>
+<p><strong>Problem 3:</strong> Volume measures how many shares were traded of a given stock over a set time period, and high volume days often associate with important events or market dynamics.</p>
+<ul>
+<li><p>Make a scatter plot of <code>volume</code> versus <code>log_return</code>, faceted by symbol to account for the fact that different stocks have different trading volumes. Do you see an association between volume and log_return in these scatter plots?</p></li>
+<li><p>Use the <code>cor</code> function to compute the pearson’s correlation coefficient between <code>volume</code> and <code>log_return</code> for each symbol. Why do you think the correlations are close to 0?</p></li>
+</ul>
+<p>Hint: use it with summarize and don’t forget that cor is a base R function so you will either need to filter NA values for volume and log_return or appropriately choose the <code>use</code> flag in the argument- see ?cor for more info.</p>
+<ul>
+<li>Next compute the correlation in the same manner but this time transform log_return using the absolute value function. Recreate the faceted scatter-plots from the first part of the problem but with the absolute-value transformed log_return. How have the correlations changed from the previous summary?</li>
+</ul>
 <p><strong>Problem 4:</strong> For this problem we will implement a more complicated mathematical transformation of data by calculating a measure of liquidity for each stock.</p>
 <p>Liquidity is defined loosely as the ability for a given asset to be bought or sold without a large impact on price. Liquid assets can be bought and sold quickly and easily, whereas illiquid assets have large increases or decreases in their price when someone tries to buy or sell them in large quantities. Liquidity is considered an important property of a well functioning financial market, and declines in liquidity have been blamed for worsening or triggering stock market crashes.</p>
-<p>Many methods have been invented to measure liquidity, but for this problem we will focus on one a method called “Kyle’s <span class="math inline">\(\lambda\)</span>”. Kyle’s <span class="math inline">\(\lambda\)</span> estimates liquidity by using a linear regression between the absolute value daily return of a stock and the logarithm of the dollar volume of that stock. The time periods used to estimate this regression can vary, but here we will use daily returns and a one month (defined as 20 trading days). You will learn a lot about linear models in DATA 606 and other classes, but to be complete, <span class="math inline">\(\lambda\)</span> is a coefficient in the following linear model: <span class="math display">\[
+<p>Many methods have been invented to measure liquidity, but for this problem we will focus on a method called “Kyle’s <span class="math inline">\(\lambda\)</span>”. Kyle’s <span class="math inline">\(\lambda\)</span> estimates liquidity by using a linear regression between the absolute value daily return of a stock and the logarithm of the dollar volume of that stock. The time periods used to estimate this regression can vary, but here we will use daily returns and a one month time period (defined as 20 trading days). You will learn a lot about linear models in DATA 606 and other classes, but to be complete, <span class="math inline">\(\lambda\)</span> is a coefficient in the following linear model: <span class="math display">\[
 |R_t-1| = c + \lambda \log((\mathrm{Volume})_t (\mathrm{close})_t) + \epsilon_t
 \]</span> where the coefficients <span class="math inline">\(c\)</span> and <span class="math inline">\(\lambda\)</span> will be calculated to minimize the error <span class="math inline">\(\epsilon_t\)</span> over the past 20 trading days.</p>
 <p><span class="math inline">\(\lambda\)</span> stands for the amount that the stock price will move in units of basis points for a given <span class="math inline">\(\log\)</span> dollar volume of trade. A small <span class="math inline">\(\lambda\)</span> indicates high liquidity, and a high <span class="math inline">\(\lambda\)</span> indicates low liquidity.</p>
@@ -467,9 +613,11 @@ window.Quarto = {
 {\mathrm{mean}\left(\log\left( p_c V \right)^2\right)/20.0
 -\mathrm{mean}\left( p_c V\right)^2 }
 \]</span> where to make the formula easier to read we have defined <span class="math inline">\(R_a = |\mathrm{return} -1|\)</span>, <span class="math inline">\(p_c = \mathrm{close}\)</span> and <span class="math inline">\(V = \mathrm{volume}\)</span>, and the averages have been taken over the past 20 days of data.</p>
-<p>Add a new variable called <code>kyle</code> to the data frame by implementing the above formula for <span class="math inline">\(\lambda\)</span>. Make sure to read and implement the formula very carefully, and to use the <code>runMean</code> function to calculate the rolling average correctly.</p>
-<p>Plot Kyle’s lambda for each stock over time (I would use a faceted scatterplot). What do you notice about how this measure of liquidity behaves (remember liquidity is high when <span class="math inline">\(\lambda\)</span> is small)?</p>
-<p>Next add a new variable to the dataframe called <code>extreme</code> which is true when the log_return for a given stock is <em>either</em> greater than 95% of other values of the log_return <em>or</em> less than 95% of all values of log_return. Use the <code>percent_rank</code> function along with logical operators to create this variable. Then for each stock calculate the mean value of Kyle’s lambda for the days when the log_return had extreme values and for when it didn’t (as identified by the <code>extreme</code> variable). What do your calculations and figures indicate about liquidity during extreme events?</p>
+<ul>
+<li><p>Add a new variable called <code>kyle</code> to the data frame by implementing the above formula for <span class="math inline">\(\lambda\)</span>. Make sure to read and implement the formula very carefully, and to use the <code>runMean</code> function to calculate the rolling average correctly.</p></li>
+<li><p>Plot Kyle’s lambda for each stock over time (I would use a faceted scatterplot). What do you notice about how this measure of liquidity behaves (remember liquidity is high when <span class="math inline">\(\lambda\)</span> is small)?</p></li>
+<li><p>Next add a new variable to the dataframe called <code>extreme</code> which is true when the log_return for a given stock is <em>either</em> greater than 95% of other values of the log_return <em>or</em> less than 95% of all values of log_return. Use the <code>percent_rank</code> <code>dplyr</code> window function along with logical operators to create this variable. Then for each stock calculate the mean value of Kyle’s lambda for the days when the log_return had extreme values and for when it didn’t (as identified by the <code>extreme</code> variable). What do your calculations and figures indicate about liquidity during extreme events?</p></li>
+</ul>
 
 
 </section>
