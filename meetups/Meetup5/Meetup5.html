@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -341,26 +406,595 @@ George I. Hagstrom
 
   <p class="date">2024-09-25</p>
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-</section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
+<section id="lab-3-summary" class="slide level2">
+<h2>Lab 3 Summary</h2>
 <ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
+<li>Graded almost every lab 3 that has been turned in.</li>
+<li>Comments:
+<ul>
+<li>No getting rid of data without a reason that comes from domain info!</li>
+<li>Stats don’t work the same on “circular” variables like time of day</li>
+</ul></li>
 </ul>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<section id="data-transformation" class="slide level2">
+<h2>Data Transformation</h2>
+<ul>
+<li>Process of creating new variables from current data</li>
+<li>Needed to prepare data for your analyses and questions</li>
+<li>Data transformations can lead to dramatically improved insight at little cost</li>
+<li>Types: Numbers, logical variables, dates, later strings and factors.</li>
+</ul>
+</section>
+<section id="case-study-brain-and-body-size" class="slide level2">
+<h2>Case Study: Brain and Body Size</h2>
+
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" class="r-stretch"></section>
+<section id="no-correlation" class="slide level2">
+<h2>No Correlation?</h2>
+<ul>
+<li>Compute the Pearson correlation between brain mass and body mass:</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">cor</span>(Animals<span class="sc">$</span>body,Animals<span class="sc">$</span>brain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] -0.005341163</code></pre>
 </div>
 </div>
+<ul>
+<li>We expect a strong relationship between brain mass and body mass</li>
+<li>Very difficult to believe that there is no relationship between brain mass and body mass.</li>
+</ul>
+</section>
+<section id="log-transformation" class="slide level2">
+<h2>Log Transformation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Brain and Body size:
+<ul>
+<li>Positive variables</li>
+<li>Range over orders of magnitude</li>
+<li>Result from multiplicative growth processes</li>
+</ul></li>
+<li>Suggests we try logarithms</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="TakeLogs.png" style="width:100.0%"></p>
+<figcaption>xkcd</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="log-transformation-different-story" class="slide level2">
+<h2>Log Transformation: Different Story</h2>
+
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>Animals <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">summarize</span>(<span class="at">Correlation =</span> <span class="fu">cor</span>(<span class="fu">log</span>(body),<span class="fu">log</span>(brain)) ) <span class="sc">|&gt;</span> <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Correlation
+1   0.7794935</code></pre>
+</div>
+</div>
+</section>
+<section id="booleanlogical-operations" class="slide level2">
+<h2>Boolean/Logical Operations</h2>
+<ul>
+<li>Logical Types: <code>TRUE</code> and <code>FALSE</code></li>
+<li>NOT: <code>!TRUE = FALSE</code>, <code>!FALSE=TRUE</code></li>
+<li>AND: only <code>TRUE &amp; TRUE = TRUE</code> rest <code>FALSE</code></li>
+<li>OR: only <code>FALSE | FALSE = FALSE</code> rest <code>TRUE</code></li>
+</ul>
+<p>Comparison statements don’t work like in English:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="dv">4</span> <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">|</span> <span class="dv">6</span> <span class="co"># Wrong</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>(<span class="dv">4</span> <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">|</span> (<span class="dv">4</span> <span class="sc">&gt;</span> <span class="dv">6</span>) <span class="co"># Right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="use-boolean-to-create-new-variable-for-comparison" class="slide level2 smaller">
+<h2>Use Boolean to Create New Variable for Comparison</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb9-2"><a></a>nycflights13<span class="sc">::</span>flights <span class="sc">|&gt;</span> <span class="fu">select</span>(year,month,day,arr_delay,carrier,origin,dest) <span class="sc">|&gt;</span>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">month</th>
+<th style="text-align: right;">day</th>
+<th style="text-align: right;">arr_delay</th>
+<th style="text-align: left;">carrier</th>
+<th style="text-align: left;">origin</th>
+<th style="text-align: left;">dest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: left;">EWR</td>
+<td style="text-align: left;">IAH</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">IAH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: left;">AA</td>
+<td style="text-align: left;">JFK</td>
+<td style="text-align: left;">MIA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-18</td>
+<td style="text-align: left;">B6</td>
+<td style="text-align: left;">JFK</td>
+<td style="text-align: left;">BQN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-25</td>
+<td style="text-align: left;">DL</td>
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">ATL</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: left;">EWR</td>
+<td style="text-align: left;">ORD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">B6</td>
+<td style="text-align: left;">EWR</td>
+<td style="text-align: left;">FLL</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-14</td>
+<td style="text-align: left;">EV</td>
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">IAD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: left;">B6</td>
+<td style="text-align: left;">JFK</td>
+<td style="text-align: left;">MCO</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">AA</td>
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">ORD</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="compare-dl-ua-aa-to-others" class="slide level2">
+<h2>Compare DL, UA, AA to others</h2>
+<ul>
+<li>Create a logical variable that is <code>TRUE</code> when airline is in the group</li>
+<li><code>FALSE</code> otherwise</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>flights <span class="ot">=</span> nycflights13<span class="sc">::</span>flights <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">mutate</span>(<span class="at">IS_CARRIER_DL_UA_AA =</span> carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"DL"</span>,<span class="st">"UA"</span>,<span class="st">"AA"</span>))</span>
+<span id="cb10-3"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a></a>  <span class="fu">group_by</span>(IS_CARRIER_DL_UA_AA) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a></a>  <span class="fu">summarise</span>(<span class="at">fraction_delayed =</span> <span class="fu">sum</span>(arr_delay<span class="sc">&gt;</span><span class="dv">30</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span></span>
+<span id="cb10-6"><a></a>              <span class="fu">sum</span>(<span class="fu">is.finite</span>(arr_delay),<span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-7"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  IS_CARRIER_DL_UA_AA fraction_delayed
+  &lt;lgl&gt;                          &lt;dbl&gt;
+1 FALSE                          0.180
+2 TRUE                           0.125</code></pre>
+</div>
+</div>
+</section>
+<section id="logical-subsetting" class="slide level2">
+<h2>Logical Subsetting</h2>
+<ul>
+<li>Powerful way of manipulating Data Frames</li>
+<li><code>if_else</code> and <code>case_when</code>: vector output</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">mutate</span>( <span class="at">cut =</span> <span class="fu">if_else</span>(</span>
+<span id="cb12-3"><a></a>      cut <span class="sc">==</span> <span class="st">"Very Good"</span>, <span class="st">"Very_Good"</span>, cut)</span>
+<span id="cb12-4"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="logical-subsetting-using-base" class="slide level2">
+<h2>Logical Subsetting using Base</h2>
+<ul>
+<li>Can use <code>[]</code> for other data types</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>diabetes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"../../assignments/labs/labData/diabetes.csv"</span>)</span>
+<span id="cb13-2"><a></a>diabetes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 768 × 9
+   Pregnancies Glucose BloodPressure SkinThickness Insulin   BMI
+         &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1           6     148            72            35       0  33.6
+ 2           1      85            66            29       0  26.6
+ 3           8     183            64             0       0  23.3
+ 4           1      89            66            23      94  28.1
+ 5           0     137            40            35     168  43.1
+ 6           5     116            74             0       0  25.6
+ 7           3      78            50            32      88  31  
+ 8          10     115             0             0       0  35.3
+ 9           2     197            70            45     543  30.5
+10           8     125            96             0       0   0  
+# ℹ 758 more rows
+# ℹ 3 more variables: DiabetesPedigreeFunction &lt;dbl&gt;, Age &lt;dbl&gt;, Outcome &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="logical-subsetting-using-base-1" class="slide level2">
+<h2>Logical Subsetting using Base</h2>
+<ul>
+<li>Can use <code>[]</code> for other data types</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>diabetes[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>][diabetes[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>]<span class="sc">==</span><span class="dv">0</span>] <span class="ot">=</span> <span class="cn">NA</span></span>
+<span id="cb15-2"><a></a>diabetes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 768 × 9
+   Pregnancies Glucose BloodPressure SkinThickness Insulin   BMI
+         &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1           6     148            72            35      NA  33.6
+ 2           1      85            66            29      NA  26.6
+ 3           8     183            64            NA      NA  23.3
+ 4           1      89            66            23      94  28.1
+ 5           0     137            40            35     168  43.1
+ 6           5     116            74            NA      NA  25.6
+ 7           3      78            50            32      88  31  
+ 8          10     115            NA            NA      NA  35.3
+ 9           2     197            70            45     543  30.5
+10           8     125            96            NA      NA  NA  
+# ℹ 758 more rows
+# ℹ 3 more variables: DiabetesPedigreeFunction &lt;dbl&gt;, Age &lt;dbl&gt;, Outcome &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="numerical-transformations" class="slide level2">
+<h2>Numerical Transformations</h2>
+<ul>
+<li>Can implement any mathematical formula you can imagine</li>
+<li>Construct quantity of interest:
+<ul>
+<li>Domain expertise</li>
+</ul></li>
+<li>As part of EDA
+<ul>
+<li>Make a complicated relationship look simpler or even linear</li>
+</ul></li>
+<li>To boost other tools
+<ul>
+<li>Some algorithms run better with standardized data</li>
+</ul></li>
+</ul>
+</section>
+<section id="recycling-rules-for-aggregates" class="slide level2">
+<h2>Recycling Rules for Aggregates</h2>
+<ul>
+<li>R adjusts “boosts” numbers/vectors so that calculations work</li>
+<li>Behavior is <em>very</em> different from other languages:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">10</span>)<span class="sc">/</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5.0000000  0.2222222  3.0000000 10.0000000</code></pre>
+</div>
+</div>
+<ul>
+<li>Shorter vector/number is repeated to match the length of longer one</li>
+<li>Can be very unintuitive for when the vectors have lengths different from 1</li>
+</ul>
+</section>
+<section id="recycling-fails" class="slide level2">
+<h2>Recycling Fails:</h2>
+<ul>
+<li>Source of silent bugs</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(year, month, flight) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   year month flight
+  &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+1  2013     1   1545
+2  2013     1   1141
+3  2013     1    461
+4  2013     1    507
+5  2013     1     79</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a></a>  <span class="fu">filter</span>(month <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(year, month, flight) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   year month flight
+  &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+1  2013     1   1545
+2  2013     1   1714
+3  2013     1   1141
+4  2013     1    725
+5  2013     1    461</code></pre>
+</div>
+</div>
+</section>
+<section id="logarithms" class="slide level2">
+<h2>logarithms</h2>
+
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><ul>
+<li><span class="math inline">\(\log(e^x) = x\)</span></li>
+<li><span class="math inline">\(\log(x_1 \cdot x_2 \cdot \dots \cdot x_n) = \log(x_1) + \log(x_2) + \dots + \log(x_n)\)</span></li>
+<li><span class="math inline">\(\log_{10}\)</span> counts the digits of a number</li>
+</ul>
+</section>
+<section id="log-in-data-science-and-stats" class="slide level2">
+<h2><span class="math inline">\(\log\)</span> in data science and stats</h2>
+<ul>
+<li>Starting point when:
+<ul>
+<li>Positive variables</li>
+<li>Multiplicative growth</li>
+<li>Wide Range</li>
+</ul></li>
+<li>Avoiding overflow/underflow in probability models
+<ul>
+<li>In maximum likelihood focus on <code>log</code> likelihood</li>
+</ul></li>
+<li>Special case of Tukey’s Ladder: <img data-src="TukeyLadder.png" alt="Tukey EDA"></li>
+</ul>
+</section>
+<section id="two-approaches-to-transformations" class="slide level2">
+<h2>Two Approaches to Transformations:</h2>
+<ol type="1">
+<li>Domain Focused:</li>
+</ol>
+<ul>
+<li>Construct quantities of interest</li>
+<li>Transformation always inspired by knowledge of domain</li>
+<li>Power transformation to scale physical values</li>
+</ul>
+<ol start="2" type="1">
+<li>Stats Focused:</li>
+</ol>
+<ul>
+<li>Transform with goal to make data more Normal, relations more linear</li>
+<li>Exemplified by Box-Cox Transformation</li>
+</ul>
+</section>
+<section id="window-functions-values" class="slide level2">
+<h2>Window Functions: Values</h2>
+<ul>
+<li>Perform transformations on “nearby” rows:</li>
+<li><code>lead</code> Next value(s)</li>
+<li><code>lag</code> Previous value(s)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">lead</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2  3  4  5  6  7  8  9 10 NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">lead</span>(<span class="at">n=</span><span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  4  5  6  7  8  9 10 NA NA NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">lag</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA  1  2  3  4  5  6  7  8  9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">lag</span>(<span class="at">n=</span><span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA NA NA  1  2  3  4  5  6  7</code></pre>
+</div>
+</div>
+<ul>
+<li><code>first()</code> and <code>last()</code></li>
+</ul>
+</section>
+<section id="window-functions-ranks" class="slide level2">
+<h2>Window Functions: Ranks</h2>
+<ul>
+<li>Perform transformations on “nearby” rows:</li>
+<li><code>percent_rank()</code></li>
+<li><code>rank()</code></li>
+<li><code>ntile()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">percent_rank</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0.0000000 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667
+ [8] 0.7777778 0.8888889 1.0000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">rank</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">ntile</span>(<span class="dv">4</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 2 2 2 3 3 4 4</code></pre>
+</div>
+</div>
+</section>
+<section id="cumulative-and-rolling-aggregates" class="slide level2">
+<h2>Cumulative and Rolling Aggregates</h2>
+<ul>
+<li><code>cumsum</code>, <code>cummean</code></li>
+<li>Rolling window (several libraries including <code>RcppRoll</code>, <code>TTR</code>, <code>slider</code>)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">library</span>(TTR)</span>
+<span id="cb37-2"><a></a><span class="fu">library</span>(cranlogs)</span>
+<span id="cb37-3"><a></a>pkgs <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb37-4"><a></a>    <span class="st">"tidyr"</span>, <span class="st">"lubridate"</span>, <span class="st">"dplyr"</span>, </span>
+<span id="cb37-5"><a></a>    <span class="st">"ggplot2"</span>, <span class="st">"purrr"</span>, </span>
+<span id="cb37-6"><a></a>    <span class="st">"stringr"</span>, <span class="st">"knitr"</span></span>
+<span id="cb37-7"><a></a>    )</span>
+<span id="cb37-8"><a></a></span>
+<span id="cb37-9"><a></a>tidyverse_downloads <span class="ot">=</span> <span class="fu">cran_downloads</span>(</span>
+<span id="cb37-10"><a></a>    <span class="at">packages =</span> pkgs, </span>
+<span id="cb37-11"><a></a>    <span class="at">from     =</span> <span class="st">"2024-01-01"</span>, </span>
+<span id="cb37-12"><a></a>    <span class="at">to       =</span> <span class="st">"2024-08-31"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-13"><a></a>    tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb37-14"><a></a>    <span class="fu">group_by</span>(package)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cumulative-and-rolling-aggregates-1" class="slide level2">
+<h2>Cumulative and Rolling Aggregates</h2>
+<ul>
+<li><code>cumsum</code>, <code>cummean</code></li>
+<li>Rolling window (several libraries including <code>RcppRoll</code>, <code>TTR</code>, <code>slider</code>)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>tidyverse_downloads <span class="sc">|&gt;</span> <span class="fu">filter</span>(package <span class="sc">==</span> <span class="st">"lubridate"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb38-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>date,<span class="at">y=</span>count)) <span class="sc">+</span> <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cumulative-and-rolling-aggregates-2" class="slide level2">
+<h2>Cumulative and Rolling Aggregates</h2>
+<ul>
+<li>Rolling window TTR:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>tidyverse_downloads <span class="sc">|&gt;</span> <span class="fu">filter</span>(package <span class="sc">==</span> <span class="st">"lubridate"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb39-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>date,<span class="at">y=</span>count)) <span class="sc">+</span> <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb39-3"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<section id="cumulative-and-rolling-aggregates-3" class="slide level2">
+<h2>Cumulative and Rolling Aggregates</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>tidyverse_downloads <span class="sc">|&gt;</span> <span class="fu">filter</span>(package <span class="sc">==</span> <span class="st">"lubridate"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a></a>  <span class="fu">mutate</span>(<span class="at">rolling_count =</span> <span class="fu">runMean</span>(count,<span class="at">n=</span><span class="dv">7</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb40-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>date,<span class="at">y=</span>count)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>rolling_count)) <span class="sc">+</span></span>
+<span id="cb40-4"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<section id="caution-about-group-boundaries" class="slide level2">
+<h2>Caution About Group Boundaries</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>tidyverse_downloads <span class="sc">|&gt;</span>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb41-2"><a></a>  <span class="fu">mutate</span>(<span class="at">rolling_count =</span> <span class="fu">runMean</span>(count,<span class="at">n=</span><span class="dv">7</span>)) <span class="sc">|&gt;</span> <span class="fu">filter</span>(package <span class="sc">==</span> <span class="st">"lubridate"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb41-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>date,<span class="at">y=</span>count)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>rolling_count)) <span class="sc">+</span></span>
+<span id="cb41-4"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<section id="data-science-in-context-presentation" class="slide level2">
+<h2>Data Science in Context Presentation</h2>
+</section>
+<section id="rank" class="slide level2">
+<h2>Rank</h2>
+<ul>
+<li><code>rank</code> transforms data from values to numerical rank:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>randVec <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb42-2"><a></a><span class="fu">print</span>(randVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] -1.42021086 -0.37208489  0.37101668 -0.79833142  0.76872906 -0.34360367
+ [7]  0.03401652  0.62211291  1.28520909  0.26799021</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">print</span>(randVec <span class="sc">|&gt;</span> <span class="fu">rank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  3  7  2  9  4  5  8 10  6</code></pre>
+</div>
+</div>
+<ul>
+<li>Rank preserved by all monotone transformations</li>
+</ul>
+</section>
+<section id="rank-correlation-and-correlation-trick" class="slide level2">
+<h2>Rank Correlation and Correlation Trick</h2>
+<ul>
+<li><em>Spearman Correlation</em> is correlation between ranks of two variables</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>Animals  <span class="sc">|&gt;</span> </span>
+<span id="cb46-2"><a></a>           <span class="fu">summarise</span>(</span>
+<span id="cb46-3"><a></a>  <span class="at">rank_corr =</span> <span class="fu">cor</span>(body,brain,<span class="at">method=</span><span class="st">'spearman'</span>),</span>
+<span id="cb46-4"><a></a>  <span class="at">corr =</span> <span class="fu">cor</span>(body,brain)</span>
+<span id="cb46-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  rank_corr         corr
+1 0.7162994 -0.005341163</code></pre>
+</div>
+</div>
+<ul>
+<li>Correlation Trick: Look for Nonlinear Transformations when Rank-Correlation is much higher than Pearson Correlation</li>
+</ul>
+</section>
+<section id="rank-correlation-graphical-version" class="slide level2">
+<h2>Rank Correlation Graphical Version</h2>
+
+<img data-src="Meetup5_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<section id="what-didnt-we-cover" class="slide level2">
+<h2>What didn’t we cover?</h2>
+<ul>
+<li><code>logit</code>, <code>probit</code>, <code>ReLU</code>: Data transformations that go between a finite interval and the real line</li>
+<li>Enormous number of different ranking functions available in R</li>
+<li>Linear Algebra Based Methods, PCA, dimensionality reduction</li>
+<li>Tools from the sciences: Fourier, Wavelets, etc</li>
+</ul>
+</section>
+<section id="meetup-reflectionone-minute-paper" class="slide level2">
+<h2>Meetup Reflection/One Minute Paper</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
