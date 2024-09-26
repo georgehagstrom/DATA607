@@ -446,10 +446,10 @@ George I. Hagstrom
 <li>Very difficult to believe that there is no relationship between brain mass and body mass.</li>
 </ul>
 </section>
-<section id="log-transformation" class="slide level2">
+<section id="log-transformation" class="slide level2 smaller">
 <h2>Log Transformation</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
 <ul>
 <li>Brain and Body size:
 <ul>
@@ -459,10 +459,10 @@ George I. Hagstrom
 </ul></li>
 <li>Suggests we try logarithms</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="TakeLogs.png" style="width:100.0%"></p>
+<p><img data-src="TakeLogs.png" style="width:90.0%"></p>
 <figcaption>xkcd</figcaption>
 </figure>
 </div>
@@ -946,12 +946,12 @@ George I. Hagstrom
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>randVec <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
 <span id="cb42-2"><a></a><span class="fu">print</span>(randVec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] -1.42021086 -0.37208489  0.37101668 -0.79833142  0.76872906 -0.34360367
- [7]  0.03401652  0.62211291  1.28520909  0.26799021</code></pre>
+<pre><code> [1] -0.1270781 -0.1139764 -1.1233840 -0.6470577 -0.5017318 -1.0069459
+ [7]  1.7860693  0.5302705  0.5467580 -1.2706733</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">print</span>(randVec <span class="sc">|&gt;</span> <span class="fu">rank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  1  3  7  2  9  4  5  8 10  6</code></pre>
+<pre><code> [1]  6  7  2  4  5  3 10  8  9  1</code></pre>
 </div>
 </div>
 <ul>
