@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -4989,7 +5023,7 @@ vertical-align: -.125em;
 <p>In this lab you will practice perform a series of exercises that use text and string manipulation to either analyze data with text, manipulate data containing strings, apply regular expressions, or handle data files with unusual formats or text strings.</p>
 <section id="problems" class="level2">
 <h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<p><strong>Problem 1.</strong> Using the 173 majors listed in fivethirtyeight.com’s <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">College Majors dataset</a>, provide code that identifies the majors that contain either “Data” or “Statistics”, case insensitive. You can find this dataset on R by installing the package <code>fivethirtyeight</code> and using the <code>major</code> column in either <code>college_recent_grades</code>, <code>college_new_grads</code>, or <code>college_all_ages</code>.</p>
+<p><strong>Problem 1.</strong> Using the 173 majors listed in fivethirtyeight.com’s <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">College Majors dataset</a>, provide code that identifies the majors that contain either “DATA” or “STATISTICS”, case insensitive. You can find this dataset on R by installing the package <code>fivethirtyeight</code> and using the <code>major</code> column in either <code>college_recent_grades</code>, <code>college_new_grads</code>, or <code>college_all_ages</code>.</p>
 <p><strong>Problem 2</strong> Write code that transforms the data below:</p>
 <p><code>[1] &quot;bell pepper&quot; &quot;bilberry&quot; &quot;blackberry&quot; &quot;blood orange&quot;</code><br>
 <code>[5] &quot;blueberry&quot; &quot;cantaloupe&quot; &quot;chili pepper&quot; &quot;cloudberry&quot;</code><br>
@@ -4998,19 +5032,35 @@ vertical-align: -.125em;
 </p>
 <p>Into a format like this:</p>
 <p><code>c(&quot;bell pepper&quot;, &quot;bilberry&quot;, &quot;blackberry&quot;, &quot;blood orange&quot;, &quot;blueberry&quot;, &quot;cantaloupe&quot;, &quot;chili pepper&quot;, &quot;cloudberry&quot;, &quot;elderberry&quot;, &quot;lime&quot;, &quot;lychee&quot;, &quot;mulberry&quot;, &quot;olive&quot;, &quot;salal berry&quot;)</code></p>
-<p><strong>Problem 3</strong> Describe, in words, what these regular expressions will match:</p>
+<p>As your starting point take the string defined in the following code chunk:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>messyString <span class="ot">=</span> <span class="st">&#39; [1] &quot;bell pepper&quot; &quot;bilberry&quot; &quot;blackberry&quot; &quot;blood orange&quot; </span><span class="sc">\n</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st"> [5] &quot;blueberry&quot; &quot;cantaloupe&quot; &quot;chili pepper&quot; &quot;cloudberry&quot; </span><span class="sc">\n</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st"> [9] &quot;elderberry&quot; &quot;lime&quot; &quot;lychee&quot; &quot;mulberry&quot; </span><span class="sc">\n</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st"> [13] &quot;olive&quot;  &quot;salal berry&quot; &#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Hint: There are many different ways to solve this problem, but if you use <code>str_extract_all</code> a helpful flag that returns a character vector instead of a list is <code>simplify=TRUE</code>. Then you can apply other tools from <code>stringr</code> if needed.</p>
+<p><strong>Problem 3</strong> Describe, in words, what these regular expressions will match. Read carefully to see if each entry is a regular expression or a string that defines a regular expression.</p>
 <ul>
-<li><code>(.)\1\1</code></li>
-<li><code>&quot;(.)(.)\\2\\1&quot;</code></li>
-<li><code>(..)\1</code></li>
-<li><code>&quot;(.).\\1.\\1&quot;</code></li>
-<li><code>&quot;(.)(.)(.).*\\3\\2\\1&quot;</code></li>
+<li><code>^.*$</code></li>
+<li><code>&quot;\\{.+\\}&quot;</code></li>
+<li><code>\d{4}-\d{2}-\d{2}</code></li>
+<li><code>&quot;\\\\{4}&quot;</code></li>
+<li><code>&quot;(..)\\1&quot;</code></li>
 </ul>
 <p><strong>Problem 4.</strong> Construct regular expressions to match words that:</p>
 <ul>
-<li>Start and end with the same character.</li>
-<li>Contain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)</li>
-<li>Contain one letter repeated in at least three places (e.g. “eleven” contains three “e”s.)</li>
+<li>Start with “y”.</li>
+<li>Have seven letters or more.</li>
+<li>Contain a vowel-consonant pair</li>
+<li>Contain at least two vowel-consonant pairs in a row.</li>
+<li>Contain the same vowel-consonant pair repeated twice in a row.</li>
+</ul>
+<p>For each example, verify that they work by running them on the <code>stringr::words</code> dataset and show the first 10 results (hint: combine <code>str_detect</code> and logical subsetting).</p>
+<p><strong>Problem 5</strong> Consider the <code>gss_cat</code> data-frame discussed in Chapter 16 of R4DS (provided as part of the <code>forcats</code> package):</p>
+<ul>
+<li><p>Create a new variable that describes whether the party-id of a survey respondent is “strong” if they are a strong republican or strong democrat, “weak” if they are a not strong democrat, not strong republican, or independent of any type, and “other” for the rest.</p></li>
+<li><p>Calculate the mean hours of TV watched by each of the groups “strong”, “weak”, and “other” and display it with a dot-plot (geom_point). Sort the levels in the dot-plot so that the group appears in order of most mean TV hours watched.</p></li>
 </ul>
 
 
