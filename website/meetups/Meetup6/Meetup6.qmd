@@ -1,0 +1,437 @@
+---
+title: "Meetup 6: Working With Text and Strings"
+author: "George I. Hagstrom"
+format: revealjs
+date: 10/02/2024
+
+---
+
+## Lab 4 Review
+
+```{r}
+#| warning: false
+library(tidyverse)
+library(TTR)
+library(kableExtra)
+library(patchwork)
+library(ggplot2)
+
+stocks = read_csv("/home/georgehagstrom/work/Teaching/DATA607/website/assignments/labs/labData/stocks.csv")
+stocks = stocks |> 
+  group_by(symbol) |> 
+  mutate(return = adjusted/lag(adjusted),
+         log_return = log(return))  
+
+```
+
+* Parameter Choices in faceted scatter plots
+* Try `scale = "free/free_x/free_y"`
+
+```{r}
+#| echo: true
+#| warning: false
+#| fig-width: 8
+#| fig-asp: 2.0
+#| eval: false
+
+
+stocks |> ggplot(aes(x=volume/1e8,y=log_return)) +
+  geom_point(alpha=0.2) +
+  facet_wrap(~symbol,ncol = 3) +
+  labs(x = "Adj. vol (10^8 shares)",
+       y = "log(return)",
+       title = "log(return) vs. Vol for Tech Stocks") +
+  theme_bw(base_size = 24)
+
+```
+
+## Lab 4 Review {.nostretch}
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig.height: 8
+#| fig.width: 12
+
+stocks |> filter(symbol %in% c("META","ADBE","AMZN","MSFT")) |> 
+  ggplot(aes(y=(volume/1e8),x=log_return)) +
+  geom_point(alpha=0.1,size=.1) +
+  facet_wrap(~symbol,ncol = 2) +
+  labs(y = "Adj. vol (10^8 shares)",
+       x = "log(return)",
+       title = "log(return) vs. Vol for Tech Stocks") +
+  theme_bw(base_size = 24)
+
+
+
+
+```
+
+
+
+
+## Lab 4 Review {.nostretch}
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig.height: 8
+#| fig.width: 12
+
+stocks |> filter(symbol %in% c("META","ADBE","AMZN","MSFT")) |> 
+  ggplot(aes(y=(volume/1e8),x=log_return)) +
+  geom_point(alpha=0.1,size=.1) +
+  facet_wrap(~symbol,ncol = 2, scales = "free_y") +
+  labs(y = "Adj. vol (10^8 shares)",
+       x = "log(return)",
+       title = "log(return) vs. Vol for Tech Stocks") +
+  theme_bw(base_size = 24)
+
+
+
+
+```
+
+
+## Lab 4 Review {.nostretch}
+
+```{r}
+#| echo: true
+#| eval: false
+#| warning: false
+#| fig.height: 8
+#| fig.width: 12
+
+stocks |> filter(symbol %in% c("META","ADBE","AMZN","MSFT")) |> 
+  ggplot(aes(y=(volume/1e8),x=log_return)) +
+  geom_point(alpha=0.1,size=.1) +
+  facet_wrap(~symbol,ncol = 2, scales = "free_y") +
+  labs(y = "Adj. vol (10^8 shares)",
+       x = "log(return)",
+       title = "log(return) vs. Vol for Tech Stocks") +
+  theme_bw(base_size = 24)
+
+
+
+
+```
+
+
+
+
+## Lab 4 Review {.nostretch}
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig.height: 8
+#| fig.width: 12
+
+stocks |> filter(symbol %in% c("META","ADBE","AMZN","MSFT")) |> 
+  ggplot(aes(y=log(volume/1e8),x=log_return)) +
+  geom_point(alpha=0.1,size=.1) +
+  facet_wrap(~symbol,ncol = 2, scales = "free_y") +
+  labs(y = "log(Adj. vol ))",
+       x = "log(return)",
+       title = "log(return) vs. log(Vol) for Tech Stocks") +
+  theme_bw(base_size = 24)
+
+
+
+
+```
+
+## Case Study: Huntington's Disease
+
+* Tandem Repeats are sections of genetic code where same short element repeats
+over and over:
+
+ - `CAGCAGCAGCAGCAGCAGCAG`
+
+
+
+```{r} 
+library(bioseq)
+
+```
+* In certain genes, number of repeats varies, can cause genetic diseases etc
+* Huntington's Disease:
+  - `CAA` and `CAG` repeats, code for amino acid Glutamine
+  - 6-35 normal
+  - 36+ causes disease
+  
+## Pattern Matching
+
+* How to determine number of repeats `CAA` + `CAG` repeats in a section of code?
+```{r}
+#| echo: true
+library(tidyverse)
+library(kableExtra)
+DNA =read_file("Huntington.txt")
+
+DNA |> str_sub(1, 1000) |> print()
+
+```
+
+## Processing Steps
+
+* Get rid of tabs, numbers, spaces, newlines:
+```{r}
+#| echo: true
+
+DNA = DNA |> str_remove_all("[0-9]") |> 
+  str_remove_all("\t") |> 
+  str_remove_all("\n") |> 
+  str_remove_all(" ")
+
+DNA |> str_sub(1,60) |> print()
+```
+
+* Following Regular Expression can match repeats of various lengths:
+(CAA|CAG){10,}
+
+```{r}
+#| echo: true
+DNA |> str_count("caa") |> print()
+DNA |> str_count("cag") |> print()
+DNA |> str_count("(caa|cag){10,}") |> print()
+
+```
+
+
+## How Long?
+
+```{r}
+#| echo: true
+DNA |> str_extract_all("(caa|cag){10,}") |> 
+  str_length()/3
+DNA |> str_extract_all("(caa|cag){10,}")
+
+```
+
+## Other Examples
+
+* Powerful tools like `stringr` and `regex` elevate your ability to work with text
+* Useful in many domains, from identifying emails and phone numbers to motifs in DNA sequences
+  - "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b" pattern matches valid email
+  - "\\d{5}([ \\-]\\d{4})?" matches American Zip codes
+  - "/([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))/" YYYY-MM-DD dates
+  
+
+
+
+## String/Character Basics
+
+* Defined by enclosing in quotes:
+```{r}
+#| echo: true
+string1 = c("word",
+            'another word', 
+            "multiple\n lines",
+            "using \"escapes\" and \u00FCnicode ")
+str_view(string1)
+```
+* Special characters:
+  - "\\n" newline
+  - "\\t" tab
+  - "\\" to escape and write special character
+
+
+## Key functions:
+* `str_c()`: adds strings together
+* `str_sub()`: subsets strings
+* `str_flatten()` combines chars in a char vector into single string
+
+```{r}
+#| echo: true
+
+str_c("Abraham"," ","Lincoln")
+
+str_sub(c("Abraham","Lincoln"),start=1,end=4)
+
+str_flatten(letters)
+
+
+```
+
+## Key functions: 
+* `str_view()` underlying string and pattern matches
+* `str_length()` self explanatory
+* `str_count()` counts matches with a pattern
+* `str_detect()` logical match
+```{r}
+#| echo: true
+str_length("Grizzly Bear")
+
+DNA |> str_count("caa") |> print()
+
+"Lions, Tigers, and Bears" |> str_view("Tiger")
+
+"Lions, Tigers, and Bears" |> str_detect("Cat")
+
+
+```
+
+## Key functions:
+* `str_replace()` and `str_replace_all`: substitute
+* `str_remove()` and `str_remove_all()`: remove matches
+* `str_extract()` and `str_extract_all()`: pull out matches
+```{r}
+#| echo: true
+"Abraham Linc0ln" |> str_replace_all("0","o")
+c("Blueberry","Blackberry","Lingonberry") |> str_remove("berry")
+DNA |> str_extract_all("tttttt")
+```
+
+
+## Regular Expressions (regex)
+
+* Regular Expressions are a powerful language for describing complex patterns
+* String search tools often use them by default
+* Regular Characters:
+ - a-z, A-z, 0-9
+* Metacharacters:
+  - ".","*","()","[]","{}","|","\","$","?","^","+"
+  - These add special meaning to the patterns
+
+## Wildcard .
+* "." a symbol that can stand for any character
+* Find all instances of "a" followed by two letters of any type, followed by another "a":
+```{r}
+#| echo: true
+words |> str_view("a..a")
+
+
+```
+
+## Quantifiers ?, +, *
+
+* Find patterns that repeat
+* Modify the adjacent character/symbol
+* "?" for optional matches:
+```{r}
+#| echo: true
+str = "eTeeTeeeTeeeeT"
+str |> str_view("ee?")
+
+```
+* "+" for repeat matches:
+```{r}
+#| echo: true
+str |> str_view("ee+")
+
+```
+* "*" for any number of repeat matches, including 0:
+```{r}
+#| echo: true
+
+str |> str_view("ee*")
+
+```
+
+## Advanced Quantifiers {m,n}
+
+* Use {m,n} to specify at least "m" matches but no more than "n" matches:
+
+```{r}
+#| echo: true
+
+AASeq = read_file("HuntingtonTrans.txt") |> 
+  str_remove_all("\t") |> 
+  str_remove_all("\n") |> 
+  str_remove_all(" ")
+AASeq |> str_extract_all("Q{2,}") |> print()
+AASeq |> str_extract_all("Q{3,10}") |> print()
+
+```
+
+
+## Character Classes
+
+* Use square brackets to denote a group of characters to match
+```{r}
+#| echo: true
+words |> str_view("[aeiou]tt[aeiou]")
+```
+* "^" matches everything not in the brackets
+```{r}
+#| echo: true
+words |> str_view("q[^u]")
+words |> str_view("q[u]") |> head(5)
+
+```
+
+## Special Characters and Escaping
+* Use "\" if you need to match a metacharacter for real, i.e.
+ - "\.", "\\", "\+" etc
+* Special character groups also denoted with "\"
+ -"\s" space, opposite: "\S" 
+ -"\d" number, "\D" not number
+ -"\w" letter or number, "\W" not letter or number
+* Ranges: "[A-E]", "[1-4]"
+* NEED TO DOUBLE ESCAPE IN R!
+```{r}
+#| echo: true
+str_view("abc123","\\d")
+
+```
+
+## Logical Or
+
+* "|" allows for specifying alternative expressions to match
+
+```{r}
+#| echo: true
+
+fruit |> str_view("apple|berry|melon") |> head(10)
+
+```
+
+##  Grouping 
+
+* "()" makes whatever inside act like a group
+* Example from earlier, finding repeats of a sequence
+```{r}
+#| echo: true
+DNA |> str_extract_all("(caa|cag){3,60}")
+
+```
+
+## Backreferencing
+
+* If something is contained in parentheses, you can reference it using "\1", "\2", etc
+```{r}
+#| echo: true
+DNA |> str_extract_all("(......)\\1+")
+
+
+```
+
+## Anchors
+* "^" start of string, "$" end of string
+```{r}
+#| echo: true
+
+words |> str_view("^a.+d$")
+
+```
+* "\\b " the boundary of a word
+```{r}
+#| echo: true
+
+sentences |> str_view("ink") |> head(5)
+sentences |> str_view("\\bink\\b")
+
+```
+
+
+## Data Science in Context Presentation
+
+
+
+
+## Meetup Reflection/One Minute Paper
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
