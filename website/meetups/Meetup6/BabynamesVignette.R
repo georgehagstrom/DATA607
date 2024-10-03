@@ -74,34 +74,23 @@ babynames |>
   ggplot(aes(x = year, y = prop_z)) + 
   geom_line()
 
-# Problem 4: How have name spelling changes masked the true popularity of some names?
 
-babynames |> 
-  group_by(year) |> 
-  summarize(prop_Ashley = mean(str_detect(name, "Ashleigh"))) |> 
-  ggplot(aes(x = year, y = prop_Ashley)) + 
-  geom_line()
-
-
-babynames |> 
-  group_by(year) |> 
-  summarize(prop_Ashley = mean(str_detect(name, "son$"))) |> 
-  ggplot(aes(x = year, y = prop_Ashley)) + 
-  geom_line()
-
-
-
-# Problem 5: Can we replace all the Megan names?
+# Problem 4: Can we look at all the different versions of Megan?
 
 # Different ways to write 
 
-regex_Meg = regex("^(Ma|Me)(g|gh)(yn|in|on|an|en|n)$")
+Meg_match = regex("^(Ma|Me)(g|gh)(yn|in|on|an|en|n)$")
 
 babynames |> filter(str_detect(name,regex_Meg)) |> 
   ggplot(aes(x=year,y=prop,color=as_factor(name))) + geom_point()
 
 
-babynames |> mutate(name = str_replace_all(name,regex_Meg,"Megan")) |> 
-  
+babynames |> 
+  filter(str_detect(name,Meg_match)) |> 
+  group_by(year) |> 
+  summarise(Megan_Prop = sum(prop)) |> 
+  ggplot(aes(x=year,y=Megan_Prop)) + 
+  geom_point()
+
 
 
