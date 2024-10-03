@@ -755,7 +755,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.7123194 -1.0034590  0.6630753  0.2795729 -0.0309651 -0.5012937\n [7] -0.3051946  1.4512309 -0.5152410 -2.4470890\n\nprint(randVec |&gt; rank())\n\n [1]  3  2  9  8  7  5  6 10  4  1\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -1.7253906 -0.2355976  0.5998337  0.3342957  0.5474764 -0.3445824\n [7]  0.5095644  0.8209459  1.8388569  0.7143322\n\nprint(randVec |&gt; rank())\n\n [1]  1  3  7  4  6  2  5  9 10  8\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
