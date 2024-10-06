@@ -6,44 +6,84 @@ editor: source
 
 # Overview
 
-This projects involves data collection, creating a normalized SQL database representing the
-data you collected, and then loading the data from the SQL database into R.
+This lab is divided into two parts. In the first part you will practice using joins for data 
+wrangling and analysis on the `nycflights` dataset. Some of the problems come from Chapter 19 of your book. For the second part, you will download a dataset on the budgets of college sports programs and process it for storage in a relational database (I strongly recommend using `duckdb` which can be installed using `install.packages("duckdb")`- duckdb is highly performant, self-contained, and ideally suited both to learning SQL and performing data analysis). Then you will load this database and use `dbplyr` to perform an analysis. You will also practice using `forcats` to recode some of the variables as factors (which are supported by duckdb) and using `separate_wider_delim` to split columns
+of text data.
+
+You will need to have installed and to the following libraries:
+```{r}
+#| echo: true
+
+library(tidyverse)
+library(DBI)
+library(duckdb)
+library(nycflights13)
+
+```
 
 # Problems
 
-**Problem 1:**
+**Part I: Airline Flight Delays**
 
-Select at least six popular movies that the people you will survey have a good chance of
-having watched. Ask at least five people that you know (friends, family, classmates, imaginary
-friends if necessary) to rate each of these movies that they have seen on a scale of 1 to 5. 
-You may use online survey software if you find it easier and want to generate a larger sample.
+For the first part of this lab exercise, we will be using the `nycflights` library, which contains 
+several different built in datasets including `planes`, which has information on each plane that
+appears in the data; `flights`, which has information on individual flights; `airports`, which has information on individual airports; and `weather`, which has information on the weather that the origin airports. In order to do this set of lab exercises, you will need to use different types of joins to combine variables in each data frame.
 
-**Problem 2:** 
+**Problem 1**
 
-Take the results(observations) and store them in a SQL database of your choosing. I recommend
-SQLite or duckDB if you are undecided. Describe the normalization scheme you selected for
-your database and explain why you chose it. 
+- Use the `flights` and `planes` tables to compute the mean departure delay of each aircraft that has more than 30 recorded flights in the dataset. Hint: Make note of the fact that the variable `year` appears in both `flights` and `planes` but means different things in each before performing any joins.
+
+- Use `anti-join` to identify flights where `tailnum` does not have a match in `plane`. Determine
+the carriers for which this problem is the most common. 
+
+- Find the airplane model which made the most flights in the dataset, and filter the dataset to contain only flights flown by airplanes of that model, adding a variable which corresponds to the year each those airplanes were built. Then compute the average departure delay for each year of origin and plot the data. Is there any evidence that older planes have more greater departure delays?
+
+**Problem 2**
+
+- Compute the average delay by destination, then join on the airports data frame so you can show the spatial distribution of delays. Here’s an easy way to draw a map of the United States:
+
+```{r}
+#| eval: false
+#| echo: true
+airports |>
+  semi_join(flights, join_by(faa == dest)) |>
+  ggplot(aes(x = lon, y = lat)) +
+    borders("state") +
+    geom_point() +
+    coord_quickmap()
+
+```
+You might want to use the size or color of the points to display the average delay for each airport.
+
+
+**Part II: Creating and Accessing a Database **
+
+In this exercise we will begin with a flat file which contains data on college sports programs throughout the country. The source of the data is a government run database called [Equity in Athletics Data Analysis](https://ope.ed.gov/athletics/#/), though we are working with just
+a small subset here. You can download this file by clicking here:
+[sports_program_data.csv](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/sports_program_data.csv). I have also included a data dictionary which gives a quick description of the dataset, which can be downloaded from here: [sports_program_data_dictionary.qmd](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/sports_program_data_dictionary.qmd). This file contains information on two types of entities: sports teams and universities, however the information on both entities is combined into a single table, creating substantial redundancies. This exercise has several goals:
+
+1. Load this data into R, split the dataframe into two dataframes, one corresponding to colleges and another corresponding to sports teams, related to each other by common keys
+2. Create a relational database using `duckdb` which contains these two tables.
+3. Read this database into R and a/an SQL query/queries to perform an analysis. 
+
+To be specific:
 
 **Problem 3:**
 
-Load the information from the SQL database into an R dataframe. This is by design a very open-ended assignment. In general, there’s no need here to ask “Can I…?” questions
-about your proposed approach. A variety of reasonable approaches are acceptable. You could for example access the SQL data directly from R, or you could create an intermediate .CSV file. I should be able to generate the SQL table(s) and data from your provided code—if you use a graphical user interface to create and populate
-tables, it should have a mechanism to generate corresponding SQL code.
-This assignment does not need to be 100% reproducible. You can (and should) blank out your SQL password if
-your solution requires it; otherwise, full credit requires that your code is “reproducible,” with the assumption
-that I have the same database server and R software.
-Handling missing data is a foundational skill when working with SQL or R. To receive full credit, you should
-demonstrate a reasonable approach for handling missing data. After all, how likely is it that all five of your
-friends have seen all six movies?
+- `sports_program_data.csv` contains variables which either describe properties of a sports team or a college. Split `sports_programs_data` into two data frames, one called `colleges`
+and another called `teams`. How can you tell which variables describe colleges and which describe teams? Use the data dictionary and how the values change as you move from college to college to help make the decision easier. Make sure there are primary keys for both the colleges and teams data frames (verify with `count`)- what are the primary keys in each case and are they simple keys (one variable) or compound keys (require multiple variables). One of these data-sets should contain a foreign key- which one has it and what variables comprise it 
 
-**Problem 4:** Is there any benefit in standardizing ratings? How might you approach this?
+- The variable `sector_name` contains information about whether a college is public, private, 
+non-profit, for-profit, a 2-year college, or a 4-year + college. Split this variable (using `separate_wider_delim`) into two variables, one of which describes whether the college is a Public, Private nonprofit, or private for-profit, and another which describes how many years the college programs run.
 
-(Optional) Reading related to this assignment:
+- Several variables are candidates to be recoded as factors, for example `state_cd`, 
+`zip_text`, `classification_name`, `sports`, and the `sector` variables you created in problem 4. Recode these variables as categorical variables. For the `classification` variable, use the `classification_code` to order the factors according to the numeric code. 
 
-* [James Le, “The 4 Recommendation Engines That Can Predict Your Movie Tastes”, May 1, 2018.](
-https://towardsdatascience.com/the-4-recommendation-engines-that-can-predict-your-movie-tastes109dc4e10c52) This a nice backgrounder on movie recommendation engines. 
+**Problem 4** 
 
-* [Steve Blank, “The Customer Development Process. 2 Minutes to See Why”, Jul 29, 2014.](
-https://www.youtube.com/watch?v=xr2zFXblSRM&t=27s). In this [<3 minute] YouTube video “lean
-startup” founder Steve Blank talks about the importance of getting out of the building to talk to customers. I’d encourage you to adopt this “builder mentality” in your own data science work
-whenever it’s practical, by collecting data yourself, whether it’s related to a “business experiment” or a “scientific experiment.”
+- Using `DBI` and `dbplyr`, create a relational database with two tables, writing the `sports` data frame you created in problem 3 to one and the
+`colleges` data frame (also from problem 3) to the other. Write this database to disk. How does the size of the database file compare to the original csv?
+
+- Use `dbplyr` to write a query to this database that calculates the top 10 colleges ranked by
+the average profit (defined as revenue - expenses) of their american football team. Print the SQL query that results from your R pipeline using `show_query()` and then use `collect()`
+to show the results of this query.
