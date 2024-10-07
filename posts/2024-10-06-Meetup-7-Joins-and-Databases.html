@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="George I. Hagstrom">
-<meta name="dcterms.date" content="2024-09-26">
-<meta name="description" content="Click here for a link to a youtube video covering a few extra slides from Meetup 5">
+<meta name="dcterms.date" content="2024-10-06">
+<meta name="description" content="Click here for info on Week 7">
 
-<title>The Correlation Trick (End of Meetup 5) – DATA 607 Fall 2024</title>
+<title>Week 7 Info: Joins and Databases – DATA 607 Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4705,12 +4705,12 @@ vertical-align: -.125em;
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="The Correlation Trick (End of Meetup 5) – DATA 607 Fall 2024">
-<meta property="og:description" content="Click here for a link to a youtube video covering a few extra slides from Meetup 5">
-<meta property="og:image" content="https://georgehagstrom.github.io/DATA607/posts/CorrelationTrick.png">
+<meta property="og:title" content="Week 7 Info: Joins and Databases – DATA 607 Fall 2024">
+<meta property="og:description" content="Click here for info on Week 7">
+<meta property="og:image" content="https://georgehagstrom.github.io/DATA607/posts/SQL.png">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
-<meta property="og:image:height" content="798">
-<meta property="og:image:width" content="1375">
+<meta property="og:image:height" content="753">
+<meta property="og:image:width" content="946">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -4722,7 +4722,7 @@ vertical-align: -.125em;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The Correlation Trick (End of Meetup 5)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7 Info: Joins and Databases</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -4973,12 +4973,12 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Correlation Trick (End of Meetup 5)</h1>
+<h1 class="title">Week 7 Info: Joins and Databases</h1>
 </div>
 
 <div>
   <div class="description">
-    Click here for a link to a youtube video covering a few extra slides from Meetup 5
+    Click here for info on Week 7
   </div>
 </div>
 
@@ -4995,7 +4995,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2024</p>
+      <p class="date">October 6, 2024</p>
     </div>
   </div>
   
@@ -5007,9 +5007,10 @@ vertical-align: -.125em;
 </header>
 
 
-<p>I made a video discussing a few topics that we missed during Meetup 5. The subject is something called the “Spearman Correlation”, the “Spearman-Rank Correlation”, or alternatively the “Correlation Trick”. It is a useful tool that can help you determine when a data transformation might be useful.</p>
-<p>The Video can be watched <a href="https://youtu.be/8R0fUPzjeZw">here on youtube</a></p>
-<p>This is a useful heuristic that will help you at some point in your career (though maybe not this week) and I thought you should know about it. You can read more about Spearman Correlation <a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">here on wikipedia</a>. The link to data transformation isn’t discussed in any open sources that I am aware of.</p>
+<p>Hello Class,</p>
+<p>Today is the start of week 7, where we will learn how to work with data that is stored in multiple different different sources. We will study the <code>join</code> function and learn about primary and foreign keys, as well as simple and compound or composite keys. The discussion of keys and joins will lead in to an introduction to relational databases, which are one of the most common ways for large organizations to store data. We will talk about the trade-offs of using databases versus other data storage schemes and introduce SQL (the most common standard for languages that access and modify databases) through R packages <code>DBI</code> and <code>dbplyr</code> and <code>duckdb</code>, which is a relational database system designed for data analysis and portability and which is also easy to learn from. In the first weeks of this program we have discussed how <code>R</code> and <code>python</code> are two required languages for data scientists to have proficiency in. <code>SQL</code> and databases are equally important.</p>
+<p>You will have a lab assignment titled <a href="../assignments/labs/Lab6">R and SQL</a> due next Sunday at midnight.</p>
+<p>For your reading assignments and more details about this week, head over to <a href="../modules/module7">Module 7</a>. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly.</p>
 
 
 
@@ -5592,7 +5593,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
        
-    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/posts/2024-09-26-Correlation-Trick.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/georgehagstrom/DATA607/edit/main/posts/2024-10-06-Meetup-7-Joins-and-Databases.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/georgehagstrom/DATA607/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
