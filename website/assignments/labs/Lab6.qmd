@@ -62,16 +62,14 @@ In this exercise we will begin with a flat file which contains data on college s
 a small subset here. You can download this file by clicking here:
 [sports_program_data.csv](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/sports_program_data.csv). I have also included a data dictionary which gives a quick description of the dataset, which can be downloaded from here: [sports_program_data_dictionary.qmd](https://github.com/georgehagstrom/DATA607/tree/main/website/assignments/labs/labData/sports_program_data_dictionary.qmd). This file contains information on two types of entities: sports teams and universities, however the information on both entities is combined into a single table, creating substantial redundancies. This exercise has several goals:
 
-1. Load this data into R, split the dataframe into two dataframes, one corresponding to colleges and another corresponding to sports teams, related to each other by common keys
+1. Load this data into R, split the dataframe into two dataframes, one corresponding to colleges and another corresponding to sports teams, related to each other by common keys. Many databases are stored according to normalization rules, which are designed to limit redundancy and to make it easier to both work with the data and make changes to it. By splitting the data frame we will partially normalize it (but won't go too far).
 2. Create a relational database using `duckdb` which contains these two tables.
 3. Read this database into R and a/an SQL query/queries to perform an analysis. 
-
-To be specific:
 
 **Problem 3:**
 
 - `sports_program_data.csv` contains variables which either describe properties of a sports team or a college. Split `sports_programs_data` into two data frames, one called `colleges`
-and another called `teams`. How can you tell which variables describe colleges and which describe teams? Use the data dictionary and how the values change as you move from college to college to help make the decision easier. Make sure there are primary keys for both the colleges and teams data frames (verify with `count`)- what are the primary keys in each case and are they simple keys (one variable) or compound keys (require multiple variables). One of these data-sets should contain a foreign key- which one has it and what variables comprise it 
+and another called `teams`. How can you tell which variables describe colleges and which describe teams? Use the data dictionary and observations of how the values vary as you move from college to college to help make the decision easier. Make sure there are primary keys for both the colleges and teams data frames (verify with `count`)- what are the primary keys in each case and are they simple keys (one variable) or compound keys (require multiple variables). One of these data-sets should contain a foreign key- which one has it and what variables comprise it?
 
 - The variable `sector_name` contains information about whether a college is public, private, 
 non-profit, for-profit, a 2-year college, or a 4-year + college. Split this variable (using `separate_wider_delim`) into two variables, one of which describes whether the college is a Public, Private nonprofit, or private for-profit, and another which describes how many years the college programs run.
@@ -81,9 +79,7 @@ non-profit, for-profit, a 2-year college, or a 4-year + college. Split this vari
 
 **Problem 4** 
 
-- Using `DBI` and `dbplyr`, create a relational database with two tables, writing the `sports` data frame you created in problem 3 to one and the
-`colleges` data frame (also from problem 3) to the other. Write this database to disk. How does the size of the database file compare to the original csv?
+- Using `DBI`, `duckdb`, and `dbplyr`, create a relational database with two tables, writing the `sports` data frame you created in problem 3 to one and the `colleges` data frame (also from problem 3) to the other. Write this database to disk. How does the size of the database file compare to the original csv?
 
 - Use `dbplyr` to write a query to this database that calculates the top 10 colleges ranked by
-the average profit (defined as revenue - expenses) of their american football team. Print the SQL query that results from your R pipeline using `show_query()` and then use `collect()`
-to show the results of this query.
+the average profit (defined as revenue - expenses) of their american football team over the years of data. Print the SQL query that results from your R pipeline using `show_query()` and then use `collect()` to show the results of this query.
