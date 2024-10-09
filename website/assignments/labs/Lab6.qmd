@@ -75,7 +75,7 @@ and another called `teams`. How can you tell which variables describe colleges a
 non-profit, for-profit, a 2-year college, or a 4-year + college. Split this variable (using `separate_wider_delim`) into two variables, one of which describes whether the college is a Public, Private nonprofit, or private for-profit, and another which describes how many years the college programs run.
 
 - Several variables are candidates to be recoded as factors, for example `state_cd`, 
-`zip_text`, `classification_name`, `sports`, and the `sector` variables you created in problem 4. Recode these variables as categorical variables. For the `classification` variable, use the `classification_code` to order the factors according to the numeric code. 
+`zip_text`, `classification_name`, `sports`, and the `sector` variables you just created for the previous part. Recode these variables as categorical variables. For the `classification` variable, use the `classification_code` to order the factors according to the numeric code. 
 
 **Problem 4** 
 
