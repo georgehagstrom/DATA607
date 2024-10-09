@@ -193,79 +193,233 @@
   {
     "objectID": "meetups/Meetup7/Meetup7.html#lab-5-review",
     "href": "meetups/Meetup7/Meetup7.html#lab-5-review",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Lab 5 Review",
     "text": "Lab 5 Review"
   },
   {
+    "objectID": "meetups/Meetup7/Meetup7.html#project-proposal",
+    "href": "meetups/Meetup7/Meetup7.html#project-proposal",
+    "title": "Meetup 7: Joins",
+    "section": "Project Proposal",
+    "text": "Project Proposal"
+  },
+  {
     "objectID": "meetups/Meetup7/Meetup7.html#combining-tables-from-multiple-tables",
     "href": "meetups/Meetup7/Meetup7.html#combining-tables-from-multiple-tables",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Combining Tables From Multiple Tables",
     "text": "Combining Tables From Multiple Tables\n\nData usually stored in separate files/data frames\nAnalysis requires data in a single frame\nNeed tools to combine data-frames"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nflights |&gt; select(time_hour,carrier,dep_time) |&gt; head(8) |&gt; kable()\n\n\n\n\ntime_hour\ncarrier\ndep_time\n\n\n\n\n2013-01-01 05:00:00\nUA\n517\n\n\n2013-01-01 05:00:00\nUA\n533\n\n\n2013-01-01 05:00:00\nAA\n542\n\n\n2013-01-01 05:00:00\nB6\n544\n\n\n2013-01-01 06:00:00\nDL\n554\n\n\n2013-01-01 05:00:00\nUA\n554\n\n\n2013-01-01 06:00:00\nB6\n555\n\n\n2013-01-01 06:00:00\nEV\n557"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-1",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-1",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nplanes |&gt; select(tailnum,year,model) |&gt; head(8) |&gt; kable()\n\n\n\n\ntailnum\nyear\nmodel\n\n\n\n\nN10156\n2004\nEMB-145XR\n\n\nN102UW\n1998\nA320-214\n\n\nN103US\n1999\nA320-214\n\n\nN104UW\n1999\nA320-214\n\n\nN10575\n2002\nEMB-145LR\n\n\nN105UW\n1999\nA320-214\n\n\nN107US\n1999\nA320-214\n\n\nN108UW\n1999\nA320-214"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-2",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-2",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nairports |&gt; select(faa,name,lat,lon) |&gt; head(8) |&gt; kable()\n\n\n\n\nfaa\nname\nlat\nlon\n\n\n\n\n04G\nLansdowne Airport\n41.13047\n-80.61958\n\n\n06A\nMoton Field Municipal Airport\n32.46057\n-85.68003\n\n\n06C\nSchaumburg Regional\n41.98934\n-88.10124\n\n\n06N\nRandall Airport\n41.43191\n-74.39156\n\n\n09J\nJekyll Island Airport\n31.07447\n-81.42778\n\n\n0A9\nElizabethton Municipal Airport\n36.37122\n-82.17342\n\n\n0G6\nWilliams County Airport\n41.46731\n-84.50678\n\n\n0G7\nFinger Lakes Regional Airport\n42.88356\n-76.78123"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-3",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-3",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(dest,origin) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ndest\norigin\n\n\n\n\nIAH\nEWR\n\n\nIAH\nLGA\n\n\nMIA\nJFK\n\n\nBQN\nJFK\n\n\nATL\nLGA\n\n\nORD\nEWR\n\n\n\n\n\n\n\nairports |&gt; \n  select(faa) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\nfaa\n\n\n\n\n04G\n\n\n06A\n\n\n06C\n\n\n06N\n\n\n09J\n\n\n0A9\n\n\n0G6\n\n\n0G7\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-4",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-4",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(dest,origin) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ndest\norigin\n\n\n\n\nIAH\nEWR\n\n\nIAH\nLGA\n\n\nMIA\nJFK\n\n\nBQN\nJFK\n\n\nATL\nLGA\n\n\nORD\nEWR\n\n\n\n\n\n\n\nairports |&gt; \n  select(faa) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\nfaa\n\n\n\n\n04G\n\n\n06A\n\n\n06C\n\n\n06N\n\n\n09J\n\n\n0A9\n\n\n0G6\n\n\n0G7\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-5",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-5",
-    "title": "Meetup 7: Joins and SQL",
+    "title": "Meetup 7: Joins",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(tailnum) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ntailnum\n\n\n\n\nN14228\n\n\nN24211\n\n\nN619AA\n\n\nN804JB\n\n\nN668DN\n\n\nN39463\n\n\n\n\n\n\n\nplanes |&gt; \n  select(tailnum) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\ntailnum\n\n\n\n\nN10156\n\n\nN102UW\n\n\nN103US\n\n\nN104UW\n\n\nN10575\n\n\nN105UW\n\n\nN107US\n\n\nN108UW\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
   },
   {
-    "objectID": "meetups/Meetup7/Meetup7.html#primary-and-foreign-keys",
-    "href": "meetups/Meetup7/Meetup7.html#primary-and-foreign-keys",
-    "title": "Meetup 7: Joins and SQL",
-    "section": "Primary and Foreign Keys",
-    "text": "Primary and Foreign Keys\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+    "objectID": "meetups/Meetup7/Meetup7.html#primary-keys",
+    "href": "meetups/Meetup7/Meetup7.html#primary-keys",
+    "title": "Meetup 7: Joins",
+    "section": "Primary Keys",
+    "text": "Primary Keys\nA Primary Key for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.\n\nFor planes it is tailnum\n\n\nplanes |&gt; select(tailnum, year, type, model) |&gt; head(5) |&gt; kable()\n\n\n\n\ntailnum\nyear\ntype\nmodel\n\n\n\n\nN10156\n2004\nFixed wing multi engine\nEMB-145XR\n\n\nN102UW\n1998\nFixed wing multi engine\nA320-214\n\n\nN103US\n1999\nFixed wing multi engine\nA320-214\n\n\nN104UW\n1999\nFixed wing multi engine\nA320-214\n\n\nN10575\n2002\nFixed wing multi engine\nEMB-145LR"
   },
   {
-    "objectID": "meetups/Meetup7/Meetup7.html#bullets",
-    "href": "meetups/Meetup7/Meetup7.html#bullets",
-    "title": "Meetup 7: Joins and SQL",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+    "objectID": "meetups/Meetup7/Meetup7.html#definition",
+    "href": "meetups/Meetup7/Meetup7.html#definition",
+    "title": "Meetup 7: Joins",
+    "section": "Definition",
+    "text": "Definition\nA Primary Key for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.\n:::\n\nFor planes it is tailnum\n\n\nplanes |&gt; \n  count(tailnum) |&gt; \n  filter(n &gt; 1)\n\n# A tibble: 0 × 2\n# ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;\n\n\n\nThis count command shows that each row has a unique value of tailnum proving that it is a primary key"
   },
   {
-    "objectID": "meetups/Meetup7/Meetup7.html#code",
-    "href": "meetups/Meetup7/Meetup7.html#code",
-    "title": "Meetup 7: Joins and SQL",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "meetups/Meetup7/Meetup7.html#compound-keys",
+    "href": "meetups/Meetup7/Meetup7.html#compound-keys",
+    "title": "Meetup 7: Joins",
+    "section": "Compound Keys",
+    "text": "Compound Keys\n\nSometimes a single variable is not enough to uniquely identify rows.\nMultiple variables can combine to be a primary key\nFor weather it requires origin and time-hour:\n\n\nweather |&gt; count(time_hour) |&gt; filter(n&gt;1) |&gt; nrow()\n\n[1] 8706\n\nweather |&gt; \n  count(origin,time_hour) |&gt; \n  filter(n &gt; 1)\n\n# A tibble: 0 × 3\n# ℹ 3 variables: origin &lt;chr&gt;, time_hour &lt;dttm&gt;, n &lt;int&gt;"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#foreign-keys",
+    "href": "meetups/Meetup7/Meetup7.html#foreign-keys",
+    "title": "Meetup 7: Joins",
+    "section": "Foreign Keys",
+    "text": "Foreign Keys\nA Foreign Key is a variable or group of variables within a data frame that serves as a primary key for another data frame.\n\nflights |&gt; select(flight,time_hour,tailnum) |&gt; head(6) |&gt; kable()\n\n\n\n\nflight\ntime_hour\ntailnum\n\n\n\n\n1545\n2013-01-01 05:00:00\nN14228\n\n\n1714\n2013-01-01 05:00:00\nN24211\n\n\n1141\n2013-01-01 05:00:00\nN619AA\n\n\n725\n2013-01-01 05:00:00\nN804JB\n\n\n461\n2013-01-01 06:00:00\nN668DN\n\n\n1696\n2013-01-01 05:00:00\nN39463\n\n\n\n\n\n\ntailnum is a primary key for planes\nForeign key is what allows for rows to be matched between data frames"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#joins",
+    "href": "meetups/Meetup7/Meetup7.html#joins",
+    "title": "Meetup 7: Joins",
+    "section": "Joins",
+    "text": "Joins\n\nJoins are functions that combine two data frames\n\nTwo main “types” of joins:\n\nMutating Joins:\n\n\nCombine data between data frames\nleft_join, right_join, full_join, inner_join\n\n\nFiltering Joins:\n\n\nFilter rows based on matches\nsemi_join, anti_join"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#mutating-joins",
+    "href": "meetups/Meetup7/Meetup7.html#mutating-joins",
+    "title": "Meetup 7: Joins",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\n\nleft_join: Keeps all rows of data_left, matches/adds from data_right\nright_join: reversed left_join\nfull_join: keeps all rows of both\ninner_join: only rows occurring in both"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#visualizing-mutating-joins",
+    "href": "meetups/Meetup7/Meetup7.html#visualizing-mutating-joins",
+    "title": "Meetup 7: Joins",
+    "section": "Visualizing Mutating Joins:",
+    "text": "Visualizing Mutating Joins:\n\nR4DS 19.8"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#left-join",
+    "href": "meetups/Meetup7/Meetup7.html#left-join",
+    "title": "Meetup 7: Joins",
+    "section": "Left Join",
+    "text": "Left Join\n\nStarting Point:\n\n\nR4DS 19.2"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#left-join-1",
+    "href": "meetups/Meetup7/Meetup7.html#left-join-1",
+    "title": "Meetup 7: Joins",
+    "section": "Left Join",
+    "text": "Left Join\n\nR4DS 19.2\nleft_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n3\nx3\nNA"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#right-join",
+    "href": "meetups/Meetup7/Meetup7.html#right-join",
+    "title": "Meetup 7: Joins",
+    "section": "Right Join",
+    "text": "Right Join\n\nR4DS 19.2\nright_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n4\nNA\ny3"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#inner-join",
+    "href": "meetups/Meetup7/Meetup7.html#inner-join",
+    "title": "Meetup 7: Joins",
+    "section": "Inner Join",
+    "text": "Inner Join\n\nR4DS 19.2\ninner_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#full-join",
+    "href": "meetups/Meetup7/Meetup7.html#full-join",
+    "title": "Meetup 7: Joins",
+    "section": "Full Join",
+    "text": "Full Join\n\n\n\n\n\nR4DS 19.2\n\n\n\n\nfull_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n3\nx3\nNA\n\n\n4\nNA\ny3"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#what-about-keys",
+    "href": "meetups/Meetup7/Meetup7.html#what-about-keys",
+    "title": "Meetup 7: Joins",
+    "section": "What about Keys?",
+    "text": "What about Keys?\n\nJoin functions automatically try to find a foreign key\nYou may specify a key using join_by and then specifying match using formula:\n\n\nflights |&gt; left_join(airports,join_by(dest == faa)) |&gt; \n  select(year:dep_delay) |&gt; head(5)\n\n# A tibble: 5 × 6\n   year month   day dep_time sched_dep_time dep_delay\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;\n1  2013     1     1      517            515         2\n2  2013     1     1      533            529         4\n3  2013     1     1      542            540         2\n4  2013     1     1      544            545        -1\n5  2013     1     1      554            600        -6\n\n\n\nPotential for multiple matches and duplication when there is no foreign key"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#filtering-joins",
+    "href": "meetups/Meetup7/Meetup7.html#filtering-joins",
+    "title": "Meetup 7: Joins",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\n\nsemi_join(x,y) gets rid of rows of x that don’t have matches in y\nUse semi_join to restrict airports to the destination airports\n\n\nairports |&gt; \n  semi_join(flights, join_by(faa == origin))\n\n# A tibble: 3 × 8\n  faa   name                  lat   lon   alt    tz dst   tzone           \n  &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           \n1 EWR   Newark Liberty Intl  40.7 -74.2    18    -5 A     America/New_York\n2 JFK   John F Kennedy Intl  40.6 -73.8    13    -5 A     America/New_York\n3 LGA   La Guardia           40.8 -73.9    22    -5 A     America/New_York"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#filtering-joins-1",
+    "href": "meetups/Meetup7/Meetup7.html#filtering-joins-1",
+    "title": "Meetup 7: Joins",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\n\nanti_join(x,y) gets rid of rows of x that have matches in y\nUse anti_join to find implicit missing values\nFlights where weather info lacking:\n\n\nflights |&gt; \n  anti_join(weather) |&gt; \n  head(5) |&gt; \n  select(year:dep_delay) |&gt;\n  print()\n\n# A tibble: 5 × 6\n   year month   day dep_time sched_dep_time dep_delay\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;\n1  2013     1     1     1153           1200        -7\n2  2013     1     1     1154           1200        -6\n3  2013     1     1     1155           1200        -5\n4  2013     1     1     1155           1200        -5\n5  2013     1     1     1157           1200        -3"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#relational-databases",
+    "href": "meetups/Meetup7/Meetup7.html#relational-databases",
+    "title": "Meetup 7: Joins",
+    "section": "Relational Databases",
+    "text": "Relational Databases"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#features",
+    "href": "meetups/Meetup7/Meetup7.html#features",
+    "title": "Meetup 7: Joins",
+    "section": "Features",
+    "text": "Features\n\nTables linked by keys\nTables correspond to entities\nRows called records\nStored on disk\nTake data from SQL to analyze elsewhere"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#trade-offs",
+    "href": "meetups/Meetup7/Meetup7.html#trade-offs",
+    "title": "Meetup 7: Joins",
+    "section": "Trade Offs",
+    "text": "Trade Offs\nWhen should you use a relational database for your project?\n\nIf many people"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#dbms-classes",
+    "href": "meetups/Meetup7/Meetup7.html#dbms-classes",
+    "title": "Meetup 7: Joins",
+    "section": "DBMS Classes",
+    "text": "DBMS Classes"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#terminology",
+    "href": "meetups/Meetup7/Meetup7.html#terminology",
+    "title": "Meetup 7: Joins",
+    "section": "Terminology",
+    "text": "Terminology"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#normalization-schemes",
+    "href": "meetups/Meetup7/Meetup7.html#normalization-schemes",
+    "title": "Meetup 7: Joins",
+    "section": "Normalization Schemes",
+    "text": "Normalization Schemes"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#sql-basics",
+    "href": "meetups/Meetup7/Meetup7.html#sql-basics",
+    "title": "Meetup 7: Joins",
+    "section": "SQL Basics",
+    "text": "SQL Basics"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#connecting-dbi",
+    "href": "meetups/Meetup7/Meetup7.html#connecting-dbi",
+    "title": "Meetup 7: Joins",
+    "section": "Connecting: DBI",
+    "text": "Connecting: DBI"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#sql-in-r-dbplyr",
+    "href": "meetups/Meetup7/Meetup7.html#sql-in-r-dbplyr",
+    "title": "Meetup 7: Joins",
+    "section": "SQL in R: dbplyr",
+    "text": "SQL in R: dbplyr"
   },
   {
     "objectID": "meetups/Meetup6/Meetup6.html#lab-4-review",
@@ -811,7 +965,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.07923829 -0.45199345 -0.70639686  0.63042960 -1.04475823 -1.81168468\n [7]  0.15043974  0.20791860  1.57634486  2.62995891\n\nprint(randVec |&gt; rank())\n\n [1]  5  4  3  8  2  1  6  7  9 10\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  1.17387844 -1.57184883 -1.93653422  1.56534800  0.70910768  0.34212494\n [7] -0.82517877 -1.29808876 -1.47356792  0.02516226\n\nprint(randVec |&gt; rank())\n\n [1]  9  2  1 10  8  7  5  4  3  6\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -1049,7 +1203,7 @@
     "href": "assignments/labs/Lab6.html",
     "title": "Lab 6: R and SQL",
     "section": "",
-    "text": "Overview\nThis lab is divided into two parts. In the first part you will practice using joins for data wrangling and analysis on the nycflights dataset. Some of the problems come from Chapter 19 of your book. For the second part, you will download a dataset on the budgets of college sports programs and process it for storage in a relational database (I strongly recommend using duckdb which can be installed using install.packages(\"duckdb\")- duckdb is highly performant, self-contained, and ideally suited both to learning SQL and performing data analysis). Then you will load this database and use dbplyr to perform an analysis. You will also practice using forcats to recode some of the variables as factors (which are supported by duckdb) and using separate_wider_delim to split columns of text data.\nYou will need to have installed and to the following libraries:\n\nlibrary(tidyverse)\nlibrary(DBI)\nlibrary(duckdb)\nlibrary(nycflights13)\n\n\n\nProblems\nPart I: Airline Flight Delays\nFor the first part of this lab exercise, we will be using the nycflights library, which contains several different built in datasets including planes, which has information on each plane that appears in the data; flights, which has information on individual flights; airports, which has information on individual airports; and weather, which has information on the weather that the origin airports. In order to do this set of lab exercises, you will need to use different types of joins to combine variables in each data frame.\nProblem 1\n\nUse the flights and planes tables to compute the mean departure delay of each aircraft that has more than 30 recorded flights in the dataset. Hint: Make note of the fact that the variable year appears in both flights and planes but means different things in each before performing any joins.\nUse anti-join to identify flights where tailnum does not have a match in plane. Determine the carriers for which this problem is the most common.\nFind the airplane model which made the most flights in the dataset, and filter the dataset to contain only flights flown by airplanes of that model, adding a variable which corresponds to the year each those airplanes were built. Then compute the average departure delay for each year of origin and plot the data. Is there any evidence that older planes have more greater departure delays?\n\nProblem 2\n\nCompute the average delay by destination, then join on the airports data frame so you can show the spatial distribution of delays. Here’s an easy way to draw a map of the United States:\n\n\nairports |&gt;\n  semi_join(flights, join_by(faa == dest)) |&gt;\n  ggplot(aes(x = lon, y = lat)) +\n    borders(\"state\") +\n    geom_point() +\n    coord_quickmap()\n\nYou might want to use the size or color of the points to display the average delay for each airport.\nPart II: Creating and Accessing a Database \nIn this exercise we will begin with a flat file which contains data on college sports programs throughout the country. The source of the data is a government run database called Equity in Athletics Data Analysis, though we are working with just a small subset here. You can download this file by clicking here: sports_program_data.csv. I have also included a data dictionary which gives a quick description of the dataset, which can be downloaded from here: sports_program_data_dictionary.qmd. This file contains information on two types of entities: sports teams and universities, however the information on both entities is combined into a single table, creating substantial redundancies. This exercise has several goals:\n\nLoad this data into R, split the dataframe into two dataframes, one corresponding to colleges and another corresponding to sports teams, related to each other by common keys. Many databases are stored according to normalization rules, which are designed to limit redundancy and to make it easier to both work with the data and make changes to it. By splitting the data frame we will partially normalize it (but won’t go too far).\nCreate a relational database using duckdb which contains these two tables.\nRead this database into R and a/an SQL query/queries to perform an analysis.\n\nProblem 3:\n\nsports_program_data.csv contains variables which either describe properties of a sports team or a college. Split sports_programs_data into two data frames, one called colleges and another called teams. How can you tell which variables describe colleges and which describe teams? Use the data dictionary and observations of how the values vary as you move from college to college to help make the decision easier. Make sure there are primary keys for both the colleges and teams data frames (verify with count)- what are the primary keys in each case and are they simple keys (one variable) or compound keys (require multiple variables). One of these data-sets should contain a foreign key- which one has it and what variables comprise it?\nThe variable sector_name contains information about whether a college is public, private, non-profit, for-profit, a 2-year college, or a 4-year + college. Split this variable (using separate_wider_delim) into two variables, one of which describes whether the college is a Public, Private nonprofit, or private for-profit, and another which describes how many years the college programs run.\nSeveral variables are candidates to be recoded as factors, for example state_cd, zip_text, classification_name, sports, and the sector variables you created in problem 4. Recode these variables as categorical variables. For the classification variable, use the classification_code to order the factors according to the numeric code.\n\nProblem 4\n\nUsing DBI, duckdb, and dbplyr, create a relational database with two tables, writing the sports data frame you created in problem 3 to one and the colleges data frame (also from problem 3) to the other. Write this database to disk. How does the size of the database file compare to the original csv?\nUse dbplyr to write a query to this database that calculates the top 10 colleges ranked by the average profit (defined as revenue - expenses) of their american football team over the years of data. Print the SQL query that results from your R pipeline using show_query() and then use collect() to show the results of this query."
+    "text": "Overview\nThis lab is divided into two parts. In the first part you will practice using joins for data wrangling and analysis on the nycflights dataset. Some of the problems come from Chapter 19 of your book. For the second part, you will download a dataset on the budgets of college sports programs and process it for storage in a relational database (I strongly recommend using duckdb which can be installed using install.packages(\"duckdb\")- duckdb is highly performant, self-contained, and ideally suited both to learning SQL and performing data analysis). Then you will load this database and use dbplyr to perform an analysis. You will also practice using forcats to recode some of the variables as factors (which are supported by duckdb) and using separate_wider_delim to split columns of text data.\nYou will need to have installed and to the following libraries:\n\nlibrary(tidyverse)\nlibrary(DBI)\nlibrary(duckdb)\nlibrary(nycflights13)\n\n\n\nProblems\nPart I: Airline Flight Delays\nFor the first part of this lab exercise, we will be using the nycflights library, which contains several different built in datasets including planes, which has information on each plane that appears in the data; flights, which has information on individual flights; airports, which has information on individual airports; and weather, which has information on the weather that the origin airports. In order to do this set of lab exercises, you will need to use different types of joins to combine variables in each data frame.\nProblem 1\n\nUse the flights and planes tables to compute the mean departure delay of each aircraft that has more than 30 recorded flights in the dataset. Hint: Make note of the fact that the variable year appears in both flights and planes but means different things in each before performing any joins.\nUse anti-join to identify flights where tailnum does not have a match in plane. Determine the carriers for which this problem is the most common.\nFind the airplane model which made the most flights in the dataset, and filter the dataset to contain only flights flown by airplanes of that model, adding a variable which corresponds to the year each those airplanes were built. Then compute the average departure delay for each year of origin and plot the data. Is there any evidence that older planes have more greater departure delays?\n\nProblem 2\n\nCompute the average delay by destination, then join on the airports data frame so you can show the spatial distribution of delays. Here’s an easy way to draw a map of the United States:\n\n\nairports |&gt;\n  semi_join(flights, join_by(faa == dest)) |&gt;\n  ggplot(aes(x = lon, y = lat)) +\n    borders(\"state\") +\n    geom_point() +\n    coord_quickmap()\n\nYou might want to use the size or color of the points to display the average delay for each airport.\nPart II: Creating and Accessing a Database \nIn this exercise we will begin with a flat file which contains data on college sports programs throughout the country. The source of the data is a government run database called Equity in Athletics Data Analysis, though we are working with just a small subset here. You can download this file by clicking here: sports_program_costs.csv. I have also included a data dictionary which gives a quick description of the dataset, which can be downloaded from here: sports_program_data_dictionary.qmd. This file contains information on two types of entities: sports teams and universities, however the information on both entities is combined into a single table, creating substantial redundancies. This exercise has several goals:\n\nLoad this data into R, split the dataframe into two dataframes, one corresponding to colleges and another corresponding to sports teams, related to each other by common keys. Many databases are stored according to normalization rules, which are designed to limit redundancy and to make it easier to both work with the data and make changes to it. By splitting the data frame we will partially normalize it (but won’t go too far).\nCreate a relational database using duckdb which contains these two tables.\nRead this database into R and a/an SQL query/queries to perform an analysis.\n\nProblem 3:\n\nsports_program_data.csv contains variables which either describe properties of a sports team or a college. Split sports_programs_data into two data frames, one called colleges and another called teams. How can you tell which variables describe colleges and which describe teams? Use the data dictionary and observations of how the values vary as you move from college to college to help make the decision easier. Make sure there are primary keys for both the colleges and teams data frames (verify with count)- what are the primary keys in each case and are they simple keys (one variable) or compound keys (require multiple variables). One of these data-sets should contain a foreign key- which one has it and what variables comprise it?\nThe variable sector_name contains information about whether a college is public, private, non-profit, for-profit, a 2-year college, or a 4-year + college. Split this variable (using separate_wider_delim) into two variables, one of which describes whether the college is a Public, Private nonprofit, or private for-profit, and another which describes how many years the college programs run.\nSeveral variables are candidates to be recoded as factors, for example state_cd, zip_text, classification_name, sports, and the sector variables you created in problem 4. Recode these variables as categorical variables. For the classification variable, use the classification_code to order the factors according to the numeric code.\n\nProblem 4\n\nUsing DBI, duckdb, and dbplyr, create a relational database with two tables, writing the sports data frame you created in problem 3 to one and the colleges data frame (also from problem 3) to the other. Write this database to disk. How does the size of the database file compare to the original csv?\nUse dbplyr to write a query to this database that calculates the top 10 colleges ranked by the average profit (defined as revenue - expenses) of their american football team over the years of data. Print the SQL query that results from your R pipeline using show_query() and then use collect() to show the results of this query."
   },
   {
     "objectID": "assignments/labs/Lab8.html",
