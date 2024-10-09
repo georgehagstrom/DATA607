@@ -26,7 +26,7 @@
     "href": "course/schedule.html",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\nMeetup 1 Slides\nMeetup 1 Video\n\n\nSep 4\n06:45PM\nVisualizing Data\nMeetup 2 Slides\nMeetup 2 Video\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\nMeetup 3 Slides\nMeetup 3 Vide\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\nMeetup 4 Slides\nMeetup 4 Video\n\n\nSep 25\n06:45PM\nData Transformations\nMeetup 5 Slides\nMeetup 5 Video\n\n\nOct 2\n06:45PM\nText and Strings\nMeetup 6 Slides\nMeetup 6 Video\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
+    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\nMeetup 1 Slides\nMeetup 1 Video\n\n\nSep 4\n06:45PM\nVisualizing Data\nMeetup 2 Slides\nMeetup 2 Video\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\nMeetup 3 Slides\nMeetup 3 Vide\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\nMeetup 4 Slides\nMeetup 4 Video\n\n\nSep 25\n06:45PM\nData Transformations\nMeetup 5 Slides\nMeetup 5 Video\n\n\nOct 2\n06:45PM\nText and Strings\nMeetup 6 Slides\nMeetup 6 Video\n\n\nOct 9\n06:45PM\nDatabases and SQL\n[Meetup 7 Slides] (../meetups/Meetup7/Meetup7.qmd)\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -37,7 +37,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA607 - Data Acquisition and Management",
     "section": "",
-    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\nMeetup 1 Slides\nMeetup 1 Video\n\n\nSep 4\n06:45PM\nVisualizing Data\nMeetup 2 Slides\nMeetup 2 Video\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\nMeetup 3 Slides\nMeetup 3 Vide\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\nMeetup 4 Slides\nMeetup 4 Video\n\n\nSep 25\n06:45PM\nData Transformations\nMeetup 5 Slides\nMeetup 5 Video\n\n\nOct 2\n06:45PM\nText and Strings\nMeetup 6 Slides\nMeetup 6 Video\n\n\nOct 9\n06:45PM\nDatabases and SQL\n\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
+    "text": "Click Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\n\n\n\n\n\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nAug 28\n06:45PM\nData Science Workflows and Toolkit\nMeetup 1 Slides\nMeetup 1 Video\n\n\nSep 4\n06:45PM\nVisualizing Data\nMeetup 2 Slides\nMeetup 2 Video\n\n\nSep 11\n06:45PM\nData Tidying and Wrangling\nMeetup 3 Slides\nMeetup 3 Vide\n\n\nSep 18\n06:45PM\nExploratory Data Analysis\nMeetup 4 Slides\nMeetup 4 Video\n\n\nSep 25\n06:45PM\nData Transformations\nMeetup 5 Slides\nMeetup 5 Video\n\n\nOct 2\n06:45PM\nText and Strings\nMeetup 6 Slides\nMeetup 6 Video\n\n\nOct 9\n06:45PM\nDatabases and SQL\n[Meetup 7 Slides] (../meetups/Meetup7/Meetup7.qmd)\n\n\n\nOct 16\n06:45PM\nAdvanced R Programming\n\n\n\n\nOct 23\n06:45PM\nWebscraping and APIs\n\n\n\n\nOct 30\n06:45PM\nGit and Collaboration\n\n\n\n\nNov 6\n06:45PM\nTidy Text and NLP\n\n\n\n\nNov 13\n06:45PM\nGraphs and Graph Data\n\n\n\n\nNov 20\n06:45PM\nBig Data\n\n\n\n\nNov 27\n\nNo Meetup (Thansgiving)\n\n\n\n\nDec 4\n06:45PM\nCloud Computing\n\n\n\n\nDec 11\n06:45PM",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -83,343 +83,378 @@
     "text": "Meetup 3 will cover basic principles of data visualization. Click here to join the meetup on Zoom.\nYou can find the meetup slides here\nClick the Module 3 link to see the course materials and instructions for this week."
   },
   {
-    "objectID": "posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html",
-    "href": "posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html",
-    "title": "Meetup 4: Exploratory Data Analysis",
+    "objectID": "posts/2024-10-09-Meetup-7-R-And-SQL.html",
+    "href": "posts/2024-10-09-Meetup-7-R-And-SQL.html",
+    "title": "Meetup 7: R and SQL",
     "section": "",
-    "text": "Meetup 4 will cover basic principles of data visualization. Click here to join the meetup on Zoom.\nYou can find the meetup slides here\nClick the Module 4 link to see the course materials and instructions for this week."
+    "text": "Meetup 7 will cover joins and maybe SQL if we have time. Click here to join the meetup on Zoom.\nYou can find the meetup slides here\nClick the Module 7 link to see the course materials and instructions for this week."
   },
   {
-    "objectID": "posts/2024-09-26-Correlation-Trick.html",
-    "href": "posts/2024-09-26-Correlation-Trick.html",
-    "title": "The Correlation Trick (End of Meetup 5)",
+    "objectID": "posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html",
+    "href": "posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html",
+    "title": "Meetup 1: Data Science Workflow and Toolkit",
     "section": "",
-    "text": "I made a video discussing a few topics that we missed during Meetup 5. The subject is something called the “Spearman Correlation”, the “Spearman-Rank Correlation”, or alternatively the “Correlation Trick”. It is a useful tool that can help you determine when a data transformation might be useful.\nThe Video can be watched here on youtube\nThis is a useful heuristic that will help you at some point in your career (though maybe not this week) and I thought you should know about it. You can read more about Spearman Correlation here on wikipedia. The link to data transformation isn’t discussed in any open sources that I am aware of."
+    "text": "Welcome to the start of the new semester! Tonight is the first class meetup. Click here to join the meetup on Zoom.\nYou can find the meetup slides here as well as a link to the electricity and carbon dixoide emission vignette if you want to experiment with it.\nClick the Module 1 link to see the course materials and instructions for this week."
   },
   {
-    "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
-    "href": "posts/2024-08-28-Welcome_to_DATA_607.html",
-    "title": "Welcome to DATA 607",
+    "objectID": "posts/2024-09-16-Week-4-Info.html",
+    "href": "posts/2024-09-16-Week-4-Info.html",
+    "title": "Week 4 Info: Exploratory Data Analysis",
     "section": "",
-    "text": "Welcome to DATA 607, Data Acquisition and Management.\nClick this post now to get started!\nHere are the first steps:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nDownload, install, and configure R, then RStudio.\nSign up for a (free) GitHub account.\nIntroduce yourself on the course discussion forum on Brightspace.\nJoin our Slack channel:\n\nAttend our first meetup on Wednesday at 6:45 p.m. ET on Zoom\nUse the google doodle poll to sign up for your Data Science in Context presentation\n\nI recorded a short video which introduces me and gives you more background on the course:"
+    "text": "Hello Class,\nToday is the start of week 4, which has as its main topic something called exploratory data analysis. Exploratory data analysis is set of techniques applied at the beginning of a statistical analysis to find errors in the data, to discover patterns, and to explore hypotheses. EDA uses visualizations as one of its primary tools, and we will deepen our knowledge of how to make visualizations in ggplot.\nYou will have a lab assignment titled Exploratory Data Analysis due next Sunday at midnight.\nFor your reading assignments and more details about this week, head over to Module 4. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
   },
   {
-    "objectID": "posts/2024-09-11-Pivot-Demo.html",
-    "href": "posts/2024-09-11-Pivot-Demo.html",
-    "title": "Pivot Coding Demo",
+    "objectID": "posts/2024-10-06-Meetup-7-Joins-and-Databases.html",
+    "href": "posts/2024-10-06-Meetup-7-Joins-and-Databases.html",
+    "title": "Week 7 Info: Joins and Databases",
     "section": "",
-    "text": "I made a short coding demo (length about 15 minutes) where I slowly go through one example of data tidying and cleaning. The coding demo can be watched on this youtube video.\nDuring the beginning of the video I said “row” when I meant “column” and vice versa.\nYou can download the R script with all the commands I entered here: WeatherStationVignette.R\nThe data used for this (in case you want to try it) came from weather.csv\nYou can read about this vignette and more on the tidyr page"
+    "text": "Hello Class,\nToday is the start of week 7, where we will learn how to work with data that is stored in multiple different different sources. We will study the join function and learn about primary and foreign keys, as well as simple and compound or composite keys. The discussion of keys and joins will lead in to an introduction to relational databases, which are one of the most common ways for large organizations to store data. We will talk about the trade-offs of using databases versus other data storage schemes and introduce SQL (the most common standard for languages that access and modify databases) through R packages DBI and dbplyr and duckdb, which is a relational database system designed for data analysis and portability and which is also easy to learn from. In the first weeks of this program we have discussed how R and python are two required languages for data scientists to have proficiency in. SQL and databases are equally important.\nYou will have a lab assignment titled R and SQL due next Sunday at midnight.\nFor your reading assignments and more details about this week, head over to Module 7. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
   },
   {
-    "objectID": "modules/module4.html",
-    "href": "modules/module4.html",
-    "title": "Module 4 - Exploratory Data Analysis",
+    "objectID": "posts/2024-09-18-How-to-seek-coding-help.html",
+    "href": "posts/2024-09-18-How-to-seek-coding-help.html",
+    "title": "How to find help and make a reproducible example (Debugging)",
     "section": "",
-    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data summary statistics\nLayers and Stats in ggplot\nReproducible Examples\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 8-11 (Chapter 10 is the most substantial part of the reading assignment)\n\n\n\nAdditional Reading:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.\n\nHere is an example of a newer book which is also excellent:\n\nExploratory Data Analysis Using R. Roland Pearson. CRC Press. (2015).\n\n\n\nVideos\n\nWhole Game Live demo of an Exploratory Data Analysis by Hadley Wickham. This isn’t a super polished video but its really nice to see examples of experts going through their process. The code he typed and data that he used can be found on github. This video has more of a focus on exploring and finding patterns rather than finding problems in a poor dataset.",
+    "text": "I made a short coding demo (length about 20 minutes) where I slowly go through one example of making a reproducible example of out code with a bug, and debuggin the code in the process. I talk a little bit about different places to find help. If you know what a reproducible example is, have used stack overflow, etc, this video may not be useful for you. If those concepts are new to you, then its very important for you to learn about them, unfortunately they are part of the “hidden curriculum” of data science and programming.\nYou can watch the video on youtube youtube by clicking here.\nHelpful resources for this subject include chapter 8 of your textbook, the help page for the reprex library, and the stack overflow website"
+  },
+  {
+    "objectID": "modules/module1.html",
+    "href": "modules/module1.html",
+    "title": "Module 1 - Introduction to R and the Data Science Workflow",
+    "section": "",
+    "text": "Overview and Deliverables\nThis week is about meeting the other students, making sure you get a good start with required course software, and taking a bird’s eye view at data science workflows and the material that we will cover in the rest of the course. As such, the only official required assignments that you must turn in are to make a post on course Brightspace page introducing yourself, and to complete the meetup reflection (this is the same thing as the 1 minute papers of Data 606 if you are also taking that course). Howeer, you should also read the introduction posts of your classmates, perform the readings, and make sure to follow the tutorials and install the required software. Start early if you can with the software so we can sort out any issues asap. I’ll be monitoring the course slack page, which is the place where we will have most of our asynchronous communication during the course.\n\n08/28: Attend the initial course meetup at 6:45PM Eastern\nDue 9/01: Introduction Post in Brightspace Discussions\nSign up for GitHub and the course Slack channel\nComplete the readings of RDS (Intro and 28), the quarto tutorial, and up to section 15 in the happygitwithr tutorial\nInstall R, RStudio, git, etc (see the software page for more details\nSign up using the doodle poll for your data science in context presentation.\n\n\nLearning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\n\nThe Introduction chapter will describe the workflow of a typical data science project and pave the road for the rest of the material we are covering in this course. Chapter 28 describes the quarto markdown language, which a flexible system for authoring projects and presentations that produces well typeset documents in a variety of file formats and integrates with a large number of different programming languages, so that computations and their results can be directly embedded and visualized in your documents. I suggest that you use quarto to create your homework assignments.\n\nQuarto tutorial\n\nThis is an official quarto tutorial.\n\nHappy Git and GitHub for the R User: Tutorial up through Section 15\n\nGit is a tool that allows a group of people to work together on a software project, enabling version control that allows differences to be more easily resolved. GitHub is a repository for software projects that integrates well with Git. Git is a commonly used tool, and is almost a requirement for teams with large codebases and more than a few people working on them. GitHub has almost been like the “LinkedIn” for Data Scientists and Software Developers. One of the goals of this degree program is to help you build a portfolio of work on GitHub that you can use to demonstrate your coding proficiency to potential employers. These tools can be intimidating because they have a steep learning curve, so I think it is important to start introducing them slowly, at the very start. There are many ways to interact with Git and GitHub, but this excellent book by Jenny Bryant focuses on the specific case of a Data Scientist working in R and RStudio. If you already know Git and have a good system, you aren’t required to follow this tutorial, but for those of you who are new to these tools this I recommend taking some time this week to get Git up and running and integrated with your RStudio installation.\n\nData Visualization: A Practical Introduction Appendix A1: How to Read an R Help File\n\nThis is another excellent resource on learning R, but the reading I’ve suggested here is an appendix which discusses the structure of help files. Being able to use help files successfully is a skill that separates novice and intermediate programmers from experienced ones, as help files often have a very formal structure that doesn’t read like a normal text document or piece of writing. This section can you know what to expect and how to get what you need from them instead of feeling frustrated.\n\n\nVideos\nHadley Wickham Introduces the Tidyverse\nThis course uses something called the tidyverse. The tidyverse is a series of packages that replaces much of the functionality of base R while at the same time giving the resulting R code a very different flavor. This course, and many of the courses in this program, start by jumping right into the tidyverse. This video provides an introduction to the tidyverse from one of its main creators. However, while this decision has some initial benefits, it isn’t without tradeoffs, so it is important for you to keep in mind that there are other, different ways to do things in R. We will explore some of these later in the class in the Big Data module and the Advanced R programming module.\nIf you want to read a little bit more about the trade offs of the different R ecosystems this is a short link:\nR Comparisons\nSpeaking with colleagues, the choice to use base R versus the tidyverse is quite polarizing, especially as you work in more complex projects.",
     "crumbs": [
       "Topics",
-      "4 - Advanced Visualizations and EDA"
+      "1 - Data Science Workflow and Toolkit"
     ]
   },
   {
-    "objectID": "modules/module13.html",
-    "href": "modules/module13.html",
-    "title": "Module 13 - Large Data and Distributed Computing",
+    "objectID": "modules/module7.html",
+    "href": "modules/module7.html",
+    "title": "Module 7 - Working with Databases and SQL",
     "section": "",
-    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
+    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 18-21\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\nSQL for Data Scientists. Renee Teate. Wiley.\nduckdb page and SQL intro\n\n\n\nVideos\nMother Duck tutorial",
     "crumbs": [
       "Topics",
-      "13 - Big Data and Cloud Computing"
+      "7 - Working with Databases and SQL"
     ]
   },
   {
-    "objectID": "modules/module2.html",
-    "href": "modules/module2.html",
-    "title": "Module 2 - Data Vizualization and Basic Transformations",
+    "objectID": "modules/module3.html",
+    "href": "modules/module3.html",
+    "title": "Module 3 - Data Tidying",
     "section": "",
-    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup (finish the reading first if you can)\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables with ggplot2\nLearn principles of good visualizations\ntidyverse code conventions\nBasic Data Transofrmations with dplyr\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nCalling BS: Principle of Proportional Ink\nCalling BS: Misleading Axes\n\nTwo good articles on making honest visualizations and identifying dishonest ones.\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nData Visualization: A Practical Introduction. Kieran Healey.\n\nWell written book on R and data visualization. This is a good place to turn if you are struggling with the style of the main course textbook.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
+    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 5-7\n\n\n\nAdditional Resources:\n\ntidyr pivot vignette\n\nThis vignette has some even more in depth discussion than the textbook.\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper. If you do read the paper, note that the definition of tidy data is different than the one in your textbook. The original definition is close to a relational database style of organization, while the current definition is more of a flat file approach that resembles a data matrix and which is more readily analyzed.\n\nTutorial on Cleveland Dot Plots\n\nThis is a classic data visualization tool that we will use in this week’s homework\n\nwidyr package\n\nA useful package that gets a little bit more at the trade-offs between different data organization schemes.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
     "crumbs": [
       "Topics",
-      "2 - Visualizing Data"
+      "3 - Data Tidying"
     ]
   },
   {
-    "objectID": "modules/module10.html",
-    "href": "modules/module10.html",
-    "title": "Module 10 - Git and Collaboration",
+    "objectID": "modules/module6.html",
+    "href": "modules/module6.html",
+    "title": "Module 6 - Processing Strings and Text",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
+    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with factors for Categorical data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 14, 15, 16\n\n\n\nAdditional Resources:\n\nRegex Buddy\nRegex Crossword\n\nRegular expressions are useful in a large number of applications. The first website provides an advanced tutorial, the second one provides fun exercises. If you are unsatisfied and want to learn even more, regular expressions are equivalent to a computer science concept known as “finite state automata”. You can dive way deeper by reading these lecture notes:\n\nFinite State Automata\nstringr package: reference index. This is the tidyverse package for processing strings. If you are stuck on a string problem the solution is probably somewhere here\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
     "crumbs": [
       "Topics",
-      "10 - GIT and Collaboration"
+      "6 - Processing Strings and Text"
     ]
   },
   {
-    "objectID": "modules/module8.html",
-    "href": "modules/module8.html",
-    "title": "Module 8 - Advanced R Programming",
+    "objectID": "modules/module9.html",
+    "href": "modules/module9.html",
+    "title": "Module 9 - Web Scraping and APIs",
     "section": "",
-    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
+    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
     "crumbs": [
       "Topics",
-      "8 - Advanced R Programming"
+      "9 - Web Scraping and APIs"
     ]
   },
   {
-    "objectID": "modules/module11.html",
-    "href": "modules/module11.html",
-    "title": "Module 11 - Tidy Text and NLP",
+    "objectID": "modules/module12.html",
+    "href": "modules/module12.html",
+    "title": "Module 12 - Graphs and Graph Data",
     "section": "",
-    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
+    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nMath is Fun on Graphs",
     "crumbs": [
       "Topics",
-      "11 - Tidy Text and NLP"
+      "12 - Graphs and Graph Data"
     ]
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Attribution-ShareAlike 4.0 International",
+    "objectID": "modules/module5.html",
+    "href": "modules/module5.html",
+    "title": "Module 5 - Data Transformations",
     "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+    "text": "Learning Objectives\n\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nUsing dplyr window functions\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 17\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
+    "crumbs": [
+      "Topics",
+      "5 - Data Transformations"
+    ]
   },
   {
-    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+    "objectID": "acknowledgements.html",
+    "href": "acknowledgements.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "We acknowledge the wonderful resources made available on the open-source course Data Science in a Box, from which we adapted some course materials and homework assignments. This material is shared under a CC BY-SA 4.0 Creative Commons Share Alike License\nThis website would not be possible without the quarto package.",
+    "crumbs": [
+      "Acknowledgements"
+    ]
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#lab-5-review",
     "href": "meetups/Meetup7/Meetup7.html#lab-5-review",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Lab 5 Review",
-    "text": "Lab 5 Review"
+    "text": "Lab 5 Review\n\nHave graded all labs that were handed in last Sunday evening.\nMostly really good, most common mistake was string typos\n\n\ngss_cat |&gt; select(partyid) |&gt; distinct()\n\n# A tibble: 10 × 1\n   partyid           \n   &lt;fct&gt;             \n 1 Ind,near rep      \n 2 Not str republican\n 3 Independent       \n 4 Not str democrat  \n 5 Strong democrat   \n 6 Ind,near dem      \n 7 Strong republican \n 8 Other party       \n 9 No answer         \n10 Don't know"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#lab-5-review-1",
+    "href": "meetups/Meetup7/Meetup7.html#lab-5-review-1",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Lab 5 Review",
+    "text": "Lab 5 Review\n\nHave graded all labs that were handed in last Sunday evening.\nMostly really good, most common mistake was string typos\nTypos with these categories lead to errors in plots\n\nSome should have been red flags (plot with only 2 categories)\nOthers more subtle (numbers off)\nAlways a good idea to look at intermediate output, doublecheck things"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#very-subtle-regex-issues-on-lab-5",
+    "href": "meetups/Meetup7/Meetup7.html#very-subtle-regex-issues-on-lab-5",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Very Subtle Regex Issues on Lab 5",
+    "text": "Very Subtle Regex Issues on Lab 5\n\nYour book (and me also) were a bit uncareful:\n\"[^aeoiu]\" only identifies consonants if the input is purely a word\nThough the book is right in a very technical sense, props to all who noticed this and identified all the consonants"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#project-proposal",
     "href": "meetups/Meetup7/Meetup7.html#project-proposal",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Project Proposal",
-    "text": "Project Proposal"
+    "text": "Project Proposal\n\nNo lab next week\nBut project proposal due October 20th\nTarget 2 Pages\n\nIntro\nData\nAnalysis Plan\n\nIdea: Demonstrate full data science workflow\nEmphasis on everything but modeling\nFeel free to ask me about your idea as you develop it"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#this-week",
+    "href": "meetups/Meetup7/Meetup7.html#this-week",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "This Week",
+    "text": "This Week\n\nTwo main topics: Joins and SQL\nSeparate video for SQL with a coding vignette"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#combining-tables-from-multiple-tables",
     "href": "meetups/Meetup7/Meetup7.html#combining-tables-from-multiple-tables",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Combining Tables From Multiple Tables",
     "text": "Combining Tables From Multiple Tables\n\nData usually stored in separate files/data frames\nAnalysis requires data in a single frame\nNeed tools to combine data-frames"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
-    "text": "Example: nycflights13\n\nflights |&gt; select(time_hour,carrier,dep_time) |&gt; head(8) |&gt; kable()\n\n\n\n\ntime_hour\ncarrier\ndep_time\n\n\n\n\n2013-01-01 05:00:00\nUA\n517\n\n\n2013-01-01 05:00:00\nUA\n533\n\n\n2013-01-01 05:00:00\nAA\n542\n\n\n2013-01-01 05:00:00\nB6\n544\n\n\n2013-01-01 06:00:00\nDL\n554\n\n\n2013-01-01 05:00:00\nUA\n554\n\n\n2013-01-01 06:00:00\nB6\n555\n\n\n2013-01-01 06:00:00\nEV\n557"
+    "text": "Example: nycflights13"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-1",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-1",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
-    "text": "Example: nycflights13\n\nplanes |&gt; select(tailnum,year,model) |&gt; head(8) |&gt; kable()\n\n\n\n\ntailnum\nyear\nmodel\n\n\n\n\nN10156\n2004\nEMB-145XR\n\n\nN102UW\n1998\nA320-214\n\n\nN103US\n1999\nA320-214\n\n\nN104UW\n1999\nA320-214\n\n\nN10575\n2002\nEMB-145LR\n\n\nN105UW\n1999\nA320-214\n\n\nN107US\n1999\nA320-214\n\n\nN108UW\n1999\nA320-214"
+    "text": "Example: nycflights13\n\nflights |&gt; select(time_hour,carrier,dep_time) |&gt; head(8) |&gt; kable()\n\n\n\n\ntime_hour\ncarrier\ndep_time\n\n\n\n\n2013-01-01 05:00:00\nUA\n517\n\n\n2013-01-01 05:00:00\nUA\n533\n\n\n2013-01-01 05:00:00\nAA\n542\n\n\n2013-01-01 05:00:00\nB6\n544\n\n\n2013-01-01 06:00:00\nDL\n554\n\n\n2013-01-01 05:00:00\nUA\n554\n\n\n2013-01-01 06:00:00\nB6\n555\n\n\n2013-01-01 06:00:00\nEV\n557"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-2",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-2",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
-    "text": "Example: nycflights13\n\nairports |&gt; select(faa,name,lat,lon) |&gt; head(8) |&gt; kable()\n\n\n\n\nfaa\nname\nlat\nlon\n\n\n\n\n04G\nLansdowne Airport\n41.13047\n-80.61958\n\n\n06A\nMoton Field Municipal Airport\n32.46057\n-85.68003\n\n\n06C\nSchaumburg Regional\n41.98934\n-88.10124\n\n\n06N\nRandall Airport\n41.43191\n-74.39156\n\n\n09J\nJekyll Island Airport\n31.07447\n-81.42778\n\n\n0A9\nElizabethton Municipal Airport\n36.37122\n-82.17342\n\n\n0G6\nWilliams County Airport\n41.46731\n-84.50678\n\n\n0G7\nFinger Lakes Regional Airport\n42.88356\n-76.78123"
+    "text": "Example: nycflights13\n\nplanes |&gt; select(tailnum,year,model) |&gt; head(8) |&gt; kable()\n\n\n\n\ntailnum\nyear\nmodel\n\n\n\n\nN10156\n2004\nEMB-145XR\n\n\nN102UW\n1998\nA320-214\n\n\nN103US\n1999\nA320-214\n\n\nN104UW\n1999\nA320-214\n\n\nN10575\n2002\nEMB-145LR\n\n\nN105UW\n1999\nA320-214\n\n\nN107US\n1999\nA320-214\n\n\nN108UW\n1999\nA320-214"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-3",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-3",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
-    "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(dest,origin) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ndest\norigin\n\n\n\n\nIAH\nEWR\n\n\nIAH\nLGA\n\n\nMIA\nJFK\n\n\nBQN\nJFK\n\n\nATL\nLGA\n\n\nORD\nEWR\n\n\n\n\n\n\n\nairports |&gt; \n  select(faa) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\nfaa\n\n\n\n\n04G\n\n\n06A\n\n\n06C\n\n\n06N\n\n\n09J\n\n\n0A9\n\n\n0G6\n\n\n0G7\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
+    "text": "Example: nycflights13\n\nairports |&gt; select(faa,name,lat,lon) |&gt; head(8) |&gt; kable()\n\n\n\n\nfaa\nname\nlat\nlon\n\n\n\n\n04G\nLansdowne Airport\n41.13047\n-80.61958\n\n\n06A\nMoton Field Municipal Airport\n32.46057\n-85.68003\n\n\n06C\nSchaumburg Regional\n41.98934\n-88.10124\n\n\n06N\nRandall Airport\n41.43191\n-74.39156\n\n\n09J\nJekyll Island Airport\n31.07447\n-81.42778\n\n\n0A9\nElizabethton Municipal Airport\n36.37122\n-82.17342\n\n\n0G6\nWilliams County Airport\n41.46731\n-84.50678\n\n\n0G7\nFinger Lakes Regional Airport\n42.88356\n-76.78123"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-4",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-4",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(dest,origin) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ndest\norigin\n\n\n\n\nIAH\nEWR\n\n\nIAH\nLGA\n\n\nMIA\nJFK\n\n\nBQN\nJFK\n\n\nATL\nLGA\n\n\nORD\nEWR\n\n\n\n\n\n\n\nairports |&gt; \n  select(faa) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\nfaa\n\n\n\n\n04G\n\n\n06A\n\n\n06C\n\n\n06N\n\n\n09J\n\n\n0A9\n\n\n0G6\n\n\n0G7\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-5",
     "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-5",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Example: nycflights13",
+    "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(dest,origin) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ndest\norigin\n\n\n\n\nIAH\nEWR\n\n\nIAH\nLGA\n\n\nMIA\nJFK\n\n\nBQN\nJFK\n\n\nATL\nLGA\n\n\nORD\nEWR\n\n\n\n\n\n\n\nairports |&gt; \n  select(faa) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\nfaa\n\n\n\n\n04G\n\n\n06A\n\n\n06C\n\n\n06N\n\n\n09J\n\n\n0A9\n\n\n0G6\n\n\n0G7\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#example-nycflights13-6",
+    "href": "meetups/Meetup7/Meetup7.html#example-nycflights13-6",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Example: nycflights13",
     "text": "Example: nycflights13\n\nCan combine data frames along rows that share matching values of a common variable:\n\n\n\n\nflights |&gt; \n  select(tailnum) |&gt; \n  head(6) |&gt;\n  kable()\n\n\n\n\ntailnum\n\n\n\n\nN14228\n\n\nN24211\n\n\nN619AA\n\n\nN804JB\n\n\nN668DN\n\n\nN39463\n\n\n\n\n\n\n\nplanes |&gt; \n  select(tailnum) |&gt; \n  head(8) |&gt; \n  kable()\n\n\n\n\ntailnum\n\n\n\n\nN10156\n\n\nN102UW\n\n\nN103US\n\n\nN104UW\n\n\nN10575\n\n\nN105UW\n\n\nN107US\n\n\nN108UW\n\n\n\n\n\n\n\nColumns which connect different data frames are Keys"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#primary-keys",
     "href": "meetups/Meetup7/Meetup7.html#primary-keys",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Primary Keys",
     "text": "Primary Keys\nA Primary Key for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.\n\nFor planes it is tailnum\n\n\nplanes |&gt; select(tailnum, year, type, model) |&gt; head(5) |&gt; kable()\n\n\n\n\ntailnum\nyear\ntype\nmodel\n\n\n\n\nN10156\n2004\nFixed wing multi engine\nEMB-145XR\n\n\nN102UW\n1998\nFixed wing multi engine\nA320-214\n\n\nN103US\n1999\nFixed wing multi engine\nA320-214\n\n\nN104UW\n1999\nFixed wing multi engine\nA320-214\n\n\nN10575\n2002\nFixed wing multi engine\nEMB-145LR"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#definition",
     "href": "meetups/Meetup7/Meetup7.html#definition",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Definition",
-    "text": "Definition\nA Primary Key for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.\n:::\n\nFor planes it is tailnum\n\n\nplanes |&gt; \n  count(tailnum) |&gt; \n  filter(n &gt; 1)\n\n# A tibble: 0 × 2\n# ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;\n\n\n\nThis count command shows that each row has a unique value of tailnum proving that it is a primary key"
+    "text": "Definition\nA Primary Key for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.\n\nFor planes it is tailnum\n\n\nplanes |&gt; \n  count(tailnum) |&gt; \n  filter(n &gt; 1)\n\n# A tibble: 0 × 2\n# ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;\n\n\n\nThis count command shows that each row has a unique value of tailnum proving that it is a primary key"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#compound-keys",
     "href": "meetups/Meetup7/Meetup7.html#compound-keys",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Compound Keys",
     "text": "Compound Keys\n\nSometimes a single variable is not enough to uniquely identify rows.\nMultiple variables can combine to be a primary key\nFor weather it requires origin and time-hour:\n\n\nweather |&gt; count(time_hour) |&gt; filter(n&gt;1) |&gt; nrow()\n\n[1] 8706\n\nweather |&gt; \n  count(origin,time_hour) |&gt; \n  filter(n &gt; 1)\n\n# A tibble: 0 × 3\n# ℹ 3 variables: origin &lt;chr&gt;, time_hour &lt;dttm&gt;, n &lt;int&gt;"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#foreign-keys",
     "href": "meetups/Meetup7/Meetup7.html#foreign-keys",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Foreign Keys",
-    "text": "Foreign Keys\nA Foreign Key is a variable or group of variables within a data frame that serves as a primary key for another data frame.\n\nflights |&gt; select(flight,time_hour,tailnum) |&gt; head(6) |&gt; kable()\n\n\n\n\nflight\ntime_hour\ntailnum\n\n\n\n\n1545\n2013-01-01 05:00:00\nN14228\n\n\n1714\n2013-01-01 05:00:00\nN24211\n\n\n1141\n2013-01-01 05:00:00\nN619AA\n\n\n725\n2013-01-01 05:00:00\nN804JB\n\n\n461\n2013-01-01 06:00:00\nN668DN\n\n\n1696\n2013-01-01 05:00:00\nN39463\n\n\n\n\n\n\ntailnum is a primary key for planes\nForeign key is what allows for rows to be matched between data frames"
+    "text": "Foreign Keys\nA Foreign Key is a variable or group of variables within a data frame that serves as a primary key for another data frame.\n\nflights |&gt; select(flight,time_hour,tailnum) |&gt; head(4) |&gt; kable()\n\n\n\n\nflight\ntime_hour\ntailnum\n\n\n\n\n1545\n2013-01-01 05:00:00\nN14228\n\n\n1714\n2013-01-01 05:00:00\nN24211\n\n\n1141\n2013-01-01 05:00:00\nN619AA\n\n\n725\n2013-01-01 05:00:00\nN804JB\n\n\n\n\n\n\ntailnum is a primary key for planes\nForeign key is what allows for rows to be matched between data frames"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#joins",
     "href": "meetups/Meetup7/Meetup7.html#joins",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Joins",
-    "text": "Joins\n\nJoins are functions that combine two data frames\n\nTwo main “types” of joins:\n\nMutating Joins:\n\n\nCombine data between data frames\nleft_join, right_join, full_join, inner_join\n\n\nFiltering Joins:\n\n\nFilter rows based on matches\nsemi_join, anti_join"
+    "text": "Joins\n\nJoins are functions that combine two data frames\n\n(left/right/semi/full/anti)_join(x,y,by = join_by(...))\nTwo main “types” of joins:\n\nMutating Joins:\n\nCombine data between data frames\nleft_join, right_join, full_join, inner_join\n\nFiltering Joins:\n\nFilter rows based on matches\nsemi_join, anti_join"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#mutating-joins",
     "href": "meetups/Meetup7/Meetup7.html#mutating-joins",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Mutating Joins",
-    "text": "Mutating Joins\n\nleft_join: Keeps all rows of data_left, matches/adds from data_right\nright_join: reversed left_join\nfull_join: keeps all rows of both\ninner_join: only rows occurring in both"
-  },
-  {
-    "objectID": "meetups/Meetup7/Meetup7.html#visualizing-mutating-joins",
-    "href": "meetups/Meetup7/Meetup7.html#visualizing-mutating-joins",
-    "title": "Meetup 7: Joins",
-    "section": "Visualizing Mutating Joins:",
-    "text": "Visualizing Mutating Joins:\n\nR4DS 19.8"
+    "text": "Mutating Joins\n\nleft_join: Keeps all rows of data_left, matches/adds from data_right\nright_join: reversed left_join\nfull_join: keeps all rows of both\ninner_join: only rows occurring in both\n\n\nR4DS 19.8"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#left-join",
     "href": "meetups/Meetup7/Meetup7.html#left-join",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Left Join",
     "text": "Left Join\n\nStarting Point:\n\n\nR4DS 19.2"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#left-join-1",
     "href": "meetups/Meetup7/Meetup7.html#left-join-1",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Left Join",
     "text": "Left Join\n\nR4DS 19.2\nleft_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n3\nx3\nNA"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#right-join",
     "href": "meetups/Meetup7/Meetup7.html#right-join",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Right Join",
     "text": "Right Join\n\nR4DS 19.2\nright_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n4\nNA\ny3"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#inner-join",
     "href": "meetups/Meetup7/Meetup7.html#inner-join",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Inner Join",
     "text": "Inner Join\n\nR4DS 19.2\ninner_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#full-join",
     "href": "meetups/Meetup7/Meetup7.html#full-join",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Full Join",
     "text": "Full Join\n\n\n\n\n\nR4DS 19.2\n\n\n\n\nfull_join(x,y) |&gt; kable()\n\n\n\n\nkey\nval_x\nval_y\n\n\n\n\n1\nx1\ny1\n\n\n2\nx2\ny2\n\n\n3\nx3\nNA\n\n\n4\nNA\ny3"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#what-about-keys",
     "href": "meetups/Meetup7/Meetup7.html#what-about-keys",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "What about Keys?",
     "text": "What about Keys?\n\nJoin functions automatically try to find a foreign key\nYou may specify a key using join_by and then specifying match using formula:\n\n\nflights |&gt; left_join(airports,join_by(dest == faa)) |&gt; \n  select(year:dep_delay) |&gt; head(5)\n\n# A tibble: 5 × 6\n   year month   day dep_time sched_dep_time dep_delay\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;\n1  2013     1     1      517            515         2\n2  2013     1     1      533            529         4\n3  2013     1     1      542            540         2\n4  2013     1     1      544            545        -1\n5  2013     1     1      554            600        -6\n\n\n\nPotential for multiple matches and duplication when there is no foreign key"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#filtering-joins",
     "href": "meetups/Meetup7/Meetup7.html#filtering-joins",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Filtering Joins",
     "text": "Filtering Joins\n\nsemi_join(x,y) gets rid of rows of x that don’t have matches in y\nUse semi_join to restrict airports to the destination airports\n\n\nairports |&gt; \n  semi_join(flights, join_by(faa == origin))\n\n# A tibble: 3 × 8\n  faa   name                  lat   lon   alt    tz dst   tzone           \n  &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           \n1 EWR   Newark Liberty Intl  40.7 -74.2    18    -5 A     America/New_York\n2 JFK   John F Kennedy Intl  40.6 -73.8    13    -5 A     America/New_York\n3 LGA   La Guardia           40.8 -73.9    22    -5 A     America/New_York"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#filtering-joins-1",
     "href": "meetups/Meetup7/Meetup7.html#filtering-joins-1",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Filtering Joins",
     "text": "Filtering Joins\n\nanti_join(x,y) gets rid of rows of x that have matches in y\nUse anti_join to find implicit missing values\nFlights where weather info lacking:\n\n\nflights |&gt; \n  anti_join(weather) |&gt; \n  head(5) |&gt; \n  select(year:dep_delay) |&gt;\n  print()\n\n# A tibble: 5 × 6\n   year month   day dep_time sched_dep_time dep_delay\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;\n1  2013     1     1     1153           1200        -7\n2  2013     1     1     1154           1200        -6\n3  2013     1     1     1155           1200        -5\n4  2013     1     1     1155           1200        -5\n5  2013     1     1     1157           1200        -3"
   },
   {
+    "objectID": "meetups/Meetup7/Meetup7.html#data-science-in-context-presentations",
+    "href": "meetups/Meetup7/Meetup7.html#data-science-in-context-presentations",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Data Science in Context Presentations",
+    "text": "Data Science in Context Presentations"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#meetup-reflectionone-minute-paper",
+    "href": "meetups/Meetup7/Meetup7.html#meetup-reflectionone-minute-paper",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Meetup Reflection/One Minute Paper",
+    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here"
+  },
+  {
     "objectID": "meetups/Meetup7/Meetup7.html#relational-databases",
     "href": "meetups/Meetup7/Meetup7.html#relational-databases",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Relational Databases",
     "text": "Relational Databases"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#features",
     "href": "meetups/Meetup7/Meetup7.html#features",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Features",
     "text": "Features\n\nTables linked by keys\nTables correspond to entities\nRows called records\nStored on disk\nTake data from SQL to analyze elsewhere"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#trade-offs",
     "href": "meetups/Meetup7/Meetup7.html#trade-offs",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Trade Offs",
-    "text": "Trade Offs\nWhen should you use a relational database for your project?\n\nIf many people"
+    "text": "Trade Offs\nWhen should you use a relational database for your project?\n\nIf many people are using the data\nIf the data takes up lots of space\nIf the data has complex organization\nIf you are planning to scale up"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#dbms-classes",
     "href": "meetups/Meetup7/Meetup7.html#dbms-classes",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "DBMS Classes",
-    "text": "DBMS Classes"
-  },
-  {
-    "objectID": "meetups/Meetup7/Meetup7.html#terminology",
-    "href": "meetups/Meetup7/Meetup7.html#terminology",
-    "title": "Meetup 7: Joins",
-    "section": "Terminology",
-    "text": "Terminology"
+    "text": "DBMS Classes\nUse Database Management Systems to access data\n\nClient-Server: (Most Traditional). Database hosted on a central server to which you connect (IBM, Oracle)\nCloud: Database hosted on cloud. Newer, easier to scale resources (Google, Amazon)\nIn Process: For smaller datasets with few users. Best for data analysis and learning (sqlite, duckdb)"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#normalization-schemes",
     "href": "meetups/Meetup7/Meetup7.html#normalization-schemes",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "Normalization Schemes",
-    "text": "Normalization Schemes"
+    "text": "Normalization Schemes\n\nDatabases often organized according to strict rules called normalization\nThese improve things like space efficiency, data consistency, etc\nMassive research topic in the 1970s"
+  },
+  {
+    "objectID": "meetups/Meetup7/Meetup7.html#normalization-schemes-1",
+    "href": "meetups/Meetup7/Meetup7.html#normalization-schemes-1",
+    "title": "Meetup 7: Joins and SQL",
+    "section": "Normalization Schemes",
+    "text": "Normalization Schemes\n\nDatabases often organized according to strict rules called normalization\nThese improve things like space efficiency, data consistency, etc\nMassive research topic in the 1970s\nIdeas often involve separating data into tables corresponding to entities\nEach fact stored in one place"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#sql-basics",
     "href": "meetups/Meetup7/Meetup7.html#sql-basics",
-    "title": "Meetup 7: Joins",
+    "title": "Meetup 7: Joins and SQL",
     "section": "SQL Basics",
-    "text": "SQL Basics"
-  },
-  {
-    "objectID": "meetups/Meetup7/Meetup7.html#connecting-dbi",
-    "href": "meetups/Meetup7/Meetup7.html#connecting-dbi",
-    "title": "Meetup 7: Joins",
-    "section": "Connecting: DBI",
-    "text": "Connecting: DBI"
-  },
-  {
-    "objectID": "meetups/Meetup7/Meetup7.html#sql-in-r-dbplyr",
-    "href": "meetups/Meetup7/Meetup7.html#sql-in-r-dbplyr",
-    "title": "Meetup 7: Joins",
-    "section": "SQL in R: dbplyr",
-    "text": "SQL in R: dbplyr"
+    "text": "SQL Basics\n\nStructured Query Language\nQueries composed of clauses (must be in order):\n\nSELECT, FROM, WHERE, GROUP BY, ORDER BY\nSELECT is combo of mutate, select, rename, summarize, relocate, summarize\nAlso has JOINS\n\ndbplyr translates tidyverse manipulations to SQL\nDBI is the library that lets you open database connections in R"
   },
   {
     "objectID": "meetups/Meetup6/Meetup6.html#lab-4-review",
@@ -965,7 +1000,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.8616631  0.3613420  0.3627519  0.3258015 -0.5223137 -1.3929317\n [7]  0.3761599  1.9357110  1.0888655 -0.2707250\n\nprint(randVec |&gt; rank())\n\n [1]  2  6  7  5  3  1  8 10  9  4\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  0.76955530 -1.18981976 -0.43602931 -0.62050010  0.09246995 -0.25344177\n [7] -0.73660154 -1.04435882 -1.17051614  0.71194765\n\nprint(randVec |&gt; rank())\n\n [1] 10  1  6  5  8  7  4  3  2  9\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -1126,7 +1161,7 @@
     "href": "index.html",
     "title": "Announcements",
     "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7 Info: Joins and Databases\n\n\n\n\n\nClick here for info on Week 7\n\n\n\n\n\nOct 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Changes in US Baby Names Using stringr, forcats, and regex\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video which illustrates the use of the stringr and forcats libraries as well as regular expressions to explore the variation of baby names in the US over time\n\n\n\n\n\nOct 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 6: Working With Text and Strings\n\n\n\n\n\nClick here for meetup 5 slides and Zoom link\n\n\n\n\n\nOct 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6 Info: Working With Text and Strings\n\n\n\n\n\nClick here for info on Week 6\n\n\n\n\n\nSep 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Correlation Trick (End of Meetup 5)\n\n\n\n\n\nClick here for a link to a youtube video covering a few extra slides from Meetup 5\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nData Transformation Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 5: Data Transformations\n\n\n\n\n\nClick here for meetup 5 slides and Zoom link\n\n\n\n\n\nSep 25, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5 Info: Data Transformations\n\n\n\n\n\nClick here for info on Week 5\n\n\n\n\n\nSep 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHow to find help and make a reproducible example (Debugging)\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo focused on debugging and reprex\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 4: Exploratory Data Analysis\n\n\n\n\n\nClick here for meetup 4 slides and Zoom link\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Info: Exploratory Data Analysis\n\n\n\n\n\nClick here for info on Week 4\n\n\n\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPivot Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 3: Tidy Data\n\n\n\n\n\nClick here for meetup 2 slides and Zoom link\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: Data Tidying\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nSep 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Data Visualizations and Transformations\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 7: R and SQL\n\n\n\n\n\nClick here for meetup 7 slides and Zoom link\n\n\n\n\n\nOct 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7 Info: Joins and Databases\n\n\n\n\n\nClick here for info on Week 7\n\n\n\n\n\nOct 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Changes in US Baby Names Using stringr, forcats, and regex\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video which illustrates the use of the stringr and forcats libraries as well as regular expressions to explore the variation of baby names in the US over time\n\n\n\n\n\nOct 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 6: Working With Text and Strings\n\n\n\n\n\nClick here for meetup 5 slides and Zoom link\n\n\n\n\n\nOct 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6 Info: Working With Text and Strings\n\n\n\n\n\nClick here for info on Week 6\n\n\n\n\n\nSep 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Correlation Trick (End of Meetup 5)\n\n\n\n\n\nClick here for a link to a youtube video covering a few extra slides from Meetup 5\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nData Transformation Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 5: Data Transformations\n\n\n\n\n\nClick here for meetup 5 slides and Zoom link\n\n\n\n\n\nSep 25, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5 Info: Data Transformations\n\n\n\n\n\nClick here for info on Week 5\n\n\n\n\n\nSep 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHow to find help and make a reproducible example (Debugging)\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo focused on debugging and reprex\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 4: Exploratory Data Analysis\n\n\n\n\n\nClick here for meetup 4 slides and Zoom link\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Info: Exploratory Data Analysis\n\n\n\n\n\nClick here for info on Week 4\n\n\n\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPivot Coding Demo\n\n\n\n\n\nClick here for a link to a code vignette and a youtube video of a coding demo\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 3: Tidy Data\n\n\n\n\n\nClick here for meetup 2 slides and Zoom link\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: Data Tidying\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nSep 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Data Visualizations and Transformations\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1: Data Science Workflow and Toolkit\n\n\n\n\n\nClick here for meetup 1 slides and Zoom link\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 607\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nAug 17, 2024\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Announcements"
     ]
@@ -1868,119 +1903,161 @@
     "text": "Acknowledgements\n\nActive Statistics (Gelman, Hill, Vehtari)\nPrinciples of Data Visualization (Wilke)\nCalling BS (Bergstrom and West)\nData Visualization (Healy)\nImpact of Outliers on Income Inequality (Jackman)\n\n\n\n\n\nDATA 607"
   },
   {
-    "objectID": "acknowledgements.html",
-    "href": "acknowledgements.html",
-    "title": "Acknowledgements",
-    "section": "",
-    "text": "We acknowledge the wonderful resources made available on the open-source course Data Science in a Box, from which we adapted some course materials and homework assignments. This material is shared under a CC BY-SA 4.0 Creative Commons Share Alike License\nThis website would not be possible without the quarto package.",
-    "crumbs": [
-      "Acknowledgements"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#relational-databases",
+    "href": "meetups/Meetup7/SQLSlides.html#relational-databases",
+    "title": "SQL Slides",
+    "section": "Relational Databases",
+    "text": "Relational Databases"
   },
   {
-    "objectID": "modules/module5.html",
-    "href": "modules/module5.html",
-    "title": "Module 5 - Data Transformations",
-    "section": "",
-    "text": "Learning Objectives\n\nWorking with boolean data, basic logical operations, conditionals, and logical subsetting\nTransformations and summaries of numeric data\nUsing dplyr window functions\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 12, 13, 17\n\n\n\nAdditional Resources:\n\nFeature Engineering and Selection, Chapter 1 Feature engineering is a natural extension of data transformation that is commonly used prior to the application of machine learning or statistical analyses.\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
-    "crumbs": [
-      "Topics",
-      "5 - Data Transformations"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#features",
+    "href": "meetups/Meetup7/SQLSlides.html#features",
+    "title": "SQL Slides",
+    "section": "Features",
+    "text": "Features\n\nTables linked by keys\nTables correspond to entities\nRows called records\nStored on disk\nTake data from SQL to analyze elsewhere"
   },
   {
-    "objectID": "modules/module12.html",
-    "href": "modules/module12.html",
-    "title": "Module 12 - Graphs and Graph Data",
-    "section": "",
-    "text": "Learning Objectives\n\nBasic Graph Theory\nCalculate and interpret basic graph statistics\nVisualize graphs\nGraph Databases\nSocial Network Analysis\n\n\n\nReadings\n\nMath is Fun on Graphs",
-    "crumbs": [
-      "Topics",
-      "12 - Graphs and Graph Data"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#trade-offs",
+    "href": "meetups/Meetup7/SQLSlides.html#trade-offs",
+    "title": "SQL Slides",
+    "section": "Trade Offs",
+    "text": "Trade Offs\nWhen should you use a relational database for your project?\n\nIf many people are using the data\nIf the data takes up lots of space\nIf the data has complex organization\nIf you are planning to scale up"
   },
   {
-    "objectID": "modules/module9.html",
-    "href": "modules/module9.html",
-    "title": "Module 9 - Web Scraping and APIs",
-    "section": "",
-    "text": "Learning Objectives\n\nUnderstand and manipulate hierarchical/web Data Structures: XML, JSON, HTML\nScraping websites with R\nLearn the httr package for interactive with WebAPIs using R\nEthics: Data Privacy Issues\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 23-24\nhttr Guide\nOK Cupid Case Study\n\n\n\nVideos\n\nExtracting Data from the Web Part I\nExtracting Data from the Web Part II\nCambridge Analytica Whistleblower",
-    "crumbs": [
-      "Topics",
-      "9 - Web Scraping and APIs"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#dbms-classes",
+    "href": "meetups/Meetup7/SQLSlides.html#dbms-classes",
+    "title": "SQL Slides",
+    "section": "DBMS Classes",
+    "text": "DBMS Classes\nUse Database Management Systems to access data\n\nClient-Server: (Most Traditional). Database hosted on a central server to which you connect (IBM, Oracle)\nCloud: Database hosted on cloud. Newer, easier to scale resources (Google, Amazon)\nIn Process: For smaller datasets with few users. Best for data analysis and learning (sqlite, duckdb)"
   },
   {
-    "objectID": "modules/module6.html",
-    "href": "modules/module6.html",
-    "title": "Module 6 - Processing Strings and Text",
-    "section": "",
-    "text": "Learning Objectives\n\nLearn to use regular expressions (regex) to find text\nProcess and transform strings in R\nWorking with factors for Categorical data\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 14, 15, 16\n\n\n\nAdditional Resources:\n\nRegex Buddy\nRegex Crossword\n\nRegular expressions are useful in a large number of applications. The first website provides an advanced tutorial, the second one provides fun exercises. If you are unsatisfied and want to learn even more, regular expressions are equivalent to a computer science concept known as “finite state automata”. You can dive way deeper by reading these lecture notes:\n\nFinite State Automata\nstringr package: reference index. This is the tidyverse package for processing strings. If you are stuck on a string problem the solution is probably somewhere here\nforcats package reference index . This is the reference for a very useful package for handling categorical data\nWrangling Categorical Data in R. A. McNamara and N. Horton. The American Statistician (2018) Vol 72.\n\nThis paper discusses both tidyverse and base R approaches to categorical data.",
-    "crumbs": [
-      "Topics",
-      "6 - Processing Strings and Text"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#normalization-schemes",
+    "href": "meetups/Meetup7/SQLSlides.html#normalization-schemes",
+    "title": "SQL Slides",
+    "section": "Normalization Schemes",
+    "text": "Normalization Schemes\n\nDatabases often organized according to strict rules called normalization\nThese improve things like space efficiency, data consistency, etc\nMassive research topic in the 1970s"
   },
   {
-    "objectID": "modules/module3.html",
-    "href": "modules/module3.html",
-    "title": "Module 3 - Data Tidying",
-    "section": "",
-    "text": "Learning Objectives\n\nConverting between wide and long data formats with tidyr\nChanging the shape of your data with dplyr\nImporting data into R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 5-7\n\n\n\nAdditional Resources:\n\ntidyr pivot vignette\n\nThis vignette has some even more in depth discussion than the textbook.\n\nTidy Data. Hadley Wickham. Journal of statistical software 59 (2014): 1-23.\ntidyr vignette\n\nThe original Tidy Data paper is one of the most influential papers on data processing. It relates Tidy Data to database normalization, which might be familiar to you if you are an expert in SQL. The accompanying vignette has code used to generate the results in the paper. If you do read the paper, note that the definition of tidy data is different than the one in your textbook. The original definition is close to a relational database style of organization, while the current definition is more of a flat file approach that resembles a data matrix and which is more readily analyzed.\n\nTutorial on Cleveland Dot Plots\n\nThis is a classic data visualization tool that we will use in this week’s homework\n\nwidyr package\n\nA useful package that gets a little bit more at the trade-offs between different data organization schemes.\n\n\nVideos\nThere are some excellent optional video lectures that discuss tidy data and data wrangling:\n\nData Science Box Intro to Tidy Data\nData Science Box Data Wranglig\nData Science Box Data Transformations\nData Science Box Exploration of Tidy Data",
-    "crumbs": [
-      "Topics",
-      "3 - Data Tidying"
-    ]
+    "objectID": "meetups/Meetup7/SQLSlides.html#normalization-schemes-1",
+    "href": "meetups/Meetup7/SQLSlides.html#normalization-schemes-1",
+    "title": "SQL Slides",
+    "section": "Normalization Schemes",
+    "text": "Normalization Schemes\n\nDatabases often organized according to strict rules called normalization\nThese improve things like space efficiency, data consistency, etc\nMassive research topic in the 1970s\nIdeas often involve separating data into tables corresponding to entities\nEach fact stored in one place"
   },
   {
-    "objectID": "modules/module7.html",
-    "href": "modules/module7.html",
-    "title": "Module 7 - Working with Databases and SQL",
+    "objectID": "meetups/Meetup7/SQLSlides.html#sql-basics",
+    "href": "meetups/Meetup7/SQLSlides.html#sql-basics",
+    "title": "SQL Slides",
+    "section": "SQL Basics",
+    "text": "SQL Basics\n\nStructured Query Language\nQueries composed of clauses (must be in order):\n\nSELECT, FROM, WHERE, GROUP BY, ORDER BY\nSELECT is combo of mutate, select, rename, summarize, relocate, summarize\nAlso has JOINS\n\ndbplyr translates tidyverse manipulations to SQL\nDBI is the library that lets you open database connections in R"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Attribution-ShareAlike 4.0 International",
     "section": "",
-    "text": "Learning Objectives\n\nWorking with multiple dataframes, Joins and Keys\nRelational Database basics: design and tradeoffs\nWorking with R and SQL\nBasic database normalization\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 18-21\n\n\n\nAdditional Resources:\n\nSQL Cheat Sheet\nPractical SQL: A Beginner’s Guide to Storytelling with Data. Anthony DeBarros. No Start Press (2022)\nSQL for Data Scientists. Renee Teate. Wiley.\nduckdb page and SQL intro\n\n\n\nVideos\nMother Duck tutorial",
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "modules/module11.html",
+    "href": "modules/module11.html",
+    "title": "Module 11 - Tidy Text and NLP",
+    "section": "",
+    "text": "Learning Objectives\n\nThe tidy text format\nLexicons and sentiment analysis\nWord frequency analysis and Zipf’s Law\nn-grams and correlations\n\n\n\nReadings\n\nText Mining with R: Chapters 1-4\n\n\n\nVideos\n\nVideo Intro to Sentiment Analysis",
     "crumbs": [
       "Topics",
-      "7 - Working with Databases and SQL"
+      "11 - Tidy Text and NLP"
     ]
   },
   {
-    "objectID": "modules/module1.html",
-    "href": "modules/module1.html",
-    "title": "Module 1 - Introduction to R and the Data Science Workflow",
+    "objectID": "modules/module8.html",
+    "href": "modules/module8.html",
+    "title": "Module 8 - Advanced R Programming",
     "section": "",
-    "text": "Overview and Deliverables\nThis week is about meeting the other students, making sure you get a good start with required course software, and taking a bird’s eye view at data science workflows and the material that we will cover in the rest of the course. As such, the only official required assignments that you must turn in are to make a post on course Brightspace page introducing yourself, and to complete the meetup reflection (this is the same thing as the 1 minute papers of Data 606 if you are also taking that course). Howeer, you should also read the introduction posts of your classmates, perform the readings, and make sure to follow the tutorials and install the required software. Start early if you can with the software so we can sort out any issues asap. I’ll be monitoring the course slack page, which is the place where we will have most of our asynchronous communication during the course.\n\n08/28: Attend the initial course meetup at 6:45PM Eastern\nDue 9/01: Introduction Post in Brightspace Discussions\nSign up for GitHub and the course Slack channel\nComplete the readings of RDS (Intro and 28), the quarto tutorial, and up to section 15 in the happygitwithr tutorial\nInstall R, RStudio, git, etc (see the software page for more details\nSign up using the doodle poll for your data science in context presentation.\n\n\nLearning Objectives\n\nData Science Workflow\nCourse Toolkit: R, RStudio, tidyverse, Quarto, git\n\n\n\nReadings\n\nRDS (R for Data Science): Introduction, Chapter 28\n\nThe Introduction chapter will describe the workflow of a typical data science project and pave the road for the rest of the material we are covering in this course. Chapter 28 describes the quarto markdown language, which a flexible system for authoring projects and presentations that produces well typeset documents in a variety of file formats and integrates with a large number of different programming languages, so that computations and their results can be directly embedded and visualized in your documents. I suggest that you use quarto to create your homework assignments.\n\nQuarto tutorial\n\nThis is an official quarto tutorial.\n\nHappy Git and GitHub for the R User: Tutorial up through Section 15\n\nGit is a tool that allows a group of people to work together on a software project, enabling version control that allows differences to be more easily resolved. GitHub is a repository for software projects that integrates well with Git. Git is a commonly used tool, and is almost a requirement for teams with large codebases and more than a few people working on them. GitHub has almost been like the “LinkedIn” for Data Scientists and Software Developers. One of the goals of this degree program is to help you build a portfolio of work on GitHub that you can use to demonstrate your coding proficiency to potential employers. These tools can be intimidating because they have a steep learning curve, so I think it is important to start introducing them slowly, at the very start. There are many ways to interact with Git and GitHub, but this excellent book by Jenny Bryant focuses on the specific case of a Data Scientist working in R and RStudio. If you already know Git and have a good system, you aren’t required to follow this tutorial, but for those of you who are new to these tools this I recommend taking some time this week to get Git up and running and integrated with your RStudio installation.\n\nData Visualization: A Practical Introduction Appendix A1: How to Read an R Help File\n\nThis is another excellent resource on learning R, but the reading I’ve suggested here is an appendix which discusses the structure of help files. Being able to use help files successfully is a skill that separates novice and intermediate programmers from experienced ones, as help files often have a very formal structure that doesn’t read like a normal text document or piece of writing. This section can you know what to expect and how to get what you need from them instead of feeling frustrated.\n\n\nVideos\nHadley Wickham Introduces the Tidyverse\nThis course uses something called the tidyverse. The tidyverse is a series of packages that replaces much of the functionality of base R while at the same time giving the resulting R code a very different flavor. This course, and many of the courses in this program, start by jumping right into the tidyverse. This video provides an introduction to the tidyverse from one of its main creators. However, while this decision has some initial benefits, it isn’t without tradeoffs, so it is important for you to keep in mind that there are other, different ways to do things in R. We will explore some of these later in the class in the Big Data module and the Advanced R programming module.\nIf you want to read a little bit more about the trade offs of the different R ecosystems this is a short link:\nR Comparisons\nSpeaking with colleagues, the choice to use base R versus the tidyverse is quite polarizing, especially as you work in more complex projects.",
+    "text": "Learning Objectives\n\nDifferent function types and reusing code\nIteration and flow control with purrr\nApplications of iteration to data processing\nLearn important concepts from base R\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 25-27\n\n\n\nAdditional Resources:\n\nAdvanced R Programming Chapter on Functional Programming",
     "crumbs": [
       "Topics",
-      "1 - Data Science Workflow and Toolkit"
+      "8 - Advanced R Programming"
     ]
   },
   {
-    "objectID": "posts/2024-09-18-How-to-seek-coding-help.html",
-    "href": "posts/2024-09-18-How-to-seek-coding-help.html",
-    "title": "How to find help and make a reproducible example (Debugging)",
+    "objectID": "modules/module10.html",
+    "href": "modules/module10.html",
+    "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "I made a short coding demo (length about 20 minutes) where I slowly go through one example of making a reproducible example of out code with a bug, and debuggin the code in the process. I talk a little bit about different places to find help. If you know what a reproducible example is, have used stack overflow, etc, this video may not be useful for you. If those concepts are new to you, then its very important for you to learn about them, unfortunately they are part of the “hidden curriculum” of data science and programming.\nYou can watch the video on youtube youtube by clicking here.\nHelpful resources for this subject include chapter 8 of your textbook, the help page for the reprex library, and the stack overflow website"
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
+    "crumbs": [
+      "Topics",
+      "10 - GIT and Collaboration"
+    ]
   },
   {
-    "objectID": "posts/2024-10-06-Meetup-7-Joins-and-Databases.html",
-    "href": "posts/2024-10-06-Meetup-7-Joins-and-Databases.html",
-    "title": "Week 7 Info: Joins and Databases",
+    "objectID": "modules/module2.html",
+    "href": "modules/module2.html",
+    "title": "Module 2 - Data Vizualization and Basic Transformations",
     "section": "",
-    "text": "Hello Class,\nToday is the start of week 7, where we will learn how to work with data that is stored in multiple different different sources. We will study the join function and learn about primary and foreign keys, as well as simple and compound or composite keys. The discussion of keys and joins will lead in to an introduction to relational databases, which are one of the most common ways for large organizations to store data. We will talk about the trade-offs of using databases versus other data storage schemes and introduce SQL (the most common standard for languages that access and modify databases) through R packages DBI and dbplyr and duckdb, which is a relational database system designed for data analysis and portability and which is also easy to learn from. In the first weeks of this program we have discussed how R and python are two required languages for data scientists to have proficiency in. SQL and databases are equally important.\nYou will have a lab assignment titled R and SQL due next Sunday at midnight.\nFor your reading assignments and more details about this week, head over to Module 7. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
+    "text": "Overview and Deliverables\nThis module focuses on visualization, which is not only one of the first things you when faced with a new dataset but also the primary way that communicate quantitative information with other people. We will discuss principles of good visualizations and how to use ggplot2 for combinations of numerical and categorical data. ggplot2 is based on something called the grammar of graphics, which you will become familiar with as we build plots. Your first homework assignment, Lab 1, will be due at the end of this week. Your reading will also cover some of the basics of using R which might be a review if you already are an experienced user. Here are your deliverables:\n\n9/04: Attend the class meetup (finish the reading first if you can)\n9/06: Submit meetup reflections\n9/08: Submit Lab 1 on the Brightspace page for the course\n\n\n\nLearning Objectives\n\nData Visualization for Numerical and Categorical Variables with ggplot2\nLearn principles of good visualizations\ntidyverse code conventions\nBasic Data Transofrmations with dplyr\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 1-4\n\n\n\nAdditional Resources:\n\nCalling BS: Principle of Proportional Ink\nCalling BS: Misleading Axes\n\nTwo good articles on making honest visualizations and identifying dishonest ones.\n\nFundamentals of Data Visualization. Claus O. Wilkey. (2019). O’Reilly.\n\nThis is my favorite modern book on data visualization, and it also uses ggplot2 as the primary tool. If you are uncertain about what visualizations might be appropriate for a given problem, this is a good place to check for inspiration. The intended audience is scientists but it is equally relevant for people working in other industries. Chapters 1-5 and Chapter 29 would be good additional readings if you wanted to go a little more in depth.\n\nData Visualization: A Practical Introduction. Kieran Healey.\n\nWell written book on R and data visualization. This is a good place to turn if you are struggling with the style of the main course textbook.\n\nA Layered Grammar of Graphics. Hadley Wickham. Journal of computational and graphical statistics 19.1 (2010): 3-28.\n\nThis paper explains the concepts and thinking behind ggplot2.\n\nggplot2 website. This is another excellent source of resources and information on ggplot2",
+    "crumbs": [
+      "Topics",
+      "2 - Visualizing Data"
+    ]
   },
   {
-    "objectID": "posts/2024-09-16-Week-4-Info.html",
-    "href": "posts/2024-09-16-Week-4-Info.html",
-    "title": "Week 4 Info: Exploratory Data Analysis",
+    "objectID": "modules/module13.html",
+    "href": "modules/module13.html",
+    "title": "Module 13 - Large Data and Distributed Computing",
     "section": "",
-    "text": "Hello Class,\nToday is the start of week 4, which has as its main topic something called exploratory data analysis. Exploratory data analysis is set of techniques applied at the beginning of a statistical analysis to find errors in the data, to discover patterns, and to explore hypotheses. EDA uses visualizations as one of its primary tools, and we will deepen our knowledge of how to make visualizations in ggplot.\nYou will have a lab assignment titled Exploratory Data Analysis due next Sunday at midnight.\nFor your reading assignments and more details about this week, head over to Module 4. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
+    "text": "Learning Objectives\n\nBasic Introduction to Computer Architecture\nWrangling large data sets using data.table\nCloud and Parrallel computing models\nUsing R and Apache Spark together with sparklyr\n\n\n\nReadings\n\ndata.table vignette\nAdvanced R: Why is R slow?\n\n\n\nAdditional Resources:\n\n\nVideos",
+    "crumbs": [
+      "Topics",
+      "13 - Big Data and Cloud Computing"
+    ]
   },
   {
-    "objectID": "posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html",
-    "href": "posts/2024-08-28-Meetup-1-Data-Science-Workflow-And-Toolkit.html",
-    "title": "Meetup 1: Data Science Workflow and Toolkit",
+    "objectID": "modules/module4.html",
+    "href": "modules/module4.html",
+    "title": "Module 4 - Exploratory Data Analysis",
     "section": "",
-    "text": "Welcome to the start of the new semester! Tonight is the first class meetup. Click here to join the meetup on Zoom.\nYou can find the meetup slides here as well as a link to the electricity and carbon dixoide emission vignette if you want to experiment with it.\nClick the Module 1 link to see the course materials and instructions for this week."
+    "text": "Learning Objectives\n\nUnderstand how Exploratory Data Analysis (EDA) informs Data Preparation and Modeling\nVisualizing variation and covariation for categorical and numerical data\nData checks, data cleaning, outliers, missing data summary statistics\nLayers and Stats in ggplot\nReproducible Examples\n\n\n\nReadings\n\nRDS (R for Data Science): Chapters 8-11 (Chapter 10 is the most substantial part of the reading assignment)\n\n\n\nAdditional Reading:\nThere are several classic texts on Exploratory Data Analysis. These are somewhat dated but contain important insights:\n\nExploratory Data Analysis. J. W. Tukey. (1977).\nVisualizing Data. W. S. Cleveland. (1993). Hobart press.\nExploratory data mining and data cleaning. T. Dasu and T. Johnson. (2003). John Wiley & Sons.\n\nHere is an example of a newer book which is also excellent:\n\nExploratory Data Analysis Using R. Roland Pearson. CRC Press. (2015).\n\n\n\nVideos\n\nWhole Game Live demo of an Exploratory Data Analysis by Hadley Wickham. This isn’t a super polished video but its really nice to see examples of experts going through their process. The code he typed and data that he used can be found on github. This video has more of a focus on exploring and finding patterns rather than finding problems in a poor dataset.",
+    "crumbs": [
+      "Topics",
+      "4 - Advanced Visualizations and EDA"
+    ]
+  },
+  {
+    "objectID": "posts/2024-09-11-Pivot-Demo.html",
+    "href": "posts/2024-09-11-Pivot-Demo.html",
+    "title": "Pivot Coding Demo",
+    "section": "",
+    "text": "I made a short coding demo (length about 15 minutes) where I slowly go through one example of data tidying and cleaning. The coding demo can be watched on this youtube video.\nDuring the beginning of the video I said “row” when I meant “column” and vice versa.\nYou can download the R script with all the commands I entered here: WeatherStationVignette.R\nThe data used for this (in case you want to try it) came from weather.csv\nYou can read about this vignette and more on the tidyr page"
+  },
+  {
+    "objectID": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "href": "posts/2024-08-28-Welcome_to_DATA_607.html",
+    "title": "Welcome to DATA 607",
+    "section": "",
+    "text": "Welcome to DATA 607, Data Acquisition and Management.\nClick this post now to get started!\nHere are the first steps:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nDownload, install, and configure R, then RStudio.\nSign up for a (free) GitHub account.\nIntroduce yourself on the course discussion forum on Brightspace.\nJoin our Slack channel:\n\nAttend our first meetup on Wednesday at 6:45 p.m. ET on Zoom\nUse the google doodle poll to sign up for your Data Science in Context presentation\n\nI recorded a short video which introduces me and gives you more background on the course:"
+  },
+  {
+    "objectID": "posts/2024-09-26-Correlation-Trick.html",
+    "href": "posts/2024-09-26-Correlation-Trick.html",
+    "title": "The Correlation Trick (End of Meetup 5)",
+    "section": "",
+    "text": "I made a video discussing a few topics that we missed during Meetup 5. The subject is something called the “Spearman Correlation”, the “Spearman-Rank Correlation”, or alternatively the “Correlation Trick”. It is a useful tool that can help you determine when a data transformation might be useful.\nThe Video can be watched here on youtube\nThis is a useful heuristic that will help you at some point in your career (though maybe not this week) and I thought you should know about it. You can read more about Spearman Correlation here on wikipedia. The link to data transformation isn’t discussed in any open sources that I am aware of."
+  },
+  {
+    "objectID": "posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html",
+    "href": "posts/2024-09-18-Meetup-4-Exploratory-Data-Analysis.html",
+    "title": "Meetup 4: Exploratory Data Analysis",
+    "section": "",
+    "text": "Meetup 4 will cover basic principles of data visualization. Click here to join the meetup on Zoom.\nYou can find the meetup slides here\nClick the Module 4 link to see the course materials and instructions for this week."
   },
   {
     "objectID": "posts/2024-09-30-Week-6-Info.html",

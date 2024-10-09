@@ -12,7 +12,7 @@
 
   <meta name="author" content="George I. Hagstrom">
   <meta name="dcterms.date" content="2024-10-09">
-  <title>DATA 607 Fall 2024 – Meetup 7: Joins</title>
+  <title>DATA 607 Fall 2024 – Meetup 7: Joins and SQL</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,7 +386,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Meetup 7: Joins – DATA 607 Fall 2024">
+<meta property="og:title" content="Meetup 7: Joins and SQL – DATA 607 Fall 2024">
 <meta property="og:site_name" content="DATA 607 Fall 2024">
 </head>
 <body class="quarto-light">
@@ -394,7 +394,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Meetup 7: Joins</h1>
+  <h1 class="title">Meetup 7: Joins and SQL</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -408,9 +408,72 @@ George I. Hagstrom
 </section>
 <section id="lab-5-review" class="slide level2">
 <h2>Lab 5 Review</h2>
+<ul>
+<li>Have graded all labs that were handed in last Sunday evening.</li>
+<li>Mostly really good, most common mistake was string typos</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>gss_cat <span class="sc">|&gt;</span> <span class="fu">select</span>(partyid) <span class="sc">|&gt;</span> <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 1
+   partyid           
+   &lt;fct&gt;             
+ 1 Ind,near rep      
+ 2 Not str republican
+ 3 Independent       
+ 4 Not str democrat  
+ 5 Strong democrat   
+ 6 Ind,near dem      
+ 7 Strong republican 
+ 8 Other party       
+ 9 No answer         
+10 Don't know        </code></pre>
+</div>
+</div>
+</section>
+<section id="lab-5-review-1" class="slide level2">
+<h2>Lab 5 Review</h2>
+<ul>
+<li>Have graded all labs that were handed in last Sunday evening.</li>
+<li>Mostly really good, most common mistake was string typos</li>
+<li>Typos with these categories lead to errors in plots
+<ul>
+<li>Some should have been red flags (plot with only 2 categories)</li>
+<li>Others more subtle (numbers off)</li>
+<li>Always a good idea to look at intermediate output, doublecheck things</li>
+</ul></li>
+</ul>
+</section>
+<section id="very-subtle-regex-issues-on-lab-5" class="slide level2">
+<h2>Very Subtle Regex Issues on Lab 5</h2>
+<ul>
+<li>Your book (and me also) were a bit uncareful:</li>
+<li><code>"[^aeoiu]"</code> only identifies consonants if the input is purely a word</li>
+<li>Though the book is right in a very technical sense, props to all who noticed this and identified all the consonants</li>
+</ul>
 </section>
 <section id="project-proposal" class="slide level2">
 <h2>Project Proposal</h2>
+<ul>
+<li>No lab next week</li>
+<li>But <a href="https://georgehagstrom.github.io/DATA607/assignments/project.html">project proposal</a> due October 20th</li>
+<li>Target 2 Pages
+<ul>
+<li>Intro</li>
+<li>Data</li>
+<li>Analysis Plan</li>
+</ul></li>
+<li>Idea: Demonstrate full data science workflow</li>
+<li>Emphasis on everything but modeling</li>
+<li>Feel free to ask me about your idea as you develop it</li>
+</ul>
+</section>
+<section id="this-week" class="slide level2">
+<h2>This Week</h2>
+<ul>
+<li>Two main topics: Joins and SQL</li>
+<li>Separate video for SQL with a coding vignette</li>
+</ul>
 </section>
 <section id="combining-tables-from-multiple-tables" class="slide level2">
 <h2>Combining Tables From Multiple Tables</h2>
@@ -422,8 +485,12 @@ George I. Hagstrom
 </section>
 <section id="example-nycflights13" class="slide level2">
 <h2>Example: nycflights13</h2>
+
+<img data-src="../../posts/SQL.png" class="r-stretch"></section>
+<section id="example-nycflights13-1" class="slide level2">
+<h2>Example: nycflights13</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">select</span>(time_hour,carrier,dep_time) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">select</span>(time_hour,carrier,dep_time) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -479,10 +546,10 @@ George I. Hagstrom
 </div>
 </div>
 </section>
-<section id="example-nycflights13-1" class="slide level2">
+<section id="example-nycflights13-2" class="slide level2">
 <h2>Example: nycflights13</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>planes <span class="sc">|&gt;</span> <span class="fu">select</span>(tailnum,year,model) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>planes <span class="sc">|&gt;</span> <span class="fu">select</span>(tailnum,year,model) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -538,10 +605,10 @@ George I. Hagstrom
 </div>
 </div>
 </section>
-<section id="example-nycflights13-2" class="slide level2">
+<section id="example-nycflights13-3" class="slide level2">
 <h2>Example: nycflights13</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>airports <span class="sc">|&gt;</span> <span class="fu">select</span>(faa,name,lat,lon) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>airports <span class="sc">|&gt;</span> <span class="fu">select</span>(faa,name,lat,lon) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -605,102 +672,6 @@ George I. Hagstrom
 </table>
 </div>
 </div>
-</section>
-<section id="example-nycflights13-3" class="slide level2 smaller">
-<h2>Example: nycflights13</h2>
-<ul>
-<li>Can combine data frames along rows that share matching values of a common variable:</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a></a>  <span class="fu">select</span>(dest,origin) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a></a>  <span class="fu">head</span>(<span class="dv">6</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">dest</th>
-<th style="text-align: left;">origin</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">IAH</td>
-<td style="text-align: left;">EWR</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">IAH</td>
-<td style="text-align: left;">LGA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MIA</td>
-<td style="text-align: left;">JFK</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BQN</td>
-<td style="text-align: left;">JFK</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ATL</td>
-<td style="text-align: left;">LGA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ORD</td>
-<td style="text-align: left;">EWR</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>airports <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">select</span>(faa) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">faa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">04G</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">06A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">06C</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">06N</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">09J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0A9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0G6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0G7</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></div>
-<ul>
-<li>Columns which connect different data frames are <em>Keys</em></li>
-</ul>
 </section>
 <section id="example-nycflights13-4" class="slide level2 smaller">
 <h2>Example: nycflights13</h2>
@@ -807,9 +778,105 @@ George I. Hagstrom
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">select</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a></a>  <span class="fu">select</span>(dest,origin) <span class="sc">|&gt;</span> </span>
 <span id="cb8-3"><a></a>  <span class="fu">head</span>(<span class="dv">6</span>) <span class="sc">|&gt;</span></span>
 <span id="cb8-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">dest</th>
+<th style="text-align: left;">origin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAH</td>
+<td style="text-align: left;">EWR</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAH</td>
+<td style="text-align: left;">LGA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MIA</td>
+<td style="text-align: left;">JFK</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BQN</td>
+<td style="text-align: left;">JFK</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ATL</td>
+<td style="text-align: left;">LGA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ORD</td>
+<td style="text-align: left;">EWR</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>airports <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a></a>  <span class="fu">select</span>(faa) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">faa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">04G</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">06A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">06C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">06N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">09J</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0A9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0G6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0G7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+<ul>
+<li>Columns which connect different data frames are <em>Keys</em></li>
+</ul>
+</section>
+<section id="example-nycflights13-6" class="slide level2 smaller">
+<h2>Example: nycflights13</h2>
+<ul>
+<li>Can combine data frames along rows that share matching values of a common variable:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">select</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a></a>  <span class="fu">head</span>(<span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -842,10 +909,10 @@ George I. Hagstrom
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>planes <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">select</span>(tailnum) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>planes <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">select</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -894,7 +961,7 @@ George I. Hagstrom
 <li>For <code>planes</code> it is <code>tailnum</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>planes <span class="sc">|&gt;</span> <span class="fu">select</span>(tailnum, year, type, model) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>planes <span class="sc">|&gt;</span> <span class="fu">select</span>(tailnum, year, type, model) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -944,14 +1011,13 @@ George I. Hagstrom
 <section id="definition" class="slide level2">
 <h2>Definition</h2>
 <p>A <strong>Primary Key</strong> for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.</p>
-<p>:::</p>
 <ul>
 <li>For <code>planes</code> it is <code>tailnum</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>planes <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a></a>  <span class="fu">count</span>(tailnum) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>planes <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">count</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 2
 # ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;</code></pre>
@@ -969,13 +1035,13 @@ George I. Hagstrom
 <li><p>For <code>weather</code> it requires <code>origin</code> and <code>time-hour</code>:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>weather <span class="sc">|&gt;</span> <span class="fu">count</span>(time_hour) <span class="sc">|&gt;</span> <span class="fu">filter</span>(n<span class="sc">&gt;</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>weather <span class="sc">|&gt;</span> <span class="fu">count</span>(time_hour) <span class="sc">|&gt;</span> <span class="fu">filter</span>(n<span class="sc">&gt;</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8706</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>weather <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a></a>  <span class="fu">count</span>(origin,time_hour) <span class="sc">|&gt;</span> </span>
-<span id="cb15-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>weather <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a></a>  <span class="fu">count</span>(origin,time_hour) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 3
 # ℹ 3 variables: origin &lt;chr&gt;, time_hour &lt;dttm&gt;, n &lt;int&gt;</code></pre>
@@ -986,7 +1052,7 @@ George I. Hagstrom
 <h2>Foreign Keys</h2>
 <p>A <strong>Foreign Key</strong> is a variable or group of variables within a data frame that serves as a primary key for another data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">select</span>(flight,time_hour,tailnum) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">6</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">select</span>(flight,time_hour,tailnum) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">4</span>) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1017,16 +1083,6 @@ George I. Hagstrom
 <td style="text-align: left;">2013-01-01 05:00:00</td>
 <td style="text-align: left;">N804JB</td>
 </tr>
-<tr class="odd">
-<td style="text-align: right;">461</td>
-<td style="text-align: left;">2013-01-01 06:00:00</td>
-<td style="text-align: left;">N668DN</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1696</td>
-<td style="text-align: left;">2013-01-01 05:00:00</td>
-<td style="text-align: left;">N39463</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1041,20 +1097,19 @@ George I. Hagstrom
 <ul>
 <li>Joins are functions that combine two data frames</li>
 </ul>
+<p><code>(left/right/semi/full/anti)_join(x,y,by = join_by(...))</code></p>
 <p>Two main “types” of joins:</p>
-<ol type="1">
-<li>Mutating Joins:</li>
-</ol>
+<ul>
+<li>Mutating Joins:
 <ul>
 <li>Combine data between data frames</li>
 <li><code>left_join</code>, <code>right_join</code>, <code>full_join</code>, <code>inner_join</code></li>
-</ul>
-<ol start="2" type="1">
-<li>Filtering Joins:</li>
-</ol>
+</ul></li>
+<li>Filtering Joins:
 <ul>
 <li>Filter rows based on matches</li>
 <li><code>semi_join</code>, <code>anti_join</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="mutating-joins" class="slide level2">
@@ -1065,9 +1120,6 @@ George I. Hagstrom
 <li><code>full_join</code>: keeps all rows of both</li>
 <li><code>inner_join</code>: only rows occurring in both</li>
 </ol>
-</section>
-<section id="visualizing-mutating-joins" class="slide level2">
-<h2>Visualizing Mutating Joins:</h2>
 
 <img data-src="venn.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 19.8</p></section>
 <section id="left-join" class="slide level2">
@@ -1081,7 +1133,7 @@ George I. Hagstrom
 <h2>Left Join</h2>
 
 <img data-src="setup.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 19.2</p><div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">left_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">left_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1116,7 +1168,7 @@ George I. Hagstrom
 <h2>Right Join</h2>
 
 <img data-src="setup.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 19.2</p><div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">right_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">right_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1151,7 +1203,7 @@ George I. Hagstrom
 <h2>Inner Join</h2>
 
 <img data-src="setup.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 19.2</p><div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">inner_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">inner_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1189,7 +1241,7 @@ George I. Hagstrom
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">full_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">full_join</span>(x,y) <span class="sc">|&gt;</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1233,8 +1285,8 @@ George I. Hagstrom
 <li>You may specify a key using <code>join_by</code> and then specifying match using formula:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airports,<span class="fu">join_by</span>(dest <span class="sc">==</span> faa)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">select</span>(year<span class="sc">:</span>dep_delay) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>flights <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airports,<span class="fu">join_by</span>(dest <span class="sc">==</span> faa)) <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a></a>  <span class="fu">select</span>(year<span class="sc">:</span>dep_delay) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
    year month   day dep_time sched_dep_time dep_delay
@@ -1257,8 +1309,8 @@ George I. Hagstrom
 <li>Use semi_join to restrict airports to the destination airports</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>airports <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a></a>  <span class="fu">semi_join</span>(flights, <span class="fu">join_by</span>(faa <span class="sc">==</span> origin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>airports <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">semi_join</span>(flights, <span class="fu">join_by</span>(faa <span class="sc">==</span> origin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
   faa   name                  lat   lon   alt    tz dst   tzone           
@@ -1277,11 +1329,11 @@ George I. Hagstrom
 <li>Flights where weather info lacking:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb26-2"><a></a>  <span class="fu">anti_join</span>(weather) <span class="sc">|&gt;</span> </span>
-<span id="cb26-3"><a></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb26-4"><a></a>  <span class="fu">select</span>(year<span class="sc">:</span>dep_delay) <span class="sc">|&gt;</span></span>
-<span id="cb26-5"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a></a>  <span class="fu">anti_join</span>(weather) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb28-4"><a></a>  <span class="fu">select</span>(year<span class="sc">:</span>dep_delay) <span class="sc">|&gt;</span></span>
+<span id="cb28-5"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
    year month   day dep_time sched_dep_time dep_delay
@@ -1293,6 +1345,14 @@ George I. Hagstrom
 5  2013     1     1     1157           1200        -3</code></pre>
 </div>
 </div>
+</section>
+<section id="data-science-in-context-presentations" class="slide level2">
+<h2>Data Science in Context Presentations</h2>
+</section>
+<section id="meetup-reflectionone-minute-paper" class="slide level2">
+<h2>Meetup Reflection/One Minute Paper</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
 </section>
 <section id="relational-databases" class="slide level2">
 <h2>Relational Databases</h2>
@@ -1312,29 +1372,52 @@ George I. Hagstrom
 <h2>Trade Offs</h2>
 <p>When should you use a relational database for your project?</p>
 <ul>
-<li>If many people</li>
+<li>If many people are using the data</li>
+<li>If the data takes up lots of space</li>
+<li>If the data has complex organization</li>
+<li>If you are planning to scale up</li>
 </ul>
 </section>
 <section id="dbms-classes" class="slide level2">
 <h2>DBMS Classes</h2>
-</section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
+<p>Use Database Management Systems to access data</p>
+<ol type="1">
+<li>Client-Server: (Most Traditional). Database hosted on a central server to which you connect (IBM, Oracle)</li>
+<li>Cloud: Database hosted on cloud. Newer, easier to scale resources (Google, Amazon)</li>
+<li>In Process: For smaller datasets with few users. Best for data analysis and learning (<code>sqlite</code>, <code>duckdb</code>)</li>
+</ol>
 </section>
 <section id="normalization-schemes" class="slide level2">
 <h2>Normalization Schemes</h2>
+<ul>
+<li>Databases often organized according to strict rules called <code>normalization</code></li>
+<li>These improve things like space efficiency, data consistency, etc</li>
+<li>Massive research topic in the 1970s <img data-src="Norm.png" alt="wikpedia"></li>
+</ul>
+</section>
+<section id="normalization-schemes-1" class="slide level2">
+<h2>Normalization Schemes</h2>
+<ul>
+<li>Databases often organized according to strict rules called <code>normalization</code></li>
+<li>These improve things like space efficiency, data consistency, etc</li>
+<li>Massive research topic in the 1970s</li>
+<li>Ideas often involve separating data into tables corresponding to entities</li>
+<li>Each fact stored in one place</li>
+</ul>
 </section>
 <section id="sql-basics" class="slide level2">
 <h2>SQL Basics</h2>
-</section>
-<section id="connecting-dbi" class="slide level2">
-<h2>Connecting: <code>DBI</code></h2>
-</section>
-<section id="sql-in-r-dbplyr" class="slide level2">
-<h2>SQL in R: <code>dbplyr</code></h2>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
+<ul>
+<li>Structured Query Language</li>
+<li>Queries composed of clauses (must be in order):
+<ul>
+<li><code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>ORDER BY</code></li>
+<li><code>SELECT</code> is combo of <code>mutate</code>, <code>select</code>, <code>rename</code>, <code>summarize</code>, <code>relocate</code>, <code>summarize</code></li>
+<li>Also has <code>JOINS</code></li>
+</ul></li>
+<li><code>dbplyr</code> translates tidyverse manipulations to SQL</li>
+<li><code>DBI</code> is the library that lets you open database connections in R</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
