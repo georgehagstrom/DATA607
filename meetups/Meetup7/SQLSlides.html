@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -341,36 +406,45 @@ George Hagstrom
 </section>
 <section id="relational-databases" class="slide level2">
 <h2>Relational Databases</h2>
-
-<img data-src="../../posts/SQL.png" class="r-stretch"></section>
+<ul>
+<li>Database is a collection of related tables</li>
+<li>Database schema defines the structure/relationships <img data-src="../../posts/SQL.png" style="width:70.0%"></li>
+</ul>
+</section>
 <section id="features" class="slide level2">
 <h2>Features</h2>
 <ul>
-<li>Tables linked by keys</li>
-<li>Tables correspond to entities</li>
-<li>Rows called records</li>
-<li>Stored on disk</li>
-<li>Take data from SQL to analyze elsewhere</li>
-</ul>
-</section>
-<section id="trade-offs" class="slide level2">
-<h2>Trade Offs</h2>
-<p>When should you use a relational database for your project?</p>
+<li>Tables linked by keys
 <ul>
-<li>If many people are using the data</li>
-<li>If the data takes up lots of space</li>
-<li>If the data has complex organization</li>
-<li>If you are planning to scale up</li>
+<li>Common to create a separate unique index/id-number to serves as primary key</li>
+</ul></li>
+<li>Tables correspond to entities
+<ul>
+<li>Each table about 1 “thing”</li>
+</ul></li>
+<li>Rows called records</li>
 </ul>
 </section>
-<section id="dbms-classes" class="slide level2">
-<h2>DBMS Classes</h2>
-<p>Use Database Management Systems to access data</p>
-<ol type="1">
-<li>Client-Server: (Most Traditional). Database hosted on a central server to which you connect (IBM, Oracle)</li>
-<li>Cloud: Database hosted on cloud. Newer, easier to scale resources (Google, Amazon)</li>
-<li>In Process: For smaller datasets with few users. Best for data analysis and learning (<code>sqlite</code>, <code>duckdb</code>)</li>
-</ol>
+<section id="entity-relationship-diagram-erd" class="slide level2">
+<h2>Entity Relationship Diagram (ERD)</h2>
+
+<img data-src="PatientAppointments.png" class="r-stretch quarto-figure-center"><p class="caption">Teate SQL4DS</p></section>
+<section id="entity-relationship-diagram-erd-1" class="slide level2">
+<h2>Entity Relationship Diagram (ERD)</h2>
+
+<img data-src="PatientsERD.png" class="r-stretch quarto-figure-center"><p class="caption">Teate SQL4DS</p><ul>
+<li>Stars mark primary and foreign keys</li>
+<li>1 and Infinity symbol indicate one-many relationship</li>
+</ul>
+</section>
+<section id="more-complex-erd" class="slide level2">
+<h2>More Complex ERD</h2>
+
+<img data-src="ManyManyERD.png" class="r-stretch quarto-figure-center"><p class="caption">Teate SQL4DS</p><ul>
+<li>Here authors and books have a many-many relationship</li>
+<li>Associative Table used as a junction Authors and Books</li>
+<li>Combo of ISBN and Author ID are primary key for Books-Authors</li>
+</ul>
 </section>
 <section id="normalization-schemes" class="slide level2">
 <h2>Normalization Schemes</h2>
@@ -388,12 +462,33 @@ George Hagstrom
 <li>Massive research topic in the 1970s</li>
 <li>Ideas often involve separating data into tables corresponding to entities</li>
 <li>Each fact stored in one place</li>
+<li>Can make a career as a database designer/architect</li>
 </ul>
 </section>
-<section id="sql-basics" class="slide level2">
-<h2>SQL Basics</h2>
+<section id="trade-offs" class="slide level2">
+<h2>Trade Offs</h2>
+<p>When should you use a relational database instead of regular file(s) for your project?</p>
 <ul>
-<li>Structured Query Language</li>
+<li>If many people are using the data</li>
+<li>If the data takes up lots of space</li>
+<li>If the data has complex organization</li>
+<li>If you are planning to scale up</li>
+</ul>
+<p>But it is likely that your organization will be using it and so knowing how to interact with databases is key, will make you more efficient and more independent!</p>
+</section>
+<section id="dbms-classes" class="slide level2">
+<h2>DBMS Classes</h2>
+<p>Use Database Management Systems to access data/interact with databases</p>
+<ol type="1">
+<li>Client-Server: (Most Traditional). Database hosted on a central server to which you connect (IBM, Oracle, MySQL server)</li>
+<li>Cloud: Database hosted on cloud. Newer, easier to scale resources (Google, Amazon, Snowflake)</li>
+<li>In Process: For smaller datasets with few users. Best for data analysis and learning (<code>sqlite</code>, <code>duckdb</code>)</li>
+</ol>
+</section>
+<section id="structured-query-language-sql-basics" class="slide level2">
+<h2>Structured Query Language (SQL) Basics</h2>
+<ul>
+<li>Stored on disk, queried to generate smaller dataset for analysis elsewhere</li>
 <li>Queries composed of clauses (must be in order):
 <ul>
 <li><code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>ORDER BY</code></li>
@@ -401,7 +496,374 @@ George Hagstrom
 <li>Also has <code>JOINS</code></li>
 </ul></li>
 <li><code>dbplyr</code> translates tidyverse manipulations to SQL</li>
-<li><code>DBI</code> is the library that lets you open database connections in R</li>
+<li>SQL is a standard with many flavors</li>
+</ul>
+</section>
+<section id="connecting-to-a-database-in-r" class="slide level2">
+<h2>Connecting to a Database in R</h2>
+<ul>
+<li><code>DBI</code> library has functions to manipulate databases</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb1-3"><a></a>con <span class="ot">=</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbdir =</span> <span class="st">"duckdb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>dbConnect()</code> connections and initializes an empty database</li>
+<li><code>duckdb()</code> creates an instance of a duck database</li>
+<li>Can use many options with <code>DBI</code></li>
+</ul>
+</section>
+<section id="writing-tables" class="slide level2">
+<h2>Writing Tables</h2>
+<ul>
+<li>dbWriteTable writes data from R to your database</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(nycflights13)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="fu">dbWriteTable</span>(con, <span class="st">"flights"</span>, flights,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-4"><a></a><span class="fu">dbWriteTable</span>(con, <span class="st">"planes"</span>, planes,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "flights" "planes" </code></pre>
+</div>
+</div>
+</section>
+<section id="reading-tables" class="slide level2">
+<h2>Reading Tables</h2>
+<ul>
+<li><code>dbReadTable</code> reads data from your database to R</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>con <span class="sc">|&gt;</span> <span class="fu">dbReadTable</span>(<span class="st">"flights"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> <span class="fu">select</span>(year<span class="sc">:</span>arr_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 7
+    year month   day dep_time sched_dep_time dep_delay arr_time
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+ 1  2013     1     1      517            515         2      830
+ 2  2013     1     1      533            529         4      850
+ 3  2013     1     1      542            540         2      923
+ 4  2013     1     1      544            545        -1     1004
+ 5  2013     1     1      554            600        -6      812
+ 6  2013     1     1      554            558        -4      740
+ 7  2013     1     1      555            600        -5      913
+ 8  2013     1     1      557            600        -3      709
+ 9  2013     1     1      557            600        -3      838
+10  2013     1     1      558            600        -2      753
+# ℹ 336,766 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="queries" class="slide level2">
+<h2>Queries</h2>
+<ul>
+<li><code>dbGetQuery</code> runs SQL queries</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>query <span class="ot">=</span> <span class="st">"</span></span>
+<span id="cb6-2"><a></a><span class="st">SELECT dep_delay, month, sched_dep_time</span></span>
+<span id="cb6-3"><a></a><span class="st">FROM flights</span></span>
+<span id="cb6-4"><a></a><span class="st">WHERE carrier = 'UA'</span></span>
+<span id="cb6-5"><a></a><span class="st">"</span></span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a>con <span class="sc">|&gt;</span> <span class="fu">dbGetQuery</span>(query) <span class="sc">|&gt;</span> <span class="fu">as_tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 58,665 × 3
+   dep_delay month sched_dep_time
+       &lt;dbl&gt; &lt;int&gt;          &lt;int&gt;
+ 1         2     1            515
+ 2         4     1            529
+ 3        -4     1            558
+ 4        -2     1            600
+ 5        -2     1            600
+ 6        -1     1            600
+ 7         0     1            607
+ 8        11     1            600
+ 9        -4     1            627
+10        -2     1            630
+# ℹ 58,655 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="dbplyr" class="slide level2">
+<h2><code>dbplyr</code></h2>
+<ul>
+<li>library that translates <code>dplyr</code> to <code>SQL</code></li>
+<li>Use it both to run queries and learn <code>SQL</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb8-2"><a></a>flights_tab <span class="ot">=</span> con <span class="sc">|&gt;</span> <span class="fu">tbl</span>(<span class="st">"flights"</span>)</span>
+<span id="cb8-3"><a></a>planes_tab <span class="ot">=</span> con <span class="sc">|&gt;</span> <span class="fu">tbl</span>(<span class="st">"planes"</span>) <span class="sc">|&gt;</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   table&lt;planes&gt; [?? x 9]
+# Database: DuckDB v1.1.0 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
+  tailnum  year type               manufacturer model engines seats speed engine
+  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; 
+1 N10156   2004 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…
+2 N102UW   1998 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
+3 N103US   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
+# ℹ more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="lazy-evaluation" class="slide level2">
+<h2>Lazy Evaluation</h2>
+<ul>
+<li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
+<li><code>show_query()</code> to see it</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>flights_tab <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(planes_tab) <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">group_by</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a></a>  <span class="fu">summarise</span>(<span class="at">num_flights =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(num_flights)) <span class="sc">|&gt;</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:     SQL [?? x 2]
+# Database:   DuckDB v1.1.0 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
+# Ordered by: desc(num_flights)
+  tailnum num_flights
+  &lt;chr&gt;         &lt;dbl&gt;
+1 N354JB          333
+2 N355JB          282
+3 N358JB          271
+4 N374JB          236
+# ℹ more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="lazy-evaluation-1" class="slide level2">
+<h2>Lazy Evaluation</h2>
+<ul>
+<li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
+<li><code>show_query()</code> to see it</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>flights_tab <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(planes_tab) <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">group_by</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">summarise</span>(<span class="at">num_flights =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(num_flights)) <span class="sc">|&gt;</span> <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, COUNT(*) AS num_flights
+FROM (
+  SELECT flights.*, "type", manufacturer, model, engines, seats, speed, engine
+  FROM flights
+  INNER JOIN planes
+    ON (flights."year" = planes."year" AND flights.tailnum = planes.tailnum)
+) q01
+GROUP BY tailnum
+ORDER BY num_flights DESC</code></pre>
+</div>
+</div>
+</section>
+<section id="lazy-evaluation-2" class="slide level2">
+<h2>Lazy Evaluation</h2>
+<ul>
+<li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
+<li><code>collect</code> to execute it</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>flights_tab <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(planes_tab) <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">group_by</span>(tailnum) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a></a>  <span class="fu">summarise</span>(<span class="at">num_flights =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(num_flights)) <span class="sc">|&gt;</span> <span class="fu">collect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 92 × 2
+   tailnum num_flights
+   &lt;chr&gt;         &lt;dbl&gt;
+ 1 N354JB          333
+ 2 N355JB          282
+ 3 N358JB          271
+ 4 N374JB          236
+ 5 N373JB          232
+ 6 N368JB          230
+ 7 N827JB          125
+ 8 N37465          111
+ 9 N37468          102
+10 N36469          102
+# ℹ 82 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="sql-basics" class="slide level2">
+<h2>SQL Basics</h2>
+<ul>
+<li>SQL queries composed of statements in order:
+<ul>
+<li><code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>ORDER BY</code></li>
+</ul></li>
+<li>Evaluation occurs in different order:</li>
+<li><code>FROM WHERE GROUP BY SELECT ORDER BY</code></li>
+<li><code>SELECT FROM</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a> flights_tab <span class="sc">|&gt;</span> <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>flights_tab <span class="sc">|&gt;</span> <span class="fu">select</span>(carrier, flight, arr_time) <span class="sc">|&gt;</span> <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT carrier, flight, arr_time
+FROM flights</code></pre>
+</div>
+</div>
+</section>
+<section id="sql-basics-1" class="slide level2">
+<h2>SQL Basics</h2>
+<ul>
+<li><code>WHERE</code> is like <code>filter()</code></li>
+<li><code>ORDER BY</code> is like <code>arrange()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>flights_tab <span class="sc">|&gt;</span> <span class="fu">filter</span>(dep_delay <span class="sc">&gt;</span> <span class="dv">30</span>, carrier <span class="sc">==</span> <span class="st">'UA'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a></a>  <span class="fu">arrange</span>(arr_delay) <span class="sc">|&gt;</span> <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT flights.*
+FROM flights
+WHERE (dep_delay &gt; 30.0) AND (carrier = 'UA')
+ORDER BY arr_delay</code></pre>
+</div>
+</div>
+</section>
+<section id="select-aggregates" class="slide level2">
+<h2>SELECT aggregates</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>flights_tab <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a></a>  <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a></a>  <span class="fu">summarise</span>(<span class="at">dep_delay =</span> <span class="fu">mean</span>(dep_delay,<span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb22-4"><a></a>            <span class="at">num_flights =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb22-5"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT carrier, AVG(dep_delay) AS dep_delay, COUNT(*) AS num_flights
+FROM flights
+GROUP BY carrier</code></pre>
+</div>
+</div>
+<ul>
+<li><code>summarise</code> variables put in select statement</li>
+</ul>
+</section>
+<section id="select-rename-relocate" class="slide level2">
+<h2><code>select</code>, <code>rename</code>, <code>relocate</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>planes_tab <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a></a>  <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">|&gt;</span> </span>
+<span id="cb24-3"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, "type", manufacturer, model, "year"
+FROM planes</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>planes_tab <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">|&gt;</span> </span>
+<span id="cb26-3"><a></a>  <span class="fu">rename</span>(<span class="at">year_built =</span> year) <span class="sc">|&gt;</span> </span>
+<span id="cb26-4"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, "type", manufacturer, model, "year" AS year_built
+FROM planes</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>planes_tab <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a></a>  <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a></a>  <span class="fu">relocate</span>(manufacturer, model, <span class="at">.before =</span> type) <span class="sc">|&gt;</span> </span>
+<span id="cb28-4"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, manufacturer, model, "type", "year"
+FROM planes</code></pre>
+</div>
+</div>
+</section>
+<section id="select-and-mutate" class="slide level2">
+<h2><code>SELECT</code> and <code>mutate</code></h2>
+<ul>
+<li><code>mutate</code> formulas appear as in <code>SELECT</code> statements</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>flights_tab <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a></a>  <span class="fu">mutate</span>(<span class="at">speed =</span> distance<span class="sc">/</span>(air_time<span class="sc">/</span><span class="fl">60.0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb30-3"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT flights.*, distance / (air_time / 60.0) AS speed
+FROM flights</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>flights_tab <span class="sc">|&gt;</span> </span>
+<span id="cb32-2"><a></a>  <span class="fu">mutate</span>(<span class="at">speed =</span> distance<span class="sc">/</span>(air_time<span class="sc">/</span><span class="fl">60.0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-3"><a></a>  <span class="fu">collect</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb32-4"><a></a>  <span class="fu">select</span>(origin,dest,time_hour,carrier,flight,speed) <span class="sc">|&gt;</span></span>
+<span id="cb32-5"><a></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 6
+  origin dest  time_hour           carrier flight speed
+  &lt;chr&gt;  &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;
+1 EWR    IAH   2013-01-01 10:00:00 UA        1545  370.
+2 LGA    IAH   2013-01-01 10:00:00 UA        1714  374.
+3 JFK    MIA   2013-01-01 10:00:00 AA        1141  408.
+4 JFK    BQN   2013-01-01 10:00:00 B6         725  517.
+5 LGA    ATL   2013-01-01 11:00:00 DL         461  394.</code></pre>
+</div>
+</div>
+</section>
+<section id="having-clause" class="slide level2">
+<h2>HAVING clause</h2>
+<ul>
+<li>If you <code>filter</code> after <code>summarise</code>, <code>HAVING</code> instead of <code>WHERE</code></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT carrier, AVG(dep_delay) AS dep_delay, COUNT(*) AS num_flights
+FROM flights
+GROUP BY carrier
+HAVING (COUNT(*) &gt; 100.0)</code></pre>
+</div>
+</div>
+</section>
+<section id="sub-queries" class="slide level2">
+<h2>Sub-queries</h2>
+<ul>
+<li><code>SQL</code> uses sub-queries to create sources of data for further queries:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>flights_tab <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a></a>  <span class="fu">mutate</span>(<span class="at">speed =</span> distance<span class="sc">/</span>(air_time<span class="sc">/</span><span class="fl">60.0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb35-3"><a></a>  <span class="fu">filter</span>(speed <span class="sc">&gt;</span> <span class="dv">450</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb35-4"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT q01.*
+FROM (
+  SELECT flights.*, distance / (air_time / 60.0) AS speed
+  FROM flights
+) q01
+WHERE (speed &gt; 450.0)</code></pre>
+</div>
+</div>
+<ul>
+<li>query name <code>q01</code> generated by <code>dbplyr</code></li>
+<li>Saw this in join example earlier</li>
+</ul>
+</section>
+<section id="pitfalls" class="slide level2">
+<h2>Pitfalls</h2>
+<ul>
+<li><code>dbplyr</code> won’t always write nicest code</li>
+<li>It takes deep knowledge to write performant/fast queries for large databases
+<ul>
+<li>If you need to become a pro in this, read <a href="https://use-the-index-luke.com/">use the index, Luke</a></li>
+</ul></li>
+<li>Many many SQL standards</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -620,6 +1082,44 @@ George Hagstrom
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -951,10 +951,10 @@ George I. Hagstrom
 </div>
 </div></div>
 <ul>
-<li>Columns which connect different data frames are <em>Keys</em></li>
+<li>Columns that are common “Keys” used to link data frames</li>
 </ul>
 </section>
-<section id="primary-keys" class="slide level2">
+<section id="primary-keys" class="slide level2 smaller">
 <h2>Primary Keys</h2>
 <p>A <strong>Primary Key</strong> for a data frame is a column group of columns within that data frame whose values uniquely determine each row of the data frame.</p>
 <ul>
@@ -1048,7 +1048,7 @@ George I. Hagstrom
 </div>
 </div>
 </section>
-<section id="foreign-keys" class="slide level2">
+<section id="foreign-keys" class="slide level2 smaller">
 <h2>Foreign Keys</h2>
 <p>A <strong>Foreign Key</strong> is a variable or group of variables within a data frame that serves as a primary key for another data frame.</p>
 <div class="cell">
@@ -1097,7 +1097,13 @@ George I. Hagstrom
 <ul>
 <li>Joins are functions that combine two data frames</li>
 </ul>
-<p><code>(left/right/semi/full/anti)_join(x,y,by = join_by(...))</code></p>
+<p><code>something_join(x,y,by = join_by(...))</code></p>
+<ul>
+<li>Here <code>something</code> is either: -left, right, full, inner, semi, or anti</li>
+</ul>
+</section>
+<section id="join-types" class="slide level2">
+<h2>Join Types</h2>
 <p>Two main “types” of joins:</p>
 <ul>
 <li>Mutating Joins:
@@ -1115,7 +1121,7 @@ George I. Hagstrom
 <section id="mutating-joins" class="slide level2">
 <h2>Mutating Joins</h2>
 <ol type="1">
-<li><code>left_join</code>: Keeps all rows of <code>data_left</code>, matches/adds from <code>data_right</code></li>
+<li><code>left_join</code>: Keeps all rows of <code>x</code>, matches/adds from <code>y</code></li>
 <li><code>right_join</code>: reversed <code>left_join</code></li>
 <li><code>full_join</code>: keeps all rows of both</li>
 <li><code>inner_join</code>: only rows occurring in both</li>
