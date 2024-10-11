@@ -408,7 +408,7 @@ George Hagstrom
 <h2>Relational Databases</h2>
 <ul>
 <li>Database is a collection of related tables</li>
-<li>Database schema defines the structure/relationships <img data-src="../../posts/SQL.png" style="width:70.0%"></li>
+<li>Database schema defines the structure/relationships <img data-src="../../posts/SQL.png" style="width:60.0%"></li>
 </ul>
 </section>
 <section id="features" class="slide level2">
@@ -485,8 +485,8 @@ George Hagstrom
 <li>In Process: For smaller datasets with few users. Best for data analysis and learning (<code>sqlite</code>, <code>duckdb</code>)</li>
 </ol>
 </section>
-<section id="structured-query-language-sql-basics" class="slide level2">
-<h2>Structured Query Language (SQL) Basics</h2>
+<section id="structured-query-language-sql" class="slide level2 smaller">
+<h2>Structured Query Language (SQL)</h2>
 <ul>
 <li>Stored on disk, queried to generate smaller dataset for analysis elsewhere</li>
 <li>Queries composed of clauses (must be in order):
@@ -558,7 +558,7 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="queries" class="slide level2">
+<section id="queries" class="slide level2 smaller">
 <h2>Queries</h2>
 <ul>
 <li><code>dbGetQuery</code> runs SQL queries</li>
@@ -589,7 +589,7 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="dbplyr" class="slide level2">
+<section id="dbplyr" class="slide level2 smaller">
 <h2><code>dbplyr</code></h2>
 <ul>
 <li>library that translates <code>dplyr</code> to <code>SQL</code></li>
@@ -611,7 +611,7 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="lazy-evaluation" class="slide level2">
+<section id="lazy-evaluation" class="slide level2 smaller">
 <h2>Lazy Evaluation</h2>
 <ul>
 <li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
@@ -636,7 +636,7 @@ George Hagstrom
 </div>
 </div>
 </section>
-<section id="lazy-evaluation-1" class="slide level2">
+<section id="lazy-evaluation-1" class="slide level2 smaller">
 <h2>Lazy Evaluation</h2>
 <ul>
 <li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
@@ -661,7 +661,7 @@ ORDER BY num_flights DESC</code></pre>
 </div>
 </div>
 </section>
-<section id="lazy-evaluation-2" class="slide level2">
+<section id="lazy-evaluation-2" class="slide level2 smaller">
 <h2>Lazy Evaluation</h2>
 <ul>
 <li><code>dbplyr</code> doesn’t immediately execute code, builds up big query instead</li>
@@ -690,7 +690,7 @@ ORDER BY num_flights DESC</code></pre>
 </div>
 </div>
 </section>
-<section id="sql-basics" class="slide level2">
+<section id="sql-basics" class="slide level2 smaller">
 <h2>SQL Basics</h2>
 <ul>
 <li>SQL queries composed of statements in order:
@@ -716,7 +716,7 @@ FROM flights</code></pre>
 </div>
 </div>
 </section>
-<section id="sql-basics-1" class="slide level2">
+<section id="sql-basics-1" class="slide level2 smaller">
 <h2>SQL Basics</h2>
 <ul>
 <li><code>WHERE</code> is like <code>filter()</code></li>
@@ -753,7 +753,7 @@ GROUP BY carrier</code></pre>
 <li><code>summarise</code> variables put in select statement</li>
 </ul>
 </section>
-<section id="select-rename-relocate" class="slide level2">
+<section id="select-rename-relocate" class="slide level2 smaller">
 <h2><code>select</code>, <code>rename</code>, <code>relocate</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>planes_tab <span class="sc">|&gt;</span> </span>
@@ -784,7 +784,7 @@ FROM planes</code></pre>
 </div>
 </div>
 </section>
-<section id="select-and-mutate" class="slide level2">
+<section id="select-and-mutate" class="slide level2 smaller">
 <h2><code>SELECT</code> and <code>mutate</code></h2>
 <ul>
 <li><code>mutate</code> formulas appear as in <code>SELECT</code> statements</li>
