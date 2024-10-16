@@ -335,7 +335,7 @@
     "href": "meetups/Meetup8/Meetup8.html#indirection",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Indirection",
-    "text": "Indirection\n\nFundamental Theorem of Software Engineering:\n“We can solve any problem by introducing an extra layer of indirection”\n\n\nAn indirection or reference is a way to refer to something using a name, reference, or container, instead of the value itself\nR expects name to be typed in, but we want R to get the column from a variable\nCan embrace the variable by wrapping in braces: filter(df, {{var}} == cond)"
+    "text": "Indirection\n\nFundamental Theorem of Software Engineering:\n“We can solve any problem by introducing an extra layer of indirection”\n\n\nAn indirection or reference is a way to refer to something using a name, reference, or container, instead of the value itself\nR expects name to be typed in\nembrace the variable: filter(df, {{var}} == cond)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#embracing-in-action",
@@ -349,14 +349,14 @@
     "href": "meetups/Meetup8/Meetup8.html#data-maskingtidy-selection",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Data Masking/Tidy Selection",
-    "text": "Data Masking/Tidy Selection\n\nlibrary(nycflights13)\n\ncount_missing &lt;- function(df, group_vars, x_var) {\n  df |&gt; \n    group_by({{ group_vars }}) |&gt; \n    summarize(\n      n_miss = sum(is.na({{ x_var }})),\n      .groups = \"drop\"\n    )\n}\n\nflights |&gt; \n  count_missing(year, dep_time)\n\n# A tibble: 1 × 2\n   year n_miss\n  &lt;int&gt;  &lt;int&gt;\n1  2013   8255\n\n\n\nflights |&gt; \n  count_missing(c(year,month,day), dep_time)\n\nError in `group_by()`:\nℹ In argument: `c(year, month, day)`.\nCaused by error:\n! `c(year, month, day)` must be size 336776 or 1, not 1010328."
+    "text": "Data Masking/Tidy Selection\n\nlibrary(nycflights13)\n\ncount_missing &lt;- function(df, group_vars, x_var) {\n  df |&gt; \n    group_by({{ group_vars }}) |&gt; \n    summarize(\n      n_miss = sum(is.na({{ x_var }})),\n      .groups = \"drop\"\n    )\n}\n\n\nflights |&gt; \n  count_missing(c(year,month,day), dep_time)\n\nError in `group_by()`:\nℹ In argument: `c(year, month, day)`.\nCaused by error:\n! `c(year, month, day)` must be size 336776 or 1, not 1010328."
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#pick-lets-you-tidy-select",
     "href": "meetups/Meetup8/Meetup8.html#pick-lets-you-tidy-select",
     "title": "Meetup 8: Functions and Iteration",
     "section": "pick lets you tidy select",
-    "text": "pick lets you tidy select\n\ncount_missing &lt;- function(df, group_vars, x_var) {\n  df |&gt; \n    group_by(pick({{ group_vars }})) |&gt; \n    summarize(\n      n_miss = sum(is.na({{ x_var }})),\n      .groups = \"drop\"\n    )\n}\n\nflights |&gt; \n  count_missing(c(year,month,day), dep_time)\n\n# A tibble: 365 × 4\n    year month   day n_miss\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;\n 1  2013     1     1      4\n 2  2013     1     2      8\n 3  2013     1     3     10\n 4  2013     1     4      6\n 5  2013     1     5      3\n 6  2013     1     6      1\n 7  2013     1     7      3\n 8  2013     1     8      4\n 9  2013     1     9      5\n10  2013     1    10      3\n# ℹ 355 more rows"
+    "text": "pick lets you tidy select\n\ncount_missing &lt;- function(df, group_vars, x_var) {\n  df |&gt; \n    group_by(pick({{ group_vars }})) |&gt; \n    summarize(\n      n_miss = sum(is.na({{ x_var }})),\n      .groups = \"drop\"\n    )\n}\n\nflights |&gt; \n  count_missing(c(year,month,day), dep_time) |&gt; head(6)\n\n# A tibble: 6 × 4\n   year month   day n_miss\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;\n1  2013     1     1      4\n2  2013     1     2      8\n3  2013     1     3     10\n4  2013     1     4      6\n5  2013     1     5      3\n6  2013     1     6      1"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#functional-programming",
@@ -370,28 +370,35 @@
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a      b      c        d\n     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n 1 -0.538  -0.810 -0.454 -1.26   \n 2  0.293  -1.74   0.537  0.849  \n 3 -3.01   -0.538 -0.767 -1.32   \n 4 -0.397  -1.29   0.479 -1.23   \n 5  0.276  -0.385  0.281 -2.86   \n 6 -0.331   0.824  1.23  -1.41   \n 7  1.13    1.48  -0.768  0.381  \n 8  0.0628 -0.312  1.04   0.636  \n 9  1.83    0.834  1.26  -0.00814\n10 -0.0379  0.668  0.583 -1.74"
+    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n        a      b      c      d\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 -1.92  -0.360  1.45  -0.710\n 2  0.347  1.40  -0.833 -0.796\n 3 -0.878 -1.47   0.112 -0.160\n 4 -0.851 -0.116  0.271  0.187\n 5 -0.181 -0.416  1.77  -1.26 \n 6 -0.723  0.614  1.00  -0.281\n 7  1.37  -1.14   1.39   0.344\n 8 -0.829  0.603  0.409 -0.610\n 9  0.896  1.11   0.686 -1.39 \n10  1.62  -0.691  0.486  1.70"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n       a      b     c      d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0722 -0.127 0.342 -0.796\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
+    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n      a       b     c      d\n  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.115 -0.0460 0.674 -0.297\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n       a      b     c      d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0722 -0.127 0.342 -0.796\n\n\n\nCan use other tools (i.e. starts_with, everything) to select columns"
+    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n      a       b     c      d\n  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.115 -0.0460 0.674 -0.297\n\n\n\nCan use other selects (i.e. starts_with, everything)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
     "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Anonymous functions in across",
-    "text": "Anonymous functions in across\n\nHow to pass additional arguments to functions?\nAnonymous (or lambda functions), functions not important enough to be named:\n\n\n\\(x) median(x^2 * exp(-x^2)) \n\nfunction (x) \nmedian(x^2 * exp(-x^2))\n\n\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n       a      b     c      d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0722 -0.127 0.342 -0.796"
+    "text": "Anonymous functions in across\n\nHow to pass additional arguments to functions?\nAnonymous (or lambda functions), functions not important enough to be named:\n\n\n\\(x) median(x^2 * exp(-x^2)) \n\nfunction (x) \nmedian(x^2 * exp(-x^2))"
+  },
+  {
+    "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
+    "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
+    "title": "Meetup 8: Functions and Iteration",
+    "section": "Anonymous functions in across",
+    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n      a       b     c      d\n  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.115 -0.0460 0.674 -0.297"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#map-family-in-purrr",
@@ -419,7 +426,14 @@
     "href": "meetups/Meetup8/Meetup8.html#where-are-the-for-loops",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Where are the for loops?",
-    "text": "Where are the for loops?\n\nfor and while loops exist in R\nThey are discouraged in favor of tools like map\nOnly use them when you must (such as when you need side effects)\n\n\nfor (element in vector){\n  func(element) # Run some code that uses element\n}\n\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 157"
+    "text": "Where are the for loops?\n\nfor and while loops exist in R\nThey are discouraged in favor of tools like map\nOnly use them when you must (such as when you need side effects)\n\n\nfor (element in vector){\n  func(element) # Run some code that uses element\n}"
+  },
+  {
+    "objectID": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
+    "href": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
+    "title": "Meetup 8: Functions and Iteration",
+    "section": "while loop in action",
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 10"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#data-science-in-context-presentation",
@@ -429,11 +443,11 @@
     "text": "Data Science in Context Presentation"
   },
   {
-    "objectID": "meetups/Meetup8/Meetup8.html#meetup-reflection",
-    "href": "meetups/Meetup8/Meetup8.html#meetup-reflection",
+    "objectID": "meetups/Meetup8/Meetup8.html#meetup-reflectionone-minute-paper",
+    "href": "meetups/Meetup8/Meetup8.html#meetup-reflectionone-minute-paper",
     "title": "Meetup 8: Functions and Iteration",
-    "section": "Meetup Reflection",
-    "text": "Meetup Reflection"
+    "section": "Meetup Reflection/One Minute Paper",
+    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#lab-5-review",
@@ -1238,7 +1252,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.4850912  1.6743211 -0.1776540  1.8456771  1.1565156 -0.4620600\n [7] -0.8458827 -1.3010703  0.2313700 -0.3889533\n\nprint(randVec |&gt; rank())\n\n [1]  3  9  6 10  8  4  2  1  7  5\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  1.2962539  0.8822177 -0.2722599 -0.1767018 -0.3723019 -0.9106871\n [7] -0.5472664  1.7013557 -0.5254146  1.0894533\n\nprint(randVec |&gt; rank())\n\n [1]  9  7  5  6  4  1  2 10  3  8\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",

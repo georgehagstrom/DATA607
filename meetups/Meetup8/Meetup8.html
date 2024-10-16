@@ -692,7 +692,7 @@ George Hagstrom
 <li>Use sparingly, has side effect of making your code difficult to understand and overly interconnected</li>
 </ul>
 </section>
-<section id="data-masking" class="slide level2">
+<section id="data-masking" class="slide level2 smaller">
 <h2>Data Masking</h2>
 <ul>
 <li>What if we try to make a function that takes a data frame?</li>
@@ -717,7 +717,7 @@ George Hagstrom
 <li><p>Called <em>data masking</em> because real values of <code>group_var</code> and <code>mean_var</code> ignored</p></li>
 </ul>
 </section>
-<section id="data-masking-1" class="slide level2">
+<section id="data-masking-1" class="slide level2 smaller">
 <h2>Data Masking</h2>
 <ul>
 <li>We can see that the real values are ignored:</li>
@@ -758,8 +758,8 @@ George Hagstrom
 </blockquote>
 <ul>
 <li><p>An <em>indirection</em> or <em>reference</em> is a way to refer to something using a name, reference, or container, instead of the value itself</p></li>
-<li><p><code>R</code> expects name to be typed in, but we want R to get the column from a variable</p></li>
-<li><p>Can <em>embrace</em> the variable by wrapping in braces: <code>filter(df, {{var}} == cond)</code></p></li>
+<li><p><code>R</code> expects name to be typed in</p></li>
+<li><p><em>embrace</em> the variable: <code>filter(df, {{var}} == cond)</code></p></li>
 </ul>
 </section>
 <section id="embracing-in-action" class="slide level2">
@@ -799,18 +799,9 @@ George Hagstrom
 <span id="cb43-9"><a></a>    )</span>
 <span id="cb43-10"><a></a>}</span>
 <span id="cb43-11"><a></a></span>
-<span id="cb43-12"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb43-13"><a></a>  <span class="fu">count_missing</span>(year, dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 2
-   year n_miss
-  &lt;int&gt;  &lt;int&gt;
-1  2013   8255</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb45-2"><a></a>  <span class="fu">count_missing</span>(<span class="fu">c</span>(year,month,day), dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-12"><a></a></span>
+<span id="cb43-13"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb43-14"><a></a>  <span class="fu">count_missing</span>(<span class="fu">c</span>(year,month,day), dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `group_by()`:
 ℹ In argument: `c(year, month, day)`.
@@ -822,32 +813,27 @@ Caused by error:
 <section id="pick-lets-you-tidy-select" class="slide level2">
 <h2><code>pick</code> lets you tidy select</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>count_missing <span class="ot">&lt;-</span> <span class="cf">function</span>(df, group_vars, x_var) {</span>
-<span id="cb47-2"><a></a>  df <span class="sc">|&gt;</span> </span>
-<span id="cb47-3"><a></a>    <span class="fu">group_by</span>(<span class="fu">pick</span>({{ group_vars }})) <span class="sc">|&gt;</span> </span>
-<span id="cb47-4"><a></a>    <span class="fu">summarize</span>(</span>
-<span id="cb47-5"><a></a>      <span class="at">n_miss =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>({{ x_var }})),</span>
-<span id="cb47-6"><a></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb47-7"><a></a>    )</span>
-<span id="cb47-8"><a></a>}</span>
-<span id="cb47-9"><a></a></span>
-<span id="cb47-10"><a></a>flights <span class="sc">|&gt;</span> </span>
-<span id="cb47-11"><a></a>  <span class="fu">count_missing</span>(<span class="fu">c</span>(year,month,day), dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>count_missing <span class="ot">&lt;-</span> <span class="cf">function</span>(df, group_vars, x_var) {</span>
+<span id="cb45-2"><a></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb45-3"><a></a>    <span class="fu">group_by</span>(<span class="fu">pick</span>({{ group_vars }})) <span class="sc">|&gt;</span> </span>
+<span id="cb45-4"><a></a>    <span class="fu">summarize</span>(</span>
+<span id="cb45-5"><a></a>      <span class="at">n_miss =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>({{ x_var }})),</span>
+<span id="cb45-6"><a></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb45-7"><a></a>    )</span>
+<span id="cb45-8"><a></a>}</span>
+<span id="cb45-9"><a></a></span>
+<span id="cb45-10"><a></a>flights <span class="sc">|&gt;</span> </span>
+<span id="cb45-11"><a></a>  <span class="fu">count_missing</span>(<span class="fu">c</span>(year,month,day), dep_time) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 365 × 4
-    year month   day n_miss
-   &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;
- 1  2013     1     1      4
- 2  2013     1     2      8
- 3  2013     1     3     10
- 4  2013     1     4      6
- 5  2013     1     5      3
- 6  2013     1     6      1
- 7  2013     1     7      3
- 8  2013     1     8      4
- 9  2013     1     9      5
-10  2013     1    10      3
-# ℹ 355 more rows</code></pre>
+<pre><code># A tibble: 6 × 4
+   year month   day n_miss
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt;
+1  2013     1     1      4
+2  2013     1     2      8
+3  2013     1     3     10
+4  2013     1     4      6
+5  2013     1     5      3
+6  2013     1     6      1</code></pre>
 </div>
 </div>
 </section>
@@ -857,15 +843,15 @@ Caused by error:
 <li>Functions are <em>first class</em> objects in R:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>power <span class="ot">&lt;-</span> <span class="cf">function</span>(g,exponent) {</span>
-<span id="cb49-2"><a></a>  <span class="cf">function</span>(x) {</span>
-<span id="cb49-3"><a></a>    <span class="fu">g</span>(x) <span class="sc">^</span> exponent</span>
-<span id="cb49-4"><a></a>  }</span>
-<span id="cb49-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>power <span class="ot">&lt;-</span> <span class="cf">function</span>(g,exponent) {</span>
+<span id="cb47-2"><a></a>  <span class="cf">function</span>(x) {</span>
+<span id="cb47-3"><a></a>    <span class="fu">g</span>(x) <span class="sc">^</span> exponent</span>
+<span id="cb47-4"><a></a>  }</span>
+<span id="cb47-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>f <span class="ot">=</span> <span class="fu">power</span>(cos,<span class="dv">2</span>)</span>
-<span id="cb50-2"><a></a><span class="fu">f</span>(<span class="sc">-</span><span class="fl">3.14159</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>f <span class="ot">=</span> <span class="fu">power</span>(cos,<span class="dv">2</span>)</span>
+<span id="cb48-2"><a></a><span class="fu">f</span>(<span class="sc">-</span><span class="fl">3.14159</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
@@ -875,32 +861,32 @@ Caused by error:
 <li><code>purrr</code> library provides functional programming tools</li>
 </ul>
 </section>
-<section id="across-iterates-on-columns" class="slide level2">
+<section id="across-iterates-on-columns" class="slide level2 smaller">
 <h2><code>across</code> iterates on columns</h2>
 <p>Suppose we want to apply an operation to many columns at once:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb52-2"><a></a>  <span class="at">a =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
-<span id="cb52-3"><a></a>  <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
-<span id="cb52-4"><a></a>  <span class="at">c =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
-<span id="cb52-5"><a></a>  <span class="at">d =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb52-6"><a></a>)</span>
-<span id="cb52-7"><a></a></span>
-<span id="cb52-8"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb50-2"><a></a>  <span class="at">a =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb50-3"><a></a>  <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb50-4"><a></a>  <span class="at">c =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb50-5"><a></a>  <span class="at">d =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb50-6"><a></a>)</span>
+<span id="cb50-7"><a></a></span>
+<span id="cb50-8"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
-         a      b      c        d
-     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
- 1 -0.538  -0.810 -0.454 -1.26   
- 2  0.293  -1.74   0.537  0.849  
- 3 -3.01   -0.538 -0.767 -1.32   
- 4 -0.397  -1.29   0.479 -1.23   
- 5  0.276  -0.385  0.281 -2.86   
- 6 -0.331   0.824  1.23  -1.41   
- 7  1.13    1.48  -0.768  0.381  
- 8  0.0628 -0.312  1.04   0.636  
- 9  1.83    0.834  1.26  -0.00814
-10 -0.0379  0.668  0.583 -1.74   </code></pre>
+        a      b      c      d
+    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+ 1 -1.92  -0.360  1.45  -0.710
+ 2  0.347  1.40  -0.833 -0.796
+ 3 -0.878 -1.47   0.112 -0.160
+ 4 -0.851 -0.116  0.271  0.187
+ 5 -0.181 -0.416  1.77  -1.26 
+ 6 -0.723  0.614  1.00  -0.281
+ 7  1.37  -1.14   1.39   0.344
+ 8 -0.829  0.603  0.409 -0.610
+ 9  0.896  1.11   0.686 -1.39 
+10  1.62  -0.691  0.486  1.70 </code></pre>
 </div>
 </div>
 </section>
@@ -910,18 +896,18 @@ Caused by error:
 <li>Count the elements and compute median:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
-<span id="cb54-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb54-3"><a></a>  <span class="at">a =</span> <span class="fu">mean</span>(a),</span>
-<span id="cb54-4"><a></a>  <span class="at">b =</span> <span class="fu">mean</span>(b),</span>
-<span id="cb54-5"><a></a>  <span class="at">c =</span> <span class="fu">mean</span>(c),</span>
-<span id="cb54-6"><a></a>  <span class="at">d =</span> <span class="fu">mean</span>(d)</span>
-<span id="cb54-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
+<span id="cb52-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb52-3"><a></a>  <span class="at">a =</span> <span class="fu">mean</span>(a),</span>
+<span id="cb52-4"><a></a>  <span class="at">b =</span> <span class="fu">mean</span>(b),</span>
+<span id="cb52-5"><a></a>  <span class="at">c =</span> <span class="fu">mean</span>(c),</span>
+<span id="cb52-6"><a></a>  <span class="at">d =</span> <span class="fu">mean</span>(d)</span>
+<span id="cb52-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-      n       a      b     c      d
-  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
-1    10 -0.0722 -0.127 0.342 -0.796</code></pre>
+      n      a       b     c      d
+  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1    10 -0.115 -0.0460 0.674 -0.297</code></pre>
 </div>
 </div>
 <ul>
@@ -937,19 +923,19 @@ Caused by error:
 <li>Arguments: function and selection of columns:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
-<span id="cb56-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb56-3"><a></a>  <span class="fu">across</span>(a<span class="sc">:</span>d,mean)</span>
-<span id="cb56-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
+<span id="cb54-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb54-3"><a></a>  <span class="fu">across</span>(a<span class="sc">:</span>d,mean)</span>
+<span id="cb54-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-      n       a      b     c      d
-  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
-1    10 -0.0722 -0.127 0.342 -0.796</code></pre>
+      n      a       b     c      d
+  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1    10 -0.115 -0.0460 0.674 -0.297</code></pre>
 </div>
 </div>
 <ul>
-<li>Can use other tools (i.e.&nbsp;<code>starts_with</code>, <code>everything</code>) to select columns</li>
+<li>Can use other selects (i.e.&nbsp;<code>starts_with</code>, <code>everything</code>)</li>
 </ul>
 </section>
 <section id="anonymous-functions-in-across" class="slide level2">
@@ -959,25 +945,28 @@ Caused by error:
 <li>Anonymous (or lambda functions), functions not important enough to be named:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>\(x) <span class="fu">median</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>\(x) <span class="fu">median</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x) 
 median(x^2 * exp(-x^2))</code></pre>
 </div>
 </div>
+</section>
+<section id="anonymous-functions-in-across-1" class="slide level2">
+<h2>Anonymous functions in <code>across</code></h2>
 <ul>
 <li>Can use this to pass arguments:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
-<span id="cb60-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb60-3"><a></a>  <span class="fu">across</span>(a<span class="sc">:</span>d, \(x) <span class="fu">mean</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb60-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(</span>
+<span id="cb58-2"><a></a>  <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb58-3"><a></a>  <span class="fu">across</span>(a<span class="sc">:</span>d, \(x) <span class="fu">mean</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb58-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-      n       a      b     c      d
-  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
-1    10 -0.0722 -0.127 0.342 -0.796</code></pre>
+      n      a       b     c      d
+  &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1    10 -0.115 -0.0460 0.674 -0.297</code></pre>
 </div>
 </div>
 </section>
@@ -987,7 +976,7 @@ median(x^2 * exp(-x^2))</code></pre>
 <li><code>map(vec,f) = [f(vec[1]),f(vec[2]),....]</code> <img data-src="map1.png" style="width:30.0%" alt="Adv. R"></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 2.718282
@@ -1000,7 +989,7 @@ median(x^2 * exp(-x^2))</code></pre>
 </div>
 </div>
 </section>
-<section id="map_" class="slide level2">
+<section id="map_" class="slide level2 smaller">
 <h2><code>map_*</code></h2>
 <ul>
 <li><code>map_dbl</code>, <code>map_chr</code>, <code>map_lgl</code>, <code>map_int</code>: assume data type and return vectors</li>
@@ -1011,7 +1000,7 @@ median(x^2 * exp(-x^2))</code></pre>
 <section id="map_-1" class="slide level2">
 <h2><code>map_*</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
@@ -1023,7 +1012,7 @@ Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
 Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
 Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">length</span>(<span class="fu">unique</span>(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> mpg  cyl disp   hp drat   wt qsec   vs   am gear carb 
   25    3   27   22   22   29   30    2    2    3    6 </code></pre>
@@ -1041,28 +1030,33 @@ Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</code></pr
 <li>Only use them when you must (such as when you need side effects)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="cf">for</span> (element <span class="cf">in</span> vector){</span>
-<span id="cb68-2"><a></a>  <span class="fu">func</span>(element) <span class="co"># Run some code that uses element</span></span>
-<span id="cb68-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="cf">for</span> (element <span class="cf">in</span> vector){</span>
+<span id="cb66-2"><a></a>  <span class="fu">func</span>(element) <span class="co"># Run some code that uses element</span></span>
+<span id="cb66-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="while-loop-in-action" class="slide level2">
+<h2><code>while</code> loop in action</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>counter <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb69-2"><a></a><span class="cf">while</span> (<span class="fu">rnorm</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="dv">2</span>) {</span>
-<span id="cb69-3"><a></a>  counter <span class="ot">=</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb69-4"><a></a>  </span>
-<span id="cb69-5"><a></a>}</span>
-<span id="cb69-6"><a></a></span>
-<span id="cb69-7"><a></a>counter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>counter <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb67-2"><a></a><span class="cf">while</span> (<span class="fu">rnorm</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="dv">2</span>) {</span>
+<span id="cb67-3"><a></a>  counter <span class="ot">=</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb67-4"><a></a>  </span>
+<span id="cb67-5"><a></a>}</span>
+<span id="cb67-6"><a></a></span>
+<span id="cb67-7"><a></a>counter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 157</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 </div>
 </section>
 <section id="data-science-in-context-presentation" class="slide level2">
 <h2>Data Science in Context Presentation</h2>
 </section>
-<section id="meetup-reflection" class="slide level2">
-<h2>Meetup Reflection</h2>
+<section id="meetup-reflectionone-minute-paper" class="slide level2">
+<h2>Meetup Reflection/One Minute Paper</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
