@@ -601,7 +601,7 @@ George Hagstrom
 <span id="cb8-3"><a></a>planes_tab <span class="ot">=</span> con <span class="sc">|&gt;</span> <span class="fu">tbl</span>(<span class="st">"planes"</span>) <span class="sc">|&gt;</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   table&lt;planes&gt; [?? x 9]
-# Database: DuckDB v1.1.0 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
+# Database: DuckDB v1.1.1 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
   tailnum  year type               manufacturer model engines seats speed engine
   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; 
 1 N10156   2004 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…
@@ -624,7 +624,7 @@ George Hagstrom
 <span id="cb10-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(num_flights)) <span class="sc">|&gt;</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:     SQL [?? x 2]
-# Database:   DuckDB v1.1.0 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
+# Database:   DuckDB v1.1.1 [georgehagstrom@Linux 6.6.6-76060606-generic:R 4.4.1//home/georgehagstrom/work/Teaching/DATA607/website/meetups/Meetup7/duckdb]
 # Ordered by: desc(num_flights)
   tailnum num_flights
   &lt;chr&gt;         &lt;dbl&gt;
@@ -684,8 +684,8 @@ ORDER BY num_flights DESC</code></pre>
  6 N368JB          230
  7 N827JB          125
  8 N37465          111
- 9 N37468          102
-10 N36469          102
+ 9 N36469          102
+10 N37468          102
 # ℹ 82 more rows</code></pre>
 </div>
 </div>
