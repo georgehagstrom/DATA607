@@ -1,58 +1,43 @@
 ---
-title: "Lab 7: Webscraping and APIs"
+title: "Lab 7: Rectangling and Webscraping"
 format: html
 editor: source
 ---
 
 # Overview
 
-This is a two part assignment. In the first part you will use the webscraping package `rvest` along with functions and iteration to download data from the internet on political contributions. In the second part, you will use `httr` to interact with the New York Times website apis.
+This is a two part assignment. In the first part of the assignment you will practice rectangling on a dataset from the `repurrrsive` package. In the second part you will combine the `rvest` package along with functions and iteration to scrape data on foreign linked political action committees from the website [open secrets](https://www.opensecrets.org).
+
+# Rectangling
+
+**Problem 1:** Load the `repurrrsive` package to get access to get access to the `got_chars` dataset. In section 23.4.2 of R4DS, there is code that extracts data from the `got_chars` list and converts it into a tibble with information on each character and a separate tibble which contains information on the titles held by each character. Perform similar operations to create separate tibbles containing the aliases, allegiances, books, and TV series of each Game of Thrones character.
 
 # Webscraping Open Secrets
 
-
 In this assignment we will scrape and work with data foreign connected PACs that donate to US political campaigns. In the United States, only American citizens and green card holders can contribute to federal elections, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees.
 
-First, we will get data foreign connected PAC contributions in the 2022 election cycle.
-Then, you will use a similar approach to get data such contributions from previous years so that we can examine trends over time.
+First, we will get data foreign connected PAC contributions in the 2022 election cycle. Then, you will use a similar approach to get data such contributions from previous years so that we can examine trends over time.
 
 In order to complete this assignment you will need a Chrome browser with the [Selector Gadget extension](http://selectorgadget.com/) installed.
 
-In addition to `tidyverse`, you will need to install and load the packages `robotstxt`,
-`rvest`, and `scales`.
+In addition to `tidyverse`, you will need to install and load the packages `robotstxt` and `rvest`
 
-**Problem 1:** Check that open secrets allows you to webscrape by running the `paths_allowed`
-function on the url `https://www.opensecrets.org`. Then write a function called 
-`scrape_pac()` that scrapes information from the Open Secrets webpage for foreign connected
-PAC contributions in a given year:
+**Problem 2:**
 
-* This function should take the url of the webpage as its only input and should output a data frame
-* It should rename scraped variables using the "snake_case" naming convention
-* clean up the `Country of Origin/Parent Company` variable with `str_squish()`.
-*  add a new column to the data frame for `year`. We will want this information when we ultimately have data from all years, so this is a good time to keep track of it. Our function doesn't take a year argument, but the year is embedded in the URL, so we can extract it out of there, and add it as a new column. Use the `str_sub()` function to extract the last 4 characters from the URL. You will probably want to look at the help for this function to figure out how to specify "last 4 characters".
+-   Check that open secrets allows you to webscrape by running the `paths_allowed` function on the url `https://www.opensecrets.org`.
 
-Define the URLs for 2022, 2020, and 2000 contributions.
-Then, test your function using these URLs as inputs.
-Does the function seem to do what you expected it to do?
+-   Write a function called `scrape_pac()` that scrapes information from the Open Secrets webpage for foreign connected PAC contributions in a given year. The `url` for this data is [https://www.opensecrets.org/political-action-committees-pacs/foreign-connected-pacs/2024](https://www.opensecrets.org/political-action-committees-pacs/foreign-connected-pacs/2024). This function should take the url of the webpage as its only input and should output a data frame. The variables of this data-frame should be renamed so that they are in `snake_case` format (`lower_case_and_underscores_for_spaces`, see R4DS section 2.3). Use `str_squish()` to remove excess whitespace from the Country of Origin/Parent Company variables, and add a new column which records the year by extracting from the input url.
 
-**Problem 2:** Construct a vector called `urls` that contains the URLs for each webpage that contains information on foreign-connected PAC contributions for a given year. Map the `scrape_pac()` function over `urls` in a way that will result in a data frame called `pac_all`.
-Write the data frame to a csv file called `pac-all.csv` in the `data` folder.
+Hint: If you have trouble finding the right elements to search for using the selector gadget try looking for a table element.
 
-**Problem 3:**  Clean your downloaded data file for visualization. 
+-   Test your function on the urls for 2024, 2022, and 2000, and show the first several rows of each of the outpus. Does the function seem to do what you expected it to do?
 
-* First report the number of observations and variables that your scraped datasset contains.
-* Separate the `country_parent` into two such that country and parent company appear in different columns for country-level analysis.
-* Convert contribution amounts in `total`, `dems`, and `repubs` from character strings to numeric values.
-* Print out the top 10 rows of your data frame after completing these steps.
-  
-**Problem 4:**  Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years.
-    Once you have made the plot, write a brief interpretation of what the graph reveals.
-    Few hints to help you out:
+**Problem 3:**
 
-**Problem 5:** Create a line plot of contributions from UK companies to each of the Democratic 
-and Republican parties over time, with the lines colored according to party to differentiate them.
+-   Construct a vector called `urls` that contains the URLs for each webpage that contains information on foreign-connected PAC contributions for a given year (combine `seq` and string functions). Using the `map_dfr` function from the `purrr` package, apply the `scrape_pac()` function over `urls` in a way that will result in a data frame called `pac_all` that contains the data for all of the years.
 
-# Using the NY Times API
+-   Clean this combined dataset by separating the country of origin from the parent company (use `separate_wider_delim` or another tool of your choice, you will need to be cautious with some special cases in this column) and by converting the strings in the `total`, `dems`, and `repubs` columns into numbers. Print out the top 10 rows over your dataset after completing these steps.
 
-**Problem 6:** The New York Times web site provides a rich set of APIs, as described [here](https://developer.nytimes.com/apis) . You’ll need to start by signing up for an API key.
-Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it into an R DataFrame.
+-   Calculate the total contributions from PACs linked to Canada and Mexico each year and plot how these contributions change over time.
+
+-   Find the 5 countries who over the entire time period of the dataset have the greatest total contribution from affiliated PACs. Then calculate the total contribution for each of those countries for each year of the data and make a plot of it to visualize how the contributions have changed over time.
