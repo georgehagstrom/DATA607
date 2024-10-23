@@ -384,21 +384,21 @@
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n        a      b      c       d\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n 1  0.293 -0.463  1.47   0.0894\n 2  1.01   0.106 -0.723 -0.436 \n 3  0.648  2.03  -1.55   1.18  \n 4 -0.332 -2.25   0.708  0.342 \n 5  0.319  0.294  0.202  1.28  \n 6 -0.464  0.759 -0.742 -0.329 \n 7  0.234 -0.862  2.51   0.125 \n 8  0.295  0.171  0.452 -1.10  \n 9 -0.908  1.34  -0.877  1.41  \n10 -0.977  0.974 -1.23  -0.280"
+    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a       b      c      d\n     &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 -0.377   1.23   -0.774  0.420\n 2  0.957   0.744   0.266  1.33 \n 3 -0.566   0.943   1.49  -0.293\n 4 -0.169   2.39    0.911 -0.655\n 5 -0.590   0.0268 -0.366  0.809\n 6  0.0184  0.406  -1.11  -1.88 \n 7  0.190   1.42    0.303 -0.871\n 8  1.18   -0.465  -0.947  0.868\n 9  1.45   -1.27    0.278 -1.28 \n10  1.47    1.11    0.773  0.778"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0123 0.210 0.0225 0.228\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
+    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n     a     b      c       d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n1    10 0.356 0.654 0.0815 -0.0763\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0123 0.210 0.0225 0.228\n\n\n\nCan use other selects (i.e. starts_with, everything)"
+    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n     a     b      c       d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n1    10 0.356 0.654 0.0815 -0.0763\n\n\n\nCan use other selects (i.e. starts_with, everything)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
@@ -412,7 +412,7 @@
     "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Anonymous functions in across",
-    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0123 0.210 0.0225 0.228"
+    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n     a     b      c       d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;\n1    10 0.356 0.654 0.0815 -0.0763"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#map-family-in-purrr",
@@ -447,7 +447,7 @@
     "href": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
     "title": "Meetup 8: Functions and Iteration",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 189"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 7"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#data-science-in-context-presentation",
@@ -653,11 +653,11 @@
     "text": "robotstxt\n\nHow to know if you can scrape a website?\n\n\nlibrary(robotstxt)\npaths_allowed(\"http://www.facebook.com\")\n\n[1] FALSE\n\npaths_allowed(\"http://www.wikipedia.com\")\n\n[1] TRUE"
   },
   {
-    "objectID": "meetups/Meetup9/Meetup9.html#meetup-reflection",
-    "href": "meetups/Meetup9/Meetup9.html#meetup-reflection",
+    "objectID": "meetups/Meetup9/Meetup9.html#meetup-reflectionone-minute-paper",
+    "href": "meetups/Meetup9/Meetup9.html#meetup-reflectionone-minute-paper",
     "title": "Meetup 9: Hierarchical Data and Webscraping",
-    "section": "Meetup Reflection",
-    "text": "Meetup Reflection"
+    "section": "Meetup Reflection/One Minute Paper",
+    "text": "Meetup Reflection/One Minute Paper\nPlease fill out the following google form after the meeting or watching the video:\nClick Here"
   },
   {
     "objectID": "meetups/Meetup7/Meetup7.html#lab-5-review",
@@ -1462,7 +1462,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.7102142 -0.1518647 -0.4132657  1.3427858 -0.3830496 -1.1865859\n [7]  0.6444683 -0.8144245 -0.4758822 -0.5313860\n\nprint(randVec |&gt; rank())\n\n [1]  3  8  6 10  7  1  9  2  5  4\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  1.4508513 -0.2727730  2.1662006 -0.1341818  0.6866839  0.1861671\n [7] -0.7622829  0.5953390  0.7789188  0.5986020\n\nprint(randVec |&gt; rank())\n\n [1]  9  2 10  3  7  4  1  5  8  6\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -2600,7 +2600,7 @@
     "href": "meetups/Meetup9/MapVignette.html#while-loop-in-action",
     "title": "Purrr and map",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 91"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 22"
   },
   {
     "objectID": "acknowledgements.html",
