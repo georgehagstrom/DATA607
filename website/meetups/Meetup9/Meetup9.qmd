@@ -1,0 +1,328 @@
+---
+title: "Meetup 9: Hierarchical Data and Webscraping"
+author: "George Hagstrom"
+format: revealjs
+---
+
+```{r}
+library(tidyverse)
+library(jsonlite)
+library(repurrrsive)
+
+
+
+```
+
+## Lab 6: Primary Keys
+
+* Most common mistake on Lab 6 was not identifying keys correctly in the college sports dataset
+```{r}
+sports_program_data <- read_csv("../../assignments/labs/labData/sports_program_costs.csv")
+sports_program_data
+
+
+
+
+```
+
+## Lab 6: Primary Keys
+
+* Most common mistake on Lab 6 was not identifying keys correctly in the college sports dataset
+* Key ideas:
+  - Remove duplicate rows from new tables
+  - Key should uniquely identify each row
+  - Is `year` needed?
+  - `unitid` versus `institution_name`?
+
+
+## Week Ahead
+
+* Project Proposal
+* Lab Assignment
+* Sign up For DS in Context
+
+
+## Hierarchical Data
+
+* Data stored in a tree-strucutre
+* Parent nodes are connected to children
+![cran data.tree](tree.png)
+* One of the most common ways to store data
+* Easy to understand, can be fast
+* Has some drawbacks (read Codd 1970)
+
+## List data type
+
+* List is like a vector, but data types don't have to be the same
+
+```{r}
+#| echo: true
+list1 <- list(vector = 1:4, letter = "a", logical = TRUE)
+
+str(list1)
+
+list1[[2]]
+list1["vector"]
+
+```
+
+* Elements can be named
+
+## List can contain lists {.smaller}
+
+* This allows lists to be hierarchical
+
+```{r}
+#| echo: true
+
+country_list = list( USA = list(capital = "Washington", pop = 330, continent = "NA"),
+                     Brazil = list(capital = "Brasilia", pop = 212, continent = "SA"),
+                     Poland = list(capital = "Warsaw",pop = 38, continent = "EU"))
+
+str(country_list)
+
+```
+* Use `str` or `View` to visualize hierarchical lists
+
+
+## Rectangling
+
+* To analyze hierarchical data, need to get it into a table
+* Use `unnest` functions
+* Two common scenarios
+  1. Named children w/ common structure 
+    - `unnest_wider`
+  2. Unnamed children
+    - `unnest_longer`
+  
+## `unnest_wider`
+
+* When list children have names and common structure, each list member can become
+a new columns:
+  
+```{r}
+#| echo: true
+  df1 <- tribble(
+  ~x, ~y,
+  1, list(a = 11, b = 12),
+  2, list(a = 21, b = 22),
+  3, list(a = 31, b = 32),
+)
+  
+df1 |> unnest_wider(y)
+  
+```
+
+## `unnest_longer` {.smaller}
+
+* When there list elements aren't named, each list member gets put into a new row
+
+```{r}
+#| echo: true
+
+df2 <- tribble(
+  ~x, ~y,
+  1, list(11, 12, 13),
+  2, list(21),
+  3, list(31, 32),
+)
+
+df2 |> unnest_longer(y)
+
+```
+
+## GOT Case Study
+* `repurrrsive` package contains hierarchical datasets for practice
+* `got_chars` contains info on Game of Thrones characters
+
+```{r}
+#| echo: true
+
+str(got_chars)
+
+```
+
+## Rectangling GOT
+
+* Start by turning it into tibble:
+
+```{r}
+
+chars = tibble(json = got_chars)
+chars
+
+```
+
+## Rectangling GOT
+
+* Lists are named, structure is same, so use `unnest_wider`
+```{r}
+#| echo: true
+
+chars |> unnest_wider(json)
+
+
+```
+
+## Create `povBooks` table
+
+* In Game of Thrones books, some characters had point of view chapters
+* Let's create a table with all the data on that
+```{r}
+#| echo: true
+chars |>
+  unnest_wider(json) |> 
+  select(id,name,povBooks) |> head(5)
+
+
+
+```
+
+## Create `povBooks` table
+
+* The lists aren't named, so we need to use `unnest_longer`
+```{r}
+#| echo: true
+chars |> 
+  unnest_wider(json) |> 
+  select(id,name,povBooks) |> 
+  unnest_longer(povBooks) |> head(10)
+
+
+
+```
+
+## JSON Files
+
+* Hierarchical data format commonly used on the internet
+```{r}
+
+json_string = r"--({"menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", "onclick": "OpenDoc()"},
+      {"value": "Close", "onclick": "CloseDoc()"}
+    ]
+  }
+}})--"
+
+str_view_all(json_string)
+
+```
+
+## JSON Files
+
+* Nested `"key":value` pairs
+* `string`, `number`, `bool`, `null`
+* Array: `[1.0, 3.0, 1, "Cat"]`
+* Object: `{"Capital":"Washington","Pop":330000000}`
+
+
+
+## `jsonlite`
+
+* Several functions exist for reading and parsing json files
+
+```{r}
+#| echo: true
+got_chars_json()
+
+got_chars_json() |> read_json()
+
+```
+
+## JSON Databases
+
+* JSON databases are an increasingly popular alternative to the relational database model
+based around SQL
+* Mongo, NoSQL
+* Do not require database schemas
+* Very flexible and scalable
+* Downsides:
+  - No Joins
+  - No ACID (Atomicity, Consistency, Isolation, Durability)
+
+## Webscraping
+
+* Webscraping is the process of extracting data from websites
+* We will use `rvest` package which pulls HTML from websites and lets you process it
+* Webscraping can be very messy, powerful but maybe a last resort
+* Alternative: APIs
+
+## HTML
+
+* Webpages are usually HTML files:
+
+``` html
+<html>
+<head>
+  <title>Page title</title>
+</head>
+<body>
+  <h1 id='first'>A heading</h1>
+  <p>Some text &amp; <b>some bold text.</b></p>
+  <img src='myimg.png' width='100' height='100'>
+</body>
+```
+* Nested "tags": `body`, `head`, `h1`, `p`, `b`
+* Attributes: `id`, `src`, `width`, `height`
+
+
+## Ethics: OK Cupid Case Study
+
+* Researchers in Denmark scraped dating site OkCupid and published a dataset
+
+![vox](okcupid.png)
+
+## Ethics: OK Cupid Case Study
+
+* Researchers in Denmark scraped dating site OkCupid and published a dataset
+
+![vox](okcupid2.png)
+
+## Ethics: OK Cupid Case Study
+
+* Researchers in Denmark scraped dating site OkCupid and published a dataset
+
+![vox](okcupid3.png)
+
+## Cambridge Analytica
+
+* Cambridge Analytica harvested data from FB users using questionaires/quizzes
+* Built psychological profiles of users and their friends
+* Used data for targetting in political campaigns
+  - Resulted in Cambridge Analytica bankruptcy
+  - FB paid billions in fines, lost market cap
+
+## Cambridge Analytica
+
+![ftc](fb-penalty.png)
+
+## Guidelines:
+
+* Just because you can, doesn't mean you should
+* Red Flags:
+  * Personal Data
+  * Data you think is only available accidentally
+* Social Science Research Study Ethics:
+  1. Did participants consent?
+  2. Is privacy maintained?
+  3. Is there the potential for harm?
+
+## `robotstxt`
+
+* How to know if you can scrape a website?
+
+```{r}
+#| echo: true
+library(robotstxt)
+paths_allowed("http://www.facebook.com")
+paths_allowed("http://www.wikipedia.com")
+```
+
+## Meetup Reflection
+
+
