@@ -293,7 +293,7 @@
     "href": "meetups/Meetup9/MapVignette.html#while-loop-in-action",
     "title": "Purrr and map",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 23"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 19"
   },
   {
     "objectID": "meetups/Meetup7/SQLSlides.html#relational-databases",
@@ -1536,7 +1536,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.4013815  1.9610392  1.0132082 -0.6861385 -1.2016781 -1.0735675\n [7] -0.9042687  0.1191660  0.2495102 -0.9827241\n\nprint(randVec |&gt; rank())\n\n [1]  6 10  9  5  1  2  4  7  8  3\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.051711010 -1.137473062 -0.003718529 -0.325488424 -0.867739164\n [6]  0.291062094 -0.074860816 -0.138924441  0.434088332 -0.013723908\n\nprint(randVec |&gt; rank())\n\n [1]  6  1  8  3  2  9  5  4 10  7\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -2537,21 +2537,21 @@
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a        b        c       d\n     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n 1  0.440  -0.00352 -0.0799  -0.347 \n 2 -0.522   1.30     0.00927 -0.807 \n 3  0.912   0.327   -0.0259  -0.180 \n 4  0.520  -1.33    -0.332   -0.121 \n 5 -0.277   0.715   -0.797    0.665 \n 6 -0.236   0.117    1.46    -0.0726\n 7 -2.62    1.05    -0.739   -0.574 \n 8  0.0193  0.372    1.55    -1.23  \n 9  0.858  -0.302    0.294   -0.0272\n10  0.663   1.14     0.657    0.920"
+    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n        a      b      c      d\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1  1.70   0.561 -0.450 -0.500\n 2 -0.259 -0.747  0.174 -0.606\n 3 -1.49   1.41  -2.15  -0.337\n 4  1.28   0.563 -0.474  0.224\n 5 -0.738 -0.791 -1.49   0.995\n 6 -0.536  0.227 -0.523 -1.15 \n 7 -1.91  -0.362  1.11   0.361\n 8 -0.248 -0.209 -0.588  0.612\n 9 -0.629 -0.355  0.121  0.835\n10 -0.545  1.61  -1.02  -0.471"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n       a     b     c      d\n  &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0245 0.338 0.200 -0.177\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
+    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c        d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n1    10 -0.337 0.191 -0.530 -0.00374\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n       a     b     c      d\n  &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0245 0.338 0.200 -0.177\n\n\n\nCan use other selects (i.e. starts_with, everything)"
+    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c        d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n1    10 -0.337 0.191 -0.530 -0.00374\n\n\n\nCan use other selects (i.e. starts_with, everything)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
@@ -2565,7 +2565,7 @@
     "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Anonymous functions in across",
-    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n       a     b     c      d\n  &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.0245 0.338 0.200 -0.177"
+    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n      a     b      c        d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n1    10 -0.337 0.191 -0.530 -0.00374"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#map-family-in-purrr",
@@ -2600,7 +2600,7 @@
     "href": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
     "title": "Meetup 8: Functions and Iteration",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 53"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 32"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#data-science-in-context-presentation",
@@ -2657,7 +2657,7 @@
     "href": "modules/module10.html",
     "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-25, 28 and 29 if you need\nhttr2 API package\nWeb APIs with R Book Sections 1-5 by Jon Harmon\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial Learn Git Branching interactive tutorial usethis package Web APIs Book Club Page I recommend the intro slides and the httr2 specific slides.",
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-25, 28 and 29 if you need\nhttr2 API package\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial Learn Git Branching interactive tutorial usethis package Web APIs Book Club Page I recommend the intro slides and the httr2 specific slides.",
     "crumbs": [
       "Topics",
       "10 - GIT and Collaboration"
