@@ -183,7 +183,7 @@
     "href": "modules/module10.html",
     "title": "Module 10 - Git and Collaboration",
     "section": "",
-    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-23\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial",
+    "text": "Learning Objectives\n\nBasic github commands\nGithub workflows and Branching\n\n\n\nReadings\n\nHappy Git and GitHub for the useR : Sections 15-25, 28 and 29 if you need\nhttr2 API package\n\n\n\nAdditional Resources:\nSoftware Carpentries git tutorial Learn Git Branching interactive tutorial usethis package",
     "crumbs": [
       "Topics",
       "10 - GIT and Collaboration"
@@ -384,21 +384,21 @@
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a       b       c      d\n     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n 1 -1.56    0.237   1.90   -0.390\n 2  0.265  -0.322  -1.12   -0.745\n 3  0.0979  0.197   0.0766 -1.00 \n 4  0.286   0.674   0.188  -0.430\n 5  0.417  -0.154   0.635   1.06 \n 6  1.13   -0.453   1.63    0.488\n 7  1.00    1.31   -0.320  -0.406\n 8 -0.721   0.345   3.04   -2.43 \n 9  0.200  -0.0883 -0.422   0.962\n10  1.30   -0.252   0.0236 -1.39"
+    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a       b       c       d\n     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n 1 -1.25   -0.488  -2.10   -1.57  \n 2  0.899  -1.70   -0.289   0.687 \n 3 -1.04    0.0639 -0.975   0.414 \n 4 -1.49   -1.00    0.218   2.07  \n 5 -0.0880  0.229  -0.0213  2.05  \n 6 -0.604   0.287  -1.57   -0.882 \n 7  0.968  -0.221  -0.744  -0.447 \n 8  0.113   0.0591 -0.375  -1.28  \n 9 -1.53    0.332   0.658  -0.523 \n10  0.0103 -0.189  -0.715   0.0270"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n     a     b     c      d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 0.242 0.150 0.562 -0.428\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
+    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n      a      b      c      d\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.401 -0.262 -0.592 0.0540\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n     a     b     c      d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 0.242 0.150 0.562 -0.428\n\n\n\nCan use other selects (i.e. starts_with, everything)"
+    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n      a      b      c      d\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.401 -0.262 -0.592 0.0540\n\n\n\nCan use other selects (i.e. starts_with, everything)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
@@ -412,7 +412,7 @@
     "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Anonymous functions in across",
-    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n     a     b     c      d\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    10 0.242 0.150 0.562 -0.428"
+    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n      a      b      c      d\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1    10 -0.401 -0.262 -0.592 0.0540"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#map-family-in-purrr",
@@ -447,7 +447,7 @@
     "href": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
     "title": "Meetup 8: Functions and Iteration",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 10"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 32"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#data-science-in-context-presentation",
@@ -1462,7 +1462,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  0.3327279  1.1247200 -1.3127398 -2.2624405 -1.1336074 -0.2538862\n [7]  2.3399723  0.1834670 -0.6815886  0.1260418\n\nprint(randVec |&gt; rank())\n\n [1]  8  9  2  1  3  5 10  7  4  6\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  1.3280426 -2.1670994  1.0713489  1.7993169 -0.3062914  0.6637034\n [7] -1.2085734 -1.5017861 -0.6130109 -0.1160825\n\nprint(randVec |&gt; rank())\n\n [1]  9  1  8 10  5  7  3  2  4  6\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -1651,7 +1651,7 @@
     "href": "assignments/tidygit/tidycreate.html",
     "title": "Tidyverse Create",
     "section": "",
-    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. You could consider our collective work as building out a book of examples on how to use TidyVerse functions.\nGitHub repository: https://github.com/georgehagstrom/Fall2024TIDYVERSE\nYour task here is to Create an Example Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset.\nLater, you’ll be asked to extend an existing vignette.  Using one of your classmate’s examples (as created above), you’ll then extend his or her example with additional annotated code.\nYou should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.\nAfter you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. .\nYou should complete your submission on the schedule stated in the course syllabus."
+    "text": "Overview\nIn this assignment, you’ll practice collaborating around a code project with GitHub. Each student will select a website API from the list of public APIs curated on this github repository. I recommend choosing a well documented repository which allows you to access data that you can load into R and visualize. If you know of website with an API that isn’t listed here, you may use it but be aware that this list is curated so there is a better chance that it will be easy to learn how to use the APIs on the websites listed here. I recommend choosing an API that doesn’t require authentication.\nUsing your selected API, you will create a vignette (in the form of a qmd file) using the httr2 library: https://httr2.r-lib.org/. This vignette should include three sections:\n\nA description of the API that you selected and the data it contains, along with a question that you are interested in exploring using the API\nCode that uses httr2 and other tidyverse functions which downloads the data you are interested in from the website and performs a simple visualization or analysis to address your question. Make sure to describe how your code works with the API.\nA conclusion section where you discuss the meaning of your visualization and/or analysis.\n\nYou should incorporate your vignette into a shared github repository which will contain all of the examples. I have created the following repository for you to use for this assignment:\nhttps://github.com/georgehagstrom/Fall2024TIDYVERSE\nYou should clone the provided repository. In order to push code to the repository, you will need to be added as a collaborator, which requires me to send me your github username (preferably over slack). You should also update the README.md file with your example. You may want to review Section 25 of Happy git and github for the useR. The github repo I have setup is to be organized following the first “ours” model.\nAfter you’ve created your vignette and uploaded it to github, render your pdf file and submit it along with your github handle to brightspace.\nIn several weeks, there will be a followup assignment where we will re-use the work submitted for this assignment and where you will select a vignette uploaded by one of your classmates and extend it by adding additional analyses.\nIf you have not yet done so, you will need to create a github account. There are many ways to work with git and R together, but one way I recommend is to follow the tutorial in the book Happy git and gitHub for the useR. To interface with our github repository use section 15.2 and create a project from an existing github repository."
   },
   {
     "objectID": "assignments/labs/Lab3.html",
@@ -2600,7 +2600,7 @@
     "href": "meetups/Meetup9/MapVignette.html#while-loop-in-action",
     "title": "Purrr and map",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 25"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 36"
   },
   {
     "objectID": "acknowledgements.html",
