@@ -7,22 +7,32 @@ editor: source
 
 # Overview
 
-In this assignment, you’ll practice collaborating around a code project with GitHub. 
-You could consider our collective work as building out a book of examples on how to use TidyVerse functions.
+In this assignment, you’ll practice collaborating around a code project with GitHub. Each student will select a website API from the list of public APIs curated on
+this [github repository](https://github.com/public-apis/public-apis). I recommend choosing a well documented repository which allows you to access data that you can
+load into R and visualize. If you know of website with an API that isn't listed here, you may use it but be aware that this list is curated so there is a better chance
+that it will be easy to learn how to use the APIs on the websites listed here. I recommend choosing an API that doesn't require authentication. 
 
-GitHub repository: [https://github.com/georgehagstrom/Fall2024TIDYVERSE](https://github.com/georgehagstrom/Fall2024TIDYVERSE)
+Using your selected API, you will create a vignette (in the form of a `qmd` file) using the `httr2` library: [https://httr2.r-lib.org/](https://httr2.r-lib.org/). This vignette
+should include three sections:
 
-Your task here is to Create an Example Using one or more TidyVerse packages, and any dataset from fivethirtyeight.com or Kaggle, 
-create a programming sample “vignette” that demonstrates how to use one or more of the capabilities of the selected TidyVerse package with your selected dataset.
+1. A description of the API that you selected and the data it contains, along with a question that you are interested in exploring using the API
+2. Code that uses `httr2` and other tidyverse functions which downloads the data you are interested in from the website and performs a simple visualization or
+analysis to address your question. Make sure to describe how your code works with the API.
+3. A conclusion section where you discuss the meaning of your visualization and/or analysis.
 
-Later, you'll be asked to extend an existing vignette.&nbsp;&nbsp;Using one of your classmate’s examples (as created above), you'll then extend his or her example with additional annotated code. 
+You should incorporate your vignette into a shared `github` repository which will contain all of the examples. I have created the following repository for you to use for this assignment:
 
-You should clone the provided repository. Once you have code to submit, you should make a pull request on the shared repository. You should also update the README.md file with your example.
+ [https://github.com/georgehagstrom/Fall2024TIDYVERSE](https://github.com/georgehagstrom/Fall2024TIDYVERSE)
 
-After you’ve created your vignette, please submit your GitHub handle name in the submission link provided below. .
+You should clone the provided repository. In order to push code to the repository, you will need to be added as a collaborator, which requires me to send me your github username (preferably over slack). You should also update the README.md file with your example. You may want to review [Section 25 of Happy git and github for the useR](https://happygitwithr.com/common-remote-setups). The `github` repo I have setup is to be organized following the first "ours" model. 
 
-You should complete your submission on the schedule stated in the course syllabus.
+After you’ve created your vignette and uploaded it to `github`, render your pdf file and submit it along with your `github` handle to brightspace. 
 
+In several weeks, there will be a followup assignment where we will re-use the work submitted for this assignment and where you will select a vignette uploaded by one of your classmates
+and extend it by adding additional analyses. 
+
+If you have not yet done so, you will need to create a `github` account. There are many ways to work with `git` and `R` together, but one way I recommend is to follow the tutorial
+in the book [Happy git and gitHub for the useR](https://happygitwithr.com). To interface with our github repository use [section 15.2 and create a project from an existing github repository.](https://happygitwithr.com/new-github-first#new-rstudio-project-via-git)
 
 
 
