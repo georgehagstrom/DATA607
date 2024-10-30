@@ -1,0 +1,229 @@
+---
+title: "Meetup 10: Web APIs and Git"
+author: "George Hagstrom"
+format: revealjs
+date: 10-30-2024
+---
+
+## Week 10 Nuts and Bolts
+
+* Behind on grading
+* Two topics and two vignettes
+* Working with APIs
+  - Using `httr2` to get EPA air quality data
+* Collaboration and `git`
+  - Short Vignette on merge conflicts based on your homework
+
+
+
+## Two part Tidyverse Assignment
+
+- API part:
+  - Find a web API
+  - Learn how to use it
+  - Get some data from it
+  - Do an analysis
+
+- github part:
+  - clone github.com/georgehagstrom/FALL2024TIDYVERSE
+  - Add your analysis as a separate file
+  - update the readme.md
+  
+## Assignment Considerations
+
+* The biggest "challenge" with github will be resolving merge conflicts in the readme.md file
+* Best practice to minimize merge conflicts:
+  - pull the repository
+  - add your changes to readme.md
+  - push
+* It should be straightforward to upload your qmd analysis
+* Turn in a pdf to Brightspace
+
+## RESTful APIs
+
+* API is an interface that allows applications to communicate
+* Each one is unique- read the docs to figure out the rules
+* REST APIs are a common standard
+* Uses `HTTP`, encodes commands in `url`
+* Four verbs: `get`, `post`, `put`, `delete`
+* Hierarchical Output (usually `json`)
+
+## `httr2` package
+
+* `httr2` let's you construct API calls systematically
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(httr2)
+
+req_weather = request("https://api.weather.gov/")
+req_weather |> req_dry_run()
+
+req_weather |> req_perform() |> resp_body_json()
+```
+
+* functions start with `req_*` or `resp_*`
+
+## Query Structure
+
+* Typically send requests to different endpoints
+* Use `req_url_path_append` to add endpoint url
+
+```{r}
+#| echo: true
+
+alert_url = "alerts/active"
+request_weather_alerts = req_weather |> req_url_path_append(alert_url)
+
+request_weather_alerts |> req_dry_run()
+```
+
+* Use `req_url_query` to add "instructions" to `url`
+
+```{r}
+#| echo: true
+
+ny_alerts = request_weather_alerts |> req_url_query(area = "NY")
+
+ny_alerts |> req_dry_run()
+```
+
+## Processing Output {.smaller}
+
+* Usually get `json`
+* `tibblify` helps you unnest
+```{r}
+#| echo: true
+library(tibblify)
+ny_alerts |> 
+  req_perform() |> 
+  resp_body_json() |> 
+  tibblify()
+
+
+
+```
+
+## `git`
+
+* Git is an open source version control tool 
+* Tracks different branches of projects, stores files according to their differences
+* Designed for collaborative teams of programmers
+* Different from `github` or `gitlab`, which are repositories with `git` functionality
+
+## Why is it Needed?
+
+![Jorge Cham PhD Comis](SlideGraphics/github-comic.png)
+
+## `git` Structure
+
+![](SlideGraphics/github1.png)
+
+
+## `git` Structure 
+
+![](SlideGraphics/github2-yourcomputer.png)
+
+
+
+## `git` Structure 
+
+![](SlideGraphics/github3-externalrepo.png)
+
+
+
+## `git` Clone
+
+![](SlideGraphics/github0-clone.png)
+
+
+
+## `git` Add
+
+![](SlideGraphics/github4-gitadd.png)
+
+
+## `git` Add (Staging Area)
+
+![](SlideGraphics/github5-stagingarea.png)
+
+
+## `git` Commit 
+
+![](SlideGraphics/github6-commit.png)
+
+
+## `git` Tracks Commits
+
+![](SlideGraphics/github7-morechanges.png)
+
+
+
+## `git` Checkout: Changing Position
+
+![](SlideGraphics/github8-checkout.png)
+
+
+
+## `git` Branching
+
+![](SlideGraphics/github9-branching.png)
+
+
+## `git` Push
+
+![](SlideGraphics/github10-push.png)
+
+## `git` Pull
+
+![](SlideGraphics/github11-pull.png)
+
+## `git` Pull
+
+![](SlideGraphics/github12-pull-2.png)
+
+## Merge Conflicts
+
+![](SlideGraphics/github13-conflicts.png)
+
+## Merge Conflicts Push
+
+![](SlideGraphics/github14-push-conflicts.png)
+
+
+## Merge Conflicts Pull
+
+![](SlideGraphics/github15-pull-conflicts.png)
+
+## Merge Conflicts Pull
+
+![](SlideGraphics/github16-pull-conflicts-2.png)
+
+
+## Push Frequently
+
+* He/She who pushes first doesn't have to deal with merge conflicts when pulling
+
+* Try not to let your branch build up too many un-pushed changes
+
+
+## What else about `git`?
+
+* You may not be allowed to push
+  - In this case repo owner will have to approve your pull request
+  - You may want to fork the repo
+* Many other commands- learn them depending on your context
+  - stash, status, rebase, squash, etc....
+
+
+## Meetup Reflection/One Minute Paper
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+
+
+
+
