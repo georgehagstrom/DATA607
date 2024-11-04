@@ -307,7 +307,7 @@
     "href": "meetups/Meetup9/MapVignette.html#while-loop-in-action",
     "title": "Purrr and map",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 18"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 5"
   },
   {
     "objectID": "meetups/Meetup7/SQLSlides.html#relational-databases",
@@ -1238,7 +1238,7 @@
     "href": "meetups/Meetup5/Meetup5.html#rank",
     "title": "Meetup 5: Data Transformation",
     "section": "Rank",
-    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1] -0.20908590 -0.61994385  0.21222981  0.68907778 -1.75466928  0.51032373\n [7] -1.67176690 -1.60470886  0.30618820 -0.07590653\n\nprint(randVec |&gt; rank())\n\n [1]  5  4  7 10  1  9  2  3  8  6\n\n\n\nRank preserved by all monotone transformations"
+    "text": "Rank\n\nrank transforms data from values to numerical rank:\n\n\nrandVec = rnorm(10)\nprint(randVec)\n\n [1]  0.3389335  0.5957521  0.4373214  1.4807618  1.1415883  0.0221617\n [7] -2.4079036  0.3230049 -0.6663387 -0.1760227\n\nprint(randVec |&gt; rank())\n\n [1]  6  8  7 10  9  4  1  5  2  3\n\n\n\nRank preserved by all monotone transformations"
   },
   {
     "objectID": "meetups/Meetup5/Meetup5.html#rank-correlation-and-correlation-trick",
@@ -2824,21 +2824,21 @@
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n        a      b      c        d\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n 1 -2.03   0.414 -0.319  0.717  \n 2  0.493  0.782  0.361  0.959  \n 3 -1.01  -0.112 -1.33   0.0268 \n 4  1.91  -0.720 -0.695  0.941  \n 5 -0.701  1.09   0.232  1.29   \n 6 -0.430 -0.320 -0.388  1.17   \n 7  0.314 -0.892 -0.381  0.00741\n 8 -0.841 -1.64  -0.976  0.456  \n 9  0.564  1.44   0.693 -0.193  \n10  1.56   0.386  1.71   0.125"
+    "text": "across iterates on columns\nSuppose we want to apply an operation to many columns at once:\n\ndf &lt;- tibble(\n  a = rnorm(10),\n  b = rnorm(10),\n  c = rnorm(10),\n  d = rnorm(10)\n)\n\ndf\n\n# A tibble: 10 × 4\n         a      b       c       d\n     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n 1 -0.108   2.34   0.875   0.512 \n 2 -1.38    0.347  0.372  -0.0921\n 3  0.707   0.721 -1.09    0.124 \n 4  1.01   -1.59  -1.67   -0.754 \n 5  1.06   -0.178  1.47    1.02  \n 6  0.340  -1.11   0.102  -0.488 \n 7  0.332   0.983  0.955   0.985 \n 8 -0.0898 -0.316 -1.54    0.303 \n 9 -0.234  -0.744 -1.06    0.662 \n10 -0.975   0.635 -0.0288  1.18"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n       a      b      c     d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 -0.0175 0.0434 -0.109 0.550\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
+    "text": "across iterates on columns\n\nCount the elements and compute median:\n\n\ndf |&gt; summarise(\n  n = n(),\n  a = mean(a),\n  b = mean(b),\n  c = mean(c),\n  d = mean(d)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0665 0.108 -0.162 0.345\n\n\n\nInvolves lots of copy/pasting\nDoesn’t scale well with number of columns"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "href": "meetups/Meetup8/Meetup8.html#across-iterates-on-columns-2",
     "title": "Meetup 8: Functions and Iteration",
     "section": "across iterates on columns",
-    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n       a      b      c     d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 -0.0175 0.0434 -0.109 0.550\n\n\n\nCan use other selects (i.e. starts_with, everything)"
+    "text": "across iterates on columns\n\nAlternative is function across\npart of purrr functional programming library\nArguments: function and selection of columns:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d,mean)\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0665 0.108 -0.162 0.345\n\n\n\nCan use other selects (i.e. starts_with, everything)"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across",
@@ -2852,7 +2852,7 @@
     "href": "meetups/Meetup8/Meetup8.html#anonymous-functions-in-across-1",
     "title": "Meetup 8: Functions and Iteration",
     "section": "Anonymous functions in across",
-    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n       a      b      c     d\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 -0.0175 0.0434 -0.109 0.550"
+    "text": "Anonymous functions in across\n\nCan use this to pass arguments:\n\n\ndf |&gt; summarise(\n  n = n(),\n  across(a:d, \\(x) mean(x,na.rm=TRUE))\n)\n\n# A tibble: 1 × 5\n      n      a     b      c     d\n  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1    10 0.0665 0.108 -0.162 0.345"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#map-family-in-purrr",
@@ -2887,7 +2887,7 @@
     "href": "meetups/Meetup8/Meetup8.html#while-loop-in-action",
     "title": "Meetup 8: Functions and Iteration",
     "section": "while loop in action",
-    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 1"
+    "text": "while loop in action\n\ncounter = 0\nwhile (rnorm(1) &lt; 2) {\n  counter = counter + 1\n  \n}\n\ncounter\n\n[1] 91"
   },
   {
     "objectID": "meetups/Meetup8/Meetup8.html#data-science-in-context-presentation",
@@ -3037,7 +3037,7 @@
     "href": "posts/2024-11-03-Week-11-Tidy-Text-and-NLP.html",
     "title": "Week 11 Info: Tidy Text and Natural Language Processing",
     "section": "",
-    "text": "Hello Class,\nWeek 11 has begun. In week 11, we will build on our previous module on strings and learn how to work with text data. Text data comes in many different forms, from books and news articles to technical manuals, legal documents, or product reviews. This data lacks the rectangular structure that many other datasets naturally posses, and requires processing in order to generate features that enable us to run analyses or generate insights.\nWe will read the first 4 chapters of the online book text mining with R: a tidy approach, which cover how to wrangle textual data and convert it into a tidy format, how to work with lexicons to peform basic sentiment analysis, how to interpret the frequency of words occuring in text, and how to make use of word combinations (n-grams) and to compute correlations. The primary tool will be a tidyverse package called tidytext which has built in functions to tokenize text data into a tidy format and to analyze the resulting dataset.\nThis week we will have a lab assignment which involves extracting data stored in a hierarchical format, and combining webscraping tools with functions and iteration to automatically download many files at once. This assignment is due Sunday November 10th by midnight: Lab 8. Note: I have added an alternative, shorter data file for those whoser personal computers struggle with the original one short_reviews.json\nFor your reading assignments and more details about this week, head over to Module 1. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
+    "text": "Hello Class,\nWeek 11 has begun. In week 11, we will build on our previous module on strings and learn how to work with text data. Text data comes in many different forms, from books and news articles to technical manuals, legal documents, or product reviews. This data lacks the rectangular structure that many other datasets naturally posses, and requires processing in order to generate features that enable us to run analyses or generate insights.\nWe will read the first 4 chapters of the online book text mining with R: a tidy approach, which cover how to wrangle textual data and convert it into a tidy format, how to work with lexicons to peform basic sentiment analysis, how to interpret the frequency of words occuring in text, and how to make use of word combinations (n-grams) and to compute correlations. The primary tool will be a tidyverse package called tidytext which has built in functions to tokenize text data into a tidy format and to analyze the resulting dataset.\nThis week we will have a lab assignment which involves extracting data stored in a hierarchical format, and combining webscraping tools with functions and iteration to automatically download many files at once. This assignment is due Sunday November 10th by midnight: Lab 8. Note: I have added an alternative, shorter data file for those whoser personal computers struggle with the original one short_reviews.json\nFor your reading assignments and more details about this week, head over to Module 11. If you can, complete the reading assignments before the weekly meetup on Wednesday. If you need help with with anything, don’t hesitate to post in slack or contact me directly."
   },
   {
     "objectID": "posts/2024-09-30-Week-6-Info.html",
