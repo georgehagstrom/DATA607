@@ -7,11 +7,12 @@ editor: source
 # Overview
 
 In this lab, we will use tidy text techniques to analyze a dataset of amazon reviews. Each problem utilizes the tidy text mining techniques described in either chapter 2 (Problem 1), chapter 3 (Problem 2), or chapter 4 (Problem 3) of
-the [tidy text mining with r](https://www.tidytextmining.com/) textbook. Note: the dataset for this assignment is a bit bigger than what we have typically worked with in the class. On my computer everything worked fast enough, but if your computer is older and you find the computations intolerably slow you may reduce the size of the dataset by 90% by taking only the first 10% of reviews. If you do this make sure it is clearly stated. 
+the [tidy text mining with r](https://www.tidytextmining.com/) textbook. Note: the dataset for this assignment is a bit bigger than what we have typically worked with in the class. On my computer everything worked fast enough, but if your computer is older and you find the computations intolerably slow you may reduce the size of the dataset by 90% by taking only the first 10% of reviews. If you do this make sure it is clearly stated. I have also listed a second shorter version of the file. 
 
 **Problem 1: Sentiment and Review Score**
 
-* Download "simple_reviews.json" from the following google drive link: [https://drive.google.com/drive/folders/1bk_2ihR5gQ8k6Tkn0NNpB58K1efruKnX?usp=sharing](https://drive.google.com/drive/folders/1bk_2ihR5gQ8k6Tkn0NNpB58K1efruKnX?usp=sharing), read it into R, and rectangle it so that it is a dataframe where each row contains a single amazon review. 
+* Download "simple_reviews.json" from the following google drive link: [https://drive.google.com/drive/folders/1bk_2ihR5gQ8k6Tkn0NNpB58K1efruKnX?usp=sharing](https://drive.google.com/drive/folders/1bk_2ihR5gQ8k6Tkn0NNpB58K1efruKnX?usp=sharing), read it into R, and rectangle it so that it is a dataframe where each row contains a single amazon review. If this file is too large,
+[click here to download a shorter version](https://drive.google.com/file/d/1d0C-xi_hSltKNn5s3dfdimI_MAkbWJQI/view?usp=sharing) where 90% of the reviews have been dropped].
 
 * To make sentiment analysis possible, add an index variable to the review data frame so that each review is uniquely identified by an integer. Then tokenize the review data frame using words as the tokens, and remove all stop words from the data set.
 
