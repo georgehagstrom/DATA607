@@ -1,0 +1,456 @@
+---
+title: "Meetup 11: Text Mining and Natural Language Processing"
+author: "George I. Hagstrom"
+format: revealjs
+date: 2024-11-06
+---
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(gutenbergr)
+
+
+```
+
+## Week Schedule and Project Proposals
+
+-   Have provided feedback on project proposals
+-   Most common comment: Project calls for using data from multiple sources
+-   Lab on text mining due this Sunday
+-   Expect one coding vignette tomorrow some time
+-   Reading a different book [Text Mining with R: A Tidy Approach](https://www.tidytextmining.com/) Chapters 1-4
+
+## What is Text Mining?
+
+Text mining is the process of extracting quantitative insights from unstructured textual data.
+
+-   Sentiment Analysis
+-   Topic Modeling
+-   Text Classification
+-   Named Entity Recognition
+
+## Tidy Text Format
+
+Text is stored in a Tidy format if it is divided into *tokens* and it is stored in a table with one token per row.
+
+-   *tokens* could be words, sentences, segments of text of fixed length, etc
+
+```{r}
+my_text <- c("Because I could not stop for Death -",
+          "He kindly stopped for me -",
+          "The Carriage held but just Ourselves -",
+          "and Immortality")
+
+my_text
+```
+
+## Tidy Text Format
+
+Text is stored in a Tidy format if it is divided into *tokens* and it is stored in a table with one token per row.
+
+-   *tokens* could be words, sentences, segments of text of fixed length, etc
+
+```{r}
+text_df <- tibble(line = 1:4, text = my_text)
+text_df %>%
+  unnest_tokens(word, text)
+
+
+```
+
+## Tidy Text Format
+
+Text is stored in a Tidy format if it is divided into *tokens* and it is stored in a table with one token per row.
+
+-   *tokens* could be words, sentences, segments of text of fixed length, etc
+
+```{r}
+text_df <- tibble(line = 1:4, text = my_text)
+text_df %>%
+  unnest_tokens(line, text,token="lines")
+
+
+```
+
+## Alternative Text Storage Formats
+
+1.  **string** long string of characters, R character data type
+2.  **corpus** structured collection of text, like a database, i.e. collection of novels, all the SEC filings from companies, legal opinions or technical manuals. Text plus metadata
+3.  **Document-term matrix** Alternate description of corpus- rows are corpus elements, columns are tokens, values describe frequency
+
+![](DTM.png){width="1000" height="160"}
+
+## How to Tokenize
+
+-   `tidytext` R package has functions for tokenization
+
+```{r}
+#| echo: true
+#| eval: false
+unnest_tokens(
+  tbl,
+  output,
+  input,
+  token = "words",
+  format = c("text", "man", "latex", "html", "xml"),
+  to_lower = TRUE,
+  drop = TRUE,
+  collapse = NULL,
+  ...
+)
+
+```
+
+## How to Tokenize
+
+-   `token` can be `words`, `sentences`, `lines`, `paragraphs`, `regex`, `ngrams`, various others
+
+```{r}
+#| echo: true
+library(janeaustenr)
+austen_books() |> filter(book == "Pride & Prejudice") |> select(text) 
+
+
+```
+
+## How to Tokenize
+
+-   `token` can be `words`, `sentences`, `lines`, `paragraphs`, `regex`, `ngrams`, various others
+
+```{r}
+#| echo: true
+austen_books() |> filter(book == "Pride & Prejudice") |> select(text) |> 
+  unnest_tokens(word,text)
+
+
+
+```
+
+## How to Tokenize
+
+-   `token` can be `words`, `sentences`, `lines`, `paragraphs`, `regex`, `ngrams`, various others
+
+```{r}
+#| echo: true
+austen_books() |> filter(book == "Pride & Prejudice") |> select(text) |> 
+  unnest_tokens(sentence,text,token="sentences")
+
+
+
+```
+
+## Tidy Text Workflow
+
+![TTwR 1.1](tidytextworkflow.png)
+
+## Stop Words
+
+-   `stop words` are words that commonly occur in the text you are studying but which contain little to no meaningful information about your data analysis task
+-   `the`, `of`, `to`, `a`, `an`, `for`
+-   Typically remove from data as part of cleaning
+
+```{r}
+#| echo: true
+data("stop_words")
+text_df %>%
+  unnest_tokens(word, text) |> 
+  anti_join(stop_words)
+
+```
+
+## Where did `stop_words` come from?
+
+-   A `lexicon` is the collection of terms that appear in a corpus
+-   `stop_words` combines three lexicons composed of different collections of `stop words`:
+    -   <http://www.lextek.com/manuals/onix/stopwords1.html>
+    -   <https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf>
+    -   <http://snowball.tartarus.org/algorithms/english/stop.txt>
+
+## Other Ways to Tidy
+
+-   Stemming/Lematization
+-   `run`, `runner`, `running`, `runners`, `runs`
+-   Replace with `run`
+-   Use `regex`
+-   Convert text to data:
+
+```{r}
+#| echo: true
+#| eval: false
+original_books <- austen_books() %>%
+  group_by(book) %>%
+  mutate(linenumber = row_number(),
+         chapter = cumsum(str_detect(text, 
+                                     regex("^chapter [\\divxlc]",
+                                           ignore_case = TRUE)))) %>%
+  ungroup()
+
+```
+
+## Other Ways to Tidy
+
+-   Stemming/Lematization
+    -   `run`, `runner`, `running`, `runners`, `runs`
+    -   Replace with `run` using `regex`
+-   Convert text to data:
+
+```{r}
+original_books <- austen_books() %>%
+  group_by(book) %>%
+  mutate(linenumber = row_number(),
+         chapter = cumsum(str_detect(text, 
+                                     regex("^chapter [\\divxlc]",
+                                           ignore_case = TRUE)))) %>%
+  ungroup()
+
+original_books
+
+```
+
+## Sentiment Analysis
+
+-   Sentiment analysis calculates the emotional content of segments of text
+-   Sentiment lexicon: group of words with defined emotional meaning
+-   Aggregate sentiment lexicon over a group of words
+
+![TTWR Fig 2.1](sentiment.png)
+
+## Types of Lexicons
+
+-   There are many different sentiment lexicons:
+-   `afinn` ranks words from -5 to 5:
+
+```{r}
+get_sentiments("afinn")
+
+
+```
+
+## Types of Lexicons
+
+-   There are many different sentiment lexicons:
+-   `afinn` ranks words from -5 to 5:
+
+```{r}
+#| echo: true
+get_sentiments("afinn")
+
+
+```
+
+## Types of Lexicons
+
+-   There are many different sentiment lexicons:
+-   `bing` splits words into positive or negative
+
+```{r}
+#| echo: true
+get_sentiments("bing")
+
+
+```
+
+## Types of Lexicons
+
+-   There are many different sentiment lexicons:
+-   `nrc` groups words into 10 broad categories
+
+```{r}
+#| echo: true
+get_sentiments("nrc")
+
+get_sentiments("nrc") |> distinct(sentiment) |> nrow()
+
+```
+
+## Example: A Modest Proposal
+
+```{r}
+#| echo: true
+modest_proposal = gutenberg_download(1080)  |> unnest_tokens(word,text) |> anti_join(stop_words)
+modest_proposal |> 
+  inner_join(get_sentiments("afinn")) 
+
+modest_proposal |> 
+  inner_join(get_sentiments("afinn")) |> summarise(sentiment = sum(value)/n())
+
+```
+
+## Compute Sentiment over larger chunks of text
+
+-   Can group words into clusters
+
+```{r}
+#| echo: true
+shakespeare =  gutenberg_download(c("2266","2265","2264","2267"),meta_fields = "title") |> 
+  unnest_tokens(word,text) |>  mutate(linenumber = row_number())
+
+shakespeare_sentiment = shakespeare |> inner_join(get_sentiments("bing")) |> 
+   count(title, index = linenumber %/% 400, sentiment) %>%
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) %>% 
+  mutate(sentiment = positive - negative)
+
+shakespeare_sentiment |> head(6)
+
+
+```
+
+## Compute Sentiment over chunks
+
+-   Can group words into clusters
+
+```{r}
+#| width: 10
+#| echo: true
+
+shakespeare_sentiment |> ggplot(aes(index, sentiment, fill = title)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~title, ncol = 2, scales = "free_x")
+
+```
+
+## Analyzing Word Frequency
+
+Can we determine what a document is about by looking at the words?
+
+Take a look at Shakespeare
+
+```{r}
+#| echo: true
+
+shakespeare <-  gutenberg_download(c("2266","2265","2264","2267"),meta_fields = "title")
+
+shakespeare |> unnest_tokens(word,text) |> count(title,word,sort=TRUE)
+
+```
+
+## Analyzing Word Frequency
+
+Can we determine what a document is about by looking at words?
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(forcats)
+
+
+shakespeare |> unnest_tokens(word,text) |>  group_by(title) |> 
+  count(word,sort=TRUE) |> 
+  slice_max(n,n=10) |> ungroup() |> 
+  mutate(word = reorder(word,n)) |> 
+  ggplot(aes(n,fct_reorder(word, n),fill = title)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "count", y = NULL) +
+  facet_wrap(~title, ncol = 2, scales = "free")
+
+```
+
+## Analyzing Word Frequency
+
+Can we determine what a document is about by looking at words?
+
+```{r}
+
+
+shakespeare |> unnest_tokens(word,text) |>  group_by(title) |>  count(word,sort=TRUE) |> 
+  slice_max(n,n=10) |> ungroup() |> 
+  mutate(word = reorder(word,n)) |> 
+  ggplot(aes(n,fct_reorder(word, n),fill = title)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "count", y = NULL) +
+  facet_wrap(~title, ncol = 2, scales = "free")
+
+```
+
+## Normalizing Frequency
+
+-   Very common words dominate the ranking
+-   If a word is common relative to how much it normally occurs, that might be more informative
+-   Definition: `tf-idf` stands for term frequency-inverse document frequency
+-   Weight counts of a word in a document relative to the occurrence of that word across all documents.
+
+$$
+\mathrm{tf}\cdot\mathrm{idf}(term,doc) =  \frac{n_{term\_in\_doc}}{n_{words\_in\_doc}}  \log(\frac{n_{docs}}{n_{docs\_with\_term}})
+$$
+
+## Calculating `tf-idf`
+
+-   `bind_tf_idf` calculates `tf-idf` given text and a grouping that defines corpus documents
+
+```{r}
+#| echo: true
+shakespeare |> unnest_tokens(word,text) |>  
+  count(title,word,sort=TRUE) |> 
+  bind_tf_idf(word,title,n)  
+
+
+```
+
+## Calculating `tf-idf`
+
+-   `bind_tf_idf` calculates `tf-idf` given text and a grouping that defines corpus documents
+
+```{r}
+#| echo: true
+#| eval: false
+shakespeare |> unnest_tokens(word,text) |>  
+  count(title,word,sort=TRUE) |> 
+  bind_tf_idf(word,title,n)  |> 
+  group_by(title) |> 
+  slice_max(tf_idf, n = 10) |> 
+  ungroup() |> 
+  ggplot(aes(tf_idf, fct_reorder(word, tf_idf), fill = title)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~title, ncol = 2, scales = "free") +
+  labs(x = "tf-idf", y = NULL)
+
+
+```
+
+## Calculating `tf-idf`
+
+-   `bind_tf_idf` calculates `tf-idf` given text and a grouping that defines corpus documents
+
+```{r}
+shakespeare |> unnest_tokens(word,text) |>  
+  count(title,word,sort=TRUE) |> 
+  bind_tf_idf(word,title,n)  |> 
+  group_by(title) |> 
+  slice_max(tf_idf, n = 10) |> 
+  ungroup() |> 
+  ggplot(aes(tf_idf, fct_reorder(word, tf_idf), fill = title)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~title, ncol = 2, scales = "free") +
+  labs(x = "tf-idf", y = NULL)
+
+
+```
+
+## Alternative Tokenization `n-grams`
+
+-   `n-grams` are combinations of `n` words
+-   Can tokenize using `unnest_tokens`:
+
+```{r}
+#| echo: true
+shakespeare <-  gutenberg_download(c("2266","2265","2264","2267"),
+                                   meta_fields = "title")
+shakespeare |> unnest_tokens(bigram,text,token = "ngrams",n=2)
+```
+
+## `n-grams`
+
+-   The presence of one word can change the meaning of another
+    -   "The food was **great**" vs "The food was **not great**"
+-   Combinations of words can be distinct units:
+    -   "Spring Street", "Chief Executive Officer"
+
+## Meetup Reflection/One Minute Paper
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+## Data Science in Context Presentations
