@@ -544,21 +544,44 @@ Accept-Encoding: deflate, gzip, br, zstd</code></pre>
 <span id="cb9-5"><a></a>  <span class="fu">tibblify</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`@context`
-$`@context`$`@version`
+$`@context`[[1]]
+[1] "https://geojson.org/geojson-ld/geojson-context.jsonld"
+
+$`@context`[[2]]
+$`@context`[[2]]$`@version`
 [1] "1.1"
+
+$`@context`[[2]]$wx
+[1] "https://api.weather.gov/ontology#"
+
+$`@context`[[2]]$`@vocab`
+[1] "https://api.weather.gov/ontology#"
+
 
 
 $type
 [1] "FeatureCollection"
 
 $features
-list()
+# A tibble: 3 × 4
+  id                                             type  geometry properties$`@id`
+  &lt;chr&gt;                                          &lt;chr&gt; &lt;list&gt;   &lt;chr&gt;           
+1 https://api.weather.gov/alerts/urn:oid:2.49.0… Feat… &lt;NULL&gt;   https://api.wea…
+2 https://api.weather.gov/alerts/urn:oid:2.49.0… Feat… &lt;NULL&gt;   https://api.wea…
+3 https://api.weather.gov/alerts/urn:oid:2.49.0… Feat… &lt;NULL&gt;   https://api.wea…
+# ℹ 25 more variables: properties$`@type` &lt;chr&gt;, $id &lt;chr&gt;, $areaDesc &lt;chr&gt;,
+#   $geocode &lt;tibble[,2]&gt;, $affectedZones &lt;list&gt;, $references &lt;list&gt;,
+#   $sent &lt;chr&gt;, $effective &lt;chr&gt;, $onset &lt;chr&gt;, $expires &lt;chr&gt;, $ends &lt;chr&gt;,
+#   $status &lt;chr&gt;, $messageType &lt;chr&gt;, $category &lt;chr&gt;, $severity &lt;chr&gt;,
+#   $certainty &lt;chr&gt;, $urgency &lt;chr&gt;, $event &lt;chr&gt;, $sender &lt;chr&gt;,
+#   $senderName &lt;chr&gt;, $headline &lt;chr&gt;, $description &lt;chr&gt;, $instruction &lt;chr&gt;,
+#   $response &lt;chr&gt;, $parameters &lt;tibble[,7]&gt;
 
 $title
 [1] "Current watches, warnings, and advisories for New York"
 
 $updated
-[1] "2024-11-04T13:00:00+00:00"</code></pre>
+[1] "2024-11-07T20:15:13+00:00"</code></pre>
 </div>
 </div>
 </section>

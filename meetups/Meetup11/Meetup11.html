@@ -615,6 +615,48 @@ George I. Hagstrom
 <span id="cb11-2"><a></a>text_df <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">|&gt;</span> </span>
 <span id="cb11-4"><a></a>  <span class="fu">anti_join</span>(stop_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="where-did-stop_words-come-from" class="slide level2">
+<h2>Where did <code>stop_words</code> come from?</h2>
+<ul>
+<li>A <code>lexicon</code> is the collection of terms that appear in a corpus</li>
+<li><code>stop_words</code> combines three lexicons composed of different collections of <code>stop words</code>:
+<ul>
+<li><a href="http://www.lextek.com/manuals/onix/stopwords1.html" class="uri">http://www.lextek.com/manuals/onix/stopwords1.html</a></li>
+<li><a href="https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf" class="uri">https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf</a></li>
+<li><a href="http://snowball.tartarus.org/algorithms/english/stop.txt" class="uri">http://snowball.tartarus.org/algorithms/english/stop.txt</a></li>
+</ul></li>
+<li>You can modify these lexicons to support your particular needs</li>
+</ul>
+</section>
+<section id="other-ways-to-tidy" class="slide level2">
+<h2>Other Ways to Tidy</h2>
+<ul>
+<li>Stemming/Lematization</li>
+<li><code>run</code>, <code>runner</code>, <code>running</code>, <code>runners</code>, <code>runs</code></li>
+<li>Replace with <code>run</code></li>
+<li>Use <code>regex</code></li>
+<li>Convert text to data:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>original_books <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb12-4"><a></a>         <span class="at">chapter =</span> <span class="fu">cumsum</span>(<span class="fu">str_detect</span>(text, </span>
+<span id="cb12-5"><a></a>                                     <span class="fu">regex</span>(<span class="st">"^chapter [</span><span class="sc">\\</span><span class="st">divxlc]"</span>,</span>
+<span id="cb12-6"><a></a>                                           <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)))) <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="stop-words-1" class="slide level2">
+<h2>Stop Words</h2>
+<ul>
+<li><code>stop words</code> are words that commonly occur in the text you are studying but which contain little to no meaningful information about your data analysis task</li>
+<li><code>the</code>, <code>of</code>, <code>to</code>, <code>a</code>, <code>an</code>, <code>for</code></li>
+<li>Typically remove from data as part of cleaning</li>
+</ul>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 2
    line word       
@@ -629,37 +671,6 @@ George I. Hagstrom
 </div>
 </div>
 </section>
-<section id="where-did-stop_words-come-from" class="slide level2">
-<h2>Where did <code>stop_words</code> come from?</h2>
-<ul>
-<li>A <code>lexicon</code> is the collection of terms that appear in a corpus</li>
-<li><code>stop_words</code> combines three lexicons composed of different collections of <code>stop words</code>:
-<ul>
-<li><a href="http://www.lextek.com/manuals/onix/stopwords1.html" class="uri">http://www.lextek.com/manuals/onix/stopwords1.html</a></li>
-<li><a href="https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf" class="uri">https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf</a></li>
-<li><a href="http://snowball.tartarus.org/algorithms/english/stop.txt" class="uri">http://snowball.tartarus.org/algorithms/english/stop.txt</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="other-ways-to-tidy" class="slide level2">
-<h2>Other Ways to Tidy</h2>
-<ul>
-<li>Stemming/Lematization</li>
-<li><code>run</code>, <code>runner</code>, <code>running</code>, <code>runners</code>, <code>runs</code></li>
-<li>Replace with <code>run</code></li>
-<li>Use <code>regex</code></li>
-<li>Convert text to data:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>original_books <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb13-4"><a></a>         <span class="at">chapter =</span> <span class="fu">cumsum</span>(<span class="fu">str_detect</span>(text, </span>
-<span id="cb13-5"><a></a>                                     <span class="fu">regex</span>(<span class="st">"^chapter [</span><span class="sc">\\</span><span class="st">divxlc]"</span>,</span>
-<span id="cb13-6"><a></a>                                           <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)))) <span class="sc">%&gt;%</span></span>
-<span id="cb13-7"><a></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="other-ways-to-tidy-1" class="slide level2">
 <h2>Other Ways to Tidy</h2>
 <ul>
@@ -669,6 +680,49 @@ George I. Hagstrom
 <li>Replace with <code>run</code> using <code>regex</code></li>
 </ul></li>
 <li>Convert text to data:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>original_books <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb14-4"><a></a>         <span class="at">chapter =</span> <span class="fu">cumsum</span>(<span class="fu">str_detect</span>(text, </span>
+<span id="cb14-5"><a></a>                                     <span class="fu">regex</span>(<span class="st">"^chapter [</span><span class="sc">\\</span><span class="st">divxlc]"</span>,</span>
+<span id="cb14-6"><a></a>                                           <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)))) <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>original_books</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="other-ways-to-tidy-2" class="slide level2">
+<h2>Other Ways to Tidy</h2>
+<ul>
+<li>Stemming/Lematization
+<ul>
+<li><code>run</code>, <code>runner</code>, <code>running</code>, <code>runners</code>, <code>runs</code></li>
+<li>Replace with <code>run</code> using <code>regex</code></li>
+</ul></li>
+<li>Convert text to data:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>original_books <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">group_by</span>(book) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb15-4"><a></a>         <span class="at">chapter =</span> <span class="fu">cumsum</span>(<span class="fu">str_detect</span>(text, </span>
+<span id="cb15-5"><a></a>                                     <span class="fu">regex</span>(<span class="st">"^chapter [</span><span class="sc">\\</span><span class="st">divxlc]"</span>,</span>
+<span id="cb15-6"><a></a>                                           <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)))) <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb15-8"><a></a></span>
+<span id="cb15-9"><a></a>original_books</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="other-ways-to-tidy-3" class="slide level2">
+<h2>Other Ways to Tidy</h2>
+<ul>
+<li>Stemming/Lematization
+<ul>
+<li><code>run</code>, <code>runner</code>, <code>running</code>, <code>runners</code>, <code>runs</code></li>
+<li>Replace with <code>run</code> using <code>regex</code></li>
+</ul></li>
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -730,7 +784,7 @@ George I. Hagstrom
 <li><code>afinn</code> ranks words from -5 to 5:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,477 × 2
    word       value
@@ -756,7 +810,7 @@ George I. Hagstrom
 <li><code>bing</code> splits words into positive or negative</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"bing"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"bing"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6,786 × 2
    word        sentiment
@@ -782,7 +836,7 @@ George I. Hagstrom
 <li><code>nrc</code> groups words into 10 broad categories</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"nrc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"nrc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13,872 × 2
    word        sentiment
@@ -799,7 +853,16 @@ George I. Hagstrom
 10 abandonment fear     
 # ℹ 13,862 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"nrc"</span>) <span class="sc">|&gt;</span> <span class="fu">distinct</span>(sentiment) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="types-of-lexicons-4" class="slide level2">
+<h2>Types of Lexicons</h2>
+<ul>
+<li>There are many different sentiment lexicons:</li>
+<li><code>nrc</code> groups words into 10 broad categories</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">get_sentiments</span>(<span class="st">"nrc"</span>) <span class="sc">|&gt;</span> <span class="fu">distinct</span>(sentiment) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
@@ -808,50 +871,44 @@ George I. Hagstrom
 <section id="example-a-modest-proposal" class="slide level2">
 <h2>Example: A Modest Proposal</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>modest_proposal <span class="ot">=</span> <span class="fu">gutenberg_download</span>(<span class="dv">1080</span>)  <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(stop_words)</span>
-<span id="cb24-2"><a></a>modest_proposal <span class="sc">|&gt;</span> </span>
-<span id="cb24-3"><a></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>modest_proposal <span class="ot">=</span> <span class="fu">gutenberg_download</span>(<span class="dv">1080</span>)  <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(stop_words)</span>
+<span id="cb26-2"><a></a>modest_proposal <span class="sc">|&gt;</span> </span>
+<span id="cb26-3"><a></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 142 × 3
-   gutenberg_id word       value
-          &lt;int&gt; &lt;chr&gt;      &lt;dbl&gt;
- 1         1080 preventing    -1
- 2         1080 poor          -2
- 3         1080 burden        -2
- 4         1080 swift          2
- 5         1080 melancholy    -2
- 6         1080 honest         2
- 7         1080 forced        -1
- 8         1080 helpless      -2
- 9         1080 leave         -1
-10         1080 dear           2
-# ℹ 132 more rows</code></pre>
+<pre><code># A tibble: 0 × 3
+# ℹ 3 variables: gutenberg_id &lt;int&gt;, word &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>modest_proposal <span class="sc">|&gt;</span> </span>
-<span id="cb26-2"><a></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">sentiment =</span> <span class="fu">sum</span>(value)<span class="sc">/</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="a-modest-proposal" class="slide level2">
+<h2>A Modest Proposal</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>modest_proposal <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"afinn"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a></a>  <span class="fu">summarise</span>(<span class="at">sentiment =</span> <span class="fu">sum</span>(value)<span class="sc">/</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   sentiment
       &lt;dbl&gt;
-1     0.197</code></pre>
+1       NaN</code></pre>
 </div>
 </div>
 </section>
-<section id="compute-sentiment-over-larger-chunks-of-text" class="slide level2">
+<section id="compute-sentiment-over-larger-chunks-of-text" class="slide level2 smaller">
 <h2>Compute Sentiment over larger chunks of text</h2>
 <ul>
 <li>Can group words into clusters</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>shakespeare <span class="ot">=</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),<span class="at">meta_fields =</span> <span class="st">"title"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a></a>  <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>())</span>
-<span id="cb28-3"><a></a></span>
-<span id="cb28-4"><a></a>shakespeare_sentiment <span class="ot">=</span> shakespeare <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"bing"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb28-5"><a></a>   <span class="fu">count</span>(title, <span class="at">index =</span> linenumber <span class="sc">%/%</span> <span class="dv">400</span>, sentiment) <span class="sc">%&gt;%</span></span>
-<span id="cb28-6"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-7"><a></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> positive <span class="sc">-</span> negative)</span>
-<span id="cb28-8"><a></a></span>
-<span id="cb28-9"><a></a>shakespeare_sentiment <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>shakespeare <span class="ot">=</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),<span class="at">meta_fields =</span> <span class="st">"title"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a></a>  <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  <span class="fu">mutate</span>(<span class="at">linenumber =</span> <span class="fu">row_number</span>())</span>
+<span id="cb30-3"><a></a></span>
+<span id="cb30-4"><a></a>shakespeare_sentiment <span class="ot">=</span> shakespeare <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"bing"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb30-5"><a></a>   <span class="fu">count</span>(title, <span class="at">index =</span> linenumber <span class="sc">%/%</span> <span class="dv">400</span>, sentiment) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-7"><a></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> positive <span class="sc">-</span> negative)</span>
+<span id="cb30-8"><a></a></span>
+<span id="cb30-9"><a></a>shakespeare_sentiment <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   title  index negative positive sentiment
@@ -871,20 +928,20 @@ George I. Hagstrom
 <li>Can group words into clusters</li>
 </ul>
 <div class="cell" width="10">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>shakespeare_sentiment <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(index, sentiment, <span class="at">fill =</span> title)) <span class="sc">+</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb30-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>shakespeare_sentiment <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(index, sentiment, <span class="at">fill =</span> title)) <span class="sc">+</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb32-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
-<section id="analyzing-word-frequency" class="slide level2">
+<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<section id="analyzing-word-frequency" class="slide level2 smaller">
 <h2>Analyzing Word Frequency</h2>
 <p>Can we determine what a document is about by looking at the words?</p>
 <p>Take a look at Shakespeare</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>shakespeare <span class="ot">&lt;-</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),<span class="at">meta_fields =</span> <span class="st">"title"</span>)</span>
-<span id="cb31-2"><a></a></span>
-<span id="cb31-3"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span> <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>shakespeare <span class="ot">&lt;-</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),<span class="at">meta_fields =</span> <span class="st">"title"</span>)</span>
+<span id="cb33-2"><a></a></span>
+<span id="cb33-3"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span> <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 17,159 × 3
    title     word      n
@@ -907,24 +964,24 @@ George I. Hagstrom
 <h2>Analyzing Word Frequency</h2>
 <p>Can we determine what a document is about by looking at words?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">library</span>(forcats)</span>
-<span id="cb33-2"><a></a></span>
-<span id="cb33-3"><a></a></span>
-<span id="cb33-4"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(title) <span class="sc">|&gt;</span> </span>
-<span id="cb33-5"><a></a>  <span class="fu">count</span>(word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb33-6"><a></a>  <span class="fu">slice_max</span>(n,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb33-7"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word,n)) <span class="sc">|&gt;</span> </span>
-<span id="cb33-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n,<span class="fu">fct_reorder</span>(word, n),<span class="at">fill =</span> title)) <span class="sc">+</span></span>
-<span id="cb33-9"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb33-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"count"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb33-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">library</span>(forcats)</span>
+<span id="cb35-2"><a></a></span>
+<span id="cb35-3"><a></a></span>
+<span id="cb35-4"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(title) <span class="sc">|&gt;</span> </span>
+<span id="cb35-5"><a></a>  <span class="fu">count</span>(word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb35-6"><a></a>  <span class="fu">slice_max</span>(n,<span class="at">n=</span><span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb35-7"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word,n)) <span class="sc">|&gt;</span> </span>
+<span id="cb35-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n,<span class="fu">fct_reorder</span>(word, n),<span class="at">fill =</span> title)) <span class="sc">+</span></span>
+<span id="cb35-9"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb35-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"count"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb35-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="analyzing-word-frequency-2" class="slide level2">
 <h2>Analyzing Word Frequency</h2>
 <p>Can we determine what a document is about by looking at words?</p>
 
-<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="normalizing-frequency" class="slide level2">
 <h2>Normalizing Frequency</h2>
 <ul>
@@ -943,9 +1000,9 @@ George I. Hagstrom
 <li><code>bind_tf_idf</code> calculates <code>tf-idf</code> given text and a grouping that defines corpus documents</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  </span>
-<span id="cb34-2"><a></a>  <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb34-3"><a></a>  <span class="fu">bind_tf_idf</span>(word,title,n)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  </span>
+<span id="cb36-2"><a></a>  <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">bind_tf_idf</span>(word,title,n)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 17,159 × 6
    title     word      n     tf   idf tf_idf
@@ -970,16 +1027,16 @@ George I. Hagstrom
 <li><code>bind_tf_idf</code> calculates <code>tf-idf</code> given text and a grouping that defines corpus documents</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  </span>
-<span id="cb36-2"><a></a>  <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb36-3"><a></a>  <span class="fu">bind_tf_idf</span>(word,title,n)  <span class="sc">|&gt;</span> </span>
-<span id="cb36-4"><a></a>  <span class="fu">group_by</span>(title) <span class="sc">|&gt;</span> </span>
-<span id="cb36-5"><a></a>  <span class="fu">slice_max</span>(tf_idf, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb36-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb36-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(tf_idf, <span class="fu">fct_reorder</span>(word, tf_idf), <span class="at">fill =</span> title)) <span class="sc">+</span></span>
-<span id="cb36-8"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb36-9"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
-<span id="cb36-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"tf-idf"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word,text) <span class="sc">|&gt;</span>  </span>
+<span id="cb38-2"><a></a>  <span class="fu">count</span>(title,word,<span class="at">sort=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a></a>  <span class="fu">bind_tf_idf</span>(word,title,n)  <span class="sc">|&gt;</span> </span>
+<span id="cb38-4"><a></a>  <span class="fu">group_by</span>(title) <span class="sc">|&gt;</span> </span>
+<span id="cb38-5"><a></a>  <span class="fu">slice_max</span>(tf_idf, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb38-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb38-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(tf_idf, <span class="fu">fct_reorder</span>(word, tf_idf), <span class="at">fill =</span> title)) <span class="sc">+</span></span>
+<span id="cb38-8"><a></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb38-9"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>title, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb38-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"tf-idf"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="calculating-tf-idf-2" class="slide level2">
@@ -988,7 +1045,7 @@ George I. Hagstrom
 <li><code>bind_tf_idf</code> calculates <code>tf-idf</code> given text and a grouping that defines corpus documents</li>
 </ul>
 
-<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<img data-src="Meetup11_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
 <section id="alternative-tokenization-n-grams" class="slide level2">
 <h2>Alternative Tokenization <code>n-grams</code></h2>
 <ul>
@@ -996,9 +1053,9 @@ George I. Hagstrom
 <li>Can tokenize using <code>unnest_tokens</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>shakespeare <span class="ot">&lt;-</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),</span>
-<span id="cb37-2"><a></a>                                   <span class="at">meta_fields =</span> <span class="st">"title"</span>)</span>
-<span id="cb37-3"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(bigram,text,<span class="at">token =</span> <span class="st">"ngrams"</span>,<span class="at">n=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>shakespeare <span class="ot">&lt;-</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),</span>
+<span id="cb39-2"><a></a>                                   <span class="at">meta_fields =</span> <span class="st">"title"</span>)</span>
+<span id="cb39-3"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(bigram,text,<span class="at">token =</span> <span class="st">"ngrams"</span>,<span class="at">n=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 92,406 × 3
    gutenberg_id title   bigram              
