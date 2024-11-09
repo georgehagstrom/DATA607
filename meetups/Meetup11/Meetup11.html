@@ -1053,24 +1053,25 @@ George I. Hagstrom
 <li>Can tokenize using <code>unnest_tokens</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>shakespeare <span class="ot">&lt;-</span>  <span class="fu">gutenberg_download</span>(<span class="fu">c</span>(<span class="st">"2266"</span>,<span class="st">"2265"</span>,<span class="st">"2264"</span>,<span class="st">"2267"</span>),</span>
-<span id="cb39-2"><a></a>                                   <span class="at">meta_fields =</span> <span class="st">"title"</span>)</span>
-<span id="cb39-3"><a></a>shakespeare <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(bigram,text,<span class="at">token =</span> <span class="st">"ngrams"</span>,<span class="at">n=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>austen_bigrams <span class="ot">&lt;-</span> <span class="fu">austen_books</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">unnest_tokens</span>(bigram, text, <span class="at">token =</span> <span class="st">"ngrams"</span>, <span class="at">n =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(bigram))</span>
+<span id="cb39-4"><a></a>austen_bigrams</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 92,406 × 3
-   gutenberg_id title   bigram              
-          &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;               
- 1         2264 Macbeth executive director's
- 2         2264 Macbeth director's notes    
- 3         2264 Macbeth &lt;NA&gt;                
- 4         2264 Macbeth in addition         
- 5         2264 Macbeth addition to         
- 6         2264 Macbeth to the              
- 7         2264 Macbeth the notes           
- 8         2264 Macbeth notes below         
- 9         2264 Macbeth below and           
-10         2264 Macbeth and so              
-# ℹ 92,396 more rows</code></pre>
+<pre><code># A tibble: 662,783 × 2
+   book                bigram         
+   &lt;fct&gt;               &lt;chr&gt;          
+ 1 Sense &amp; Sensibility sense and      
+ 2 Sense &amp; Sensibility and sensibility
+ 3 Sense &amp; Sensibility by jane        
+ 4 Sense &amp; Sensibility jane austen    
+ 5 Sense &amp; Sensibility chapter 1      
+ 6 Sense &amp; Sensibility the family     
+ 7 Sense &amp; Sensibility family of      
+ 8 Sense &amp; Sensibility of dashwood    
+ 9 Sense &amp; Sensibility dashwood had   
+10 Sense &amp; Sensibility had long       
+# ℹ 662,773 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -1086,6 +1087,117 @@ George I. Hagstrom
 <li>“Spring Street”, “Chief Executive Officer”</li>
 </ul></li>
 </ul>
+</section>
+<section id="filter-n-grams" class="slide level2">
+<h2>Filter n-grams?</h2>
+<ul>
+<li>Look at the common <code>bi-grams</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>austen_bigrams <span class="sc">|&gt;</span> <span class="fu">count</span>(bigram,<span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 193,209 × 2
+   bigram       n
+   &lt;chr&gt;    &lt;int&gt;
+ 1 of the    2853
+ 2 to be     2670
+ 3 in the    2221
+ 4 it was    1691
+ 5 i am      1485
+ 6 she had   1405
+ 7 of her    1363
+ 8 to the    1315
+ 9 she was   1309
+10 had been  1206
+# ℹ 193,199 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li>How do we remove the bi-grams with stop words?</li>
+</ul>
+</section>
+<section id="separate" class="slide level2">
+<h2>Separate</h2>
+<ul>
+<li>Can use <code>separate</code> to split the bi-gram into two</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>austen_bigrams <span class="sc">|&gt;</span> <span class="fu">separate</span>(bigram,<span class="fu">c</span>(<span class="st">"word1"</span>,<span class="st">"word2"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb43-2"><a></a>  <span class="fu">count</span>(word1,word2, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 187,965 × 3
+   word1 word2     n
+   &lt;chr&gt; &lt;chr&gt; &lt;int&gt;
+ 1 of    the    2853
+ 2 to    be     2671
+ 3 in    the    2221
+ 4 it    was    1694
+ 5 i     am     1488
+ 6 she   had    1409
+ 7 of    her    1371
+ 8 to    the    1316
+ 9 she   was    1310
+10 had   been   1206
+# ℹ 187,955 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="then-filter" class="slide level2">
+<h2>Then Filter</h2>
+<ul>
+<li>Then can use filter to remove the stop words</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>austen_bigrams <span class="sc">|&gt;</span> <span class="fu">separate</span>(bigram,<span class="fu">c</span>(<span class="st">"word1"</span>,<span class="st">"word2"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb45-2"><a></a>  <span class="fu">count</span>(word1,word2, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb45-3"><a></a>  <span class="fu">anti_join</span>(stop_words,<span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"word1"</span> <span class="sc">==</span> <span class="st">"word"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb45-4"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"word2"</span> <span class="sc">==</span> <span class="st">"word"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 26,022 × 3
+   word1   word2         n
+   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;
+ 1 sir     thomas      300
+ 2 miss    crawford    240
+ 3 captain wentworth   167
+ 4 miss    woodhouse   152
+ 5 lady    russell     136
+ 6 frank   churchill   131
+ 7 sir     walter      123
+ 8 colonel brandon     116
+ 9 lady    bertram     116
+10 miss    fairfax     111
+# ℹ 26,012 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="and-finally-unite" class="slide level2">
+<h2>And finally unite</h2>
+<ul>
+<li>Put the two words back together</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>austen_bigrams <span class="sc">|&gt;</span> <span class="fu">separate</span>(bigram,<span class="fu">c</span>(<span class="st">"word1"</span>,<span class="st">"word2"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb47-2"><a></a>  <span class="fu">count</span>(word1,word2, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb47-3"><a></a>  <span class="fu">anti_join</span>(stop_words,<span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"word1"</span> <span class="sc">==</span> <span class="st">"word"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb47-4"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"word2"</span> <span class="sc">==</span> <span class="st">"word"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb47-5"><a></a>  <span class="fu">unite</span>(bigram,word1,word2,<span class="at">sep=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 26,022 × 2
+   bigram                n
+   &lt;chr&gt;             &lt;int&gt;
+ 1 sir thomas          300
+ 2 miss crawford       240
+ 3 captain wentworth   167
+ 4 miss woodhouse      152
+ 5 lady russell        136
+ 6 frank churchill     131
+ 7 sir walter          123
+ 8 colonel brandon     116
+ 9 lady bertram        116
+10 miss fairfax        111
+# ℹ 26,012 more rows</code></pre>
+</div>
+</div>
 </section>
 <section id="meetup-reflectionone-minute-paper" class="slide level2">
 <h2>Meetup Reflection/One Minute Paper</h2>
