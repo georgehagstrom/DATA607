@@ -152,6 +152,7 @@ austen_books() |> filter(book == "Pride & Prejudice") |> select(text) |>
 
 ```{r}
 #| echo: true
+#| eval: false
 data("stop_words")
 text_df %>%
   unnest_tokens(word, text) |> 
@@ -166,6 +167,7 @@ text_df %>%
     -   <http://www.lextek.com/manuals/onix/stopwords1.html>
     -   <https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf>
     -   <http://snowball.tartarus.org/algorithms/english/stop.txt>
+-   You can modify these lexicons to support your particular needs
 
 ## Other Ways to Tidy
 
@@ -188,12 +190,70 @@ original_books <- austen_books() %>%
 
 ```
 
+
+## Stop Words
+
+-   `stop words` are words that commonly occur in the text you are studying but which contain little to no meaningful information about your data analysis task
+-   `the`, `of`, `to`, `a`, `an`, `for`
+-   Typically remove from data as part of cleaning
+
+```{r}
+data("stop_words")
+text_df %>%
+  unnest_tokens(word, text) |> 
+  anti_join(stop_words)
+
+```
+
 ## Other Ways to Tidy
 
 -   Stemming/Lematization
     -   `run`, `runner`, `running`, `runners`, `runs`
     -   Replace with `run` using `regex`
 -   Convert text to data:
+
+```{r}
+#| echo: true
+#| eval: false
+original_books <- austen_books() %>%
+  group_by(book) %>%
+  mutate(linenumber = row_number(),
+         chapter = cumsum(str_detect(text, 
+                                     regex("^chapter [\\divxlc]",
+                                           ignore_case = TRUE)))) %>%
+  ungroup()
+
+original_books
+
+```
+
+## Other Ways to Tidy
+
+-   Stemming/Lematization
+    -   `run`, `runner`, `running`, `runners`, `runs`
+    -   Replace with `run` using `regex`
+-   Convert text to data:
+
+```{r}
+#| echo: true
+#| eval: false
+original_books <- austen_books() %>%
+  group_by(book) %>%
+  mutate(linenumber = row_number(),
+         chapter = cumsum(str_detect(text, 
+                                     regex("^chapter [\\divxlc]",
+                                           ignore_case = TRUE)))) %>%
+  ungroup()
+
+original_books
+
+```
+
+## Other Ways to Tidy
+
+-   Stemming/Lematization
+    -   `run`, `runner`, `running`, `runners`, `runs`
+    -   Replace with `run` using `regex`
 
 ```{r}
 original_books <- austen_books() %>%
@@ -207,6 +267,7 @@ original_books <- austen_books() %>%
 original_books
 
 ```
+
 
 ## Sentiment Analysis
 
@@ -260,6 +321,16 @@ get_sentiments("bing")
 #| echo: true
 get_sentiments("nrc")
 
+```
+
+## Types of Lexicons
+
+-   There are many different sentiment lexicons:
+-   `nrc` groups words into 10 broad categories
+
+
+```{r}
+#| echo: true
 get_sentiments("nrc") |> distinct(sentiment) |> nrow()
 
 ```
@@ -272,12 +343,21 @@ modest_proposal = gutenberg_download(1080)  |> unnest_tokens(word,text) |> anti_
 modest_proposal |> 
   inner_join(get_sentiments("afinn")) 
 
+```
+
+
+## A Modest Proposal
+
+```{r}
+#| echo: true
+
 modest_proposal |> 
-  inner_join(get_sentiments("afinn")) |> summarise(sentiment = sum(value)/n())
+  inner_join(get_sentiments("afinn")) |> 
+  summarise(sentiment = sum(value)/n())
 
 ```
 
-## Compute Sentiment over larger chunks of text
+## Compute Sentiment over larger chunks of text {.smaller}
 
 -   Can group words into clusters
 
@@ -310,7 +390,7 @@ shakespeare_sentiment |> ggplot(aes(index, sentiment, fill = title)) +
 
 ```
 
-## Analyzing Word Frequency
+## Analyzing Word Frequency {.smaller}
 
 Can we determine what a document is about by looking at the words?
 
@@ -435,9 +515,10 @@ shakespeare |> unnest_tokens(word,text) |>
 
 ```{r}
 #| echo: true
-shakespeare <-  gutenberg_download(c("2266","2265","2264","2267"),
-                                   meta_fields = "title")
-shakespeare |> unnest_tokens(bigram,text,token = "ngrams",n=2)
+austen_bigrams <- austen_books() %>%
+  unnest_tokens(bigram, text, token = "ngrams", n = 2) %>%
+  filter(!is.na(bigram))
+austen_bigrams
 ```
 
 ## `n-grams`
@@ -446,6 +527,57 @@ shakespeare |> unnest_tokens(bigram,text,token = "ngrams",n=2)
     -   "The food was **great**" vs "The food was **not great**"
 -   Combinations of words can be distinct units:
     -   "Spring Street", "Chief Executive Officer"
+
+## Filter n-grams?
+
+- Look at the common `bi-grams`
+```{r}
+#| echo: true
+austen_bigrams |> count(bigram,sort=TRUE)
+
+```
+- How do we remove the bi-grams with stop words?
+
+## Separate
+
+- Can use `separate` to split the bi-gram into two
+```{r}
+#| echo: true
+austen_bigrams |> separate(bigram,c("word1","word2")) |> 
+  count(word1,word2, sort = TRUE)
+
+
+```
+
+## Then Filter
+
+- Then can use filter to remove the stop words
+
+```{r}
+#| echo: true
+austen_bigrams |> separate(bigram,c("word1","word2")) |> 
+  count(word1,word2, sort = TRUE) |> 
+  anti_join(stop_words,by = join_by("word1" == "word")) |> 
+  anti_join(stop_words, by = join_by("word2" == "word"))
+
+```
+
+## And finally unite
+
+* Put the two words back together
+
+```{r}
+#| echo: true
+
+austen_bigrams |> separate(bigram,c("word1","word2")) |> 
+  count(word1,word2, sort = TRUE) |> 
+  anti_join(stop_words,by = join_by("word1" == "word")) |> 
+  anti_join(stop_words, by = join_by("word2" == "word")) |> 
+  unite(bigram,word1,word2,sep=" ")
+
+
+
+```
 
 ## Meetup Reflection/One Minute Paper
 
