@@ -28,7 +28,7 @@ hasn't been joined with the sentiment lexicon data. For each item (`asin`), use 
 to find the word that occurs in the reviews of that item with the highest frequency relative to the
 frequency of words in the entire review test dataset. 
 
-* Select five items from (either at random or by hand) and look up the `asin` code on Amazon.com. In each of these cases, does the highest relative frequency word correspond to the identify or type of the item that you chose? You may not be able to find every single item, but I was able to find a solid majority of the ones I searched for by searching amazon.com for the `asin`. 
+* Select five items from the dataset (either at random or by hand) and look up the `asin` code for those items on Amazon.com. In each of these cases, does the highest relative frequency word correspond to the identify or type of the item that you chose? You may not be able to find every single item, but I was able to find a solid majority of the ones I searched for by searching amazon.com for the `asin`. 
 
 **Problem 3: Bigrams and Sentiment**
 
