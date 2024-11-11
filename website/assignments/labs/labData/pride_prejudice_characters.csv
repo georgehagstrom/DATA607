@@ -6,7 +6,7 @@ id, unique_name,    alias
 1, "ElizabethBennet", "Lizzy"
 1, "ElizabethBennet", "Eliza Bennet" 
 2, "MrDarcy", "Fitzwilliam Darcy"
-2. "MrDarcy", "Darcy"
+2, "MrDarcy", "Darcy"
 3, "MrBennet", "Mr. Bennet"
 4, "MrsBennet", "Mrs. Bennet"
 5, "JaneBennet", "Jane Bennet"
