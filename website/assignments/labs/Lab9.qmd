@@ -1,0 +1,43 @@
+---
+title: "Lab 9: Graphs and Social Networks in Pride & Prejudice"
+author: "George I. Hagstrom"
+format: html
+---
+
+## Overview
+
+In the this lab assignment, you are going to construct a social network 
+from the characters in the book "Pride & Prejudice", a novel written by Jane Austen
+and available in the `janeaustenr` package. The social network will be a weighted
+graph connecting the characters, where the weight is equal to the number of times the
+names of each character appeared in each 10 line section of the book. Once you create the graph, you
+will load it into tidygraph, make a visualization of the graph, and rank the most 
+connected characters by a measure called `degree centrality`
+
+**Problem 1**
+
+Load the text of Pride & Prejudice into R using the `janeaustenr` library. Then download and read the
+csv file from my github page containing a list of characters in `Pride & Prejudice` and their aliases. 
+Here aliases refers to the different names that the characters go by in the books, for example "Darcy"
+also goes by the names "Mr. Darcy", and "Mr. Fitzwilliam Darcy" (not to be confused with his cousin "Colonel Fitzwilliam"). Process the text of Pride & Prejudice to replace instances where an 
+alias occurs with the full name of the character- I recommend using the iteration techniques you learned ealier, I arranged the order of names in the `csv` file to minimize misidentifications if you replace names in the order that they appear in the file. Making this perfect would require a bit of
+effort but we are ok if there are some misidentifications. Here the final name of each character will
+be a single word. 
+
+**Problem 2**
+
+Following the example in chapter 4 of the text mining with R book, create a new column in the data frame corresponding to the Pride & Prejudice text that divides the text into sections of 10 lines each. Then use the `pairwise_count` function from `widyr` to determine the number of times each name occurs
+with each other name in the same 10 line section. 
+
+**Problem 3**
+
+Create a dataframe of nodes which contains the id and unique names of each character, and create a 
+dataframe of edges which contains three columns: a column named `from`, a column named `to`, and a column named `weight`, where the `from` and `to` are the id numbers of each character and `weight` is the number of co-occurences you found in Problem 2. Each pair should only appear once in the edge list (i.e. Elizabeth and MrDarcy but not MrDarcy and then Elizabeth). Create a tidygraph object using `as_tbl_graph` that contains the social network data that we just constructed.
+
+**Problem 4**
+
+Using `ggraph`, graph the connections between the characters. Make sure that each node is labeled
+by the character name, and make sure that the weight is represented by the thickness of the edge
+plotted between the two nodes. Then use the `centrality_degree` function to calculate the weighted degree centrality of each character, and make a plot which shows the degree centrality of each character where the characters are arranged in order of degree centrality. 
+
+
