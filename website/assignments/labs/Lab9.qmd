@@ -16,10 +16,12 @@ connected characters by a measure called `degree centrality`
 
 **Problem 1**
 
-Load the text of Pride & Prejudice into R using the `janeaustenr` library. Then download and read the
+Load the text of Pride & Prejudice into R using the `janeaustenr` library. Then download and read [pride_prejudice_characters.csv](https://github.com/georgehagstrom/DATA607/blob/main/website/assignments/labs/labData/pride_prejudice_characters.csv), the
 csv file from my github page containing a list of characters in `Pride & Prejudice` and their aliases. 
 Here aliases refers to the different names that the characters go by in the books, for example "Darcy"
-also goes by the names "Mr. Darcy", and "Mr. Fitzwilliam Darcy" (not to be confused with his cousin "Colonel Fitzwilliam"). Process the text of Pride & Prejudice to replace instances where an 
+also goes by the names "Mr. Darcy", and "Mr. Fitzwilliam Darcy" (not to be confused with his cousin "Colonel Fitzwilliam"). 
+
+Process the text of Pride & Prejudice to replace instances where an 
 alias occurs with the full name of the character- I recommend using the iteration techniques you learned ealier, I arranged the order of names in the `csv` file to minimize misidentifications if you replace names in the order that they appear in the file. Making this perfect would require a bit of
 effort but we are ok if there are some misidentifications. Here the final name of each character will
 be a single word. 
