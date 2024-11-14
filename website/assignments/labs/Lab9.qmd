@@ -34,7 +34,10 @@ with each other name in the same 10 line section.
 **Problem 3**
 
 Create a dataframe of nodes which contains the id and unique names of each character, and create a 
-dataframe of edges which contains three columns: a column named `from`, a column named `to`, and a column named `weight`, where the `from` and `to` are the id numbers of each character and `weight` is the number of co-occurences you found in Problem 2. Each pair should only appear once in the edge list (i.e. Elizabeth and MrDarcy but not MrDarcy and then Elizabeth). Create a tidygraph object using `as_tbl_graph` that contains the social network data that we just constructed.
+dataframe of edges which contains three columns: a column named `from`, a column named `to`, and a column named `weight`, where the `from` and `to` are the id numbers of each character and `weight` is the number of co-occurences you found in Problem 2. Each pair should only appear once in the edge list (i.e. Elizabeth and MrDarcy but not MrDarcy and then Elizabeth). Create a tidygraph object using `tbl_graph` that contains the social network data that we just constructed.
+
+
+
 
 **Problem 4**
 
