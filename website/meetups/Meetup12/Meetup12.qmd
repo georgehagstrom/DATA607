@@ -1,0 +1,680 @@
+---
+title: "Meetup 12: Graph Theory and Graph Data"
+author: "George I. Hagstrom"
+format: revealjs
+---
+
+```{r}
+library(tidyverse)
+library(tidygraph)
+library(networkdata)
+library(ggraph)
+
+
+```
+
+## Graphs  {.smaller}
+
+* Graphs are a set of objects (nodes) connected by links (edges)
+```{r}
+create_notable('Grotzsch') |> 
+  mutate(name = letters[1:11]) |> 
+  ggraph(layout = "kk") +
+  geom_edge_link() +
+  geom_node_point(size = 14, color = "steelblue") +
+  geom_node_text(aes(label = name),color = "white", vjust = 0.4,size=10) +
+  ggtitle("Example Graph") +
+  theme_graph()
+  
+```
+
+
+## Examples: Social Networks {.smaller}
+
+* Nodes are people
+* Edges are social interaction or friendship
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+
+```{r}
+#| fig-width: 8
+#| fig-height: 5
+
+data("flo_business")
+flo_business |> ggraph(layout="nicely") +
+ geom_edge_link(aes(start_cap = circle(5, 'mm'),
+                     end_cap = circle(5, 'mm'))) + 
+     geom_node_text(aes(label = name),size = 6) +
+  theme_graph()
+
+
+
+```
+:::
+
+::::
+
+
+
+
+## Examples: Transportation Network  {.smaller}
+* Nodes are locations
+* Edges are road or air links
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+
+```{r}
+#| fig-width: 7
+#| fig-height: 5
+gr <- sfnetworks::as_sfnetwork(sfnetworks::roxel)
+ggraph(gr, 'sf') + 
+  geom_edge_sf(aes(color = type)) + 
+  geom_node_sf(size = 0.3) +
+  theme_graph(base_size = 14)
+
+
+
+```
+
+:::
+
+::::
+
+## Examples: Statistical Models  {.smaller}
+
+* Graphs represent the causal structure between a set of variables
+```{r}
+
+
+nodes = tibble("nodes" = letters[1:6])
+
+edges = tibble("from" = c(1,1,2,3,2,3,5),"to" = c(2,3,4,4,5,6,6))
+
+gr2= tbl_graph(nodes = nodes,edges = edges,directed = TRUE)
+
+gr2 |> ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(10, 'mm'),
+                     end_cap = circle(10, 'mm')), 
+                 arrow = arrow(length = unit(8, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 14) +
+  theme_graph()
+```
+
+
+## What Graph Theory Can Do  {.smaller}
+
+- Social Networks:
+  - Identifying influential people
+  - Identifying Communities
+  - Using social info for recommendations
+  - Epidemiology/Contact Tracing
+- Financial or Infrastructure Networks
+  - Fraud Detection
+  - Vulnerability Detection
+- Logistical Networks- Optimization
+- Graph Databases (neo4js)
+- Statistical Methods and Models
+  
+
+
+## Definition of a Simple Graph  {.smaller}
+
+1. Set of objects called the nodes:
+N = (Chicago, Detroit, Miami, NYC)
+
+2. Set of pairs of nodes, called edges:
+E = [ (Chicago,Detroit), (Miami,NYC), (NYC,Chicago)]
+
+Adjacency Matrix A:
+
+  - $A_{ij} = 1$ if node $i$ and node $j$ connected
+  - $A_{ij} = 0$ if no connection between $i$ and $j$
+  
+  $$ A = \begin{pmatrix}
+0 & 1 & 0 & 1\\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0
+\end{pmatrix} $$
+
+## Directed and Weighted Graphs  {.smaller}
+
+- In a directed graph edges have directionality, from node $i$ to node $j$
+  - I might follow Warren Buffett on LinkedIn, but he doesn't follow me
+- Adjacency Matrix no longer symmetric
+- In a weighted graph, edges have `weights` which represent the strength of the connection
+
+:::: {.columns}
+
+::: {.column}
+
+```{r}
+#| fig-width: 8
+#| fig-height: 6
+simple <- create_notable('bull') |> 
+  mutate(name = c('Thomas', 'Bob', 'Hadley', 'Winston', 'Baptiste')) |> 
+  activate(edges) |> 
+  mutate(weight = sample(c(1,2,3,4,5), 5, TRUE))
+
+
+ggraph(simple, layout = 'graphopt') + 
+  geom_edge_link(aes(label = weight), 
+                 angle_calc = 'along',
+                 label_dodge = unit(8, 'mm'),
+                 end_cap = circle(3, 'mm'),
+                 label_size = 16) + 
+  geom_node_point(size = 5) +
+  theme_graph(base_size = 14)
+```
+:::
+
+::::
+
+## Graph Stats: Degree  {.smaller}
+
+- Degree of a node is the number of edges connecting to that node
+- For directed graphs: in-degree and out-degree are nodes going in and out
+- For weighted graphs, each edge can contribute to weighted degree according to weight
+- High degree nodes are often very influential
+
+:::: {.columns}
+
+::: {.column}
+
+```{r}
+#| fig-width: 10
+#| fig-height: 8
+h1958 = highschool |> filter(year == 1958)
+graph <- as_tbl_graph(h1958) |> 
+    mutate(Friends = centrality_degree(mode = 'in'))
+
+# plot using ggraph
+ggraph(graph, layout = 'kk') + 
+    geom_edge_fan(aes(alpha = after_stat(index)), show.legend = FALSE) + 
+    geom_node_point(aes(size = Friends)) + 
+    theme_graph(base_size = 36)
+
+
+```
+:::
+
+::::
+
+
+## Graph Stats: Centrality
+
+- Can define measures of how central/connected each node is
+- Degree Centrality: just the degree
+- Page Rank: probability that a random walker lands on a given node
+- Betweenness Centrality: How many shortest paths go through a given node
+- Must be 100 others....
+
+## Other Important Graph Concepts
+
+- Cliques: groups of nodes where each node is connected to every other 
+- Paths: Sets of vertices that start with one node and end with another
+- Connected Components: groups of nodes where you can travel from one to another along paths
+- Random Graphs: Defined by connection probability and degree distribution
+- Small World Networks: In many social networks, path between any two edges is very short
+
+## Graph Packages in R
+
+- Two important graph packages in `R` are `tidygraph` and `igraph`
+- `tidygraph` is a tidy wrapper around `igraph`
+  - Key idea: represent graph with two tibbles, nodes and edges
+- `ggraph` is a `ggplot` style graph visualization package
+- `igraph` can do more things than `tidygraph`
+
+## Create a Graph  {.smaller}
+
+- `tbl_graph` creates a graph from set of nodes and edges
+
+```{r}
+#| echo: true
+
+nodes = tibble("nodes" = letters[1:6])
+edges = tibble("from" = c(1,1,2,3,2,3,5),"to" = c(2,3,4,4,5,6,6))
+gr2= tbl_graph(nodes = nodes,edges = edges,directed = TRUE)
+nodes
+edges
+
+
+```
+
+## Create a Graph  {.smaller}
+
+- `as_tbl_graph` creates a graph from tibble of edges
+- `tbl_graph` from nodes and edges
+
+```{r}
+#| echo: true
+
+nodes = tibble("nodes" = letters[1:6])
+edges = tibble("from" = c(1,1,2,3,2,3,5),"to" = c(2,3,4,4,5,6,6))
+gr1 = as_tbl_graph(edges,directed = TRUE)
+gr2= tbl_graph(nodes = nodes,edges = edges,directed = TRUE)
+nodes
+
+
+```
+
+## Create a Graph  {.smaller}
+
+
+```{r}
+#| echo: true
+nodes = tibble("nodes" = letters[1:6])
+edges = tibble("from" = c(1,1,2,3,2,3,5),"to" = c(2,3,4,4,5,6,6))
+gr1 = as_tbl_graph(edges,directed = TRUE)
+gr2= tbl_graph(nodes = nodes,edges = edges,directed = TRUE)
+gr1
+
+```
+
+## Create a Graph  {.smaller}
+
+
+```{r}
+#| echo: true
+nodes = tibble("nodes" = letters[1:6])
+edges = tibble("from" = c(1,1,2,3,2,3,5),"to" = c(2,3,4,4,5,6,6))
+gr1 = as_tbl_graph(edges,directed = TRUE)
+gr2= tbl_graph(nodes = nodes,edges = edges,directed = TRUE)
+gr2
+
+```
+
+
+## Create a Graph  
+
+- We have been using `ggraph` to visualize graphs
+
+```{r}
+#| echo: true
+
+gr2 |> ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(10, 'mm'),
+                     end_cap = circle(10, 'mm')), 
+                 arrow = arrow(length = unit(8, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 14) +
+  theme_graph()
+```
+
+## Other ways to create a graph  {.smaller}
+
+- `as_tbl_graph` converts from `igraph` format to `tidy` format
+  - Many datasets come in this format
+
+```{r}
+#| echo: true
+library(networkdata)
+data("flo_marriage")
+flo_marriage
+
+```
+
+## Other ways to create a graph  {.smaller}
+
+- `as_tbl_graph` also converts from `igraph` format to `tidy` format
+  - Many datasets come in this format
+
+```{r}
+#| echo: true
+
+flo_marriage |> as_tbl_graph()
+
+```
+
+## Visualizing Graphs: `ggraph` 
+
+- `ggraph(graph,layout="auto",...)`
+- `geom_node_*(point,range,text,label,....)`
+- `geom_edge_*(link,sf,hive,...)`
+- Pick layout and style for nodes and edges
+- Use `aes` to plot other data
+
+## Visualizing Graphs: Basic Example
+
+
+
+```{r}
+#| echo: true
+#| fig-width: 8
+gr2 |> ggraph(layout = "auto") +
+   geom_edge_link0() +
+    geom_node_point() +
+  theme_graph()
+
+```
+
+## Layouts  {.smaller}
+
+- layouts use algorithms for arranging the nodes
+- `kk` and `stress` pretends the edges are springs, finds equilibrium
+
+:::: {.columns}
+
+
+::: {.column width="80%"}
+
+```{r}
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+gr2 |> ggraph(layout = "stress") +
+   geom_edge_link0() +
+    geom_node_point() +
+  theme_graph()
+
+```
+
+::: 
+
+::::
+
+## Layouts  {.smaller}
+
+- layouts use algorithms for arranging the nodes
+- `dendrogram` draws a family tree (note duplicates)
+
+:::: {.columns width="100%"}
+
+::: {.column width="80%"}
+
+```{r}
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+gr2 |> ggraph(layout = "dendrogram") +
+   geom_edge_link0() +
+    geom_node_text(aes(label = nodes),size = 14) +
+  theme_graph()
+
+```
+
+::: 
+
+::::
+
+## `geom_node_*` {.smaller} 
+
+- `point`, `circle`, `text` most common
+- Key aestethics:
+ - `point`: `alpha`, `color`, `fill`, `shape`, `size`
+ - text: `label`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: true
+#| eval: false
+#| fig-width: 8
+gr2 |> ggraph(layout = "stress") +
+   geom_edge_link0() +
+  geom_node_point(aes(size = centrality_degree(mode = "in") + centrality_degree(mode = "out"),
+                      color = centrality_degree(mode = "in") > 0), 
+                  alpha = 0.8) +
+  theme_graph()
+
+```
+
+::: 
+
+::::
+
+## `geom_node_*` {.smaller} 
+
+- `point`, `circle`, `text` most common
+- Key aestethics:
+ - `point`: `alpha`, `color`, `fill`, `shape`, `size`
+ - text: `label`
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+```{r}
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+gr2 |> ggraph(layout = "stress") +
+   geom_edge_link0() +
+  geom_node_point(aes(size = centrality_degree(mode = "in") + centrality_degree(mode = "out"),
+                      color = centrality_degree(mode = "in") > 0), 
+                  alpha = 0.8) +
+  theme_graph()
+
+```
+
+::: 
+
+::::
+
+
+## `geom_edge_*` 
+
+- `geom_edge_link` family common
+- Key aestethics: `edge_color/width/linetype` `arrow`
+- Fancy aestethics: `label`, `start/end_cap`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: true
+#| eval: false
+#| fig-width: 6
+
+gr2 |> ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(6, 'mm'),
+                     end_cap = circle(6, 'mm')), 
+                 arrow = arrow(length = unit(5, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 8) +
+  theme_graph()
+```
+
+:::
+
+::::
+
+## `geom_edge_*` 
+
+- `geom_edge_link` family common
+- Key aestethics: `edge_color/width/linetype` `arrow`
+- Fancy aestethics: `label`, `start/end_cap`
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-width: 6
+#| fig-height: 4
+
+gr2 |> ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(6, 'mm'),
+                     end_cap = circle(6, 'mm')), 
+                 arrow = arrow(length = unit(5, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 8) +
+  theme_graph()
+```
+
+:::
+
+::::
+
+
+## Manipulating the Graph
+
+- `tidy` manipulation requires that you `activate` either `edges` or `nodes`
+- `nodes` active by default
+```{r}
+#| echo: true
+gr2 |> 
+  mutate(degree = centrality_degree())
+
+
+```
+
+## Manipulating the Graph {.smaller}
+
+- `tidy` manipulation requires that you `activate` either `edges` or `nodes`
+- use `activate` to change the edges
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: true
+gr3 = gr2 |> 
+  activate(edges) |> 
+  mutate(distance = abs(to-from))  
+  
+gr3
+
+```
+
+:::
+
+::::
+
+
+## Manipulating the Graph {.smaller}
+
+- `tidy` manipulation requires that you `activate` either `edges` or `nodes`
+- use `activate` to change the edges
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: true
+#| eval: false
+gr3 |> 
+   ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(10, 'mm'),
+                     end_cap = circle(10, 'mm'),
+                     color = distance > 1), 
+                 arrow = arrow(length = unit(8, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 14) +
+  theme_graph()
+```
+
+:::
+
+::::
+
+
+
+## Manipulating the Graph {.smaller}
+
+- `tidy` manipulation requires that you `activate` either `edges` or `nodes`
+- use `activate` to change the edges
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: false
+gr3 |> 
+   ggraph(layout = "auto") +
+   geom_edge_link(aes(start_cap = circle(10, 'mm'),
+                     end_cap = circle(10, 'mm'),
+                     color = distance > 1), 
+                 arrow = arrow(length = unit(8, 'mm'))) + 
+     geom_node_text(aes(label = nodes),size = 14) +
+  theme_graph()
+```
+
+:::
+
+::::
+
+## Graph Analysis Functions {.smaller}
+
+- `centrality_*` tidygraph centrality functions
+- `node_*` and `edge_*`- example `node_distance_to`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| eval: false
+#| echo: true
+#| fig-width: 8
+gr2 |> 
+  activate("nodes") |> 
+  mutate(dist_to_a = node_distance_from(nodes = 1)) |> 
+  ggraph() +
+  geom_node_point(aes(size=3-dist_to_a)) + 
+  geom_edge_link0() +
+  theme_graph()
+```
+
+:::
+
+::::
+
+## Graph Analysis Functions 
+
+- `centrality_*` tidygraph centrality functions
+- `node_*` and `edge_*`- example `node_distance_to`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+```{r}
+#| echo: false
+#| fig-width: 8
+gr2 |> 
+  activate("nodes") |> 
+  mutate(dist_to_a = node_distance_from(nodes = 1)) |> 
+  ggraph() +
+  geom_node_point(aes(size=3-dist_to_a)) + 
+  geom_edge_link0() +
+  theme_graph()
+```
+
+:::
+
+::::
+
+
+
+## Graph Analysis Functions 
+
+- `centrality_*` tidygraph centrality functions
+- `node_*` and `edge_*`- example `node_distance_to`
+- `graph_*` and `to_*` functions
+- Sometimes need to call them `with_graph`
+- `igraph` functions: good fraction of most important network science stats
+
+
+## Meetup Reflection
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+
+
+
+
+
+
