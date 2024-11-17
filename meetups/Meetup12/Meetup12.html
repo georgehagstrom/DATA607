@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -339,21 +404,623 @@ George I. Hagstrom
 </div>
 
 </section>
-<section id="week-update" class="slide level2">
-<h2>Week Update</h2>
-</section>
-<section id="graphs" class="slide level2">
+<section id="graphs" class="slide level2 smaller">
 <h2>Graphs</h2>
 <ul>
 <li>Graphs are a set of objects (nodes) connected by links (edges)</li>
 </ul>
 
 <img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="examples-social-networks" class="slide level2 no_stretch">
+<section id="examples-social-networks" class="slide level2 smaller">
 <h2>Examples: Social Networks</h2>
 <ul>
 <li>Nodes are people</li>
 <li>Edges are social interaction or friendship</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-3-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="examples-transportation-network" class="slide level2 smaller">
+<h2>Examples: Transportation Network</h2>
+<ul>
+<li>Nodes are locations</li>
+<li>Edges are road or air links</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-4-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="examples-statistical-models" class="slide level2 smaller">
+<h2>Examples: Statistical Models</h2>
+<ul>
+<li>Graphs represent the causal structure between a set of variables</li>
+</ul>
+
+<img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="what-graph-theory-can-do" class="slide level2 smaller">
+<h2>What Graph Theory Can Do</h2>
+<ul>
+<li>Social Networks:
+<ul>
+<li>Identifying influential people</li>
+<li>Identifying Communities</li>
+<li>Using social info for recommendations</li>
+<li>Epidemiology/Contact Tracing</li>
+</ul></li>
+<li>Financial or Infrastructure Networks
+<ul>
+<li>Fraud Detection</li>
+<li>Vulnerability Detection</li>
+</ul></li>
+<li>Logistical Networks- Optimization</li>
+<li>Graph Databases (neo4js)</li>
+<li>Statistical Methods and Models</li>
+</ul>
+</section>
+<section id="definition-of-a-simple-graph" class="slide level2 smaller">
+<h2>Definition of a Simple Graph</h2>
+<ol type="1">
+<li><p>Set of objects called the nodes: N = (Chicago, Detroit, Miami, NYC)</p></li>
+<li><p>Set of pairs of nodes, called edges: E = [ (Chicago,Detroit), (Miami,NYC), (NYC,Chicago)]</p></li>
+</ol>
+<p>Adjacency Matrix A:</p>
+<ul>
+<li><span class="math inline">\(A_{ij} = 1\)</span> if node <span class="math inline">\(i\)</span> and node <span class="math inline">\(j\)</span> connected</li>
+<li><span class="math inline">\(A_{ij} = 0\)</span> if no connection between <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span></li>
+</ul>
+<p><span class="math display">\[ A = \begin{pmatrix}
+0 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix} \]</span></p>
+</section>
+<section id="directed-and-weighted-graphs" class="slide level2 smaller">
+<h2>Directed and Weighted Graphs</h2>
+<ul>
+<li>In a directed graph edges have directionality, from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>
+<ul>
+<li>I might follow Warren Buffett on LinkedIn, but he doesn’t follow me</li>
+</ul></li>
+<li>Adjacency Matrix no longer symmetric</li>
+<li>In a weighted graph, edges have <code>weights</code> which represent the strength of the connection</li>
+</ul>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-6-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="graph-stats-degree" class="slide level2 smaller">
+<h2>Graph Stats: Degree</h2>
+<ul>
+<li>Degree of a node is the number of edges connecting to that node</li>
+<li>For directed graphs: in-degree and out-degree are nodes going in and out</li>
+<li>For weighted graphs, each edge can contribute to weighted degree according to weight</li>
+<li>High degree nodes are often very influential</li>
+</ul>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="graph-stats-centrality" class="slide level2">
+<h2>Graph Stats: Centrality</h2>
+<ul>
+<li>Can define measures of how central/connected each node is</li>
+<li>Degree Centrality: just the degree</li>
+<li>Page Rank: probability that a random walker lands on a given node</li>
+<li>Betweenness Centrality: How many shortest paths go through a given node</li>
+<li>Must be 100 others….</li>
+</ul>
+</section>
+<section id="other-important-graph-concepts" class="slide level2">
+<h2>Other Important Graph Concepts</h2>
+<ul>
+<li>Cliques: groups of nodes where each node is connected to every other</li>
+<li>Paths: Sets of vertices that start with one node and end with another</li>
+<li>Connected Components: groups of nodes where you can travel from one to another along paths</li>
+<li>Random Graphs: Defined by connection probability and degree distribution</li>
+<li>Small World Networks: In many social networks, path between any two edges is very short</li>
+</ul>
+</section>
+<section id="graph-packages-in-r" class="slide level2">
+<h2>Graph Packages in R</h2>
+<ul>
+<li>Two important graph packages in <code>R</code> are <code>tidygraph</code> and <code>igraph</code></li>
+<li><code>tidygraph</code> is a tidy wrapper around <code>igraph</code>
+<ul>
+<li>Key idea: represent graph with two tibbles, nodes and edges</li>
+</ul></li>
+<li><code>ggraph</code> is a <code>ggplot</code> style graph visualization package</li>
+<li><code>igraph</code> can do more things than <code>tidygraph</code></li>
+</ul>
+</section>
+<section id="create-a-graph" class="slide level2 smaller">
+<h2>Create a Graph</h2>
+<ul>
+<li><code>tbl_graph</code> creates a graph from set of nodes and edges</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>nodes <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"nodes"</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span>
+<span id="cb1-2"><a></a>edges <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"from"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="st">"to"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb1-3"><a></a>gr2<span class="ot">=</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> nodes,<span class="at">edges =</span> edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-4"><a></a>nodes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 1
+  nodes
+  &lt;chr&gt;
+1 a    
+2 b    
+3 c    
+4 d    
+5 e    
+6 f    </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>edges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+   from    to
+  &lt;dbl&gt; &lt;dbl&gt;
+1     1     2
+2     1     3
+3     2     4
+4     3     4
+5     2     5
+6     3     6
+7     5     6</code></pre>
+</div>
+</div>
+</section>
+<section id="create-a-graph-1" class="slide level2 smaller">
+<h2>Create a Graph</h2>
+<ul>
+<li><code>as_tbl_graph</code> creates a graph from tibble of edges</li>
+<li><code>tbl_graph</code> from nodes and edges</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>nodes <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"nodes"</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span>
+<span id="cb5-2"><a></a>edges <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"from"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="st">"to"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb5-3"><a></a>gr1 <span class="ot">=</span> <span class="fu">as_tbl_graph</span>(edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-4"><a></a>gr2<span class="ot">=</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> nodes,<span class="at">edges =</span> edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-5"><a></a>nodes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 1
+  nodes
+  &lt;chr&gt;
+1 a    
+2 b    
+3 c    
+4 d    
+5 e    
+6 f    </code></pre>
+</div>
+</div>
+</section>
+<section id="create-a-graph-2" class="slide level2 smaller">
+<h2>Create a Graph</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>nodes <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"nodes"</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span>
+<span id="cb7-2"><a></a>edges <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"from"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="st">"to"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb7-3"><a></a>gr1 <span class="ot">=</span> <span class="fu">as_tbl_graph</span>(edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-4"><a></a>gr2<span class="ot">=</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> nodes,<span class="at">edges =</span> edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a></a>gr1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 6 nodes and 7 edges
+#
+# A directed acyclic simple graph with 1 component
+#
+# Node Data: 6 × 0 (active)
+#
+# Edge Data: 7 × 2
+   from    to
+  &lt;int&gt; &lt;int&gt;
+1     1     2
+2     1     3
+3     2     5
+# ℹ 4 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="create-a-graph-3" class="slide level2 smaller">
+<h2>Create a Graph</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>nodes <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"nodes"</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span>
+<span id="cb9-2"><a></a>edges <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"from"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="st">"to"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb9-3"><a></a>gr1 <span class="ot">=</span> <span class="fu">as_tbl_graph</span>(edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-4"><a></a>gr2<span class="ot">=</span> <span class="fu">tbl_graph</span>(<span class="at">nodes =</span> nodes,<span class="at">edges =</span> edges,<span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-5"><a></a>gr2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 6 nodes and 7 edges
+#
+# A directed acyclic simple graph with 1 component
+#
+# Node Data: 6 × 1 (active)
+  nodes
+  &lt;chr&gt;
+1 a    
+2 b    
+3 c    
+4 d    
+5 e    
+6 f    
+#
+# Edge Data: 7 × 2
+   from    to
+  &lt;int&gt; &lt;int&gt;
+1     1     2
+2     1     3
+3     2     4
+# ℹ 4 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="create-a-graph-4" class="slide level2">
+<h2>Create a Graph</h2>
+<ul>
+<li>We have been using <code>ggraph</code> to visualize graphs</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"auto"</span>) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>   <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">start_cap =</span> <span class="fu">circle</span>(<span class="dv">10</span>, <span class="st">'mm'</span>),</span>
+<span id="cb11-3"><a></a>                     <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">10</span>, <span class="st">'mm'</span>)), </span>
+<span id="cb11-4"><a></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">'mm'</span>))) <span class="sc">+</span> </span>
+<span id="cb11-5"><a></a>     <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> nodes),<span class="at">size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="other-ways-to-create-a-graph" class="slide level2 smaller">
+<h2>Other ways to create a graph</h2>
+<ul>
+<li><code>as_tbl_graph</code> converts from <code>igraph</code> format to <code>tidy</code> format
+<ul>
+<li>Many datasets come in this format</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(networkdata)</span>
+<span id="cb12-2"><a></a><span class="fu">data</span>(<span class="st">"flo_marriage"</span>)</span>
+<span id="cb12-3"><a></a>flo_marriage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>IGRAPH bc7fb16 UN-- 16 20 -- 
++ attr: name (v/c), wealth (v/n), #priors (v/n), #ties (v/n)
++ edges from bc7fb16 (vertex names):
+ [1] Acciaiuoli--Medici       Albizzi   --Ginori       Albizzi   --Guadagni    
+ [4] Albizzi   --Medici       Barbadori --Castellani   Barbadori --Medici      
+ [7] Bischeri  --Guadagni     Bischeri  --Peruzzi      Bischeri  --Strozzi     
+[10] Castellani--Peruzzi      Castellani--Strozzi      Guadagni  --Lamberteschi
+[13] Guadagni  --Tornabuoni   Medici    --Ridolfi      Medici    --Salviati    
+[16] Medici    --Tornabuoni   Pazzi     --Salviati     Peruzzi   --Strozzi     
+[19] Ridolfi   --Strozzi      Ridolfi   --Tornabuoni  </code></pre>
+</div>
+</div>
+</section>
+<section id="other-ways-to-create-a-graph-1" class="slide level2 smaller">
+<h2>Other ways to create a graph</h2>
+<ul>
+<li><code>as_tbl_graph</code> also converts from <code>igraph</code> format to <code>tidy</code> format
+<ul>
+<li>Many datasets come in this format</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>flo_marriage <span class="sc">|&gt;</span> <span class="fu">as_tbl_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 16 nodes and 20 edges
+#
+# An undirected simple graph with 2 components
+#
+# Node Data: 16 × 4 (active)
+   name         wealth `#priors` `#ties`
+   &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Acciaiuoli       10        53       2
+ 2 Albizzi          36        65       3
+ 3 Barbadori        55         0      14
+ 4 Bischeri         44        12       9
+ 5 Castellani       20        22      18
+ 6 Ginori           32         0       9
+ 7 Guadagni          8        21      14
+ 8 Lamberteschi     42         0      14
+ 9 Medici          103        53      54
+10 Pazzi            48         0       7
+11 Peruzzi          49        42      32
+12 Pucci             3         0       1
+13 Ridolfi          27        38       4
+14 Salviati         10        35       5
+15 Strozzi         146        74      29
+16 Tornabuoni       48         0       7
+#
+# Edge Data: 20 × 2
+   from    to
+  &lt;int&gt; &lt;int&gt;
+1     1     9
+2     2     6
+3     2     7
+# ℹ 17 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-graphs-ggraph" class="slide level2">
+<h2>Visualizing Graphs: <code>ggraph</code></h2>
+<ul>
+<li><code>ggraph(graph,layout="auto",...)</code></li>
+<li><code>geom_node_*(point,range,text,label,....)</code></li>
+<li><code>geom_edge_*(link,sf,hive,...)</code></li>
+<li>Pick layout and style for nodes and edges</li>
+<li>Use <code>aes</code> to plot other data</li>
+</ul>
+</section>
+<section id="visualizing-graphs-basic-example" class="slide level2">
+<h2>Visualizing Graphs: Basic Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"auto"</span>) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>   <span class="fu">geom_edge_link0</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a></a>    <span class="fu">geom_node_point</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-15-1.png" width="768" class="r-stretch"></section>
+<section id="layouts" class="slide level2 smaller">
+<h2>Layouts</h2>
+<ul>
+<li>layouts use algorithms for arranging the nodes</li>
+<li><code>kk</code> and <code>stress</code> pretends the edges are springs, finds equilibrium</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"stress"</span>) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>   <span class="fu">geom_edge_link0</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a></a>    <span class="fu">geom_node_point</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-16-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="layouts-1" class="slide level2 smaller">
+<h2>Layouts</h2>
+<ul>
+<li>layouts use algorithms for arranging the nodes</li>
+<li><code>dendrogram</code> draws a family tree (note duplicates)</li>
+</ul>
+<div class="columns" width="100%">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"dendrogram"</span>) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>   <span class="fu">geom_edge_link0</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>    <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> nodes),<span class="at">size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-17-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="geom_node_" class="slide level2 smaller">
+<h2><code>geom_node_*</code></h2>
+<ul>
+<li><code>point</code>, <code>circle</code>, <code>text</code> most common</li>
+<li>Key aestethics:</li>
+<li><code>point</code>: <code>alpha</code>, <code>color</code>, <code>fill</code>, <code>shape</code>, <code>size</code></li>
+<li>text: <code>label</code></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"stress"</span>) <span class="sc">+</span></span>
+<span id="cb19-2"><a></a>   <span class="fu">geom_edge_link0</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">"in"</span>) <span class="sc">+</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">"out"</span>),</span>
+<span id="cb19-4"><a></a>                      <span class="at">color =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">"in"</span>) <span class="sc">&gt;</span> <span class="dv">0</span>), </span>
+<span id="cb19-5"><a></a>                  <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb19-6"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="geom_node_-1" class="slide level2 smaller">
+<h2><code>geom_node_*</code></h2>
+<ul>
+<li><code>point</code>, <code>circle</code>, <code>text</code> most common</li>
+<li>Key aestethics:</li>
+<li><code>point</code>: <code>alpha</code>, <code>color</code>, <code>fill</code>, <code>shape</code>, <code>size</code></li>
+<li>text: <code>label</code></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-19-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="geom_edge_" class="slide level2">
+<h2><code>geom_edge_*</code></h2>
+<ul>
+<li><code>geom_edge_link</code> family common</li>
+<li>Key aestethics: <code>edge_color/width/linetype</code> <code>arrow</code></li>
+<li>Fancy aestethics: <code>label</code>, <code>start/end_cap</code></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>gr2 <span class="sc">|&gt;</span> <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"auto"</span>) <span class="sc">+</span></span>
+<span id="cb20-2"><a></a>   <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">start_cap =</span> <span class="fu">circle</span>(<span class="dv">6</span>, <span class="st">'mm'</span>),</span>
+<span id="cb20-3"><a></a>                     <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">6</span>, <span class="st">'mm'</span>)), </span>
+<span id="cb20-4"><a></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">5</span>, <span class="st">'mm'</span>))) <span class="sc">+</span> </span>
+<span id="cb20-5"><a></a>     <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> nodes),<span class="at">size =</span> <span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="geom_edge_-1" class="slide level2">
+<h2><code>geom_edge_*</code></h2>
+<ul>
+<li><code>geom_edge_link</code> family common</li>
+<li>Key aestethics: <code>edge_color/width/linetype</code> <code>arrow</code></li>
+<li>Fancy aestethics: <code>label</code>, <code>start/end_cap</code></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-21-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="manipulating-the-graph" class="slide level2">
+<h2>Manipulating the Graph</h2>
+<ul>
+<li><code>tidy</code> manipulation requires that you <code>activate</code> either <code>edges</code> or <code>nodes</code></li>
+<li><code>nodes</code> active by default</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>gr2 <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a></a>  <span class="fu">mutate</span>(<span class="at">degree =</span> <span class="fu">centrality_degree</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 6 nodes and 7 edges
+#
+# A directed acyclic simple graph with 1 component
+#
+# Node Data: 6 × 2 (active)
+  nodes degree
+  &lt;chr&gt;  &lt;dbl&gt;
+1 a          2
+2 b          2
+3 c          2
+4 d          0
+5 e          1
+6 f          0
+#
+# Edge Data: 7 × 2
+   from    to
+  &lt;int&gt; &lt;int&gt;
+1     1     2
+2     1     3
+3     2     4
+# ℹ 4 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="manipulating-the-graph-1" class="slide level2 smaller">
+<h2>Manipulating the Graph</h2>
+<ul>
+<li><code>tidy</code> manipulation requires that you <code>activate</code> either <code>edges</code> or <code>nodes</code></li>
+<li>use <code>activate</code> to change the edges</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>gr3 <span class="ot">=</span> gr2 <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a></a>  <span class="fu">activate</span>(edges) <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a></a>  <span class="fu">mutate</span>(<span class="at">distance =</span> <span class="fu">abs</span>(to<span class="sc">-</span>from))  </span>
+<span id="cb23-4"><a></a>  </span>
+<span id="cb23-5"><a></a>gr3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 6 nodes and 7 edges
+#
+# A directed acyclic simple graph with 1 component
+#
+# Edge Data: 7 × 3 (active)
+   from    to distance
+  &lt;int&gt; &lt;int&gt;    &lt;int&gt;
+1     1     2        1
+2     1     3        2
+3     2     4        2
+4     3     4        1
+5     2     5        3
+6     3     6        3
+7     5     6        1
+#
+# Node Data: 6 × 1
+  nodes
+  &lt;chr&gt;
+1 a    
+2 b    
+3 c    
+# ℹ 3 more rows</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="manipulating-the-graph-2" class="slide level2 smaller">
+<h2>Manipulating the Graph</h2>
+<ul>
+<li><code>tidy</code> manipulation requires that you <code>activate</code> either <code>edges</code> or <code>nodes</code></li>
+<li>use <code>activate</code> to change the edges</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>gr3 <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a></a>   <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"auto"</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a></a>   <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">start_cap =</span> <span class="fu">circle</span>(<span class="dv">10</span>, <span class="st">'mm'</span>),</span>
+<span id="cb25-4"><a></a>                     <span class="at">end_cap =</span> <span class="fu">circle</span>(<span class="dv">10</span>, <span class="st">'mm'</span>),</span>
+<span id="cb25-5"><a></a>                     <span class="at">color =</span> distance <span class="sc">&gt;</span> <span class="dv">1</span>), </span>
+<span id="cb25-6"><a></a>                 <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">'mm'</span>))) <span class="sc">+</span> </span>
+<span id="cb25-7"><a></a>     <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> nodes),<span class="at">size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb25-8"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="manipulating-the-graph-3" class="slide level2 smaller">
+<h2>Manipulating the Graph</h2>
+<ul>
+<li><code>tidy</code> manipulation requires that you <code>activate</code> either <code>edges</code> or <code>nodes</code></li>
+<li>use <code>activate</code> to change the edges</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:100%;">
@@ -361,66 +1028,65 @@ George I. Hagstrom
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-3-1.png" width="864"></p>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="examples-transportation-network" class="slide level2">
-<h2>Examples: Transportation Network</h2>
+<section id="graph-analysis-functions" class="slide level2 smaller">
+<h2>Graph Analysis Functions</h2>
 <ul>
-<li>Nodes are locations</li>
-<li>Edges are road or air links</li>
+<li><code>centrality_*</code> tidygraph centrality functions</li>
+<li><code>node_*</code> and <code>edge_*</code>- example <code>node_distance_to</code></li>
 </ul>
-
-<img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="examples-statistical-models" class="slide level2">
-<h2>Examples: Statistical Models</h2>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>gr2 <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">activate</span>(<span class="st">"nodes"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb26-3"><a></a>  <span class="fu">mutate</span>(<span class="at">dist_to_a =</span> <span class="fu">node_distance_from</span>(<span class="at">nodes =</span> <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb26-4"><a></a>  <span class="fu">ggraph</span>() <span class="sc">+</span></span>
+<span id="cb26-5"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size=</span><span class="dv">3</span><span class="sc">-</span>dist_to_a)) <span class="sc">+</span> </span>
+<span id="cb26-6"><a></a>  <span class="fu">geom_edge_link0</span>() <span class="sc">+</span></span>
+<span id="cb26-7"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="graph-analysis-functions-1" class="slide level2">
+<h2>Graph Analysis Functions</h2>
 <ul>
-<li>Graphs represent the causal structure between a set of variables</li>
+<li><code>centrality_*</code> tidygraph centrality functions</li>
+<li><code>node_*</code> and <code>edge_*</code>- example <code>node_distance_to</code></li>
 </ul>
-
-<img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="what-graph-theory-can-do" class="slide level2">
-<h2>What Graph Theory Can Do</h2>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Meetup12_files/figure-revealjs/unnamed-chunk-27-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="definition-of-a-graph" class="slide level2">
-<h2>Definition of a Graph</h2>
-</section>
-<section id="directed-graphs" class="slide level2">
-<h2>Directed Graphs</h2>
-</section>
-<section id="weighted-graphs" class="slide level2">
-<h2>Weighted Graphs</h2>
-</section>
-<section id="graph-stats-degree" class="slide level2">
-<h2>Graph Stats: Degree</h2>
-</section>
-<section id="graph-stats-centrality" class="slide level2">
-<h2>Graph Stats: Centrality</h2>
-</section>
-<section id="graph-stats-cliques" class="slide level2">
-<h2>Graph Stats: Cliques</h2>
-</section>
-<section id="graph-stats-paths" class="slide level2">
-<h2>Graph Stats: Paths</h2>
-</section>
-<section id="creating-a-graph-tidygraph" class="slide level2">
-<h2>Creating a Graph Tidygraph</h2>
-</section>
-<section id="manipulating-the-graph" class="slide level2">
-<h2>Manipulating the Graph</h2>
-</section>
-<section id="tidygraph-functions" class="slide level2">
-<h2>Tidygraph Functions</h2>
+<section id="graph-analysis-functions-2" class="slide level2">
+<h2>Graph Analysis Functions</h2>
+<ul>
+<li><code>centrality_*</code> tidygraph centrality functions</li>
+<li><code>node_*</code> and <code>edge_*</code>- example <code>node_distance_to</code></li>
+<li><code>graph_*</code> and <code>to_*</code> functions</li>
+<li>Sometimes need to call them <code>with_graph</code></li>
+<li><code>igraph</code> functions: good fraction of most important network science stats</li>
+</ul>
 </section>
 <section id="meetup-reflection" class="slide level2">
 <h2>Meetup Reflection</h2>
-</section>
-<section id="data-science-in-context-presentations" class="slide level2">
-<h2>Data Science in Context Presentations</h2>
+<p>Please fill out the following google form after the meeting or watching the video:</p>
+<p><a href="https://forms.gle/wa1LCs15j6Bnp8KW6">Click Here</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
