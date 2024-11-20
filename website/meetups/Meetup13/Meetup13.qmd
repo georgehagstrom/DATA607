@@ -1,0 +1,523 @@
+---
+title: "Meetup 13: Big Data and data.table"
+author: "George I. Hagstrom"
+format: revealjs
+---
+
+```{r}
+library(tidyverse)
+
+
+```
+
+## Pre-Thanksgiving Update
+
+- Entering Course Home Stretch
+- Assignments Remaining:
+  - tidyverse extend and graph theory (due this Sunday)
+  - Final Lab due December 4th 
+  - Final Real Meetup December 1st
+  - Final Project: Record Video Presentation and upload to Brightspace
+
+## Computer Architecture Basics
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](CPUArchitecture.png)
+:::
+
+::: {.column width="50%"}
+
+- Hierarchical Memory
+- Cache: Small and Fast
+- RAM: Medium Size and Speed
+- Disk: Huge and Slow
+
+
+:::
+
+::::
+
+## Memory Limited Tasks
+
+- Data processing and manipulation tasks are inherently memory/memory speed limited
+- Reading and writing files are also memory limited
+- Some data analysis tasks are (but not the topic here)
+- Start caring when your dataset ~1GB (or if things run slowly)
+
+
+## `dplyr` tradeoffs
+
+"We optimize `dplyr` for expressiveness on medium data; feel free to use `data.table` for raw speed on bigger data"
+
+![https://h2oai.github.io/db-benchmark/](benchmarks.png)
+
+## `data.table` summary
+
+- `data.table` enhances the base `R` `data.frame`
+- Designed for high speed with large datasets
+- Style is polar opposite of the tidyverse:
+  - Few functions
+  - Very concise code
+  - Very stable syntax
+- `dtplyr` and `tidytable` are two "tidy style" backends to `data.table`
+
+## `data.table` top features
+
+1. `data.table` queries executed together
+
+2. `data.table` `:=` operator supports passing by reference
+
+3. `data.table` supports reindexing which allows for extremely fast searches and subsetting
+
+- Passing by reference and indexing are subtler and more advanced computing topics, won't 
+get to them here and will instead introudce them in a coding vignette
+- Also considering making a vignette on basic code benchmarking
+
+## Creating a Data Table:
+
+- using `data.table()`:
+
+```{r}
+#| echo: true
+library(data.table)
+
+DT = data.table(
+  ID = c("b","b","b","a","a","c"),
+  a = 1:6,
+  b = 7:12,
+  c = 13:18
+)
+DT
+
+```
+
+## Creating a Data Table:
+
+- using `data.table()`:
+
+```{r}
+#| echo: true
+
+DT = data.table(
+  ID = c("b","b","b","a","a","c"),
+  a = 1:6,
+  b = 7:12,
+  c = 13:18
+)
+DT
+
+```
+
+## Creating a Data Table
+
+- Using `fread`
+
+```{r}
+#| echo: true
+flights = fread("https://raw.githubusercontent.com/Rdatatable/data.table/master/vignettes/flights14.csv")
+
+flights
+
+```
+
+## Creating a Data Table
+
+- Coercing a data frame, tibble, list, matrix, database etc:
+
+```{r}
+#| echo: true
+
+data_cars = mtcars |> data.table()
+data_cars
+
+```
+
+## Basic Syntax
+
+- Query data tables using square brackets:
+```{r}
+#| echo: true
+#| eval: false
+DT[ i   ,  j   ,   by   ]
+
+```
+- Code replaces each of `i`, `j`, and `by`
+- `i`: code for logical subsetting
+- `j`: code for transformation and aggregation
+- `by`: code for grouping
+
+## Subset Example
+
+- `i`: subset by index/key or logical conditions
+
+
+```{r}
+#| echo: true
+
+ flights[1:20,]
+
+```
+ 
+ 
+## Subset Example
+ 
+- `i`: subset by index/key or logical conditions
+ 
+```{r}
+#| echo: true
+ 
+ flights[origin == "JFK" & dest =="ORD" & arr_delay >60, ] |> head(n=20)
+
+
+```
+
+## Subset Example
+ 
+- `i`: subset by index/key or logical conditions
+ 
+```{r}
+#| echo: true
+ 
+ flights[origin == "JFK" & dest =="ORD" & arr_delay >60, ] |> head(n=20)
+
+
+```
+
+## Sort Example
+
+- Can also rearrange data.table using the `order()` function
+- Automatically uses `data.table` fast sort
+```{r}
+#| echo: true
+flights[order(origin, -dest)] |> 
+  head()
+
+```
+
+## Selecting Columns {.smaller}
+
+- Can choose a subset of columns in the second argument of `[]`
+
+```{r}
+#| echo: true
+
+flights[ , air_time ] |> 
+  head()
+
+
+```
+
+- Not "tidy" by default
+- Use `list` to select multiple columns and return data table:
+
+```{r}
+#| echo: true
+
+flights[, list(arr_delay,air_time)] |> 
+  head()
+
+
+```
+
+## `list` alias `.()`  {.smaller}
+
+- Can use `.` instead of `list`
+
+```{r}
+#| echo: true
+
+flights[ , .(origin,dest,dep_delay,arr_delay,air_time)] |> 
+  head()
+
+
+```
+
+- Can also select using a vector with `..` notation:
+
+```{r}
+#| echo: true
+sel = c("origin","dest","dep_delay","arr_delay","air_time")
+
+flights[ , ..sel ] |> head()
+
+
+```
+
+## Logical selection
+
+- Can select range of columns:
+
+```{r}
+#| echo: true
+
+flights[ , year:carrier  ] |> head()
+
+flights[ , !(year:carrier)  ]
+
+```
+
+## Rename
+
+- Can rename columns when you select just like you name columns in a list
+
+```{r}
+#| echo: true
+
+flights[ , list(
+  arrival_delay = arr_delay, 
+  departure_delay = dep_delay, 
+  time_in_air = air_time
+  )] |> 
+  head()
+
+
+```
+
+## Calculations 
+
+- Can perform mathematical operations in the `j`/2nd entry
+- How many flights with no delay:
+```{r}
+#| echo: true
+
+flights[ , sum( arr_delay + dep_delay < 0  )   ] 
+
+
+
+```
+- You can combine sorting/subsetting in `i` with selection and computation in `j`
+- Efficient because calculations done together, unnecessary options are avoided
+
+```{r}
+#| echo: true
+
+flights[origin == "LGA" & month == 1 , 
+        sum( arr_delay + dep_delay < 0  )   ] 
+
+```
+
+## Counting
+
+- .N is an alias for counting rows
+
+```{r}
+#| echo: true
+
+flights[origin == "LGA" & month == 1 & (arr_delay + dep_delay < 0), 
+       .N  ] 
+
+
+```
+
+- Note that computation can also take place in the `i` column
+
+
+## Aggregation  {.smaller}
+
+- Third column `by` is for aggregation (group_by)
+- How many trips from each airport?
+
+```{r}
+#| echo: true
+
+flights[ , .N, by = origin]
+
+
+```
+
+- Need `.` alias for multiple entries:
+
+```{r}
+#| echo: true
+
+flights[ carrier %in% c("DL","AA") , 
+         .(number = .N, mean_dep_delay = mean(dep_delay)) ,
+         by = .(origin,dest)    ] |> 
+  head()
+
+```
+
+
+## Sorting Groups
+
+- `keyby` lets you resort by groups:
+- Creates a `key`
+
+```{r}
+#| echo: true
+
+flights[ carrier %in% c("DL","AA") , 
+         .(number = .N, mean_dep_delay = mean(dep_delay)) ,
+         keyby = .(origin,dest)    ] |> 
+  head()
+
+
+
+
+```
+
+## Chaining Expressions  {.smaller}
+
+- What if you want to perform a series of operations that don't neatly fit in a single bracket?
+- Can chain together multiple brackets
+- Suppose we want to get number of trips for each origin dest pair but have a different order for 
+origin and dest?
+
+```{r}
+#| echo: true
+
+flights[carrier %in% c("DL","AA","UA"),
+        .N,
+        by = .(origin, dest)][order(origin,-dest)] |> 
+  head(10) 
+
+```
+
+## Group By Expressions
+
+- Can include expressions in the `by` column
+- Group by whether the flights arrived or departed late
+```{r}
+#| echo: true
+
+flights[ , .N, by = .(origin, dep_delay > 0, arr_delay > 0)][
+  order(origin,dep_delay,arr_delay)]
+
+
+
+```
+
+## Applying functions across columns  {.smaller}
+
+- `.SD` in the `j` column stands for the data for each group in `.by`
+- Use `lapply` similar to how we used `across`
+- `.SDcols` argument after `by`
+```{r}
+#| echo: true
+flights[ , lapply(.SD, mean), by = .(origin, dest, month)
+         , .SDcols = c("arr_delay","dep_delay")  ]
+
+
+```
+
+## Applying functions across columns  {.smaller}
+
+- `.SD` in the `j` column stands for the data for each group in `.by`
+- Use `lapply` similar to how we used `across`
+- ``.SDcols` can use logic to select columns
+```{r}
+#| echo: true
+flights[ , lapply(.SD, mean), by = .(origin, dest, month)
+         , .SDcols = is.numeric  ]
+
+```
+
+## Applying functions across columns  {.smaller}
+
+- `.SD` in the `j` column stands for the data for each group in `.by`
+- Use `lapply` similar to how we used `across`
+- ``.SDcols` can use logic to select columns
+```{r}
+#| echo: true
+flights[ , lapply(.SD, mean), by = .(origin, dest, month)
+         , .SDcols = patterns("delay")  ]
+
+```
+
+## Joins  {.smaller}
+
+- Two ways to do joins, put one DT in the `i` column of a bracket
+- Using `merge`
+- Define "holiday" DT (hat tip Toby Hocking)
+```{r}
+#| echo: true
+holiday = data.table(month = c(1,7,11,12),
+                     day = c(1,4,27,25),
+                     holiday = c("NYE",
+                                 "Independence_Day",
+                                 "Thanksgiving",
+                                 "Christmas"))
+
+holiday
+```
+
+## Right Join
+
+- `DT1[DT2, on = c(keys)]` does a Right Join
+
+```{r}
+#| echo: true
+flights[holiday, on = c("month","day")]
+
+```
+
+## Left Join
+
+- Reverse the arguments for left join
+
+```{r}
+#| echo: true
+holiday[flights, on = c("month","day")]
+
+```
+
+## Inner Join
+
+- Add `nomatch = 0` to make it an inner join ()
+- Drops all the `NA` values
+
+```{r}
+#| echo: true
+holiday[flights, on = c("month","day"), nomatch = 0]
+
+```
+
+## Full Join
+
+- Several ways, but `merge` with `all = TRUE` works
+- Can use DT1[DT2] notation but clunkier
+
+```{r}
+#| echo: true
+
+merge(flights,holiday,all = TRUE)
+
+```
+
+## Anti Join
+
+- Use `DT[!DT2, ...]` for an anti-join
+
+```{r}
+#| echo: true
+
+flights[!holiday, on = c("month","day")]
+
+```
+
+## Semi Join
+
+- A little clunky, need to use `na.omit` and `which`
+
+```{r}
+#| echo: true
+
+flights[na.omit(flights[holiday, on = c("month","day"),which = TRUE])]
+
+
+```
+
+## Reflection Meetup
+
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+
+
+## Data Science in Context Presentations
+
