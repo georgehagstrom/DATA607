@@ -2,7 +2,7 @@ id, unique_name,    alias
 1, "ElizabethBennet", "Elizabeth Bennet"
 1, "ElizabethBennet", "Elizabeth"
 1, "ElizabethBennet", "Miss Bennet"
-1, "ElizabethBennet", "Miss Lizzy",
+1, "ElizabethBennet", "Miss Lizzy"
 1, "ElizabethBennet", "Lizzy"
 1, "ElizabethBennet", "Eliza Bennet" 
 2, "MrDarcy", "Fitzwilliam Darcy"
@@ -26,8 +26,8 @@ id, unique_name,    alias
 11, "MrBingley", "Mr. Bingley"
 11, "MrBingley", "Bingley"
 12, "MrWickham", "George Wickham",
-12, "MrWickham", "Mr. Wickham",
-12, "MrWickham", "Wickham",
+12, "MrWickham", "Mr. Wickham"
+12, "MrWickham", "Wickham"
 12, "MrWickham", "George"
 13, "MrCollins", "William Collins"
 13, "MrCollins", "Mr. Collins"
