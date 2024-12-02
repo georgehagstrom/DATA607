@@ -1,0 +1,55 @@
+---
+title: "Lab 10: Tools for Working with Big Data"
+author: "George I. Hagstrom"
+format: html
+---
+
+
+
+## Overview
+
+This is a two part lab assignment. For both parts we will be using a dataset of New York City Taxi trips. In the first part you will complete a problem using `data.tables`
+and in the second part you will create a local `spark` instance on your computer and use the `sparklyr` library to simulate how you would process the dataset if it were stored
+on a distributed computing cluster. 
+
+You will need to download up to three data files for this lab, which are available via shared links in a google drive folder. The first is a dataset of taxi trips that took
+place in 2021. This file is 3GB in size so if your computer doesn't have a large amount of RAM (at least 16GB), consider using the smaller alternative (but be clear which one you
+are using when you complete your assignment): 
+
+1. [Click here to download 2021 Taxi Rides](https://drive.google.com/file/d/1GtQFjgJbm9aaCUbO6EacrToySrzxb2SS/view?usp=drive_link)
+
+The second dataset just contains the rides from November for the 2021 dataset, and as a result is 10 times smaller:
+
+2. [Click here to download the 2021 Taxi rides in November](https://drive.google.com/file/d/16_rRGea7X_v7o6OmBsoCsvwp2cZujnoy/view?usp=sharing)
+
+Finally, the final dataset contains details on the meaning of the taxi location code, which is important for determining the actual geographic location of the pickup and dropoff
+of each taxi ride:
+
+3. [Click here to download the taxi location codes dataset](https://drive.google.com/file/d/1BjHkT3fJv7cdLvuD0H04RYvvWyeYOwDD/view?usp=drive_link)
+
+
+
+**Problem 1**
+
+- Use `data.tables` to load 2021 NYC taxi dataset (or, if your computer has low memory, the alternative dataset of just November 2021) and the dataset that describes the location of each taxi location code, and output the memory address of the data.table obtained after loading. Performing all operations in place, recode the the drop off and pick up time variables as 
+date-times (whether or how you will do this depends on how your reader interprets the file). Then create new columns 
+in the data table which are equal to the duration of each taxi ride (in whatever time units you prefer) and the average speed in miles per hour of each taxi ride. Next, set equal to `NA` all
+values of the ride speed where ride speed is either negative, greater than 90 mph, or where the ride time is longer than 3 hours. 
+Next join with the location information
+so that the borough of origin and destination of each taxi ride is present in the data.table (this may require joining twice). Verify that this final data.table has the same memory address
+as the original data.frame. Hint: `lubridate` has a variety of functions for working with characters that represent time stamps.
+
+- For each combination of origin and destination boroughs, calculate the average speed (technically the average
+of the average speed) of taxi rides between those two boroughs and the total number of taxi rides between those boroughs, sort in descending order by average speed, and display the full answer.
+
+
+**Problem 2**
+
+- Create a local `spark` instance on your computer and load the November taxi dataset and taxi location dataset into your spark instance by using `spark_read_csv`. Join the datasets so that that the taxi ride data has data on 
+the borough of origin of each taxi ride. Create a new column in the dataset equal to the tip percentage, and filter the tip percentage data so that it excludes data points where either
+the tip or fare was less 0. Then, for taxi rides originating in each borough, calculate the mean and maximum
+tip percentage. 
+
+- For taxi rides on November 25th, filter the data so that tip percentage includes only rows where the tip and fare were non-negative, and the tip percentage is less than 100\%. Make a plot of the distribution of cab fares for taxi rides originating in each borough (using ggplot2 or ggridges). Perform all of the computations and data wrangling in Spark, and only collect the final tibbles to display your results make your plot.
+
+
