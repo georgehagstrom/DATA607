@@ -1,0 +1,209 @@
+---
+title: "Meetup 14: Distributed Computing and Apache Spark"
+author: "George I. Hagstrom"
+format: revealjs
+---
+
+## Last few weeks of semester
+
+- Data Science in Context
+- Video Presentation/Final Projects
+- If you are missing work get it in ASAP
+- Final lab due this Sunday
+
+
+## Why distributed computing?
+
+Answer: For the same reason you wouldn't have one person build the NYC subway
+
+- Many problems cannot be solved by a single processor/computer
+  - Limited by processing power
+  - Limited by memory
+- Enormous applications:
+  - Invented for physical sciences
+  - Big Data, AI, Machine Learning, etc etc
+
+
+## What is Distributed Computing
+
+Serial computing: single task at a time:
+![llnl-hpc](serial.png)
+
+## What is Distributed Computing
+
+- Parallel or distributed Computing: divide tasks among compute units:
+
+![llnl-hpc](parrallel.png)
+
+## Distributed Computing Paradigms: Shared Memory
+
+![llnl-hpc](uma.png)
+
+## Distributed Computing Paradigms: Cluster
+
+![llnl-hpc](numa.png)
+
+## Distributed Computing Paradigms: Distributed
+
+![llnl-hpc](distributed.png)
+
+## Apache Spark Architecture
+
+- `Spark` is a tool for high performance computing on a distributed cluster
+- "Secret Sauce" is something called an `RDD` or "Resilient Distributed Dataset"
+- Developed in 2009 and spun out of UC Berkeley
+- Requires two external resources:
+  - Distributed file system (disk)
+  - Cluster manager (cloud)
+
+## Pros of Spark
+
+- Extremely fast
+- Complexity under the hood
+- Very scalable
+- Robust/fault tolerant
+- Good library support for machine learning, graphs, and databases
+- Great for streaming analysis
+
+## Cons of Spark
+
+- Memory requirements \$\$\$
+- Can require programming chops as you get more into it
+
+
+
+## `sparklyr`
+
+- You can do data analysis in spark using almost the same syntax as `dplyr`
+- Computational process is different- workflow creates a series of instructions, gets executed all
+at once
+- Only certain key results returned to R by `collect`
+
+![Mastering Spark with R](analysis-approach-1.png)
+
+
+## Creating a `Spark` instance
+
+- Normally you run `spark` on a cluster or a data center
+- Can generate a "local" `spark` instance to practice
+
+```{r}
+#| echo: true
+library(sparklyr)
+library(tidyverse)
+
+spark_instance <- spark_connect(master = "local", version = "3.3")
+
+spark_instance
+
+
+```
+
+## Getting data into spark
+
+- Small datasets for practice: `copy_to`
+
+```{r}
+#| echo: true
+
+spark_cars = spark_instance |> copy_to(mtcars)
+
+spark_cars
+
+```
+
+## Getting data into spark
+
+- Also possible to read files from a regular disk
+- Distributes data across the cluster
+
+```{r}
+#| echo: true
+
+taxi_spark = spark_read_csv(spark_instance,"/home/georgehagstrom/Downloads/taxi_november_2021.csv", memory = TRUE)
+
+taxi_spark
+```
+
+## Data Lake versus ETL
+
+- Spark works well with "Data Lakes"
+  - Store data in its "natural" format, load into spark
+  - Alternative is to transform all new data into a data warehouse
+
+![Mastering Spark with R](data-data-lake-1.png)
+
+
+
+## Transformations and Actions
+
+- Two types main types of functions in `sparklyr`/`spark`
+- Transformations create a logical string of operations
+  - `filter`, `select`, `join`, `map`, `mutate`, ...
+- Actions execute the transformations and can return results to 
+`R`
+  - `collect`, `compute`
+
+## Example
+
+- Transformations use "lazy evaluation"
+  - 
+
+```{r}
+#| echo: true
+
+taxi_v2 = taxi_spark |> 
+  filter(VendorID == 2) |>  group_by(passenger_count) |> 
+  summarise( num_trips = n(),
+    mean_distance =  mean(trip_distance,na.rm = TRUE),
+    mean_fare = mean(fare_amount,na.rm = TRUE),
+    mean_tip = mean(tip_amount,na.rm = TRUE))
+
+taxi_v2
+
+```
+
+## Actions complete the computation
+
+```{r}
+#| echo: true
+
+taxi_v2 |> collect()
+
+```
+
+- Use `collect()` to execute your analysis and bring the results to `R` for visualization etc
+
+
+
+
+## Caching
+
+- Common workflow involves splitting into two steps:
+  - Data wrangling/transformations
+  - Statistical modeling
+- It can be most efficient to `cache` outcome of transformations 
+- Use `compute` to create an intermediate dataset in `spark`
+```{r}
+#| echo: true
+
+cached_taxi = taxi_v2 |> compute()
+
+
+```
+
+
+
+## Meetup Reflection/One Minute Paper
+
+
+
+
+Please fill out the following google form after the meeting or watching the video:
+
+[Click Here](https://forms.gle/wa1LCs15j6Bnp8KW6)
+
+
+## Data Science in Context Presentations
+
+
